@@ -1,0 +1,1526 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Правила ухода за зубами</title>
+<style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+/* Черновик страницы «Правила ежедневного ухода за зубами» в утверждённом дизайне страницы КТ. Картинки — заглушки до получения экспорта из Figma. */
+/* Денталь профи — страница «Правила ежедневного ухода за зубами».
+   Стили повторяют утверждённую страницу «Зачем делать КТ» (dentale-profi.ru/for-patients/zachem-delat-kt):
+   те же токены, шрифт Inter, отступы секций 72 / 56 / 32, сетки 4 колонки с межколонником 28 px.
+   Десктоп (≥1200) — стиль по умолчанию; ниже — планшет (<1200) и телефон (<768). */
+
+/* ---------- Токены (как на странице КТ) ---------- */
+:root {
+  --navy: #0E294B;
+  --text: #333333;
+  --muted: #7B8A9D;
+  --bg-gray: #F5F5F5;
+  --bg-gray-2: #F6F6F6;
+  --white: #FFFFFF;
+  --line: #D5D5D5;
+  --section-line: #CDCDCD;
+
+  --hero-bg: #101317;
+  --hero-glow-1: #12305A;
+  --hero-glow-2: #102542;
+  --hero-glow-3: #101B29;
+  --rule-light: rgba(255, 255, 255, 0.5);
+  --rule-faint: rgba(255, 255, 255, 0.18);
+
+  --logo-ink: #F4F8FC;
+
+  --radius-card: 16px;
+  --shadow-hero: 0 18px 44px rgba(0, 0, 0, 0.36);
+  --shadow-soft: 0 12px 32px rgba(14, 41, 75, 0.12);
+  --shadow-card: 0 12px 26px rgba(14, 41, 75, 0.14);
+
+  --font: 'Inter', Arial, sans-serif;
+
+  --ease-out: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --ease-float: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* ---------- База ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  font-family: var(--font);
+  font-size: 16px;
+  line-height: 1.25;
+  color: var(--text);
+  background: var(--white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, p, ul, ol, figure {
+  margin: 0;
+  padding: 0;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  width: 100%;
+  max-width: 1710px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+/* ---------- Типографика ---------- */
+.h2 {
+  max-width: 1100px;
+  font-size: 40px;
+  line-height: 44px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  color: var(--navy);
+  text-wrap: balance;
+}
+
+.lead {
+  max-width: 860px;
+  margin-top: 20px;
+  font-size: 20px;
+  line-height: 25px;
+}
+
+.lead + .lead {
+  margin-top: 12px;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+/* ---------- Секции: отступы 72 / 56 / 32 ---------- */
+.section {
+  padding-top: 72px;
+  padding-bottom: 72px;
+}
+
+.section--white { background: var(--white); }
+.section--gray { background: var(--bg-gray); }
+.section--gray2 { background: var(--bg-gray-2); }
+.section--navy { background: var(--navy); color: var(--white); }
+.section--line { border-bottom: 1px solid var(--section-line); }
+
+.section--navy .h2 {
+  color: var(--white);
+}
+
+/* Две тёмно-синие секции подряд — между ними тонкая светлая линия на всю ширину контента. */
+.section--navy + .section--navy {
+  padding-top: 0;
+}
+
+.section--navy + .section--navy .container {
+  padding-top: 72px;
+  border-top: 1px solid var(--rule-faint);
+}
+
+/* ---------- 1. Первый экран #top ---------- */
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding-top: 24px;
+  padding-bottom: 72px;
+  color: var(--white);
+  background-color: var(--hero-bg);
+  background-image: radial-gradient(58% 52% at 50% 52%,
+    var(--hero-glow-1) 0%,
+    var(--hero-glow-2) 45%,
+    var(--hero-glow-3) 82%,
+    var(--hero-bg) 100%);
+}
+
+.hero__header {
+  display: flex;
+  justify-content: center;
+}
+
+.hero__body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 480px);
+  column-gap: 64px;
+  align-items: center;
+  margin-top: 32px;
+}
+
+.hero__title {
+  max-width: 900px;
+  font-size: 50px;
+  line-height: 55px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  text-wrap: balance;
+}
+
+.hero__text {
+  max-width: 760px;
+  margin-top: 20px;
+  font-size: 20px;
+  line-height: 25px;
+}
+
+/* Карточка первого экрана: фото щётки с пастой на тёмном фоне — у карточки тот же тёмный фон. */
+.hero__card {
+  overflow: hidden;
+  border-radius: var(--radius-card);
+  background: var(--hero-glow-3);
+  box-shadow: var(--shadow-hero);
+}
+
+.hero__img {
+  width: 100%;
+  height: auto;
+}
+
+/* ---------- Логотип: знак, «Денталь Профи», подпись — SVG из logo-intro.html ---------- */
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 230px;
+  transform-origin: 50% 38%;
+}
+
+.logo__mark {
+  display: block;
+  width: 72.8%;
+  height: auto;
+  overflow: visible;
+}
+
+.logo__word {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-top: 9%;
+  overflow: visible;
+  fill: var(--logo-ink);
+}
+
+.logo__motto {
+  display: block;
+  width: 72.8%;
+  height: auto;
+  margin-top: 3.7%;
+  overflow: visible;
+  fill: var(--logo-ink);
+}
+
+.logo__stroke {
+  fill: none;
+  stroke: var(--logo-ink);
+  stroke-width: 36;
+  stroke-linecap: round;
+}
+
+.logo__spark {
+  fill: none;
+  stroke: var(--white);
+  stroke-width: 12;
+  stroke-linecap: round;
+}
+
+.logo__sparks {
+  stroke-opacity: 0;
+}
+
+.logo__sheen {
+  display: none;
+}
+
+.logo__sweep {
+  transform: translateX(-900px);
+}
+
+.has-logo-intro .logo {
+  transform: scale(1.05);
+}
+
+.has-logo-intro .logo__stroke {
+  stroke-width: 5.5;
+  stroke-dasharray: 1000 1500;
+  stroke-dashoffset: 1001;
+}
+
+.has-logo-intro .logo__sheen {
+  display: inline;
+}
+
+.has-logo-intro .logo__letter,
+.has-logo-intro .logo__glyph {
+  opacity: 0;
+}
+
+/* ---------- Галерея: картинки в ряд, подпись под картинкой (как «Что исследование поможет уточнить») ---------- */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 28px;
+  margin-top: 40px;
+}
+
+.gallery--6 {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.gallery__img {
+  width: 100%;
+  height: auto;
+  background: var(--bg-gray);
+}
+
+.gallery__caption {
+  margin-top: 14px;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 500;
+  color: var(--navy);
+}
+
+.gallery__note {
+  display: block;
+  margin-top: 4px;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 400;
+  color: var(--text);
+}
+
+/* Номер в подписи (01–06) — приглушённый, как номера списков на странице КТ. */
+.gallery__num {
+  display: inline-block;
+  min-width: 30px;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+/* ---------- Шаги: картинка, заголовок, текст (как «Что будет после КТ») ---------- */
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+  margin-top: 40px;
+}
+
+.steps--4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.steps--2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.steps__img {
+  width: 100%;
+  height: auto;
+  background: var(--white);
+}
+
+.steps__body {
+  margin-top: 20px;
+}
+
+.steps__title {
+  font-size: 20px;
+  line-height: 25px;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.steps__text {
+  margin-top: 8px;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+/* ---------- Текст + картинка в тёмной секции (как «Продолжим подготовку…») ---------- */
+.split {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 520px);
+  column-gap: 80px;
+  align-items: center;
+}
+
+.split__img {
+  width: 100%;
+  height: auto;
+}
+
+.split__rule {
+  max-width: 860px;
+  height: 1px;
+  margin-top: 28px;
+  background: var(--rule-light);
+}
+
+.split__rule + .lead {
+  margin-top: 28px;
+}
+
+/* ---------- Нумерованный список причин (вместо красного списка макета) ---------- */
+/* Две колонки, строки с линиями, номер приглушённый — по образцу списков макета, в фирменных цветах. */
+.reasons {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 28px;
+  margin-top: 32px;
+}
+
+.reasons__item {
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr);
+  align-items: baseline;
+  padding-top: 18px;
+  padding-bottom: 18px;
+  border-top: 1px solid var(--line);
+  font-size: 20px;
+  line-height: 25px;
+  font-weight: 500;
+  color: var(--navy);
+}
+
+.reasons__num {
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+/* Вывод под списком — крупно, как заголовок H3 секции. */
+.reasons-summary {
+  max-width: 1100px;
+  margin-top: 40px;
+  padding-top: 28px;
+  border-top: 1px solid var(--section-line);
+  font-size: 28px;
+  line-height: 34px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  color: var(--navy);
+  text-wrap: balance;
+}
+
+/* =========================================================
+   Планшет и телефон: < 1200
+   ========================================================= */
+@media (max-width: 1199.98px) {
+  .h2 {
+    max-width: none;
+    font-size: 24px;
+    line-height: 30px;
+  }
+
+  .lead {
+    max-width: none;
+    margin-top: 16px;
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .lead + .lead {
+    margin-top: 10px;
+  }
+
+  .section {
+    padding-top: 56px;
+    padding-bottom: 56px;
+  }
+
+  .section--navy + .section--navy .container {
+    padding-top: 56px;
+  }
+
+  .hero {
+    padding-bottom: 56px;
+  }
+
+  .hero__header {
+    justify-content: flex-start;
+  }
+
+  .logo {
+    width: 120px;
+  }
+
+  .logo__motto {
+    display: none;
+  }
+
+  .hero__body {
+    grid-template-columns: minmax(0, 55fr) minmax(0, 45fr);
+    column-gap: 32px;
+    margin-top: 28px;
+  }
+
+  .hero__title {
+    max-width: 600px;
+    font-size: 28px;
+    line-height: 35px;
+  }
+
+  .hero__text {
+    max-width: 560px;
+    margin-top: 16px;
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .gallery {
+    gap: 20px;
+    margin-top: 32px;
+  }
+
+  .gallery--6 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .steps {
+    gap: 20px;
+    margin-top: 32px;
+  }
+
+  /* На планшете четыре шага в ряд тесно — по два в ряд. */
+  .steps--4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .steps__body {
+    margin-top: 16px;
+  }
+
+  .steps__title {
+    font-size: 18px;
+    line-height: 23px;
+  }
+
+  .steps__text {
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  .split {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 340px);
+    column-gap: 32px;
+  }
+
+  .split__rule {
+    max-width: none;
+    margin-top: 18px;
+  }
+
+  .split__rule + .lead {
+    margin-top: 18px;
+  }
+
+  .reasons {
+    column-gap: 20px;
+    margin-top: 24px;
+  }
+
+  .reasons__item {
+    padding-top: 14px;
+    padding-bottom: 14px;
+    font-size: 18px;
+    line-height: 23px;
+  }
+
+  .reasons-summary {
+    margin-top: 32px;
+    padding-top: 22px;
+    font-size: 22px;
+    line-height: 28px;
+  }
+}
+
+/* =========================================================
+   Телефон: < 768 — всё столбиком, отступы 32, первый экран 24 / 32
+   ========================================================= */
+@media (max-width: 767.98px) {
+  .container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .section {
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
+
+  .section--navy + .section--navy .container {
+    padding-top: 32px;
+  }
+
+  .hero {
+    padding-top: 24px;
+    padding-bottom: 32px;
+  }
+
+  .hero__body {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 24px;
+    margin-top: 20px;
+  }
+
+  .hero__title,
+  .hero__text {
+    max-width: none;
+  }
+
+  .hero__card {
+    width: 100%;
+    max-width: 300px;
+    justify-self: center;
+  }
+
+  .gallery,
+  .gallery--6 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    margin-top: 24px;
+  }
+
+  .gallery__caption {
+    margin-top: 10px;
+  }
+
+  /* Шаги столбиком; в шаге картинка слева, текст справа — страница короче */
+  .steps,
+  .steps--4,
+  .steps--2 {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+    margin-top: 20px;
+  }
+
+  .steps__item {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+    column-gap: 16px;
+    align-items: center;
+  }
+
+  .steps__body {
+    margin-top: 0;
+  }
+
+  .steps__text {
+    margin-top: 6px;
+  }
+
+  .split {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 24px;
+  }
+
+  .split__img {
+    max-width: 320px;
+    justify-self: center;
+  }
+
+  .reasons {
+    grid-template-columns: minmax(0, 1fr);
+    margin-top: 16px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .reasons__item {
+    grid-template-columns: 36px minmax(0, 1fr);
+    padding-top: 12px;
+    padding-bottom: 12px;
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .reasons-summary {
+    margin-top: 24px;
+    padding-top: 18px;
+    border-top: 0;
+    font-size: 20px;
+    line-height: 25px;
+  }
+}
+
+/* =========================================================
+   Анимация — как на странице КТ: только transform и opacity.
+   ========================================================= */
+@keyframes card-in {
+  from {
+    opacity: 0;
+    transform: translateX(40px) scale(1.02);
+  }
+}
+
+.hero__card {
+  animation: card-in 0.5s var(--ease-out) 0.1s backwards;
+}
+
+.gallery__item,
+.steps__item {
+  position: relative;
+  transition: transform 0.25s var(--ease-out);
+}
+
+.gallery__item::before,
+.steps__item::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  height: 8px;
+}
+
+.gallery__img,
+.steps__img {
+  transition: box-shadow 0.25s var(--ease-out);
+}
+
+@media (hover: hover) {
+  .gallery__item:hover,
+  .steps__item:hover {
+    transform: translateY(-5px);
+  }
+
+  .gallery__item:hover .gallery__img,
+  .steps__item:hover .steps__img {
+    box-shadow: var(--shadow-card);
+  }
+}
+
+/* Всплывание картинок при прокрутке (класс html.has-reveal ставит main.js) */
+.has-reveal .reveal {
+  opacity: 0;
+  transform: translateY(28px);
+}
+
+.has-reveal .reveal.is-in {
+  opacity: 1;
+  transform: none;
+  transition: opacity 0.7s var(--ease-float) var(--reveal-delay, 0s),
+    transform 0.7s var(--ease-float) var(--reveal-delay, 0s);
+}
+
+@media print {
+  .has-reveal .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__card {
+    animation: none;
+  }
+
+  .has-reveal .reveal,
+  .has-reveal .reveal.is-in {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .has-logo-intro .logo {
+    transform: none;
+  }
+
+  .has-logo-intro .logo__stroke {
+    stroke-width: 36;
+    stroke-dasharray: none;
+    stroke-dashoffset: 0;
+  }
+
+  .has-logo-intro .logo__sheen {
+    display: none;
+  }
+
+  .has-logo-intro .logo__letter,
+  .has-logo-intro .logo__glyph {
+    opacity: 1;
+  }
+
+  .gallery__item,
+  .steps__item,
+  .gallery__img,
+  .steps__img {
+    transition: none;
+  }
+
+  .gallery__item:hover,
+  .steps__item:hover {
+    transform: none;
+  }
+}
+
+body { font-family: var(--font); font-size: 16px; }
+.draft-note { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; margin: 0; padding: 10px 16px; background: #EFDECD; color: #0E294B; font: 500 14px/1.3 var(--font); text-align: center; }
+</style>
+<script>
+/* Денталь профи — поведение страницы (редакция 4, §12 спеки). Без JS страница читается полностью.
+
+   1. Логотип первого экрана (G20) — прорисовка из logo-intro.html: тонкая светлая линия загорается
+      на вершине дуги, бежит по ней и по зубам, набирает фирменную толщину, по знаку проходит блик,
+      проявляются «Денталь Профи» и подпись. Один раз при загрузке; таймлайн заставки проигрывается
+      в SPEED раз быстрее — целиком за ≈ 2,4 с. Заголовок, текст и картинка первого экрана её не ждут.
+      Скрытое до прорисовки состояние включает класс html.has-logo-intro. Ставится он только здесь,
+      сразу при разборе <head> (скрипт подключён без defer — до первой отрисовки, иначе мелькнул бы
+      готовый знак), и только если анимация возможна: есть Web Animations API и «уменьшить движение»
+      выключено. После прорисовки класс снимается, анимации отменяются — остаётся статичная разметка,
+      она и есть последний кадр. Кнопок и клавиш заставки на странице нет.
+   2. Всплывание картинок при прокрутке (G27): только картинки и карточки без текста — из прозрачности
+      и на 28 px ниже на место за 0,7 с; соседи в ряду — по очереди, шаг 90 мс. Срабатывает, когда верх
+      картинки уже в экране (поднялся над нижними 4 % окна; со сдвигом 28 px — видно не больше половины
+      даже у маленькой картинки шага на телефоне), — всплывание видно, а не проходит за краем экрана.
+      Маршрут Москва — Нью-Йорк на картинке с самолётом (G30) прокладывается отдельно — когда на экране
+      уже ≥ 60 % картинки, то есть её верх с маршрутом виден целиком (класс .route.is-drawn, анимация — в CSS).
+      Текст (G23) виден сразу всегда. Скрытие включает класс html.has-reveal — тоже только здесь:
+      без JS, без IntersectionObserver и при «уменьшить движение» всё видно сразу.
+   3. Ролик «КТ в работе» в #planning (G22, таск F10): в разметке у <video> только кадр-заставка
+      (poster, preload="none"), адрес файла — в data-src. Когда блок подходит к экрану ближе ≈ 300 px,
+      адрес подставляется и ролик начинает грузиться; играет, пока блок виден, вне экрана — на паузе.
+      При «уменьшить движение» и в режиме экономии трафика (navigator.connection.saveData) адрес
+      не подставляется вовсе — остаётся заставка. Без JS — тоже заставка. */
+(function () {
+  'use strict';
+
+  var root = document.documentElement;
+  var reduce = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+
+  /* ================= 1. Логотип ================= */
+
+  var LOGO_GATE = 'has-logo-intro';
+  var logoIntro = !reduce && typeof root.animate === 'function' && typeof Promise === 'function';
+  if (logoIntro) root.classList.add(LOGO_GATE);
+
+  /* Таймлайн заставки logo-intro.html, секунды от старта (без приглушения фона и «приземления»). */
+  var T = {
+    cam: 5.4,                    // медленное «отъезжание» 1.05 → 1
+    pen0: 0.5, pen: 2.45,        // тонкая линия прочерчивает знак
+    swell0: 2.75, swell: 1.3,    // линия набирает толщину
+    sheen0: 3.6, sheen: 1.4,     // блик по знаку
+    word: 3.2, wordStep: 0.06, wordDur: 1.4,
+    tag: 3.95, tagDur: 1.7       // подпись — последней: 3,95 + 1,7 = 5,65 с
+  };
+  var SPEED = 2.35;              // 5,65 с / 2,35 ≈ 2,4 с — не дольше ~2,5 с (§11)
+  var H = 70;                    // длина светящегося кончика, ед. viewBox
+  var FRAMES = 110;              // кадров на ход линии
+
+  /* Аналог CSS cubic-bezier() для расчёта движения линии по кадрам. */
+  function bezier(x1, y1, x2, y2) {
+    function cx(t) { return ((1 - 3 * x2 + 3 * x1) * t + (3 * x2 - 6 * x1)) * t * t + 3 * x1 * t; }
+    function cy(t) { return ((1 - 3 * y2 + 3 * y1) * t + (3 * y2 - 6 * y1)) * t * t + 3 * y1 * t; }
+    function dx(t) { return 3 * (1 - 3 * x2 + 3 * x1) * t * t + 2 * (3 * x2 - 6 * x1) * t + 3 * x1; }
+    return function (x) {
+      if (x <= 0) return 0;
+      if (x >= 1) return 1;
+      var t = x;
+      var i;
+      var d;
+      for (i = 0; i < 8; i++) {
+        d = dx(t);
+        if (Math.abs(d) < 1e-6) break;
+        t -= (cx(t) - x) / d;
+      }
+      if (!(t >= 0 && t <= 1) || Math.abs(cx(t) - x) > 1e-4) {
+        var lo = 0;
+        var hi = 1;
+        t = x;
+        for (i = 0; i < 40; i++) {
+          if (cx(t) < x) lo = t; else hi = t;
+          t = (lo + hi) / 2;
+        }
+      }
+      return cy(t);
+    };
+  }
+  // мягкий разгон и долгое плавное торможение у кончиков корней
+  var penEase = bezier(0.45, 0.05, 0.2, 1);
+
+  function ms(seconds) {
+    return Math.round(seconds * 1000 / SPEED);
+  }
+
+  function clamp(v) {
+    return v < 0 ? 0 : v > 1 ? 1 : v;
+  }
+
+  function startLogo() {
+    var logo = document.querySelector('.logo');
+    var anims = [];
+    var sparks = [];
+    var done = false;
+
+    // Всё доиграно (или что-то пошло не так): статичная разметка — и есть последний кадр.
+    function finish() {
+      if (done) return;
+      done = true;
+      root.classList.remove(LOGO_GATE);
+      anims.forEach(function (a) {
+        try { a.cancel(); } catch (e) { /* уже отменена */ }
+      });
+      sparks.forEach(function (el) {
+        el.style.removeProperty('stroke-dasharray');
+        if (!el.getAttribute('style')) el.removeAttribute('style');
+      });
+    }
+
+    function play(el, keyframes, options) {
+      if (!el) return;
+      options.fill = 'both';
+      anims.push(el.animate(keyframes, options));
+    }
+
+    if (!logo) {
+      finish();
+      return;
+    }
+
+    try {
+      // Шесть отрезков: дуга от вершины влево и вправо, затем каждый зуб — двумя половинами
+      // от стыка с дугой до кончика корня.
+      var ids = ['AL', 'AR', 'BR', 'BL', 'SR', 'SL'];
+      var line = {};
+      var head = {};
+      var len = {};
+      ids.forEach(function (k) {
+        line[k] = document.getElementById('dp' + k);
+        head[k] = document.getElementById('dp' + k + 'h');
+        len[k] = line[k].getTotalLength();
+        sparks.push(head[k]);
+      });
+
+      // --- сцена: композиция чуть-чуть «отъезжает», как камера ---
+      play(logo, [{ transform: 'scale(1.05)' }, { transform: 'scale(1)' }],
+        { delay: 0, duration: ms(T.cam), easing: 'cubic-bezier(.25,.55,.25,1)' });
+
+      // --- тонкая линия: все четыре ветки замыкаются в один момент; доли общего хода, когда дуга
+      // доходит до зубов, подобраны так, чтобы скорость линий была близкой ---
+      var uJ = len.AL / (len.AL + (len.BR + len.BL) / 2);
+      var uK = len.AR / (len.AR + (len.SR + len.SL) / 2);
+      var progress = {
+        AL: function (u) { return u / uJ; },
+        AR: function (u) { return u / uK; },
+        BR: function (u) { return (u - uJ) / (1 - uJ); },
+        BL: function (u) { return (u - uJ) / (1 - uJ); },
+        SR: function (u) { return (u - uK) / (1 - uK); },
+        SL: function (u) { return (u - uK) / (1 - uK); }
+      };
+      var offset = function (p) { return p <= 0 ? 1001 : 1000 * (1 - p); };   // при p=0 линии нет совсем
+      var headOffset = function (p, h) { return h + 1 - 1000 * p; };          // кончик: [1000p-h-1, 1000p-1]
+
+      ids.forEach(function (k) {
+        var h = H / len[k] * 1000;
+        var arc = k.charAt(0) === 'A';
+        head[k].style.strokeDasharray = h.toFixed(2) + ' 9000';
+        var lineFrames = [];
+        var headFrames = [];
+        for (var i = 0; i <= FRAMES; i++) {
+          var x = i / FRAMES;
+          var p = progress[k](penEase(x));
+          lineFrames.push({ offset: x, strokeDashoffset: offset(clamp(p)) });
+          // кончик дуги уходит за её конец и гаснет там, где начинаются ветки зуба
+          headFrames.push({ offset: x, strokeDashoffset: headOffset(arc ? Math.max(p, 0) : clamp(p), h) });
+        }
+        play(line[k], lineFrames, { delay: ms(T.pen0), duration: ms(T.pen), easing: 'linear' });
+        play(head[k], headFrames, { delay: ms(T.pen0), duration: ms(T.pen), easing: 'linear' });
+
+        // --- линия набирает толщину; клип держит точный контур логотипа ---
+        play(line[k], [
+          { strokeWidth: '5.5px', easing: 'cubic-bezier(.62,0,.3,1)' },
+          { strokeWidth: '31px', offset: 0.88 },
+          { strokeWidth: '36px' }
+        ], { delay: ms(T.swell0), duration: ms(T.swell), easing: 'linear' });
+      });
+
+      // светящиеся кончики: мягко загораются и гаснут, когда ветки сошлись
+      var headDur = T.pen + 0.55;
+      play(logo.querySelector('.logo__sparks'), [
+        { strokeOpacity: 0 },
+        { strokeOpacity: 1, offset: 0.3 / headDur },
+        { strokeOpacity: 1, offset: (T.pen - 0.12) / headDur },
+        { strokeOpacity: 0 }
+      ], { delay: ms(T.pen0), duration: ms(headDur), easing: 'linear' });
+
+      // --- блик по знаку, как свет по эмали ---
+      play(logo.querySelector('.logo__sweep'), [{ transform: 'translateX(-780px)' }, { transform: 'translateX(780px)' }],
+        { delay: ms(T.sheen0), duration: ms(T.sheen), easing: 'cubic-bezier(.45,.05,.3,1)' });
+
+      // --- «ДЕНТАЛЬ ПРОФИ»: буквы по очереди проявляются, чуть всплывая и сходясь к центру ---
+      var word = logo.querySelector('.logo__word');
+      var wordCenter = parseFloat(word.getAttribute('data-cx')) || 1005;
+      Array.prototype.forEach.call(word.querySelectorAll('.logo__letter'), function (el, k) {
+        var c = parseFloat(el.getAttribute('data-cx'));
+        var delay = ms(T.word + k * T.wordStep);
+        play(el, [
+          { transform: 'translate(' + ((c - wordCenter) * 0.045).toFixed(1) + 'px, 34px)' },
+          { transform: 'translate(0px, 0px)' }
+        ], { delay: delay, duration: ms(T.wordDur), easing: 'cubic-bezier(.2,.6,.25,1)' });
+        play(el, [{ opacity: 0 }, { opacity: 1 }],
+          { delay: delay, duration: ms(T.wordDur * 0.8), easing: 'cubic-bezier(.4,0,.3,1)' });
+      });
+
+      // --- подпись: буквы медленно сходятся к центру — трекинг сжимается ---
+      var motto = logo.querySelector('.logo__motto');
+      var mottoCenter = parseFloat(motto.getAttribute('data-cx')) || 1004;
+      Array.prototype.forEach.call(motto.querySelectorAll('.logo__glyph'), function (el) {
+        var c = parseFloat(el.getAttribute('data-cx'));
+        play(el, [
+          { transform: 'translateX(' + ((c - mottoCenter) * 0.12).toFixed(1) + 'px)' },
+          { transform: 'translateX(0px)' }
+        ], { delay: ms(T.tag), duration: ms(T.tagDur), easing: 'cubic-bezier(.2,.65,.25,1)' });
+        play(el, [{ opacity: 0 }, { opacity: 1 }],
+          { delay: ms(T.tag), duration: ms(T.tagDur * 0.75), easing: 'cubic-bezier(.4,0,.3,1)' });
+      });
+
+      Promise.all(anims.map(function (a) { return a.finished; })).then(finish, finish);
+      // страховка: что бы ни случилось с анимациями, через секунду после конца логотип виден целиком
+      window.setTimeout(finish, ms(T.tag + T.tagDur) + 1000);
+    } catch (e) {
+      finish();
+    }
+  }
+
+  /* ================= 2. Всплывание картинок при прокрутке ================= */
+
+  var TARGETS = '.gallery__img, .planning__card, .dose__media, .steps__img, .split__img';
+  var STEP = 90;          // мс между соседями в ряду
+  var MAX_STEPS = 3;      // дальше задержка не растёт: четвёртая картинка ряда — через 0,27 с
+  var DURATION = 700;     // мс — как переход .reveal.is-in в style.css
+  var ROUTE_SHOWN = 0.6;  // доля картинки с маршрутом в экране, с которой пунктир прокладывается
+
+  function startReveal() {
+    if (reduce || !('IntersectionObserver' in window)) return;
+    var targets = Array.prototype.slice.call(document.querySelectorAll(TARGETS));
+    if (!targets.length) return;
+
+    var order = new Map();
+    targets.forEach(function (el, index) {
+      order.set(el, index);
+      el.classList.add('reveal');
+    });
+    root.classList.add('has-reveal');
+
+    function show(el, delay) {
+      el.style.setProperty('--reveal-delay', delay + 'ms');
+      el.classList.add('is-in');
+      // После появления элемент возвращается к обычным стилям — наведение без задержки.
+      window.setTimeout(function () {
+        el.classList.remove('reveal', 'is-in');
+        el.style.removeProperty('--reveal-delay');
+        if (!el.getAttribute('style')) el.removeAttribute('style');
+      }, delay + DURATION + 50);
+    }
+
+    var observer = new IntersectionObserver(function (entries) {
+      var batch = entries
+        .filter(function (entry) { return entry.isIntersecting; })
+        .map(function (entry) { return entry.target; })
+        .sort(function (a, b) { return order.get(a) - order.get(b); });
+      // Картинки, вошедшие в зону вместе (ряд иллюстраций, шаги), — по очереди, в порядке страницы.
+      batch.forEach(function (el, index) {
+        observer.unobserve(el);
+        show(el, Math.min(index, MAX_STEPS) * STEP);
+      });
+    }, { rootMargin: '0px 0px -4% 0px', threshold: 0 });
+
+    targets.forEach(function (el) {
+      observer.observe(el);
+    });
+
+    // Маршрут — свой наблюдатель: прокладка начинается, только когда маршрут уже в кадре.
+    var routes = Array.prototype.slice.call(document.querySelectorAll('.route'));
+    var routeObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        // доля на пороге бывает 0,5999… — небольшой допуск, иначе срабатывание теряется
+        if (entry.intersectionRatio < ROUTE_SHOWN - 0.02) return;
+        routeObserver.unobserve(entry.target);
+        entry.target.classList.add('is-drawn');
+      });
+    }, { threshold: ROUTE_SHOWN });
+    routes.forEach(function (el) {
+      routeObserver.observe(el);
+    });
+  }
+
+  /* ================= 3. Ролик в #planning ================= */
+
+  function saveData() {
+    var connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+    return !!(connection && connection.saveData);
+  }
+
+  function startVideo() {
+    var video = document.querySelector('.planning__video');
+    if (!video) return;
+    var src = video.getAttribute('data-src');
+    // Ролик — украшение: без него остаётся заставка, а трафик и движение пациента важнее.
+    if (!src || reduce || saveData() || !('IntersectionObserver' in window)) return;
+
+    var loaded = false;
+    var visible = false;
+    video.muted = true;   // свойство, а не только атрибут: без звука браузер разрешает автозапуск
+
+    function update() {
+      if (!loaded) return;
+      if (visible) {
+        var playing = video.play();
+        // Автозапуск может быть запрещён (например, режим энергосбережения iOS) — тогда видна заставка.
+        if (playing && typeof playing.catch === 'function') playing.catch(function () { return null; });
+      } else {
+        video.pause();
+      }
+    }
+
+    // Загрузка — заранее, когда блок ближе ≈ 300 px к экрану; один раз.
+    var loader = new IntersectionObserver(function (entries) {
+      if (!entries.some(function (entry) { return entry.isIntersecting; })) return;
+      loader.disconnect();
+      loaded = true;
+      video.preload = 'auto';
+      video.src = src;
+      video.load();
+      update();
+    }, { rootMargin: '300px 0px 300px 0px' });
+
+    // Воспроизведение — пока хоть часть ролика на экране.
+    var player = new IntersectionObserver(function (entries) {
+      visible = entries[entries.length - 1].isIntersecting;
+      update();
+    });
+
+    loader.observe(video);
+    player.observe(video);
+  }
+
+  /* ================= Запуск ================= */
+
+  function ready(fn) {
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', fn);
+    else fn();
+  }
+
+  ready(function () {
+    if (logoIntro) startLogo();
+    startReveal();
+    startVideo();
+  });
+})();
+
+</script>
+</head>
+<body>
+<p class="draft-note">Черновик: структура и тексты. Серые квадраты — места иллюстраций из макета (заменю, когда получу экспорт из Figma).</p>
+<main>
+    <!-- 1. Первый экран -->
+    <section class="hero" id="top">
+      <div class="container hero__inner">
+        <header class="hero__header">
+          <!-- Логотип «Денталь Профи» — знак, надпись и подпись из logo-intro.html (векторные контуры) -->
+          <div class="logo" role="img" aria-label="Денталь Профи — центр восстановления улыбок">
+            <svg class="logo__mark" viewBox="568.6 -13.4 876.3 889.7" aria-hidden="true" focusable="false">
+              <defs>
+                <clipPath id="dpCB"><path d="M718.36 29.32C669.5 29.32 630.93 42.95 617.94 87.25C600.82 158.12 640.92 351.29 810.89 660.21C861.41 747.05 913.43 792.52 961.36 791.42C1002.66 790.45 1042.02 754.58 1078.33 684.8C1123.28 602.32 1163.38 502.03 1183.09 422.8L1183.4 421.55C1199.38 354.43 1213.73 257.23 1153.86 189.59C1128.04 161.1 1088.57 138.93 1037.27 114.43C970.23 83.13 896.87 58.23 825.25 42.46L824.46 42.32C787.55 35.29 750.7 29.32 718.36 29.32ZM959.67 820.6C901.28 820.6 841.12 770.18 785.52 674.57C759.25 626.84 693.14 502.2 643.06 369.61C593.14 237.45 575.22 139.92 589.78 79.73C620.81 -26.14 751.72 -1.21 829.92 13.68L831.11 13.9C905.2 30.21 980.66 55.82 1049.73 88.06C1104.25 114.09 1146.45 137.99 1175.59 170.14C1244.57 248.07 1229.25 354.86 1211.74 428.41L1211.41 429.76C1211.41 429.77 1211.41 429.79 1211.4 429.8C1191.12 511.27 1150 614.23 1104.07 698.51C1062.6 778.19 1014.78 819.34 962.04 820.57C961.25 820.59 960.46 820.6 959.67 820.6Z"/></clipPath>
+                <clipPath id="dpCS"><path d="M1290.94 143.64C1210.66 143.64 1081.14 195.82 1035.82 242.96C1035.82 242.96 1035.8 242.97 1035.8 242.98L1035 243.81C971.65 306.43 1004.21 440.55 1025.76 529.3L1029.21 543.56C1050.93 618.82 1076.11 698.45 1121.48 764.57C1143.71 796.19 1166.59 811.75 1189.5 810.25C1223.14 808.26 1261.32 770.72 1297.03 704.54C1355.74 596.12 1394.84 448.55 1396.63 328.59C1397.45 280.08 1391.9 165.38 1322.94 147.27C1313.64 144.79 1302.83 143.64 1290.94 143.64ZM1186.57 839.49C1154.67 839.49 1124.75 819.91 1097.54 781.21C1049.61 711.37 1023.58 629.19 1001.02 551L997.43 536.18C974.33 441.05 939.42 297.29 1014.27 223.31L1014.8 222.75C1068.86 166.53 1241.77 95.45 1330.39 119.08C1367.15 128.73 1428.48 168.87 1425.79 329.05C1423.92 453.34 1383.45 606.18 1322.68 718.4C1293.91 771.72 1247.74 836.02 1191.21 839.36C1189.67 839.45 1188.12 839.49 1186.57 839.49Z"/></clipPath>
+                <clipPath id="dpCA"><path d="M718.36 29.32C669.5 29.32 630.93 42.95 617.94 87.25C600.82 158.12 640.92 351.29 810.89 660.21C861.41 747.05 913.43 792.52 961.36 791.42C1002.66 790.45 1042.02 754.58 1078.33 684.8C1123.28 602.32 1163.38 502.03 1183.09 422.8L1183.4 421.55C1199.38 354.43 1213.73 257.23 1153.86 189.59C1128.04 161.1 1088.57 138.93 1037.27 114.43C970.23 83.13 896.87 58.23 825.25 42.46L824.46 42.32C787.55 35.29 750.7 29.32 718.36 29.32ZM959.67 820.6C901.28 820.6 841.12 770.18 785.52 674.57C759.25 626.84 693.14 502.2 643.06 369.61C593.14 237.45 575.22 139.92 589.78 79.73C620.81 -26.14 751.72 -1.21 829.92 13.68L831.11 13.9C905.2 30.21 980.66 55.82 1049.73 88.06C1104.25 114.09 1146.45 137.99 1175.59 170.14C1244.57 248.07 1229.25 354.86 1211.74 428.41L1211.41 429.76C1211.41 429.77 1211.41 429.79 1211.4 429.8C1191.12 511.27 1150 614.23 1104.07 698.51C1062.6 778.19 1014.78 819.34 962.04 820.57C961.25 820.59 960.46 820.6 959.67 820.6ZM1290.94 143.64C1210.66 143.64 1081.14 195.82 1035.82 242.96C1035.82 242.96 1035.8 242.97 1035.8 242.98L1035 243.81C971.65 306.43 1004.21 440.55 1025.76 529.3L1029.21 543.56C1050.93 618.82 1076.11 698.45 1121.48 764.57C1143.71 796.19 1166.59 811.75 1189.5 810.25C1223.14 808.26 1261.32 770.72 1297.03 704.54C1355.74 596.12 1394.84 448.55 1396.63 328.59C1397.45 280.08 1391.9 165.38 1322.94 147.27C1313.64 144.79 1302.83 143.64 1290.94 143.64ZM1186.57 839.49C1154.67 839.49 1124.75 819.91 1097.54 781.21C1049.61 711.37 1023.58 629.19 1001.02 551L997.43 536.18C974.33 441.05 939.42 297.29 1014.27 223.31L1014.8 222.75C1068.86 166.53 1241.77 95.45 1330.39 119.08C1367.15 128.73 1428.48 168.87 1425.79 329.05C1423.92 453.34 1383.45 606.18 1322.68 718.4C1293.91 771.72 1247.74 836.02 1191.21 839.36C1189.67 839.45 1188.12 839.49 1186.57 839.49ZM1304.12 114.98C1294.56 114.2 1284.41 114.2 1273.88 114.98C1264.12 76.93 1245.58 42.19 1210.06 32.83C1200.89 30.29 1189.97 29.32 1178.06 29.32C1130.83 29.32 1066.63 47.27 1012.57 71.86C1000.67 66.59 988.57 61.91 976.28 57.22C1051.41 18.19 1155.23 -11.86 1217.48 4.73C1245 11.95 1286.18 36.14 1304.12 114.98Z"/></clipPath>
+                <!-- постоянное едва заметное мятное свечение линий (как было на сайте) -->
+                <filter id="dpHalo" x="-6%" y="-6%" width="112%" height="112%" color-interpolation-filters="sRGB">
+                  <feGaussianBlur in="SourceAlpha" stdDeviation="3.2"/>
+                  <feColorMatrix type="matrix" values="0 0 0 0 .494  0 0 0 0 .878  0 0 0 0 .769  0 0 0 .4 0"/>
+                  <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+                </filter>
+                <!-- светящаяся точка на кончике тонкой линии: жемчужно-белое ядро и мягкий ореол -->
+                <filter id="dpSpark" x="-12%" y="-12%" width="124%" height="124%" color-interpolation-filters="sRGB">
+                  <feGaussianBlur in="SourceAlpha" stdDeviation="10" result="wide"/>
+                  <feGaussianBlur in="SourceAlpha" stdDeviation="2.8" result="core"/>
+                  <feColorMatrix in="wide" type="matrix" values="0 0 0 0 .74  0 0 0 0 .95  0 0 0 0 .89  0 0 0 .75 0" result="g1"/>
+                  <feColorMatrix in="core" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .95 0" result="g2"/>
+                  <feMerge><feMergeNode in="g1"/><feMergeNode in="g2"/></feMerge>
+                </filter>
+                <!-- блик: светлая полоса, обрезанная по знаку, с мягким ореолом -->
+                <linearGradient id="dpSheenGrad" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0" stop-color="#fff" stop-opacity="0"/>
+                  <stop offset=".5" stop-color="#fff" stop-opacity=".95"/>
+                  <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+                </linearGradient>
+                <filter id="dpBloom" x="-12%" y="-12%" width="124%" height="124%" color-interpolation-filters="sRGB">
+                  <feGaussianBlur in="SourceAlpha" stdDeviation="12" result="wide"/>
+                  <feGaussianBlur in="SourceAlpha" stdDeviation="3.5" result="core"/>
+                  <feColorMatrix in="wide" type="matrix" values="0 0 0 0 1  0 0 0 0 .97  0 0 0 0 .93  0 0 0 .8 0" result="g1"/>
+                  <feColorMatrix in="core" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .9 0" result="g2"/>
+                  <feMerge><feMergeNode in="g1"/><feMergeNode in="g2"/><feMergeNode in="SourceGraphic"/></feMerge>
+                </filter>
+              </defs>
+              <!-- свечение «искр» лежит под линией: видно только сияние вокруг неё -->
+              <g class="logo__sparks" filter="url(#dpSpark)">
+                <path id="dpALh" class="logo__spark" pathLength="1000" d="M1179 14.6C1127.2 15 1076.4 29.8 1028.7 49.1C1010.9 56.4 993.5 64.6 976 72.7"/>
+                <path id="dpARh" class="logo__spark" pathLength="1000" d="M1179 14.6C1191.3 14.7 1203.6 15.7 1215.4 19.2C1222.3 21.2 1228.9 24 1235 27.7C1239.4 30.3 1243.5 33.4 1247.4 36.7C1274.3 60.2 1284.1 95.5 1292.5 128.8"/>
+                <path id="dpBRh" class="logo__spark" pathLength="1000" d="M976.1 72.6C1012.6 86.6 1048.3 102.6 1082.9 120.9C1112.9 136.8 1142.6 154.9 1165.3 180.5C1172.6 188.8 1179.1 197.7 1184.6 207.2C1223.7 273.7 1214.6 355.1 1197.1 426.7C1193.8 440.4 1190.1 453.9 1186 467.3C1180.7 484.6 1174.9 501.6 1168.7 518.6C1160.8 540.2 1152.4 561.7 1143.4 582.9C1129 617.1 1113.1 650.6 1095.7 683.4C1082 709 1067.8 734.4 1048.8 756.7C1030.8 777.8 1008.1 796.9 980.6 803.5C973.7 805.2 966.8 805.9 959.7 806"/>
+                <path id="dpBLh" class="logo__spark" pathLength="1000" d="M976.1 72.6C930.3 55.2 883.3 40.4 835.4 29.9C802.2 22.7 768.3 16.7 734.4 15.1C716.4 14.2 698.2 14.5 680.5 17.9C669.7 19.9 659.1 23.2 649.2 28.1C642 31.6 635.2 36 629.3 41.4C625.6 44.8 622.2 48.5 619.1 52.5C596.2 82.6 597.7 123.8 601.6 159.5C602.5 167.5 603.6 175.4 604.8 183.3C614.5 242.7 632.7 300.4 653.5 356.7C681.2 431.8 714.4 505 750.4 576.5C759.9 595.3 769.6 614 779.3 632.6C802.9 677.6 829.1 722.7 865.5 758.6C891 783.6 922.8 805.4 959.7 806"/>
+                <path id="dpSRh" class="logo__spark" pathLength="1000" d="M1292.6 129C1307.6 129.3 1322.8 130.9 1336.8 136.6C1378.5 153.7 1396.2 200 1404.4 240.9C1406 248.8 1407.2 256.7 1408.1 264.7C1409.3 274.6 1410.2 284.7 1410.7 294.7C1413.7 350.9 1407.1 407.2 1396.5 462.3C1379.9 548.9 1351.7 633.8 1309.8 711.6C1292.8 743.3 1272.9 774.4 1245.7 798.3C1229 813 1209.3 824.4 1186.6 825"/>
+                <path id="dpSLh" class="logo__spark" pathLength="1000" d="M1292.6 129C1260.4 128.9 1228.8 135.3 1197.9 144.1C1155.4 156.2 1114.3 172.9 1076.1 195.1C1052.1 209.2 1028.3 225.7 1011.8 248.6C1003.6 260 997.6 272.8 993.2 286.2C980.7 324.5 981.8 365.8 986.4 405.4C990.2 438.3 996.8 470.8 1004.4 503C1009.9 526.4 1015.7 549.7 1022.6 572.8C1042.9 640.8 1066.7 709 1106.4 768.4C1122.1 791.8 1143 816.4 1171.7 823.2C1176.6 824.4 1181.6 824.8 1186.6 825"/>
+              </g>
+              <g class="logo__ink" filter="url(#dpHalo)">
+                <path id="dpAL" class="logo__stroke" pathLength="1000" clip-path="url(#dpCA)" d="M1179 14.6C1127.2 15 1076.4 29.8 1028.7 49.1C1010.9 56.4 993.5 64.6 976 72.7"/>
+                <path id="dpAR" class="logo__stroke" pathLength="1000" clip-path="url(#dpCA)" d="M1179 14.6C1191.3 14.7 1203.6 15.7 1215.4 19.2C1222.3 21.2 1228.9 24 1235 27.7C1239.4 30.3 1243.5 33.4 1247.4 36.7C1274.3 60.2 1284.1 95.5 1292.5 128.8"/>
+                <path id="dpBR" class="logo__stroke" pathLength="1000" clip-path="url(#dpCB)" d="M976.1 72.6C1012.6 86.6 1048.3 102.6 1082.9 120.9C1112.9 136.8 1142.6 154.9 1165.3 180.5C1172.6 188.8 1179.1 197.7 1184.6 207.2C1223.7 273.7 1214.6 355.1 1197.1 426.7C1193.8 440.4 1190.1 453.9 1186 467.3C1180.7 484.6 1174.9 501.6 1168.7 518.6C1160.8 540.2 1152.4 561.7 1143.4 582.9C1129 617.1 1113.1 650.6 1095.7 683.4C1082 709 1067.8 734.4 1048.8 756.7C1030.8 777.8 1008.1 796.9 980.6 803.5C973.7 805.2 966.8 805.9 959.7 806"/>
+                <path id="dpBL" class="logo__stroke" pathLength="1000" clip-path="url(#dpCB)" d="M976.1 72.6C930.3 55.2 883.3 40.4 835.4 29.9C802.2 22.7 768.3 16.7 734.4 15.1C716.4 14.2 698.2 14.5 680.5 17.9C669.7 19.9 659.1 23.2 649.2 28.1C642 31.6 635.2 36 629.3 41.4C625.6 44.8 622.2 48.5 619.1 52.5C596.2 82.6 597.7 123.8 601.6 159.5C602.5 167.5 603.6 175.4 604.8 183.3C614.5 242.7 632.7 300.4 653.5 356.7C681.2 431.8 714.4 505 750.4 576.5C759.9 595.3 769.6 614 779.3 632.6C802.9 677.6 829.1 722.7 865.5 758.6C891 783.6 922.8 805.4 959.7 806"/>
+                <path id="dpSR" class="logo__stroke" pathLength="1000" clip-path="url(#dpCS)" d="M1292.6 129C1307.6 129.3 1322.8 130.9 1336.8 136.6C1378.5 153.7 1396.2 200 1404.4 240.9C1406 248.8 1407.2 256.7 1408.1 264.7C1409.3 274.6 1410.2 284.7 1410.7 294.7C1413.7 350.9 1407.1 407.2 1396.5 462.3C1379.9 548.9 1351.7 633.8 1309.8 711.6C1292.8 743.3 1272.9 774.4 1245.7 798.3C1229 813 1209.3 824.4 1186.6 825"/>
+                <path id="dpSL" class="logo__stroke" pathLength="1000" clip-path="url(#dpCS)" d="M1292.6 129C1260.4 128.9 1228.8 135.3 1197.9 144.1C1155.4 156.2 1114.3 172.9 1076.1 195.1C1052.1 209.2 1028.3 225.7 1011.8 248.6C1003.6 260 997.6 272.8 993.2 286.2C980.7 324.5 981.8 365.8 986.4 405.4C990.2 438.3 996.8 470.8 1004.4 503C1009.9 526.4 1015.7 549.7 1022.6 572.8C1042.9 640.8 1066.7 709 1106.4 768.4C1122.1 791.8 1143 816.4 1171.7 823.2C1176.6 824.4 1181.6 824.8 1186.6 825"/>
+              </g>
+              <g class="logo__sheen" filter="url(#dpBloom)">
+                <g clip-path="url(#dpCA)">
+                  <g class="logo__sweep"><rect x="-130" y="-720" width="260" height="1440" fill="url(#dpSheenGrad)" transform="translate(1006 431) rotate(22)"/></g>
+                </g>
+              </g>
+            </svg>
+            <svg class="logo__word" viewBox="0 946.6 2010.9 254.2" aria-hidden="true" focusable="false" data-cx="1005">
+              <path class="logo__letter" data-cx="75" d="M70.36 954.63L70.28 955L25.5 1161.13L0.61 1161.13L0.61 1189.39L149.36 1189.55L149.36 954.63L70.36 954.63ZM92.48 982.89L121.1 982.89L121.1 1161.13L53.77 1161.13L92.48 982.89Z"/>
+              <path class="logo__letter" data-cx="242" d="M307.04 1189.27L177.08 1189.27L177.08 954.5L307.04 954.5L307.04 982.76L205.34 982.76L205.34 1032.32L278.86 1032.32L278.86 1060.58L205.34 1060.58L205.34 1161L307.05 1161L307.04 1189.27Z"/>
+              <path class="logo__letter" data-cx="399" d="M464.12 954.73L464.12 1189.5L435.86 1189.5L435.86 1060.58L362.34 1060.58L362.34 1189.5L334.08 1189.5L334.08 954.73L362.34 954.73L362.34 1032.32L435.86 1032.32L435.86 954.73L464.12 954.73Z"/>
+              <path class="logo__letter" data-cx="556" d="M621.46 954.77L621.46 954.93L615.36 983.04L570.58 983.04L570.58 1189.54L542.31 1189.54L542.31 983.04L491.43 983.04L491.43 954.77L621.46 954.77Z"/>
+              <path class="logo__letter" data-cx="667" d="M689.39 1125.22C681.8 1090.07 674.21 1054.92 666.63 1019.78C660 1050.3 653.38 1080.82 646.75 1111.35L679.66 1121.07C683.03 1122.25 686.28 1123.64 689.39 1125.22ZM731.54 1189.5L703.27 1189.5L701.78 1182.6L701.42 1180.89C697.95 1166.16 686.4 1153.46 670.66 1147.86L640.73 1139.04L629.77 1189.5L601.5 1189.5C618.5 1111.24 635.5 1032.98 652.5 954.73L680.86 954.73C697.75 1032.98 714.64 1111.24 731.54 1189.5Z"/>
+              <path class="logo__letter" data-cx="824" d="M888.85 954.79L888.85 1189.55L860.58 1189.55L860.58 983.05L831.97 983.05L787.11 1189.55L758.85 1189.55L809.77 955.14L809.85 954.79L888.85 954.79Z"/>
+              <path class="logo__letter" data-cx="981" d="M986.11 1074.07L944.45 1061.78L944.45 1161.25L976.31 1161.25C1000.18 1157.79 1018.41 1137.88 1017.95 1115.55C1017.58 1097.36 1004.8 1080.71 986.11 1074.07ZM979.05 1189.38L978.17 1189.51L916.19 1189.51L916.19 954.72L944.45 954.72L944.45 1032.32L995.11 1047.28C1025.06 1057.72 1045.59 1084.93 1046.21 1114.97C1046.95 1151.8 1017.45 1184.5 979.05 1189.38Z"/>
+              <path class="logo__letter" data-cx="1243" d="M1308.24 954.76L1308.24 1189.54L1279.98 1189.54L1279.98 983.02L1206.47 983.02L1206.47 1189.54L1178.21 1189.54L1178.21 954.76L1308.24 954.76Z"/>
+              <path class="logo__letter" data-cx="1401" d="M1437.31 1028.73C1437.77 1006.4 1419.54 986.48 1395.67 983.04L1363.81 983.04L1363.81 1082.5L1405.48 1070.21C1424.16 1063.56 1436.94 1046.92 1437.31 1028.73ZM1465.56 1029.31C1464.95 1059.34 1444.43 1086.55 1414.47 1097L1363.81 1111.96L1363.81 1189.56L1335.55 1189.56L1335.55 954.77L1397.53 954.77L1398.41 954.9C1436.81 959.79 1466.31 992.48 1465.56 1029.31Z"/>
+              <path class="logo__letter" data-cx="1551" d="M1513.89 1126.15L1513.89 1018.11C1513.89 997.18 1530.34 980.21 1550.63 980.21C1570.93 980.21 1587.38 997.18 1587.38 1018.11L1587.38 1126.15C1587.38 1147.07 1570.93 1164.04 1550.63 1164.04C1530.34 1164.04 1513.89 1147.07 1513.89 1126.15ZM1485.61 1018.18L1485.61 1126.15C1485.61 1163.19 1514.72 1193.21 1550.63 1193.21C1586.55 1193.21 1615.66 1163.19 1615.66 1126.15L1615.66 1018.18C1615.66 981.14 1586.55 951.12 1550.63 951.12C1514.72 951.12 1485.61 981.14 1485.61 1018.18Z"/>
+              <path class="logo__letter" data-cx="1749" d="M1805 1070.21L1763.3 1082.52L1763.3 983.02L1795.16 983.02C1819 986.45 1837.22 1006.42 1836.78 1028.73C1836.42 1046.95 1823.66 1063.57 1805 1070.21ZM1735.02 1082.52L1693.39 1070.21C1674.66 1063.57 1661.9 1046.95 1661.53 1028.73C1661.1 1006.42 1679.32 986.45 1703.16 983.02L1735.02 983.02L1735.02 1082.52ZM1797.93 954.88L1797.05 954.8L1701.34 954.8L1700.46 954.88C1662.04 959.76 1632.52 992.5 1633.32 1029.31C1633.91 1059.34 1654.46 1086.54 1684.35 1097.03L1735.02 1111.98L1735.02 1189.54L1763.3 1189.54L1763.3 1111.98L1813.96 1097.03C1843.93 1086.54 1864.41 1059.34 1865.07 1029.31C1865.8 992.5 1836.27 959.76 1797.93 954.88Z"/>
+              <path class="logo__letter" data-cx="1945" d="M2010.11 954.49L2010.11 1189.26L1981.85 1189.26L1981.85 1019.68L1908.34 1189.26L1880.08 1189.26L1880.08 954.49L1908.34 954.49L1908.34 1124.06L1981.85 954.49L2010.11 954.49Z"/>
+            </svg>
+            <svg class="logo__motto" viewBox="140.5 1274.3 1725.9 105" aria-hidden="true" focusable="false" data-cx="1004">
+              <path class="logo__glyph" data-cx="178" d="M148.91 1301.3L156.61 1301.3L156.61 1351.21L189.15 1351.21L189.15 1301.3L196.85 1301.3L196.85 1351.21L206.11 1351.21L206.11 1371.28L200.8 1371.28L197.99 1358.18L148.91 1358.18L148.91 1301.3Z"/>
+              <path class="logo__glyph" data-cx="246" d="M268.05 1325.32C265.45 1313.99 257.03 1307.02 246 1307.02C235.2 1307.02 226.56 1314.4 224.48 1325.32L268.05 1325.32ZM274.29 1339.46C270.12 1351.41 259 1359.53 246.63 1359.53C229.79 1359.53 216.58 1346.33 216.58 1329.48C216.58 1312.95 229.58 1299.95 246 1299.95C262.33 1299.95 276.05 1313.26 276.05 1329.06C276.05 1330.1 275.85 1331.25 275.64 1332.29L224.28 1332.29C224.89 1343.52 234.68 1352.46 246.42 1352.46C255.05 1352.46 263.06 1347.26 266.28 1339.46L274.29 1339.46Z"/>
+              <path class="logo__glyph" data-cx="316" d="M291.51 1301.3L299.21 1301.3L299.21 1325.74L333.31 1325.74L333.31 1301.3L341 1301.3L341 1358.18L333.31 1358.18L333.31 1332.7L299.21 1332.7L299.21 1358.18L291.51 1358.18L291.51 1301.3Z"/>
+              <path class="logo__glyph" data-cx="373" d="M368.95 1308.27L353.98 1308.27L353.98 1301.3L391.41 1301.3L391.41 1308.27L376.65 1308.27L376.65 1358.18L368.95 1358.18L368.95 1308.27Z"/>
+              <path class="logo__glyph" data-cx="434" d="M456.58 1330C456.58 1316.59 447.02 1307.02 433.81 1307.02C421.34 1307.02 411.56 1317 411.56 1329.79C411.56 1342.59 421.34 1352.46 434.12 1352.46C446.91 1352.46 456.58 1342.79 456.58 1330ZM404.38 1301.3L412.08 1301.3L412.08 1311.08C416.87 1303.8 424.66 1299.95 434.44 1299.95C451.38 1299.95 464.38 1312.84 464.38 1329.79C464.38 1346.54 451.28 1359.53 434.22 1359.53C424.77 1359.53 417.07 1355.68 412.08 1348.41L412.08 1378.14L404.38 1378.14L404.38 1301.3Z"/>
+              <path class="logo__glyph" data-cx="537" d="M536.8 1351.21C546.58 1351.21 551.98 1347.67 551.98 1341.23C551.98 1334.89 546.89 1331.77 536.8 1331.77L522.14 1331.77L522.14 1351.21L536.8 1351.21ZM535.98 1324.8C544.61 1324.8 549.49 1321.68 549.49 1316.27C549.49 1310.97 544.92 1308.27 535.98 1308.27L522.14 1308.27L522.14 1324.8L535.98 1324.8ZM514.45 1301.3L537.22 1301.3C549.49 1301.3 556.88 1306.92 556.88 1316.27C556.88 1320.85 553.55 1325.74 549.18 1327.61C556.15 1330.21 559.79 1334.79 559.79 1341.23C559.79 1351.11 551.05 1358.18 538.78 1358.18L514.45 1358.18L514.45 1301.3Z"/>
+              <path class="logo__glyph" data-cx="603" d="M624.64 1330C624.64 1316.59 615.49 1307.02 602.6 1307.02C590.12 1307.02 580.87 1316.79 580.87 1329.89C580.87 1342.89 590.33 1352.46 603.22 1352.46C615.7 1352.46 624.64 1343.1 624.64 1330ZM603.22 1299.95C619.96 1299.95 632.45 1312.74 632.45 1329.89C632.45 1346.95 620.17 1359.53 603.43 1359.53C586.07 1359.53 573.07 1346.85 573.07 1329.79C573.07 1312.53 585.75 1299.95 603.22 1299.95Z"/>
+              <path class="logo__glyph" data-cx="676" d="M705.2 1341.44C698.65 1353.71 689.71 1359.53 677.33 1359.53C659.86 1359.53 646.35 1346.54 646.35 1329.58C646.35 1313.05 659.76 1299.95 676.81 1299.95C689.71 1299.95 700.52 1307.12 705.09 1318.56L696.46 1318.56C692.1 1311.07 685.13 1307.02 676.71 1307.02C664.02 1307.02 654.14 1317 654.14 1329.79C654.14 1342.48 664.23 1352.46 677.02 1352.46C685.13 1352.46 690.54 1349.34 696.46 1341.44L705.2 1341.44Z"/>
+              <path class="logo__glyph" data-cx="748" d="M777.64 1341.44C771.09 1353.71 762.15 1359.53 749.78 1359.53C732.31 1359.53 718.8 1346.54 718.8 1329.58C718.8 1313.05 732.2 1299.95 749.26 1299.95C762.15 1299.95 772.96 1307.12 777.54 1318.56L768.91 1318.56C764.54 1311.07 757.57 1307.02 749.16 1307.02C736.47 1307.02 726.59 1317 726.59 1329.79C726.59 1342.48 736.67 1352.46 749.46 1352.46C757.57 1352.46 762.98 1349.34 768.91 1341.44L777.64 1341.44Z"/>
+              <path class="logo__glyph" data-cx="807" d="M803.08 1308.27L788.11 1308.27L788.11 1301.3L825.55 1301.3L825.55 1308.27L810.78 1308.27L810.78 1358.18L803.08 1358.18L803.08 1308.27Z"/>
+              <path class="logo__glyph" data-cx="866" d="M866.8 1352.45C879.18 1352.45 888.75 1342.48 888.75 1329.58C888.75 1316.69 879.07 1307.02 866.18 1307.02C854.01 1307.02 844.14 1317.11 844.14 1329.58C844.14 1342.37 854.22 1352.45 866.8 1352.45ZM866.28 1299.95C876.27 1299.95 883.02 1303.38 888.75 1311.39L888.75 1301.3L896.44 1301.3L896.44 1358.18L888.75 1358.18L888.75 1348.2C882.71 1356.3 876.57 1359.53 866.91 1359.53C849.34 1359.53 836.34 1346.95 836.34 1329.89C836.34 1312.84 849.23 1299.95 866.28 1299.95Z"/>
+              <path class="logo__glyph" data-cx="939" d="M914.7 1301.3L922.39 1301.3L922.39 1325.74L956.5 1325.74L956.5 1301.3L964.2 1301.3L964.2 1358.18L956.5 1358.18L956.5 1332.7L922.39 1332.7L922.39 1358.18L914.7 1358.18L914.7 1301.3Z"/>
+              <path class="logo__glyph" data-cx="1010" d="M1031.86 1330C1031.86 1316.59 1022.71 1307.02 1009.82 1307.02C997.34 1307.02 988.09 1316.79 988.09 1329.89C988.09 1342.89 997.55 1352.46 1010.44 1352.46C1022.92 1352.46 1031.86 1343.1 1031.86 1330ZM1010.44 1299.95C1027.18 1299.95 1039.66 1312.74 1039.66 1329.89C1039.66 1346.95 1027.39 1359.53 1010.65 1359.53C993.29 1359.53 980.29 1346.85 980.29 1329.79C980.29 1312.53 992.98 1299.95 1010.44 1299.95Z"/>
+              <path class="logo__glyph" data-cx="1078" d="M1078.09 1351.21C1087.88 1351.21 1093.28 1347.67 1093.28 1341.23C1093.28 1334.89 1088.19 1331.77 1078.09 1331.77L1063.43 1331.77L1063.43 1351.21L1078.09 1351.21ZM1077.27 1324.8C1085.89 1324.8 1090.79 1321.68 1090.79 1316.27C1090.79 1310.97 1086.21 1308.27 1077.27 1308.27L1063.43 1308.27L1063.43 1324.8L1077.27 1324.8ZM1055.74 1301.3L1078.52 1301.3C1090.79 1301.3 1098.17 1306.92 1098.17 1316.27C1098.17 1320.85 1094.84 1325.74 1090.47 1327.61C1097.44 1330.21 1101.08 1334.79 1101.08 1341.23C1101.08 1351.11 1092.34 1358.18 1080.07 1358.18L1055.74 1358.18L1055.74 1301.3Z"/>
+              <path class="logo__glyph" data-cx="1139" d="M1134.95 1301.3L1143.58 1301.3L1168.01 1358.18L1159.9 1358.18L1139.32 1310.04L1118.63 1358.18L1110.51 1358.18L1134.95 1301.3Z"/>
+              <path class="logo__glyph" data-cx="1203" d="M1224.77 1325.32C1222.17 1313.99 1213.75 1307.02 1202.72 1307.02C1191.91 1307.02 1183.28 1314.4 1181.2 1325.32L1224.77 1325.32ZM1231.01 1339.46C1226.84 1351.41 1215.72 1359.53 1203.35 1359.53C1186.5 1359.53 1173.3 1346.33 1173.3 1329.48C1173.3 1312.95 1186.3 1299.95 1202.72 1299.95C1219.05 1299.95 1232.77 1313.26 1232.77 1329.06C1232.77 1330.1 1232.57 1331.25 1232.36 1332.29L1181 1332.29C1181.61 1343.52 1191.39 1352.46 1203.14 1352.46C1211.77 1352.46 1219.78 1347.26 1223 1339.46L1231.01 1339.46Z"/>
+              <path class="logo__glyph" data-cx="1273" d="M1248.23 1301.3L1255.93 1301.3L1255.93 1325.74L1290.03 1325.74L1290.03 1301.3L1297.72 1301.3L1297.72 1358.18L1290.03 1358.18L1290.03 1332.7L1255.93 1332.7L1255.93 1358.18L1248.23 1358.18L1248.23 1301.3Z"/>
+              <path class="logo__glyph" data-cx="1341" d="M1316 1301.3L1323.69 1301.3L1323.69 1347.26L1358.32 1301.3L1366.01 1301.3L1366.01 1358.18L1358.32 1358.18L1358.32 1312.22L1323.69 1358.18L1316 1358.18L1316 1301.3Z"/>
+              <path class="logo__glyph" data-cx="1401" d="M1416 1308.27L1402.79 1308.27C1393.64 1308.27 1389.06 1311.59 1389.06 1318.25C1389.06 1324.91 1393.64 1328.23 1402.79 1328.23L1416 1328.23L1416 1308.27ZM1395.1 1334.58C1386.57 1332.6 1381.27 1326.36 1381.27 1318.25C1381.27 1308.27 1389.28 1301.3 1400.81 1301.3L1423.69 1301.3L1423.69 1358.18L1416 1358.18L1416 1335.2L1403.42 1335.2L1387.41 1358.18L1378.66 1358.18L1395.1 1334.58Z"/>
+              <path class="logo__glyph" data-cx="1497" d="M1492.38 1356.3L1470.33 1301.3L1478.76 1301.3L1496.75 1346.63L1515.98 1301.3L1524.2 1301.3L1491.34 1378.14L1483.12 1378.14L1492.38 1356.3Z"/>
+              <path class="logo__glyph" data-cx="1551" d="M1546.53 1301.3L1555.16 1301.3L1579.59 1358.18L1571.48 1358.18L1550.9 1310.04L1530.21 1358.18L1522.1 1358.18L1546.53 1301.3Z"/>
+              <path class="logo__glyph" data-cx="1621" d="M1641.64 1301.3L1649.34 1301.3L1649.34 1358.18L1641.64 1358.18L1641.64 1301.3ZM1613.26 1351.21C1622.41 1351.21 1626.98 1347.89 1626.98 1341.12C1626.98 1334.36 1622.41 1331.04 1613.26 1331.04L1599.53 1331.04L1599.53 1351.21L1613.26 1351.21ZM1591.84 1301.3L1599.53 1301.3L1599.53 1324.07L1615.24 1324.07C1626.77 1324.07 1634.78 1331.04 1634.78 1341.12C1634.78 1351.21 1626.77 1358.18 1615.24 1358.18L1591.84 1358.18L1591.84 1301.3Z"/>
+              <path class="logo__glyph" data-cx="1696" d="M1718.35 1329.48C1718.35 1316.69 1708.79 1307.02 1696 1307.02C1683.41 1307.02 1673.85 1316.79 1673.85 1329.48C1673.85 1342.79 1683.21 1352.46 1695.89 1352.46C1708.68 1352.46 1718.35 1342.58 1718.35 1329.48ZM1673.12 1314.82C1676.96 1305.57 1686.32 1299.95 1697.97 1299.95C1713.67 1299.95 1726.14 1313.05 1726.14 1329.69C1726.14 1346.74 1713.25 1359.53 1696.1 1359.53C1676.65 1359.53 1666.16 1347.37 1666.16 1324.7L1666.16 1321.58C1666.16 1293.71 1676.13 1280.2 1697.97 1278.32L1722.2 1276.25L1722.2 1283.31L1698.59 1285.5C1681.75 1287.05 1673.22 1296.83 1672.81 1314.71L1673.12 1314.82Z"/>
+              <path class="logo__glyph" data-cx="1770" d="M1791.63 1330C1791.63 1316.59 1782.48 1307.02 1769.59 1307.02C1757.11 1307.02 1747.85 1316.79 1747.85 1329.89C1747.85 1342.89 1757.32 1352.46 1770.21 1352.46C1782.68 1352.46 1791.63 1343.1 1791.63 1330ZM1770.21 1299.95C1786.95 1299.95 1799.43 1312.74 1799.43 1329.89C1799.43 1346.95 1787.16 1359.53 1770.42 1359.53C1753.05 1359.53 1740.06 1346.85 1740.06 1329.79C1740.06 1312.53 1752.74 1299.95 1770.21 1299.95Z"/>
+              <path class="logo__glyph" data-cx="1837" d="M1815.51 1301.3L1823.2 1301.3L1823.2 1326.67L1849.2 1301.3L1859.18 1301.3L1830.79 1328.86L1859.18 1358.18L1849.09 1358.18L1823.2 1331.35L1823.2 1358.18L1815.51 1358.18L1815.51 1301.3Z"/>
+            </svg>
+          </div>
+        </header>
+        <div class="hero__body">
+          <div class="hero__content">
+            <h1 class="hero__title">Правила ежедневного ухода за&nbsp;зубами</h1>
+            <p class="hero__text">Потратьте всего несколько минут, чтобы узнать, как сохранить здоровье зубов и&nbsp;результат лечения на&nbsp;долгие годы.</p>
+          </div>
+          <div class="hero__card">
+            <img class="hero__img" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5NjAiIGhlaWdodD0iODgwIiB2aWV3Qm94PSIwIDAgOTYwIDg4MCI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iIzEwMWIyOSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmaWxsPSIjZjRmOGZjIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iNDMiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiPtGE0L7RgtC+OiDRidGR0YLQutCwINGBINC/0LDRgdGC0L7QuTwvdGV4dD48L3N2Zz4=" width="480" height="440" alt="Зубная щётка с пастой" decoding="async">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Что понадобится -->
+    <section class="section section--white" id="kit">
+      <div class="container">
+        <h2 class="h2">Что понадобится для правильной домашней гигиены</h2>
+        <div class="gallery">
+          <figure class="gallery__item">
+            <img class="gallery__img" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3NzIiIGhlaWdodD0iNzEyIiB2aWV3Qm94PSIwIDAgNzcyIDcxMiI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2U1ZTllZSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmaWxsPSIjMGUyOTRiIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMzQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiPtC40LvQu9GO0YHRgtGA0LDRhtC40Y8ga2l0LWJydXNoPC90ZXh0Pjwvc3ZnPg==" width="386" height="356" alt="Зубная щётка" loading="lazy" decoding="async">
+            <figcaption class="gallery__caption">Зубная щётка<span class="gallery__note">электрическая или обычная с&nbsp;мягкой щетиной</span></figcaption>
+          </figure>
+          <figure class="gallery__item">
+            <img class="gallery__img" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3NzIiIGhlaWdodD0iNzEyIiB2aWV3Qm94PSIwIDAgNzcyIDcxMiI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2U1ZTllZSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmaWxsPSIjMGUyOTRiIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMzQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiPtC40LvQu9GO0YHRgtGA0LDRhtC40Y8ga2l0LWZsb3NzPC90ZXh0Pjwvc3ZnPg==" width="386" height="356" alt="Зубная нить" loading="lazy" decoding="async">
+            <figcaption class="gallery__caption">Зубная нить</figcaption>
+          </figure>
+          <figure class="gallery__item">
+            <img class="gallery__img" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3NzIiIGhlaWdodD0iNzEyIiB2aWV3Qm94PSIwIDAgNzcyIDcxMiI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2U1ZTllZSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmaWxsPSIjMGUyOTRiIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMzQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiPtC40LvQu9GO0YHRgtGA0LDRhtC40Y8ga2l0LWlycmlnYXRvcjwvdGV4dD48L3N2Zz4=" width="386" height="356" alt="Ирригатор" loading="lazy" decoding="async">
+            <figcaption class="gallery__caption">Ирригатор</figcaption>
+          </figure>
+          <figure class="gallery__item">
+            <img class="gallery__img" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3NzIiIGhlaWdodD0iNzEyIiB2aWV3Qm94PSIwIDAgNzcyIDcxMiI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2U1ZTllZSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmaWxsPSIjMGUyOTRiIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMzQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiPtC40LvQu9GO0YHRgtGA0LDRhtC40Y8ga2l0LXRvbmd1ZTwvdGV4dD48L3N2Zz4=" width="386" height="356" alt="Щётка для языка" loading="lazy" decoding="async">
+            <figcaption class="gallery__caption">Щётка для языка</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Последовательность домашней гигиены -->
+    <section class="section section--gray" id="order">
+      <div class="container">
+        <h2 class="h2">Правильная последовательность домашней гигиены</h2>
+        <p class="lead">На&nbsp;каждом зубе задерживать щётку <span class="nowrap">2–3</span>&nbsp;секунды.</p>
+        <ol class="steps steps--4">
+          <li class="steps__item">
+            <img class="steps__img" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3NzIiIGhlaWdodD0iNzEyIiB2aWV3Qm94PSIwIDAgNzcyIDcxMiI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2U1ZTllZSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmaWxsPSIjMGUyOTRiIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMzQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiPtC40LvQu9GO0YHRgtGA0LDRhtC40Y8gb3JkZXItMTwvdGV4dD48L3N2Zz4=" width="386" height="356" alt="Чистка зубов электрической щёткой" loading="lazy" decoding="async">
+            <div class="steps__body">
+              <h3 class="steps__title">Шаг&nbsp;1</h3>
+              <p class="steps__text">Чистка зубов электрической щёткой.</p>
+            </div>
+          </li>
+          <li class="steps__item">
+            <img class="steps__img" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3NzIiIGhlaWdodD0iNzEyIiB2aWV3Qm94PSIwIDAgNzcyIDcxMiI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2U1ZTllZSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmaWxsPSIjMGUyOTRiIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMzQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiPtC40LvQu9GO0YHRgtGA0LDRhtC40Y8gb3JkZXItMjwvdGV4dD48L3N2Zz4=" width="386" height="356" alt="Очистка межзубных промежутков зубной нитью" loading="lazy" decoding="async">
+            <div class="steps__body">
+              <h3 class="steps__title">Шаг&nbsp;2</h3>
+              <p class="steps__text">Очистка межзубных промежутков зубной нитью.</p>
+            </div>
+          </li>
+          <li class="steps__item">
+            <img class="steps__img" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3NzIiIGhlaWdodD0iNzEyIiB2aWV3Qm94PSIwIDAgNzcyIDcxMiI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2U1ZTllZSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmaWxsPSIjMGUyOTRiIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMzQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiPtC40LvQu9GO0YHRgtGA0LDRhtC40Y8gb3JkZXItMzwvdGV4dD48L3N2Zz4=" width="386" height="356" alt="Очистка ирригатором" loading="lazy" decoding="async">
+            <div class="steps__body">
+              <h3 class="steps__title">Шаг&nbsp;3</h3>
+              <p class="steps__text">Очистка ирригатором.</p>
+            </div>
+          </li>
+          <li class="steps__item">
+            <img class="steps__img" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3NzIiIGhlaWdodD0iNzEyIiB2aWV3Qm94PSIwIDAgNzcyIDcxMiI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2U1ZTllZSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmaWxsPSIjMGUyOTRiIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMzQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiPtC40LvQu9GO0YHRgtGA0LDRhtC40Y8gb3JkZXItNDwvdGV4dD48L3N2Zz4=" width="386" height="356" alt="Очистка языка" loading="lazy" decoding="async">
+            <div class="steps__body">
+              <h3 class="steps__title">Шаг&nbsp;4</h3>
+              <p class="steps__text">Очистка языка.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- 4. Как правильно чистить зубы -->
+    <section class="section section--white" id="brushing">
+      <div class="container">
+        <h2 class="h2">Как правильно чистить зубы</h2>
+        <p class="lead">У&nbsp;каждого зуба пять поверхностей. Необходимо очистить каждую из&nbsp;них.</p>
+        <p class="lead">На&nbsp;каждом зубе задерживайте щётку <span class="nowrap">2–3</span>&nbsp;секунды.</p>
+        <ol class="steps steps--4">
+          <li class="steps__item">
+            <img class="steps__img" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3NzIiIGhlaWdodD0iNzEyIiB2aWV3Qm94PSIwIDAgNzcyIDcxMiI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2U1ZTllZSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmaWxsPSIjMGUyOTRiIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMzQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiPtC40LvQu9GO0YHRgtGA0LDRhtC40Y8gYnJ1c2gtMTwvdGV4dD48L3N2Zz4=" width="386" height="356" alt="Щётка на наружной поверхности зубов" loading="lazy" decoding="async">
+            <div class="steps__body">
+              <h3 class="steps__title">1. Круговыми движениями очистите наружную поверхность зубов</h3>
+            </div>
+          </li>
+          <li class="steps__item">
+            <img class="steps__img" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3NzIiIGhlaWdodD0iNzEyIiB2aWV3Qm94PSIwIDAgNzcyIDcxMiI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2U1ZTllZSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmaWxsPSIjMGUyOTRiIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMzQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiPtC40LvQu9GO0YHRgtGA0LDRhtC40Y8gYnJ1c2gtMjwvdGV4dD48L3N2Zz4=" width="386" height="356" alt="Щётка на жевательной поверхности коренных зубов" loading="lazy" decoding="async">
+            <div class="steps__body">
+              <h3 class="steps__title">2. Тщательно очистите жевательные поверхности всех коренных зубов</h3>
+            </div>
+          </li>
+          <li class="steps__item">
+            <img class="steps__img" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3NzIiIGhlaWdodD0iNzEyIiB2aWV3Qm94PSIwIDAgNzcyIDcxMiI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2U1ZTllZSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmaWxsPSIjMGUyOTRiIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMzQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiPtC40LvQu9GO0YHRgtGA0LDRhtC40Y8gYnJ1c2gtMzwvdGV4dD48L3N2Zz4=" width="386" height="356" alt="Щётка у задней поверхности зубов" loading="lazy" decoding="async">
+            <div class="steps__body">
+              <h3 class="steps__title">3. Затем перейдите к&nbsp;задней поверхности и&nbsp;межзубным промежуткам</h3>
+            </div>
+          </li>
+          <li class="steps__item">
+            <img class="steps__img" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3NzIiIGhlaWdodD0iNzEyIiB2aWV3Qm94PSIwIDAgNzcyIDcxMiI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2U1ZTllZSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmaWxsPSIjMGUyOTRiIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMzQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiPtC40LvQu9GO0YHRgtGA0LDRhtC40Y8gYnJ1c2gtNDwvdGV4dD48L3N2Zz4=" width="386" height="356" alt="Пять поверхностей зуба: наружная, жевательная, две боковые, задняя" loading="lazy" decoding="async">
+            <div class="steps__body">
+              <h3 class="steps__title">4. Помните, необходимо очистить каждую из&nbsp;этих пяти поверхностей для полноценной гигиены</h3>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- 5. Зубная нить -->
+    <section class="section section--gray" id="floss">
+      <div class="container">
+        <h2 class="h2">Как пользоваться зубной нитью</h2>
+        <p class="lead">Зубная нить помогает удалить налёт и&nbsp;остатки пищи из&nbsp;межзубных промежутков, куда не&nbsp;проникает зубная щётка.</p>
+        <ol class="steps steps--4">
+          <li class="steps__item">
+            <img class="steps__img" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3NzIiIGhlaWdodD0iNzEyIiB2aWV3Qm94PSIwIDAgNzcyIDcxMiI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2U1ZTllZSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmaWxsPSIjMGUyOTRiIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMzQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiPtC40LvQu9GO0YHRgtGA0LDRhtC40Y8gZmxvc3MtMTwvdGV4dD48L3N2Zz4=" width="386" height="356" alt="Нить обёрнута вокруг средних пальцев" loading="lazy" decoding="async">
+            <div class="steps__body">
+              <h3 class="steps__title">1. Оберните <span class="nowrap">40–50</span>&nbsp;см нити вокруг средних пальцев</h3>
+            </div>
+          </li>
+          <li class="steps__item">
+            <img class="steps__img" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3NzIiIGhlaWdodD0iNzEyIiB2aWV3Qm94PSIwIDAgNzcyIDcxMiI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2U1ZTllZSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmaWxsPSIjMGUyOTRiIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMzQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiPtC40LvQu9GO0YHRgtGA0LDRhtC40Y8gZmxvc3MtMjwvdGV4dD48L3N2Zz4=" width="386" height="356" alt="Короткий участок нити между большими и указательными пальцами" loading="lazy" decoding="async">
+            <div class="steps__body">
+              <h3 class="steps__title">2. Удерживайте короткий участок между большими и&nbsp;указательными пальцами</h3>
+            </div>
+          </li>
+          <li class="steps__item">
+            <img class="steps__img" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3NzIiIGhlaWdodD0iNzEyIiB2aWV3Qm94PSIwIDAgNzcyIDcxMiI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2U1ZTllZSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmaWxsPSIjMGUyOTRiIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMzQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiPtC40LvQu9GO0YHRgtGA0LDRhtC40Y8gZmxvc3MtMzwvdGV4dD48L3N2Zz4=" width="386" height="356" alt="Нить вводится между зубами" loading="lazy" decoding="async">
+            <div class="steps__body">
+              <h3 class="steps__title">3. Вводите нить между зубами лёгким пилящим движением</h3>
+              <p class="steps__text">Не&nbsp;вдавливайте нить резко в&nbsp;десну.</p>
+            </div>
+          </li>
+          <li class="steps__item">
+            <img class="steps__img" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3NzIiIGhlaWdodD0iNzEyIiB2aWV3Qm94PSIwIDAgNzcyIDcxMiI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2U1ZTllZSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmaWxsPSIjMGUyOTRiIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMzQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiPtC40LvQu9GO0YHRgtGA0LDRhtC40Y8gZmxvc3MtNDwvdGV4dD48L3N2Zz4=" width="386" height="356" alt="Нить очищает боковые поверхности зуба" loading="lazy" decoding="async">
+            <div class="steps__body">
+              <h3 class="steps__title">4. Тщательно очистите обе боковые поверхности в&nbsp;каждом межзубном промежутке</h3>
+              <p class="steps__text">Сменяйте участок нити для каждого зуба.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- 6. Ирригатор -->
+    <section class="section section--white" id="irrigator">
+      <div class="container">
+        <h2 class="h2">Как пользоваться ирригатором</h2>
+        <p class="lead">Обрабатывать каждый промежуток <span class="nowrap">1–2</span>&nbsp;секунды.</p>
+        <ol class="steps">
+          <li class="steps__item">
+            <img class="steps__img" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3NzIiIGhlaWdodD0iNzEyIiB2aWV3Qm94PSIwIDAgNzcyIDcxMiI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2U1ZTllZSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmaWxsPSIjMGUyOTRiIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMzQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiPtC40LvQu9GO0YHRgtGA0LDRhtC40Y8gaXJyaWctMTwvdGV4dD48L3N2Zz4=" width="386" height="356" alt="Ирригатор наполняют водой" loading="lazy" decoding="async">
+            <div class="steps__body">
+              <h3 class="steps__title">1. Наполните ирригатор чистой водой</h3>
+            </div>
+          </li>
+          <li class="steps__item">
+            <img class="steps__img" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3NzIiIGhlaWdodD0iNzEyIiB2aWV3Qm94PSIwIDAgNzcyIDcxMiI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2U1ZTllZSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmaWxsPSIjMGUyOTRiIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMzQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiPtC40LvQu9GO0YHRgtGA0LDRhtC40Y8gaXJyaWctMjwvdGV4dD48L3N2Zz4=" width="386" height="356" alt="Наконечник ирригатора у десневого края" loading="lazy" decoding="async">
+            <div class="steps__body">
+              <h3 class="steps__title">2. Расположите наконечник перпендикулярно десневому краю</h3>
+              <p class="steps__text">Обрабатывайте его и&nbsp;межзубные пространства.</p>
+            </div>
+          </li>
+          <li class="steps__item">
+            <img class="steps__img" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3NzIiIGhlaWdodD0iNzEyIiB2aWV3Qm94PSIwIDAgNzcyIDcxMiI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2U1ZTllZSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmaWxsPSIjMGUyOTRiIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMzQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiPtC40LvQu9GO0YHRgtGA0LDRhtC40Y8gaXJyaWctMzwvdGV4dD48L3N2Zz4=" width="386" height="356" alt="Ирригатор у задней поверхности зубов" loading="lazy" decoding="async">
+            <div class="steps__body">
+              <h3 class="steps__title">3. Перейдите к&nbsp;задней поверхности</h3>
+              <p class="steps__text">Обрабатывайте каждый промежуток <span class="nowrap">1–2</span>&nbsp;секунды.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- 7. Щётка для языка -->
+    <section class="section section--gray" id="tongue">
+      <div class="container">
+        <h2 class="h2">Как пользоваться щёткой для языка</h2>
+        <p class="lead">Язык необходимо очищать ежедневно до&nbsp;визуально чистой поверхности.</p>
+        <ol class="steps steps--2">
+          <li class="steps__item">
+            <img class="steps__img" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3NzIiIGhlaWdodD0iNzEyIiB2aWV3Qm94PSIwIDAgNzcyIDcxMiI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2U1ZTllZSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmaWxsPSIjMGUyOTRiIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMzQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiPtC40LvQu9GO0YHRgtGA0LDRhtC40Y8gdG9uZ3VlLTE8L3RleHQ+PC9zdmc+" width="386" height="356" alt="Щётка для очистки языка в руке" loading="lazy" decoding="async">
+            <div class="steps__body">
+              <h3 class="steps__title">1. Возьмите специальную щётку для очистки языка</h3>
+            </div>
+          </li>
+          <li class="steps__item">
+            <img class="steps__img" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3NzIiIGhlaWdodD0iNzEyIiB2aWV3Qm94PSIwIDAgNzcyIDcxMiI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2U1ZTllZSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmaWxsPSIjMGUyOTRiIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMzQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiPtC40LvQu9GO0YHRgtGA0LDRhtC40Y8gdG9uZ3VlLTI8L3RleHQ+PC9zdmc+" width="386" height="356" alt="Щётка движется от корня языка к кончику" loading="lazy" decoding="async">
+            <div class="steps__body">
+              <h3 class="steps__title">2. Двигайте щёткой от&nbsp;корня языка к&nbsp;кончику</h3>
+              <p class="steps__text">До&nbsp;визуально чистой поверхности.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- 8. Почему нужна профессиональная гигиена -->
+    <section class="section section--white section--line" id="limits">
+      <div class="container">
+        <h2 class="h2">Профессиональная гигиена позволяет удалить то, что невозможно убрать дома</h2>
+        <p class="lead">Даже идеальная домашняя гигиена не&nbsp;позволяет полностью удалить все зубные отложения, которые накапливаются со&nbsp;временем. Они становятся причиной:</p>
+        <ul class="reasons">
+          <li class="reasons__item"><span class="reasons__num">01</span><span>Воспаления десен</span></li>
+          <li class="reasons__item"><span class="reasons__num">02</span><span>Неприятного запаха</span></li>
+          <li class="reasons__item"><span class="reasons__num">03</span><span>Кровоточивости</span></li>
+          <li class="reasons__item"><span class="reasons__num">04</span><span>Кариеса</span></li>
+          <li class="reasons__item"><span class="reasons__num">05</span><span>Сокращения срока службы реставраций</span></li>
+          <li class="reasons__item"><span class="reasons__num">06</span><span>Осложнений вокруг имплантов</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 9. Что происходит без профессиональной гигиены -->
+    <section class="section section--gray2" id="neglect">
+      <div class="container">
+        <h2 class="h2">Что происходит, если не&nbsp;делать профессиональную гигиену</h2>
+        <ol class="gallery gallery--6">
+          <li class="gallery__item">
+            <img class="gallery__img" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3NzIiIGhlaWdodD0iNzEyIiB2aWV3Qm94PSIwIDAgNzcyIDcxMiI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2U1ZTllZSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmaWxsPSIjMGUyOTRiIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMzQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiPtC40LvQu9GO0YHRgtGA0LDRhtC40Y8gc3RhZ2UtMTwvdGV4dD48L3N2Zz4=" width="386" height="356" alt="Мягкий налёт на зубе" loading="lazy" decoding="async">
+            <p class="gallery__caption"><span class="gallery__num">01</span>Мягкий налет</p>
+          </li>
+          <li class="gallery__item">
+            <img class="gallery__img" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3NzIiIGhlaWdodD0iNzEyIiB2aWV3Qm94PSIwIDAgNzcyIDcxMiI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2U1ZTllZSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmaWxsPSIjMGUyOTRiIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMzQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiPtC40LvQu9GO0YHRgtGA0LDRhtC40Y8gc3RhZ2UtMjwvdGV4dD48L3N2Zz4=" width="386" height="356" alt="Зубной камень у десны" loading="lazy" decoding="async">
+            <p class="gallery__caption"><span class="gallery__num">02</span>Камень</p>
+          </li>
+          <li class="gallery__item">
+            <img class="gallery__img" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3NzIiIGhlaWdodD0iNzEyIiB2aWV3Qm94PSIwIDAgNzcyIDcxMiI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2U1ZTllZSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmaWxsPSIjMGUyOTRiIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMzQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiPtC40LvQu9GO0YHRgtGA0LDRhtC40Y8gc3RhZ2UtMzwvdGV4dD48L3N2Zz4=" width="386" height="356" alt="Воспаление десны" loading="lazy" decoding="async">
+            <p class="gallery__caption"><span class="gallery__num">03</span>Воспаление</p>
+          </li>
+          <li class="gallery__item">
+            <img class="gallery__img" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3NzIiIGhlaWdodD0iNzEyIiB2aWV3Qm94PSIwIDAgNzcyIDcxMiI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2U1ZTllZSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmaWxsPSIjMGUyOTRiIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMzQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiPtC40LvQu9GO0YHRgtGA0LDRhtC40Y8gc3RhZ2UtNDwvdGV4dD48L3N2Zz4=" width="386" height="356" alt="Кровоточивость десны" loading="lazy" decoding="async">
+            <p class="gallery__caption"><span class="gallery__num">04</span>Кровоточивость</p>
+          </li>
+          <li class="gallery__item">
+            <img class="gallery__img" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3NzIiIGhlaWdodD0iNzEyIiB2aWV3Qm94PSIwIDAgNzcyIDcxMiI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2U1ZTllZSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmaWxsPSIjMGUyOTRiIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMzQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiPtC40LvQu9GO0YHRgtGA0LDRhtC40Y8gc3RhZ2UtNTwvdGV4dD48L3N2Zz4=" width="386" height="356" alt="Убыль костной ткани вокруг корня" loading="lazy" decoding="async">
+            <p class="gallery__caption"><span class="gallery__num">05</span>Убыль костной ткани</p>
+          </li>
+          <li class="gallery__item">
+            <img class="gallery__img" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3NzIiIGhlaWdodD0iNzEyIiB2aWV3Qm94PSIwIDAgNzcyIDcxMiI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2U1ZTllZSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmaWxsPSIjMGUyOTRiIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMzQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiPtC40LvQu9GO0YHRgtGA0LDRhtC40Y8gc3RhZ2UtNjwvdGV4dD48L3N2Zz4=" width="386" height="356" alt="Расшатанный зуб с кариесом" loading="lazy" decoding="async">
+            <p class="gallery__caption"><span class="gallery__num">06</span>Зубы расшатываются, начинает образовываться кариес</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- 10. Каждые 6 месяцев -->
+    <section class="section section--navy" id="every6">
+      <div class="container split">
+        <div class="split__text">
+          <h2 class="h2">Каждые 6&nbsp;месяцев необходимо делать профессиональную гигиену</h2>
+          <div class="split__rule" aria-hidden="true"></div>
+          <p class="lead">Если пациент проходит ортодонтическое лечение, имеет импланты, виниры или заболевания десен&nbsp;— по&nbsp;индивидуальному графику, назначенному врачом.</p>
+        </div>
+        <img class="split__img" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNTg0IiBoZWlnaHQ9IjEyODAiIHZpZXdCb3g9IjAgMCAxNTg0IDEyODAiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiMwZTI5NGIiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZmlsbD0iI2ZmZmZmZiIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjcxIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIj7QuNC70LvRjtGB0YLRgNCw0YbQuNGPOiDQutGA0LXRgdC70L48L3RleHQ+PC9zdmc+" width="792" height="640" alt="Стоматологическое кресло" loading="lazy" decoding="async">
+      </div>
+    </section>
+
+    <!-- 11. Итог -->
+    <section class="section section--navy" id="final">
+      <div class="container split">
+        <div class="split__text">
+          <h2 class="h2">Регулярная домашняя и&nbsp;профессиональная гигиена&nbsp;—</h2>
+          <div class="split__rule" aria-hidden="true"></div>
+          <p class="lead">самый простой и&nbsp;дешевый способ сохранить здоровье зубов, десен и&nbsp;результат лечения на&nbsp;долгие годы.</p>
+        </div>
+        <img class="split__img" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNTg0IiBoZWlnaHQ9IjEyODAiIHZpZXdCb3g9IjAgMCAxNTg0IDEyODAiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiMwZTI5NGIiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZmlsbD0iI2ZmZmZmZiIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjcxIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIj7QuNC70LvRjtGB0YLRgNCw0YbQuNGPOiDQvdCw0LHQvtGAINGB0YDQtdC00YHRgtCyPC90ZXh0Pjwvc3ZnPg==" width="792" height="640" alt="Средства домашней гигиены: щётки, нить, паста, ополаскиватель, ирригатор" loading="lazy" decoding="async">
+      </div>
+    </section>
+  </main>
+</body>
+</html>
