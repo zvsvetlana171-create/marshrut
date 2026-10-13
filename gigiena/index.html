@@ -1,1156 +1,40 @@
 <!doctype html>
+<!--
+  «Правила ежедневного ухода за зубами» — страница раздела «Пациентам» (образовательный маршрут).
+  Дизайн — по утверждённой странице «Зачем делать КТ»; тексты — из макета Figma (страница «Гигиена»).
+  Решения заказчика 11.10.2026: без кнопки «Смотреть видео», без блока контактов, без красного и зелёного текста.
+  Редакция 8 (12.10.2026): правки медицинского рецензента (главное правило, техника для двух типов щёток, ёршики, нить буквой С, риски без линейной цепочки, индивидуальный интервал).
+-->
 <html lang="ru">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Правила ухода за зубами</title>
-<style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
-<style>
-/* Черновик страницы «Правила ежедневного ухода за зубами» в утверждённом дизайне страницы КТ. Картинки — заглушки до получения экспорта из Figma. */
-/* Денталь профи — страница «Правила ежедневного ухода за зубами».
-   Стили повторяют утверждённую страницу «Зачем делать КТ» (dentale-profi.ru/for-patients/zachem-delat-kt):
-   те же токены, шрифт Inter, отступы секций 72 / 56 / 32, сетки 4 колонки с межколонником 28 px.
-   Десктоп (≥1200) — стиль по умолчанию; ниже — планшет (<1200) и телефон (<768). */
-
-/* ---------- Токены (как на странице КТ) ---------- */
-:root {
-  --navy: #0E294B;
-  --text: #333333;
-  --muted: #7B8A9D;
-  --bg-gray: #F5F5F5;
-  --bg-gray-2: #F6F6F6;
-  --white: #FFFFFF;
-  --line: #D5D5D5;
-  --section-line: #CDCDCD;
-
-  --hero-bg: #101317;
-  --hero-glow-1: #12305A;
-  --hero-glow-2: #102542;
-  --hero-glow-3: #101B29;
-  --rule-light: rgba(255, 255, 255, 0.5);
-  --rule-faint: rgba(255, 255, 255, 0.18);
-
-  --logo-ink: #F4F8FC;
-
-  --radius-card: 16px;
-  --shadow-hero: 0 18px 44px rgba(0, 0, 0, 0.36);
-  --shadow-soft: 0 12px 32px rgba(14, 41, 75, 0.12);
-  --shadow-card: 0 12px 26px rgba(14, 41, 75, 0.14);
-
-  --font: 'Inter', Arial, sans-serif;
-
-  --ease-out: cubic-bezier(0.2, 0.7, 0.2, 1);
-  --ease-float: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-/* ---------- База ---------- */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-html {
-  -webkit-text-size-adjust: 100%;
-  text-size-adjust: 100%;
-}
-
-body {
-  margin: 0;
-  min-width: 320px;
-  font-family: var(--font);
-  font-size: 16px;
-  line-height: 1.25;
-  color: var(--text);
-  background: var(--white);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-h1, h2, h3, p, ul, ol, figure {
-  margin: 0;
-  padding: 0;
-}
-
-ul, ol {
-  list-style: none;
-}
-
-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
-
-.container {
-  width: 100%;
-  max-width: 1710px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 40px;
-  padding-right: 40px;
-}
-
-/* ---------- Типографика ---------- */
-.h2 {
-  max-width: 1100px;
-  font-size: 40px;
-  line-height: 44px;
-  font-weight: 800;
-  letter-spacing: -0.01em;
-  text-transform: uppercase;
-  color: var(--navy);
-  text-wrap: balance;
-}
-
-.lead {
-  max-width: 860px;
-  margin-top: 20px;
-  font-size: 20px;
-  line-height: 25px;
-}
-
-.lead + .lead {
-  margin-top: 12px;
-}
-
-.nowrap {
-  white-space: nowrap;
-}
-
-/* ---------- Секции: отступы 72 / 56 / 32 ---------- */
-.section {
-  padding-top: 72px;
-  padding-bottom: 72px;
-}
-
-.section--white { background: var(--white); }
-.section--gray { background: var(--bg-gray); }
-.section--gray2 { background: var(--bg-gray-2); }
-.section--navy { background: var(--navy); color: var(--white); }
-.section--line { border-bottom: 1px solid var(--section-line); }
-
-.section--navy .h2 {
-  color: var(--white);
-}
-
-/* Две тёмно-синие секции подряд — между ними тонкая светлая линия на всю ширину контента. */
-.section--navy + .section--navy {
-  padding-top: 0;
-}
-
-.section--navy + .section--navy .container {
-  padding-top: 72px;
-  border-top: 1px solid var(--rule-faint);
-}
-
-/* ---------- 1. Первый экран #top ---------- */
-.hero {
-  position: relative;
-  overflow: hidden;
-  padding-top: 24px;
-  padding-bottom: 72px;
-  color: var(--white);
-  background-color: var(--hero-bg);
-  background-image: radial-gradient(58% 52% at 50% 52%,
-    var(--hero-glow-1) 0%,
-    var(--hero-glow-2) 45%,
-    var(--hero-glow-3) 82%,
-    var(--hero-bg) 100%);
-}
-
-.hero__header {
-  display: flex;
-  justify-content: center;
-}
-
-.hero__body {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 480px);
-  column-gap: 64px;
-  align-items: center;
-  margin-top: 32px;
-}
-
-.hero__title {
-  max-width: 900px;
-  font-size: 50px;
-  line-height: 55px;
-  font-weight: 800;
-  letter-spacing: -0.01em;
-  text-transform: uppercase;
-  text-wrap: balance;
-}
-
-.hero__text {
-  max-width: 760px;
-  margin-top: 20px;
-  font-size: 20px;
-  line-height: 25px;
-}
-
-/* Карточка первого экрана: фото щётки с пастой на тёмном фоне — у карточки тот же тёмный фон. */
-.hero__card {
-  overflow: hidden;
-  border-radius: var(--radius-card);
-  background: var(--hero-glow-3);
-  box-shadow: var(--shadow-hero);
-}
-
-.hero__img {
-  width: 100%;
-  height: auto;
-}
-
-/* ---------- Логотип: знак, «Денталь Профи», подпись — SVG из logo-intro.html ---------- */
-.logo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 230px;
-  transform-origin: 50% 38%;
-}
-
-.logo__mark {
-  display: block;
-  width: 72.8%;
-  height: auto;
-  overflow: visible;
-}
-
-.logo__word {
-  display: block;
-  width: 100%;
-  height: auto;
-  margin-top: 9%;
-  overflow: visible;
-  fill: var(--logo-ink);
-}
-
-.logo__motto {
-  display: block;
-  width: 72.8%;
-  height: auto;
-  margin-top: 3.7%;
-  overflow: visible;
-  fill: var(--logo-ink);
-}
-
-.logo__stroke {
-  fill: none;
-  stroke: var(--logo-ink);
-  stroke-width: 36;
-  stroke-linecap: round;
-}
-
-.logo__spark {
-  fill: none;
-  stroke: var(--white);
-  stroke-width: 12;
-  stroke-linecap: round;
-}
-
-.logo__sparks {
-  stroke-opacity: 0;
-}
-
-.logo__sheen {
-  display: none;
-}
-
-.logo__sweep {
-  transform: translateX(-900px);
-}
-
-.has-logo-intro .logo {
-  transform: scale(1.05);
-}
-
-.has-logo-intro .logo__stroke {
-  stroke-width: 5.5;
-  stroke-dasharray: 1000 1500;
-  stroke-dashoffset: 1001;
-}
-
-.has-logo-intro .logo__sheen {
-  display: inline;
-}
-
-.has-logo-intro .logo__letter,
-.has-logo-intro .logo__glyph {
-  opacity: 0;
-}
-
-/* ---------- Галерея: картинки в ряд, подпись под картинкой (как «Что исследование поможет уточнить») ---------- */
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 28px;
-  margin-top: 40px;
-}
-
-.gallery--6 {
-  grid-template-columns: repeat(6, minmax(0, 1fr));
-  gap: 20px;
-}
-
-.gallery__img {
-  width: 100%;
-  height: auto;
-  background: var(--bg-gray);
-}
-
-.gallery__caption {
-  margin-top: 14px;
-  font-size: 16px;
-  line-height: 20px;
-  font-weight: 500;
-  color: var(--navy);
-}
-
-.gallery__note {
-  display: block;
-  margin-top: 4px;
-  font-size: 16px;
-  line-height: 20px;
-  font-weight: 400;
-  color: var(--text);
-}
-
-/* Номер в подписи (01–06) — приглушённый, как номера списков на странице КТ. */
-.gallery__num {
-  display: inline-block;
-  min-width: 30px;
-  font-weight: 500;
-  color: var(--muted);
-}
-
-/* ---------- Шаги: картинка, заголовок, текст (как «Что будет после КТ») ---------- */
-.steps {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 28px;
-  margin-top: 40px;
-}
-
-.steps--4 {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-}
-
-.steps--2 {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-.steps__img {
-  width: 100%;
-  height: auto;
-  background: var(--white);
-}
-
-.steps__body {
-  margin-top: 20px;
-}
-
-.steps__title {
-  font-size: 20px;
-  line-height: 25px;
-  font-weight: 700;
-  color: var(--navy);
-}
-
-.steps__text {
-  margin-top: 8px;
-  font-size: 16px;
-  line-height: 20px;
-}
-
-/* ---------- Текст + картинка в тёмной секции (как «Продолжим подготовку…») ---------- */
-.split {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 520px);
-  column-gap: 80px;
-  align-items: center;
-}
-
-.split__img {
-  width: 100%;
-  height: auto;
-}
-
-.split__rule {
-  max-width: 860px;
-  height: 1px;
-  margin-top: 28px;
-  background: var(--rule-light);
-}
-
-.split__rule + .lead {
-  margin-top: 28px;
-}
-
-/* ---------- Нумерованный список причин (вместо красного списка макета) ---------- */
-/* Две колонки, строки с линиями, номер приглушённый — по образцу списков макета, в фирменных цветах. */
-.reasons {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  column-gap: 28px;
-  margin-top: 32px;
-}
-
-.reasons__item {
-  display: grid;
-  grid-template-columns: 44px minmax(0, 1fr);
-  align-items: baseline;
-  padding-top: 18px;
-  padding-bottom: 18px;
-  border-top: 1px solid var(--line);
-  font-size: 20px;
-  line-height: 25px;
-  font-weight: 500;
-  color: var(--navy);
-}
-
-.reasons__num {
-  font-size: 16px;
-  line-height: 20px;
-  font-weight: 500;
-  color: var(--muted);
-}
-
-/* Вывод под списком — крупно, как заголовок H3 секции. */
-.reasons-summary {
-  max-width: 1100px;
-  margin-top: 40px;
-  padding-top: 28px;
-  border-top: 1px solid var(--section-line);
-  font-size: 28px;
-  line-height: 34px;
-  font-weight: 800;
-  letter-spacing: -0.01em;
-  text-transform: uppercase;
-  color: var(--navy);
-  text-wrap: balance;
-}
-
-/* =========================================================
-   Планшет и телефон: < 1200
-   ========================================================= */
-@media (max-width: 1199.98px) {
-  .h2 {
-    max-width: none;
-    font-size: 24px;
-    line-height: 30px;
-  }
-
-  .lead {
-    max-width: none;
-    margin-top: 16px;
-    font-size: 16px;
-    line-height: 20px;
-  }
-
-  .lead + .lead {
-    margin-top: 10px;
-  }
-
-  .section {
-    padding-top: 56px;
-    padding-bottom: 56px;
-  }
-
-  .section--navy + .section--navy .container {
-    padding-top: 56px;
-  }
-
-  .hero {
-    padding-bottom: 56px;
-  }
-
-  .hero__header {
-    justify-content: flex-start;
-  }
-
-  .logo {
-    width: 120px;
-  }
-
-  .logo__motto {
-    display: none;
-  }
-
-  .hero__body {
-    grid-template-columns: minmax(0, 55fr) minmax(0, 45fr);
-    column-gap: 32px;
-    margin-top: 28px;
-  }
-
-  .hero__title {
-    max-width: 600px;
-    font-size: 28px;
-    line-height: 35px;
-  }
-
-  .hero__text {
-    max-width: 560px;
-    margin-top: 16px;
-    font-size: 16px;
-    line-height: 20px;
-  }
-
-  .gallery {
-    gap: 20px;
-    margin-top: 32px;
-  }
-
-  .gallery--6 {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .steps {
-    gap: 20px;
-    margin-top: 32px;
-  }
-
-  /* На планшете четыре шага в ряд тесно — по два в ряд. */
-  .steps--4 {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .steps__body {
-    margin-top: 16px;
-  }
-
-  .steps__title {
-    font-size: 18px;
-    line-height: 23px;
-  }
-
-  .steps__text {
-    font-size: 14px;
-    line-height: 18px;
-  }
-
-  .split {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 340px);
-    column-gap: 32px;
-  }
-
-  .split__rule {
-    max-width: none;
-    margin-top: 18px;
-  }
-
-  .split__rule + .lead {
-    margin-top: 18px;
-  }
-
-  .reasons {
-    column-gap: 20px;
-    margin-top: 24px;
-  }
-
-  .reasons__item {
-    padding-top: 14px;
-    padding-bottom: 14px;
-    font-size: 18px;
-    line-height: 23px;
-  }
-
-  .reasons-summary {
-    margin-top: 32px;
-    padding-top: 22px;
-    font-size: 22px;
-    line-height: 28px;
-  }
-}
-
-/* =========================================================
-   Телефон: < 768 — всё столбиком, отступы 32, первый экран 24 / 32
-   ========================================================= */
-@media (max-width: 767.98px) {
-  .container {
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-
-  .section {
-    padding-top: 32px;
-    padding-bottom: 32px;
-  }
-
-  .section--navy + .section--navy .container {
-    padding-top: 32px;
-  }
-
-  .hero {
-    padding-top: 24px;
-    padding-bottom: 32px;
-  }
-
-  .hero__body {
-    grid-template-columns: minmax(0, 1fr);
-    row-gap: 24px;
-    margin-top: 20px;
-  }
-
-  .hero__title,
-  .hero__text {
-    max-width: none;
-  }
-
-  .hero__card {
-    width: 100%;
-    max-width: 300px;
-    justify-self: center;
-  }
-
-  .gallery,
-  .gallery--6 {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 20px;
-    margin-top: 24px;
-  }
-
-  .gallery__caption {
-    margin-top: 10px;
-  }
-
-  /* Шаги столбиком; в шаге картинка слева, текст справа — страница короче */
-  .steps,
-  .steps--4,
-  .steps--2 {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 20px;
-    margin-top: 20px;
-  }
-
-  .steps__item {
-    display: grid;
-    grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
-    column-gap: 16px;
-    align-items: center;
-  }
-
-  .steps__body {
-    margin-top: 0;
-  }
-
-  .steps__text {
-    margin-top: 6px;
-  }
-
-  .split {
-    grid-template-columns: minmax(0, 1fr);
-    row-gap: 24px;
-  }
-
-  .split__img {
-    max-width: 320px;
-    justify-self: center;
-  }
-
-  .reasons {
-    grid-template-columns: minmax(0, 1fr);
-    margin-top: 16px;
-    border-bottom: 1px solid var(--line);
-  }
-
-  .reasons__item {
-    grid-template-columns: 36px minmax(0, 1fr);
-    padding-top: 12px;
-    padding-bottom: 12px;
-    font-size: 16px;
-    line-height: 20px;
-  }
-
-  .reasons-summary {
-    margin-top: 24px;
-    padding-top: 18px;
-    border-top: 0;
-    font-size: 20px;
-    line-height: 25px;
-  }
-}
-
-/* =========================================================
-   Анимация — как на странице КТ: только transform и opacity.
-   ========================================================= */
-@keyframes card-in {
-  from {
-    opacity: 0;
-    transform: translateX(40px) scale(1.02);
-  }
-}
-
-.hero__card {
-  animation: card-in 0.5s var(--ease-out) 0.1s backwards;
-}
-
-.gallery__item,
-.steps__item {
-  position: relative;
-  transition: transform 0.25s var(--ease-out);
-}
-
-.gallery__item::before,
-.steps__item::before {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-  height: 8px;
-}
-
-.gallery__img,
-.steps__img {
-  transition: box-shadow 0.25s var(--ease-out);
-}
-
-@media (hover: hover) {
-  .gallery__item:hover,
-  .steps__item:hover {
-    transform: translateY(-5px);
-  }
-
-  .gallery__item:hover .gallery__img,
-  .steps__item:hover .steps__img {
-    box-shadow: var(--shadow-card);
-  }
-}
-
-/* Всплывание картинок при прокрутке (класс html.has-reveal ставит main.js) */
-.has-reveal .reveal {
-  opacity: 0;
-  transform: translateY(28px);
-}
-
-.has-reveal .reveal.is-in {
-  opacity: 1;
-  transform: none;
-  transition: opacity 0.7s var(--ease-float) var(--reveal-delay, 0s),
-    transform 0.7s var(--ease-float) var(--reveal-delay, 0s);
-}
-
-@media print {
-  .has-reveal .reveal {
-    opacity: 1;
-    transform: none;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .hero__card {
-    animation: none;
-  }
-
-  .has-reveal .reveal,
-  .has-reveal .reveal.is-in {
-    opacity: 1;
-    transform: none;
-    transition: none;
-  }
-
-  .has-logo-intro .logo {
-    transform: none;
-  }
-
-  .has-logo-intro .logo__stroke {
-    stroke-width: 36;
-    stroke-dasharray: none;
-    stroke-dashoffset: 0;
-  }
-
-  .has-logo-intro .logo__sheen {
-    display: none;
-  }
-
-  .has-logo-intro .logo__letter,
-  .has-logo-intro .logo__glyph {
-    opacity: 1;
-  }
-
-  .gallery__item,
-  .steps__item,
-  .gallery__img,
-  .steps__img {
-    transition: none;
-  }
-
-  .gallery__item:hover,
-  .steps__item:hover {
-    transform: none;
-  }
-}
-
-body { font-family: var(--font); font-size: 16px; }
-.draft-note { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; margin: 0; padding: 10px 16px; background: #EFDECD; color: #0E294B; font: 500 14px/1.3 var(--font); text-align: center; }
-</style>
-<script>
-/* Денталь профи — поведение страницы (редакция 4, §12 спеки). Без JS страница читается полностью.
-
-   1. Логотип первого экрана (G20) — прорисовка из logo-intro.html: тонкая светлая линия загорается
-      на вершине дуги, бежит по ней и по зубам, набирает фирменную толщину, по знаку проходит блик,
-      проявляются «Денталь Профи» и подпись. Один раз при загрузке; таймлайн заставки проигрывается
-      в SPEED раз быстрее — целиком за ≈ 2,4 с. Заголовок, текст и картинка первого экрана её не ждут.
-      Скрытое до прорисовки состояние включает класс html.has-logo-intro. Ставится он только здесь,
-      сразу при разборе <head> (скрипт подключён без defer — до первой отрисовки, иначе мелькнул бы
-      готовый знак), и только если анимация возможна: есть Web Animations API и «уменьшить движение»
-      выключено. После прорисовки класс снимается, анимации отменяются — остаётся статичная разметка,
-      она и есть последний кадр. Кнопок и клавиш заставки на странице нет.
-   2. Всплывание картинок при прокрутке (G27): только картинки и карточки без текста — из прозрачности
-      и на 28 px ниже на место за 0,7 с; соседи в ряду — по очереди, шаг 90 мс. Срабатывает, когда верх
-      картинки уже в экране (поднялся над нижними 4 % окна; со сдвигом 28 px — видно не больше половины
-      даже у маленькой картинки шага на телефоне), — всплывание видно, а не проходит за краем экрана.
-      Маршрут Москва — Нью-Йорк на картинке с самолётом (G30) прокладывается отдельно — когда на экране
-      уже ≥ 60 % картинки, то есть её верх с маршрутом виден целиком (класс .route.is-drawn, анимация — в CSS).
-      Текст (G23) виден сразу всегда. Скрытие включает класс html.has-reveal — тоже только здесь:
-      без JS, без IntersectionObserver и при «уменьшить движение» всё видно сразу.
-   3. Ролик «КТ в работе» в #planning (G22, таск F10): в разметке у <video> только кадр-заставка
-      (poster, preload="none"), адрес файла — в data-src. Когда блок подходит к экрану ближе ≈ 300 px,
-      адрес подставляется и ролик начинает грузиться; играет, пока блок виден, вне экрана — на паузе.
-      При «уменьшить движение» и в режиме экономии трафика (navigator.connection.saveData) адрес
-      не подставляется вовсе — остаётся заставка. Без JS — тоже заставка. */
-(function () {
-  'use strict';
-
-  var root = document.documentElement;
-  var reduce = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
-
-  /* ================= 1. Логотип ================= */
-
-  var LOGO_GATE = 'has-logo-intro';
-  var logoIntro = !reduce && typeof root.animate === 'function' && typeof Promise === 'function';
-  if (logoIntro) root.classList.add(LOGO_GATE);
-
-  /* Таймлайн заставки logo-intro.html, секунды от старта (без приглушения фона и «приземления»). */
-  var T = {
-    cam: 5.4,                    // медленное «отъезжание» 1.05 → 1
-    pen0: 0.5, pen: 2.45,        // тонкая линия прочерчивает знак
-    swell0: 2.75, swell: 1.3,    // линия набирает толщину
-    sheen0: 3.6, sheen: 1.4,     // блик по знаку
-    word: 3.2, wordStep: 0.06, wordDur: 1.4,
-    tag: 3.95, tagDur: 1.7       // подпись — последней: 3,95 + 1,7 = 5,65 с
-  };
-  var SPEED = 2.35;              // 5,65 с / 2,35 ≈ 2,4 с — не дольше ~2,5 с (§11)
-  var H = 70;                    // длина светящегося кончика, ед. viewBox
-  var FRAMES = 110;              // кадров на ход линии
-
-  /* Аналог CSS cubic-bezier() для расчёта движения линии по кадрам. */
-  function bezier(x1, y1, x2, y2) {
-    function cx(t) { return ((1 - 3 * x2 + 3 * x1) * t + (3 * x2 - 6 * x1)) * t * t + 3 * x1 * t; }
-    function cy(t) { return ((1 - 3 * y2 + 3 * y1) * t + (3 * y2 - 6 * y1)) * t * t + 3 * y1 * t; }
-    function dx(t) { return 3 * (1 - 3 * x2 + 3 * x1) * t * t + 2 * (3 * x2 - 6 * x1) * t + 3 * x1; }
-    return function (x) {
-      if (x <= 0) return 0;
-      if (x >= 1) return 1;
-      var t = x;
-      var i;
-      var d;
-      for (i = 0; i < 8; i++) {
-        d = dx(t);
-        if (Math.abs(d) < 1e-6) break;
-        t -= (cx(t) - x) / d;
-      }
-      if (!(t >= 0 && t <= 1) || Math.abs(cx(t) - x) > 1e-4) {
-        var lo = 0;
-        var hi = 1;
-        t = x;
-        for (i = 0; i < 40; i++) {
-          if (cx(t) < x) lo = t; else hi = t;
-          t = (lo + hi) / 2;
-        }
-      }
-      return cy(t);
-    };
-  }
-  // мягкий разгон и долгое плавное торможение у кончиков корней
-  var penEase = bezier(0.45, 0.05, 0.2, 1);
-
-  function ms(seconds) {
-    return Math.round(seconds * 1000 / SPEED);
-  }
-
-  function clamp(v) {
-    return v < 0 ? 0 : v > 1 ? 1 : v;
-  }
-
-  function startLogo() {
-    var logo = document.querySelector('.logo');
-    var anims = [];
-    var sparks = [];
-    var done = false;
-
-    // Всё доиграно (или что-то пошло не так): статичная разметка — и есть последний кадр.
-    function finish() {
-      if (done) return;
-      done = true;
-      root.classList.remove(LOGO_GATE);
-      anims.forEach(function (a) {
-        try { a.cancel(); } catch (e) { /* уже отменена */ }
-      });
-      sparks.forEach(function (el) {
-        el.style.removeProperty('stroke-dasharray');
-        if (!el.getAttribute('style')) el.removeAttribute('style');
-      });
-    }
-
-    function play(el, keyframes, options) {
-      if (!el) return;
-      options.fill = 'both';
-      anims.push(el.animate(keyframes, options));
-    }
-
-    if (!logo) {
-      finish();
-      return;
-    }
-
-    try {
-      // Шесть отрезков: дуга от вершины влево и вправо, затем каждый зуб — двумя половинами
-      // от стыка с дугой до кончика корня.
-      var ids = ['AL', 'AR', 'BR', 'BL', 'SR', 'SL'];
-      var line = {};
-      var head = {};
-      var len = {};
-      ids.forEach(function (k) {
-        line[k] = document.getElementById('dp' + k);
-        head[k] = document.getElementById('dp' + k + 'h');
-        len[k] = line[k].getTotalLength();
-        sparks.push(head[k]);
-      });
-
-      // --- сцена: композиция чуть-чуть «отъезжает», как камера ---
-      play(logo, [{ transform: 'scale(1.05)' }, { transform: 'scale(1)' }],
-        { delay: 0, duration: ms(T.cam), easing: 'cubic-bezier(.25,.55,.25,1)' });
-
-      // --- тонкая линия: все четыре ветки замыкаются в один момент; доли общего хода, когда дуга
-      // доходит до зубов, подобраны так, чтобы скорость линий была близкой ---
-      var uJ = len.AL / (len.AL + (len.BR + len.BL) / 2);
-      var uK = len.AR / (len.AR + (len.SR + len.SL) / 2);
-      var progress = {
-        AL: function (u) { return u / uJ; },
-        AR: function (u) { return u / uK; },
-        BR: function (u) { return (u - uJ) / (1 - uJ); },
-        BL: function (u) { return (u - uJ) / (1 - uJ); },
-        SR: function (u) { return (u - uK) / (1 - uK); },
-        SL: function (u) { return (u - uK) / (1 - uK); }
-      };
-      var offset = function (p) { return p <= 0 ? 1001 : 1000 * (1 - p); };   // при p=0 линии нет совсем
-      var headOffset = function (p, h) { return h + 1 - 1000 * p; };          // кончик: [1000p-h-1, 1000p-1]
-
-      ids.forEach(function (k) {
-        var h = H / len[k] * 1000;
-        var arc = k.charAt(0) === 'A';
-        head[k].style.strokeDasharray = h.toFixed(2) + ' 9000';
-        var lineFrames = [];
-        var headFrames = [];
-        for (var i = 0; i <= FRAMES; i++) {
-          var x = i / FRAMES;
-          var p = progress[k](penEase(x));
-          lineFrames.push({ offset: x, strokeDashoffset: offset(clamp(p)) });
-          // кончик дуги уходит за её конец и гаснет там, где начинаются ветки зуба
-          headFrames.push({ offset: x, strokeDashoffset: headOffset(arc ? Math.max(p, 0) : clamp(p), h) });
-        }
-        play(line[k], lineFrames, { delay: ms(T.pen0), duration: ms(T.pen), easing: 'linear' });
-        play(head[k], headFrames, { delay: ms(T.pen0), duration: ms(T.pen), easing: 'linear' });
-
-        // --- линия набирает толщину; клип держит точный контур логотипа ---
-        play(line[k], [
-          { strokeWidth: '5.5px', easing: 'cubic-bezier(.62,0,.3,1)' },
-          { strokeWidth: '31px', offset: 0.88 },
-          { strokeWidth: '36px' }
-        ], { delay: ms(T.swell0), duration: ms(T.swell), easing: 'linear' });
-      });
-
-      // светящиеся кончики: мягко загораются и гаснут, когда ветки сошлись
-      var headDur = T.pen + 0.55;
-      play(logo.querySelector('.logo__sparks'), [
-        { strokeOpacity: 0 },
-        { strokeOpacity: 1, offset: 0.3 / headDur },
-        { strokeOpacity: 1, offset: (T.pen - 0.12) / headDur },
-        { strokeOpacity: 0 }
-      ], { delay: ms(T.pen0), duration: ms(headDur), easing: 'linear' });
-
-      // --- блик по знаку, как свет по эмали ---
-      play(logo.querySelector('.logo__sweep'), [{ transform: 'translateX(-780px)' }, { transform: 'translateX(780px)' }],
-        { delay: ms(T.sheen0), duration: ms(T.sheen), easing: 'cubic-bezier(.45,.05,.3,1)' });
-
-      // --- «ДЕНТАЛЬ ПРОФИ»: буквы по очереди проявляются, чуть всплывая и сходясь к центру ---
-      var word = logo.querySelector('.logo__word');
-      var wordCenter = parseFloat(word.getAttribute('data-cx')) || 1005;
-      Array.prototype.forEach.call(word.querySelectorAll('.logo__letter'), function (el, k) {
-        var c = parseFloat(el.getAttribute('data-cx'));
-        var delay = ms(T.word + k * T.wordStep);
-        play(el, [
-          { transform: 'translate(' + ((c - wordCenter) * 0.045).toFixed(1) + 'px, 34px)' },
-          { transform: 'translate(0px, 0px)' }
-        ], { delay: delay, duration: ms(T.wordDur), easing: 'cubic-bezier(.2,.6,.25,1)' });
-        play(el, [{ opacity: 0 }, { opacity: 1 }],
-          { delay: delay, duration: ms(T.wordDur * 0.8), easing: 'cubic-bezier(.4,0,.3,1)' });
-      });
-
-      // --- подпись: буквы медленно сходятся к центру — трекинг сжимается ---
-      var motto = logo.querySelector('.logo__motto');
-      var mottoCenter = parseFloat(motto.getAttribute('data-cx')) || 1004;
-      Array.prototype.forEach.call(motto.querySelectorAll('.logo__glyph'), function (el) {
-        var c = parseFloat(el.getAttribute('data-cx'));
-        play(el, [
-          { transform: 'translateX(' + ((c - mottoCenter) * 0.12).toFixed(1) + 'px)' },
-          { transform: 'translateX(0px)' }
-        ], { delay: ms(T.tag), duration: ms(T.tagDur), easing: 'cubic-bezier(.2,.65,.25,1)' });
-        play(el, [{ opacity: 0 }, { opacity: 1 }],
-          { delay: ms(T.tag), duration: ms(T.tagDur * 0.75), easing: 'cubic-bezier(.4,0,.3,1)' });
-      });
-
-      Promise.all(anims.map(function (a) { return a.finished; })).then(finish, finish);
-      // страховка: что бы ни случилось с анимациями, через секунду после конца логотип виден целиком
-      window.setTimeout(finish, ms(T.tag + T.tagDur) + 1000);
-    } catch (e) {
-      finish();
-    }
-  }
-
-  /* ================= 2. Всплывание картинок при прокрутке ================= */
-
-  var TARGETS = '.gallery__img, .planning__card, .dose__media, .steps__img, .split__img';
-  var STEP = 90;          // мс между соседями в ряду
-  var MAX_STEPS = 3;      // дальше задержка не растёт: четвёртая картинка ряда — через 0,27 с
-  var DURATION = 700;     // мс — как переход .reveal.is-in в style.css
-  var ROUTE_SHOWN = 0.6;  // доля картинки с маршрутом в экране, с которой пунктир прокладывается
-
-  function startReveal() {
-    if (reduce || !('IntersectionObserver' in window)) return;
-    var targets = Array.prototype.slice.call(document.querySelectorAll(TARGETS));
-    if (!targets.length) return;
-
-    var order = new Map();
-    targets.forEach(function (el, index) {
-      order.set(el, index);
-      el.classList.add('reveal');
-    });
-    root.classList.add('has-reveal');
-
-    function show(el, delay) {
-      el.style.setProperty('--reveal-delay', delay + 'ms');
-      el.classList.add('is-in');
-      // После появления элемент возвращается к обычным стилям — наведение без задержки.
-      window.setTimeout(function () {
-        el.classList.remove('reveal', 'is-in');
-        el.style.removeProperty('--reveal-delay');
-        if (!el.getAttribute('style')) el.removeAttribute('style');
-      }, delay + DURATION + 50);
-    }
-
-    var observer = new IntersectionObserver(function (entries) {
-      var batch = entries
-        .filter(function (entry) { return entry.isIntersecting; })
-        .map(function (entry) { return entry.target; })
-        .sort(function (a, b) { return order.get(a) - order.get(b); });
-      // Картинки, вошедшие в зону вместе (ряд иллюстраций, шаги), — по очереди, в порядке страницы.
-      batch.forEach(function (el, index) {
-        observer.unobserve(el);
-        show(el, Math.min(index, MAX_STEPS) * STEP);
-      });
-    }, { rootMargin: '0px 0px -4% 0px', threshold: 0 });
-
-    targets.forEach(function (el) {
-      observer.observe(el);
-    });
-
-    // Маршрут — свой наблюдатель: прокладка начинается, только когда маршрут уже в кадре.
-    var routes = Array.prototype.slice.call(document.querySelectorAll('.route'));
-    var routeObserver = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        // доля на пороге бывает 0,5999… — небольшой допуск, иначе срабатывание теряется
-        if (entry.intersectionRatio < ROUTE_SHOWN - 0.02) return;
-        routeObserver.unobserve(entry.target);
-        entry.target.classList.add('is-drawn');
-      });
-    }, { threshold: ROUTE_SHOWN });
-    routes.forEach(function (el) {
-      routeObserver.observe(el);
-    });
-  }
-
-  /* ================= 3. Ролик в #planning ================= */
-
-  function saveData() {
-    var connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
-    return !!(connection && connection.saveData);
-  }
-
-  function startVideo() {
-    var video = document.querySelector('.planning__video');
-    if (!video) return;
-    var src = video.getAttribute('data-src');
-    // Ролик — украшение: без него остаётся заставка, а трафик и движение пациента важнее.
-    if (!src || reduce || saveData() || !('IntersectionObserver' in window)) return;
-
-    var loaded = false;
-    var visible = false;
-    video.muted = true;   // свойство, а не только атрибут: без звука браузер разрешает автозапуск
-
-    function update() {
-      if (!loaded) return;
-      if (visible) {
-        var playing = video.play();
-        // Автозапуск может быть запрещён (например, режим энергосбережения iOS) — тогда видна заставка.
-        if (playing && typeof playing.catch === 'function') playing.catch(function () { return null; });
-      } else {
-        video.pause();
-      }
-    }
-
-    // Загрузка — заранее, когда блок ближе ≈ 300 px к экрану; один раз.
-    var loader = new IntersectionObserver(function (entries) {
-      if (!entries.some(function (entry) { return entry.isIntersecting; })) return;
-      loader.disconnect();
-      loaded = true;
-      video.preload = 'auto';
-      video.src = src;
-      video.load();
-      update();
-    }, { rootMargin: '300px 0px 300px 0px' });
-
-    // Воспроизведение — пока хоть часть ролика на экране.
-    var player = new IntersectionObserver(function (entries) {
-      visible = entries[entries.length - 1].isIntersecting;
-      update();
-    });
-
-    loader.observe(video);
-    player.observe(video);
-  }
-
-  /* ================= Запуск ================= */
-
-  function ready(fn) {
-    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', fn);
-    else fn();
-  }
-
-  ready(function () {
-    if (logoIntro) startLogo();
-    startReveal();
-    startVideo();
-  });
-})();
-
-</script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Правила ежедневного ухода за зубами | Денталь профи</title>
+  <meta name="description" content="Потратьте всего несколько минут, чтобы узнать, как сохранить здоровье зубов и результат лечения на долгие годы.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Правила ежедневного ухода за зубами | Денталь профи">
+  <meta property="og:description" content="Потратьте всего несколько минут, чтобы узнать, как сохранить здоровье зубов и результат лечения на долгие годы.">
+  <meta property="og:url" content="https://zvsvetlana171-create.github.io/marshrut/gigiena/">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:image" content="https://zvsvetlana171-create.github.io/marshrut/gigiena/assets/img/og-preview.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="data:,">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/main.js"></script>
 </head>
 <body>
-<p class="draft-note">Черновик: структура и тексты. Серые квадраты — места иллюстраций из макета (заменю, когда получу экспорт из Figma).</p>
-<main>
+  <main>
     <!-- 1. Первый экран -->
     <section class="hero" id="top">
       <div class="container hero__inner">
         <header class="hero__header">
           <!-- Логотип «Денталь Профи» — знак, надпись и подпись из logo-intro.html (векторные контуры) -->
-          <div class="logo" role="img" aria-label="Денталь Профи — центр восстановления улыбок">
+          <div class="logo" role="img" aria-label="Денталь Профи, центр восстановления улыбок">
             <svg class="logo__mark" viewBox="568.6 -13.4 876.3 889.7" aria-hidden="true" focusable="false">
               <defs>
                 <clipPath id="dpCB"><path d="M718.36 29.32C669.5 29.32 630.93 42.95 617.94 87.25C600.82 158.12 640.92 351.29 810.89 660.21C861.41 747.05 913.43 792.52 961.36 791.42C1002.66 790.45 1042.02 754.58 1078.33 684.8C1123.28 602.32 1163.38 502.03 1183.09 422.8L1183.4 421.55C1199.38 354.43 1213.73 257.23 1153.86 189.59C1128.04 161.1 1088.57 138.93 1037.27 114.43C970.23 83.13 896.87 58.23 825.25 42.46L824.46 42.32C787.55 35.29 750.7 29.32 718.36 29.32ZM959.67 820.6C901.28 820.6 841.12 770.18 785.52 674.57C759.25 626.84 693.14 502.2 643.06 369.61C593.14 237.45 575.22 139.92 589.78 79.73C620.81 -26.14 751.72 -1.21 829.92 13.68L831.11 13.9C905.2 30.21 980.66 55.82 1049.73 88.06C1104.25 114.09 1146.45 137.99 1175.59 170.14C1244.57 248.07 1229.25 354.86 1211.74 428.41L1211.41 429.76C1211.41 429.77 1211.41 429.79 1211.4 429.8C1191.12 511.27 1150 614.23 1104.07 698.51C1062.6 778.19 1014.78 819.34 962.04 820.57C961.25 820.59 960.46 820.6 959.67 820.6Z"/></clipPath>
@@ -1250,275 +134,393 @@ body { font-family: var(--font); font-size: 16px; }
             </svg>
           </div>
         </header>
+
         <div class="hero__body">
           <div class="hero__content">
             <h1 class="hero__title">Правила ежедневного ухода за&nbsp;зубами</h1>
             <p class="hero__text">Потратьте всего несколько минут, чтобы узнать, как сохранить здоровье зубов и&nbsp;результат лечения на&nbsp;долгие годы.</p>
           </div>
           <div class="hero__card">
-            <img class="hero__img" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5NjAiIGhlaWdodD0iODgwIiB2aWV3Qm94PSIwIDAgOTYwIDg4MCI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iIzEwMWIyOSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmaWxsPSIjZjRmOGZjIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iNDMiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiPtGE0L7RgtC+OiDRidGR0YLQutCwINGBINC/0LDRgdGC0L7QuTwvdGV4dD48L3N2Zz4=" width="480" height="440" alt="Зубная щётка с пастой" decoding="async">
+            <img class="hero__img" src="assets/img/hero-kit.png" width="386" height="356" alt="Набор средств для домашнего ухода: электрическая щётка, ополаскиватель, зубная нить, щётка, ирригатор, паста" decoding="async">
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 2. Что понадобится -->
-    <section class="section section--white" id="kit">
+    <!-- 2. Главное правило -->
+    <section class="section section--white" id="basics">
       <div class="container">
-        <h2 class="h2">Что понадобится для правильной домашней гигиены</h2>
+        <h2 class="h2">Главное правило ежедневного ухода</h2>
+        <ul class="facts">
+          <li class="facts__item">
+            <p class="facts__value"><span class="nowrap">2&nbsp;раза</span> в&nbsp;день</p>
+            <p class="facts__text">Чистите зубы утром и&nbsp;вечером перед сном.</p>
+          </li>
+          <li class="facts__item">
+            <p class="facts__value"><span class="nowrap">2&nbsp;минуты</span></p>
+            <p class="facts__text">Примерно столько длится одна чистка, чтобы очистить все зубы.</p>
+          </li>
+          <li class="facts__item">
+            <p class="facts__value"><span class="nowrap">1350–1500&nbsp;ppm</span></p>
+            <p class="facts__text">Столько фтора должно быть в&nbsp;пасте для&nbsp;взрослых, если врач не&nbsp;назначил другую.</p>
+          </li>
+          <li class="facts__item">
+            <p class="facts__value"><span class="nowrap">1&nbsp;раз</span> в&nbsp;день</p>
+            <p class="facts__text">Очищайте межзубные промежутки нитью, ёршиками или&nbsp;другим средством, которое подобрал врач или&nbsp;гигиенист.</p>
+          </li>
+        </ul>
+        <p class="tip tip--wide">
+          <svg class="tip__icon" viewBox="0 0 32 32" width="32" height="32" aria-hidden="true"><path d="M16 4c4.5 6 8 10.2 8 14.5A8 8 0 0 1 8 18.5C8 14.2 11.5 10 16 4Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M5 27l22-22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          <span>После чистки сплюньте пасту, но&nbsp;не&nbsp;полощите рот водой: так фтор дольше остаётся на&nbsp;зубах и&nbsp;лучше их&nbsp;защищает.</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- 3. Что понадобится -->
+    <section class="section section--gray" id="kit">
+      <div class="container">
+        <h2 class="h2">Что понадобится для домашней гигиены</h2>
+        <p class="lead">Каждый день нужны зубная щётка, паста с&nbsp;фтором и&nbsp;средство для&nbsp;межзубных промежутков. Какое средство подойдёт именно вам (нить, ёршики подходящего размера или&nbsp;другое), подскажет врач или&nbsp;гигиенист. Ирригатор и&nbsp;щётку для&nbsp;языка используют дополнительно.</p>
         <div class="gallery">
           <figure class="gallery__item">
-            <img class="gallery__img" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3NzIiIGhlaWdodD0iNzEyIiB2aWV3Qm94PSIwIDAgNzcyIDcxMiI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2U1ZTllZSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmaWxsPSIjMGUyOTRiIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMzQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiPtC40LvQu9GO0YHRgtGA0LDRhtC40Y8ga2l0LWJydXNoPC90ZXh0Pjwvc3ZnPg==" width="386" height="356" alt="Зубная щётка" loading="lazy" decoding="async">
-            <figcaption class="gallery__caption">Зубная щётка<span class="gallery__note">электрическая или обычная с&nbsp;мягкой щетиной</span></figcaption>
+            <img class="gallery__img" src="assets/img/kit-brush.jpg" width="386" height="558" alt="Зубная щётка" loading="lazy" decoding="async">
+            <figcaption class="gallery__label">Зубная щётка<small>электрическая или&nbsp;обычная с&nbsp;мягкой щетиной</small></figcaption>
           </figure>
           <figure class="gallery__item">
-            <img class="gallery__img" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3NzIiIGhlaWdodD0iNzEyIiB2aWV3Qm94PSIwIDAgNzcyIDcxMiI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2U1ZTllZSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmaWxsPSIjMGUyOTRiIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMzQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiPtC40LvQu9GO0YHRgtGA0LDRhtC40Y8ga2l0LWZsb3NzPC90ZXh0Pjwvc3ZnPg==" width="386" height="356" alt="Зубная нить" loading="lazy" decoding="async">
-            <figcaption class="gallery__caption">Зубная нить</figcaption>
+            <img class="gallery__img" src="assets/img/kit-floss.jpg" width="386" height="558" alt="Зубная нить" loading="lazy" decoding="async">
+            <figcaption class="gallery__label">Нить или&nbsp;ёршики<small>средство подберёт врач или&nbsp;гигиенист</small></figcaption>
           </figure>
           <figure class="gallery__item">
-            <img class="gallery__img" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3NzIiIGhlaWdodD0iNzEyIiB2aWV3Qm94PSIwIDAgNzcyIDcxMiI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2U1ZTllZSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmaWxsPSIjMGUyOTRiIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMzQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiPtC40LvQu9GO0YHRgtGA0LDRhtC40Y8ga2l0LWlycmlnYXRvcjwvdGV4dD48L3N2Zz4=" width="386" height="356" alt="Ирригатор" loading="lazy" decoding="async">
-            <figcaption class="gallery__caption">Ирригатор</figcaption>
+            <img class="gallery__img" src="assets/img/kit-irrigator.jpg" width="386" height="558" alt="Ирригатор" loading="lazy" decoding="async">
+            <figcaption class="gallery__label">Ирригатор<small>дополнительно, по&nbsp;рекомендации врача</small></figcaption>
           </figure>
           <figure class="gallery__item">
-            <img class="gallery__img" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3NzIiIGhlaWdodD0iNzEyIiB2aWV3Qm94PSIwIDAgNzcyIDcxMiI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2U1ZTllZSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmaWxsPSIjMGUyOTRiIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMzQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiPtC40LvQu9GO0YHRgtGA0LDRhtC40Y8ga2l0LXRvbmd1ZTwvdGV4dD48L3N2Zz4=" width="386" height="356" alt="Щётка для языка" loading="lazy" decoding="async">
-            <figcaption class="gallery__caption">Щётка для языка</figcaption>
+            <img class="gallery__img" src="assets/img/kit-tongue.jpg" width="386" height="558" alt="Щётка для языка" loading="lazy" decoding="async">
+            <figcaption class="gallery__label">Щётка для&nbsp;языка<small>дополнительно</small></figcaption>
           </figure>
         </div>
       </div>
     </section>
 
-    <!-- 3. Последовательность домашней гигиены -->
-    <section class="section section--gray" id="order">
+    <!-- 4. Последовательность и инструкции (раскрывающиеся блоки 01–04) -->
+    <section class="section section--white" id="order">
       <div class="container">
-        <h2 class="h2">Правильная последовательность домашней гигиены</h2>
-        <p class="lead">На&nbsp;каждом зубе задерживать щётку <span class="nowrap">2–3</span>&nbsp;секунды.</p>
-        <ol class="steps steps--4">
-          <li class="steps__item">
-            <img class="steps__img" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3NzIiIGhlaWdodD0iNzEyIiB2aWV3Qm94PSIwIDAgNzcyIDcxMiI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2U1ZTllZSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmaWxsPSIjMGUyOTRiIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMzQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiPtC40LvQu9GO0YHRgtGA0LDRhtC40Y8gb3JkZXItMTwvdGV4dD48L3N2Zz4=" width="386" height="356" alt="Чистка зубов электрической щёткой" loading="lazy" decoding="async">
-            <div class="steps__body">
-              <h3 class="steps__title">Шаг&nbsp;1</h3>
-              <p class="steps__text">Чистка зубов электрической щёткой.</p>
-            </div>
+        <h2 class="h2">Последовательность домашней гигиены</h2>
+        <ol class="seq">
+          <li class="seq__item">
+            <img class="seq__img" src="assets/img/seq-1.jpg" width="136" height="136" alt="" loading="lazy" decoding="async">
+            <span class="seq__num">01</span>
+            <p class="seq__title">Чистка зубов</p>
+            <p class="seq__text">щёткой и&nbsp;пастой с&nbsp;фтором, <span class="nowrap">2&nbsp;раза</span> в&nbsp;день</p>
           </li>
-          <li class="steps__item">
-            <img class="steps__img" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3NzIiIGhlaWdodD0iNzEyIiB2aWV3Qm94PSIwIDAgNzcyIDcxMiI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2U1ZTllZSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmaWxsPSIjMGUyOTRiIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMzQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiPtC40LvQu9GO0YHRgtGA0LDRhtC40Y8gb3JkZXItMjwvdGV4dD48L3N2Zz4=" width="386" height="356" alt="Очистка межзубных промежутков зубной нитью" loading="lazy" decoding="async">
-            <div class="steps__body">
-              <h3 class="steps__title">Шаг&nbsp;2</h3>
-              <p class="steps__text">Очистка межзубных промежутков зубной нитью.</p>
-            </div>
+          <li class="seq__item">
+            <img class="seq__img" src="assets/img/seq-2.jpg" width="136" height="136" alt="" loading="lazy" decoding="async">
+            <span class="seq__num">02</span>
+            <p class="seq__title">Межзубные промежутки</p>
+            <p class="seq__text">нитью или&nbsp;ёршиками, <span class="nowrap">1&nbsp;раз</span> в&nbsp;день</p>
           </li>
-          <li class="steps__item">
-            <img class="steps__img" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3NzIiIGhlaWdodD0iNzEyIiB2aWV3Qm94PSIwIDAgNzcyIDcxMiI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2U1ZTllZSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmaWxsPSIjMGUyOTRiIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMzQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiPtC40LvQu9GO0YHRgtGA0LDRhtC40Y8gb3JkZXItMzwvdGV4dD48L3N2Zz4=" width="386" height="356" alt="Очистка ирригатором" loading="lazy" decoding="async">
-            <div class="steps__body">
-              <h3 class="steps__title">Шаг&nbsp;3</h3>
-              <p class="steps__text">Очистка ирригатором.</p>
-            </div>
+          <li class="seq__item seq__item--extra">
+            <img class="seq__img" src="assets/img/seq-3.jpg" width="136" height="136" alt="" loading="lazy" decoding="async">
+            <span class="seq__num">03</span>
+            <p class="seq__title">Ирригатор</p>
+            <p class="seq__text">дополнительно, если рекомендовал врач</p>
           </li>
-          <li class="steps__item">
-            <img class="steps__img" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3NzIiIGhlaWdodD0iNzEyIiB2aWV3Qm94PSIwIDAgNzcyIDcxMiI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2U1ZTllZSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmaWxsPSIjMGUyOTRiIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMzQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiPtC40LvQu9GO0YHRgtGA0LDRhtC40Y8gb3JkZXItNDwvdGV4dD48L3N2Zz4=" width="386" height="356" alt="Очистка языка" loading="lazy" decoding="async">
-            <div class="steps__body">
-              <h3 class="steps__title">Шаг&nbsp;4</h3>
-              <p class="steps__text">Очистка языка.</p>
-            </div>
+          <li class="seq__item seq__item--extra">
+            <img class="seq__img" src="assets/img/seq-4.jpg" width="136" height="136" alt="" loading="lazy" decoding="async">
+            <span class="seq__num">04</span>
+            <p class="seq__title">Очистка языка</p>
+            <p class="seq__text">дополнительно</p>
           </li>
+        </ol>
+        <div class="accs">
+        <details class="acc" id="brushing" open>
+          <summary class="acc__head">
+            <span class="acc__titles">
+              <span class="acc__num">01</span>
+              <h2 class="h2 acc__title">Как правильно чистить зубы</h2>
+              <span class="acc__why">У&nbsp;каждого зуба пять поверхностей. Щётка очищает три из&nbsp;них: наружную, жевательную и&nbsp;заднюю. Техника зависит от&nbsp;типа щётки.</span>
+            
+              <span class="acc__peek" aria-hidden="true"><img class="acc__thumb" src="assets/img/brush-1.jpg" width="96" height="89" alt="" loading="lazy" decoding="async"><img class="acc__thumb" src="assets/img/brush-2.jpg" width="96" height="89" alt="" loading="lazy" decoding="async"><img class="acc__thumb" src="assets/img/brush-3.jpg" width="96" height="89" alt="" loading="lazy" decoding="async"><img class="acc__thumb" src="assets/img/brush-4.jpg" width="96" height="89" alt="" loading="lazy" decoding="async"><span class="acc__more">Смотреть инструкцию<span class="acc__chev"></span></span></span>
+              <span class="acc__less">Свернуть<span class="acc__chev"></span></span>
+            </span>
+            
+          </summary>
+          <div class="acc__body">
+            <div class="tabs">
+              <input class="tabs__radio tabs__radio--1" type="radio" name="dphg-brush" id="dphg-brush-el" checked>
+              <input class="tabs__radio tabs__radio--2" type="radio" name="dphg-brush" id="dphg-brush-man">
+              <div class="tabs__bar">
+                <label class="tabs__tab tabs__tab--1" for="dphg-brush-el">Электрическая щётка</label>
+                <label class="tabs__tab tabs__tab--2" for="dphg-brush-man">Обычная щётка</label>
+              </div>
+              <div class="tabs__panel tabs__panel--1">
+            <ol class="steps steps--4">
+              <li class="steps__item">
+                <img class="steps__img" src="assets/img/brush-1.jpg" width="386" height="357" alt="Головка электрической щётки у наружной поверхности зубов" loading="lazy" decoding="async">
+                <div class="steps__body">
+                  <h3 class="steps__title">1. Приложите головку к&nbsp;зубу у&nbsp;края десны и&nbsp;медленно ведите её от&nbsp;зуба к&nbsp;зубу</h3>
+                <p class="steps__text">Задерживайтесь на&nbsp;каждом зубе на&nbsp;<span class="nowrap">2–3&nbsp;секунды</span>. Не&nbsp;трите и&nbsp;не&nbsp;давите: щётка делает чистящие движения сама.</p>
+                </div>
+              </li>
+              <li class="steps__item">
+                <img class="steps__img" src="assets/img/brush-2.jpg" width="386" height="357" alt="Щётка на жевательной поверхности коренных зубов" loading="lazy" decoding="async">
+                <div class="steps__body">
+                  <h3 class="steps__title">2. Так же&nbsp;пройдите жевательные поверхности всех коренных зубов</h3>
+                </div>
+              </li>
+              <li class="steps__item">
+                <img class="steps__img" src="assets/img/brush-3.jpg" width="386" height="357" alt="Щётка у задней поверхности зубов" loading="lazy" decoding="async">
+                <div class="steps__body">
+                  <h3 class="steps__title">3. Затем очистите задние поверхности зубов со&nbsp;стороны языка и&nbsp;нёба</h3>
+                </div>
+              </li>
+              <li class="steps__item">
+                <img class="steps__img" src="assets/img/brush-4.jpg" width="386" height="357" alt="Пять поверхностей зуба: наружная, жевательная, две боковые, задняя" loading="lazy" decoding="async">
+                <div class="steps__body">
+                  <h3 class="steps__title">4. Боковые поверхности между зубами щётка не&nbsp;очищает</h3>
+                <p class="steps__text">Для&nbsp;них нужны нить или&nbsp;ёршики, о&nbsp;них в&nbsp;следующем блоке.</p>
+                </div>
+              </li>
+            </ol>
+              </div>
+              <div class="tabs__panel tabs__panel--2">
+            <div class="method">
+              <img class="method__img" src="assets/img/brush-manual.jpg" width="386" height="357" alt="Схема: щётка прилегает к краю десны под углом 45°, стрелка показывает выметающее движение от десны к краю зуба" loading="lazy" decoding="async">
+              <ol class="method__list">
+                <li class="method__item">
+                  <h3 class="steps__title">1. Поставьте щётку под углом 45° к&nbsp;краю десны</h3>
+                  <p class="steps__text">Щетина касается и&nbsp;зуба, и&nbsp;десны.</p>
+                </li>
+                <li class="method__item">
+                  <h3 class="steps__title">2. Сделайте несколько коротких мягких движений, затем выметающее движение от&nbsp;десны к&nbsp;краю зуба</h3>
+                  <p class="steps__text">По&nbsp;<span class="nowrap">1–2&nbsp;зуба</span> за&nbsp;раз, без&nbsp;сильного нажима.</p>
+                </li>
+                <li class="method__item">
+                  <h3 class="steps__title">3. Пройдите наружные, задние и&nbsp;жевательные поверхности всех зубов</h3>
+                  <p class="steps__text">Задние поверхности передних зубов удобнее чистить, держа щётку вертикально.</p>
+                </li>
+                <li class="method__item">
+                  <h3 class="steps__title">4. Боковые поверхности между зубами очистите нитью или&nbsp;ёршиками</h3>
+                  <p class="steps__text">Щётка до&nbsp;них не&nbsp;достаёт.</p>
+                </li>
+              </ol>
+            </div>
+              </div>
+            </div>
+          </div>
+        </details>
+
+        <details class="acc" id="floss">
+          <summary class="acc__head">
+            <span class="acc__titles">
+              <span class="acc__num">02</span>
+              <h2 class="h2 acc__title">Как очищать межзубные промежутки</h2>
+              <span class="acc__why">Щётка не&nbsp;достаёт до&nbsp;боковых поверхностей зубов, а&nbsp;именно там чаще всего начинаются кариес и&nbsp;воспаление дёсен. Средство подбирает врач или&nbsp;гигиенист: нить, ёршики подходящего размера или&nbsp;другие средства.</span>
+            
+              <span class="acc__peek" aria-hidden="true"><img class="acc__thumb" src="assets/img/floss-1.jpg" width="96" height="89" alt="" loading="lazy" decoding="async"><img class="acc__thumb" src="assets/img/floss-3.jpg" width="96" height="89" alt="" loading="lazy" decoding="async"><img class="acc__thumb" src="assets/img/floss-c.jpg" width="96" height="89" alt="" loading="lazy" decoding="async"><img class="acc__thumb" src="assets/img/interdental.jpg" width="96" height="89" alt="" loading="lazy" decoding="async"><span class="acc__more">Смотреть инструкцию<span class="acc__chev"></span></span></span>
+              <span class="acc__less">Свернуть<span class="acc__chev"></span></span>
+            </span>
+            
+          </summary>
+          <div class="acc__body">
+            <h3 class="subhead subhead--first">Зубная нить</h3>
+            <ol class="steps steps--4">
+              <li class="steps__item">
+                <img class="steps__img" src="assets/img/floss-1.jpg" width="386" height="357" alt="Нить обёрнута вокруг средних пальцев" loading="lazy" decoding="async">
+                <div class="steps__body">
+                  <h3 class="steps__title">1. Оберните <span class="nowrap">40–50&nbsp;см</span> нити вокруг средних пальцев</h3>
+                </div>
+              </li>
+              <li class="steps__item">
+                <img class="steps__img" src="assets/img/floss-2.jpg" width="386" height="357" alt="Короткий участок нити между большими и указательными пальцами" loading="lazy" decoding="async">
+                <div class="steps__body">
+                  <h3 class="steps__title">2. Удерживайте короткий участок между большими и&nbsp;указательными пальцами</h3>
+                <p class="steps__text">Рабочий участок нити около <span class="nowrap">3–4&nbsp;см</span>.</p>
+                </div>
+              </li>
+              <li class="steps__item">
+                <img class="steps__img" src="assets/img/floss-3.jpg" width="386" height="357" alt="Нить вводится между зубами" loading="lazy" decoding="async">
+                <div class="steps__body">
+                  <h3 class="steps__title">3. Вводите нить между зубами лёгким пилящим движением</h3>
+                <p class="steps__text">Не&nbsp;вдавливайте нить резко в&nbsp;десну.</p>
+                </div>
+              </li>
+              <li class="steps__item">
+                <img class="steps__img" src="assets/img/floss-c.jpg" width="386" height="357" alt="Схема, вид сверху: нить огибает боковую поверхность зуба буквой С" loading="lazy" decoding="async">
+                <div class="steps__body">
+                  <h3 class="steps__title">4. Обогните нитью зуб буквой «С» и&nbsp;несколько раз проведите вверх-вниз</h3>
+                <p class="steps__text">Нить слегка заходит под край десны. Затем так же&nbsp;очистите соседний зуб, а&nbsp;для&nbsp;следующего промежутка возьмите чистый участок нити. На&nbsp;схеме вид сверху.</p>
+                </div>
+              </li>
+            </ol>
+            <p class="tip tip--wide tip--after">
+              <svg class="tip__icon tip__icon--tooth" viewBox="66 25 116 158" width="26" height="36" aria-hidden="true"><path d="M166.545 87.3101C163.509 95.7423 159.86 100.996 158.551 110.816C158.262 112.972 158.084 115.35 158.053 118.028C157.726 145.053 154.383 156.583 149.188 165.29C149.063 165.502 148.927 165.707 148.784 165.905C143.294 173.586 138.701 175.13 135.592 166.608C135.199 165.526 135.021 164.379 135.056 163.228C135.488 149.552 133.642 136.725 128.228 125.226C127.863 124.45 127.382 123.73 126.801 123.097C123.458 119.45 120.593 119.686 118.17 123.515C117.922 123.908 117.71 124.325 117.526 124.753C112.759 135.96 111.21 149.107 111.046 163.089C111.039 163.725 110.969 164.361 110.827 164.98C109.5 170.728 106.955 173.225 102.93 171.761C101.262 171.156 99.8384 170.008 98.8182 168.558C91.4579 158.092 88.2651 146.419 87.8961 133.925C87.8856 133.533 87.903 133.143 87.9413 132.75C88.5088 126.797 88.2477 118.379 86.7297 110.152C85.9463 105.889 84.8252 101.681 83.3071 97.8912C75.8145 79.1734 74.1467 70.7342 75.9294 57.2149C75.9955 56.6967 76.1104 56.1786 76.2706 55.6814C81.9632 38.0102 93.7523 32.6588 111.036 38.4171C119.165 40.6842 126.888 41.5918 133.385 38.4171C142.009 34.46 149.881 34.38 156.987 38.2224C157.228 38.351 157.461 38.4901 157.687 38.6396C174.023 49.4398 173.494 68.0081 166.545 87.3101Z" fill="none" stroke="currentColor" stroke-width="8" stroke-linejoin="round"/><path d="M150.034 47.4857C145.226 47.1762 140.602 48.0594 136.1 49.725C134.078 50.4726 132.17 51.4845 130.335 52.6145C124.931 55.9388 119.312 55.4172 113.483 51.3071C110.562 49.2451 107.202 47.8508 103.644 47.5031C99.2672 47.0754 95.6219 48.1776 92.5789 50.5282" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round"/></svg>
+              <span>Так пройдите нитью все межзубные промежутки. При&nbsp;полном зубном ряде без&nbsp;зубов мудрости их&nbsp;<b>26</b>: по&nbsp;13 на&nbsp;верхней и&nbsp;нижней челюсти.</span>
+            </p>
+            <h3 class="subhead subhead--block">Межзубные ёршики</h3>
+            <div class="method">
+              <img class="method__img" src="assets/img/interdental.jpg" width="386" height="357" alt="Межзубный ёршик введён в промежуток между зубами у края десны, стрелка показывает движение вперёд-назад" loading="lazy" decoding="async">
+              <ol class="method__list">
+                <li class="method__item">
+                  <h3 class="steps__title">1. Подберите размер вместе с&nbsp;врачом или&nbsp;гигиенистом</h3>
+                  <p class="steps__text">Для&nbsp;разных промежутков он&nbsp;может быть разным.</p>
+                </li>
+                <li class="method__item">
+                  <h3 class="steps__title">2. Вводите ёршик у&nbsp;края десны без&nbsp;усилия</h3>
+                  <p class="steps__text">Несколько раз проведите им&nbsp;вперёд-назад.</p>
+                </li>
+                <li class="method__item">
+                  <h3 class="steps__title">3. Если ёршик входит с&nbsp;трудом, не&nbsp;проталкивайте его</h3>
+                  <p class="steps__text">Нужен размер меньше.</p>
+                </li>
+              </ol>
+            </div>
+          </div>
+        </details>
+
+        <details class="acc" id="irrigator">
+          <summary class="acc__head">
+            <span class="acc__titles">
+              <span class="acc__num">03<span class="badge">дополнительно</span></span>
+              <h2 class="h2 acc__title">Как пользоваться ирригатором</h2>
+              <span class="acc__why">Ирригатор не&nbsp;обязателен. Врач может рекомендовать его, например, при&nbsp;брекетах, имплантах или&nbsp;мостовидных протезах. Он дополняет щётку и&nbsp;средства для&nbsp;межзубных промежутков, но&nbsp;не&nbsp;заменяет их.</span>
+            
+              <span class="acc__peek" aria-hidden="true"><img class="acc__thumb" src="assets/img/irrig-1.jpg" width="96" height="89" alt="" loading="lazy" decoding="async"><img class="acc__thumb" src="assets/img/irrig-2.jpg" width="96" height="89" alt="" loading="lazy" decoding="async"><img class="acc__thumb" src="assets/img/irrig-3.jpg" width="96" height="89" alt="" loading="lazy" decoding="async"><span class="acc__more">Смотреть инструкцию<span class="acc__chev"></span></span></span>
+              <span class="acc__less">Свернуть<span class="acc__chev"></span></span>
+            </span>
+            
+          </summary>
+          <div class="acc__body">
+            <ol class="steps">
+              <li class="steps__item">
+                <img class="steps__img" src="assets/img/irrig-1.jpg" width="386" height="357" alt="Ирригатор наполняют водой" loading="lazy" decoding="async">
+                <div class="steps__body">
+                  <h3 class="steps__title">1. Наполните ирригатор чистой водой</h3>
+                </div>
+              </li>
+              <li class="steps__item">
+                <img class="steps__img" src="assets/img/irrig-2.jpg" width="386" height="357" alt="Наконечник ирригатора у десневого края" loading="lazy" decoding="async">
+                <div class="steps__body">
+                  <h3 class="steps__title">2. Расположите наконечник перпендикулярно десневому краю</h3>
+                <p class="steps__text">Обрабатывайте его и&nbsp;межзубные пространства.</p>
+                </div>
+              </li>
+              <li class="steps__item">
+                <img class="steps__img" src="assets/img/irrig-3.jpg" width="386" height="357" alt="Ирригатор у задней поверхности зубов" loading="lazy" decoding="async">
+                <div class="steps__body">
+                  <h3 class="steps__title">3. Перейдите к&nbsp;задней поверхности</h3>
+                <p class="steps__text">Обрабатывайте каждый промежуток <span class="nowrap">1–2&nbsp;секунды</span>.</p>
+                </div>
+              </li>
+            </ol>
+            <div class="note note--steps">
+              <h3 class="note__title">Чтобы вода не&nbsp;разлеталась, работайте с&nbsp;закрытым ртом</h3>
+              <ol class="mini">
+                <li class="mini__item"><span class="mini__num">1</span><p>Наклонитесь над раковиной и&nbsp;вставьте наконечник в&nbsp;рот.</p></li>
+                <li class="mini__item"><span class="mini__num">2</span><p>Сомкните губы вокруг наконечника и&nbsp;только после этого включите ирригатор. Не&nbsp;открывайте рот, пока он&nbsp;работает.</p></li>
+                <li class="mini__item"><span class="mini__num">3</span><p>Когда во&nbsp;рту наберётся вода, выключите ирригатор, сплюньте и&nbsp;продолжайте с&nbsp;того&nbsp;же места.</p></li>
+              </ol>
+              <p class="note__small">На&nbsp;рисунках выше рот открыт только для&nbsp;того, чтобы было видно, куда направлять наконечник.</p>
+            </div>
+          </div>
+        </details>
+
+        <details class="acc" id="tongue">
+          <summary class="acc__head">
+            <span class="acc__titles">
+              <span class="acc__num">04<span class="badge">дополнительно</span></span>
+              <h2 class="h2 acc__title">Как пользоваться щёткой для&nbsp;языка</h2>
+              <span class="acc__why">На&nbsp;языке скапливаются бактерии и&nbsp;налёт. Это&nbsp;одна из&nbsp;частых причин неприятного запаха изо рта.</span>
+            
+              <span class="acc__peek" aria-hidden="true"><img class="acc__thumb" src="assets/img/tongue-1.jpg" width="96" height="89" alt="" loading="lazy" decoding="async"><img class="acc__thumb" src="assets/img/tongue-2.jpg" width="96" height="89" alt="" loading="lazy" decoding="async"><span class="acc__more">Смотреть инструкцию<span class="acc__chev"></span></span></span>
+              <span class="acc__less">Свернуть<span class="acc__chev"></span></span>
+            </span>
+            
+          </summary>
+          <div class="acc__body">
+            <ol class="steps steps--2">
+              <li class="steps__item">
+                <img class="steps__img" src="assets/img/tongue-1.jpg" width="386" height="357" alt="Щётка для очистки языка в руке" loading="lazy" decoding="async">
+                <div class="steps__body">
+                  <h3 class="steps__title">1. Возьмите специальную щётку для&nbsp;очистки языка</h3>
+                </div>
+              </li>
+              <li class="steps__item">
+                <img class="steps__img" src="assets/img/tongue-2.jpg" width="386" height="357" alt="Щётка движется от корня языка к кончику" loading="lazy" decoding="async">
+                <div class="steps__body">
+                  <h3 class="steps__title">2. Двигайте щёткой от&nbsp;корня языка к&nbsp;кончику</h3>
+                <p class="steps__text">Очищайте бережно, без&nbsp;сильного давления.</p>
+                </div>
+              </li>
+            </ol>
+          </div>
+        </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Зачем нужна профессиональная гигиена: камень, кариес, дёсны (без линейной цепочки) -->
+    <section class="section section--gray2" id="pro">
+      <div class="container">
+        <h2 class="h2">Зачем нужна профессиональная гигиена</h2>
+        <p class="lead">Даже при&nbsp;хорошем домашнем уходе в&nbsp;труднодоступных местах остаются отложения. Мягкий налёт со&nbsp;временем твердеет и&nbsp;превращается в&nbsp;зубной камень, который щёткой уже не&nbsp;убрать. На&nbsp;профессиональной гигиене удаляют налёт и&nbsp;камень и&nbsp;проверяют состояние зубов и&nbsp;дёсен.</p>
+        <ol class="steps steps--3">
+              <li class="steps__item">
+                <img class="steps__img" src="assets/img/stage-2.jpg" width="386" height="355" alt="Зубной камень у края десны" loading="lazy" decoding="async">
+                <div class="steps__body">
+                  <h3 class="steps__title">Налёт и&nbsp;зубной камень</h3>
+                <p class="steps__text">Налёт, который не&nbsp;удалили вовремя, уплотняется и&nbsp;становится камнем. Камень удерживает бактерии у&nbsp;края десны, и&nbsp;убрать его можно только на&nbsp;профессиональной гигиене.</p>
+                </div>
+              </li>
+              <li class="steps__item">
+                <img class="steps__img" src="assets/img/stage-6.jpg" width="386" height="355" alt="Зуб с кариозным поражением" loading="lazy" decoding="async">
+                <div class="steps__body">
+                  <h3 class="steps__title">Кариес</h3>
+                <p class="steps__text">Бактерии налёта превращают сахар в&nbsp;кислоты, которые разрушают эмаль. Чаще всего кариес начинается там, где зубы хуже очищаются: между зубами, у&nbsp;края десны, по&nbsp;краю пломб и&nbsp;коронок.</p>
+                </div>
+              </li>
+              <li class="steps__item">
+                <img class="steps__img" src="assets/img/stage-4.jpg" width="386" height="355" alt="Воспалённая кровоточащая десна" loading="lazy" decoding="async">
+                <div class="steps__body">
+                  <h3 class="steps__title">Заболевания дёсен</h3>
+                <p class="steps__text">Налёт и&nbsp;камень у&nbsp;края десны вызывают воспаление (гингивит): дёсны краснеют и&nbsp;кровоточат при&nbsp;чистке. Без&nbsp;лечения оно может перейти в&nbsp;пародонтит, при&nbsp;котором постепенно разрушается кость вокруг зуба. Похожее воспаление бывает и&nbsp;вокруг имплантов.</p>
+                </div>
+              </li>
         </ol>
       </div>
     </section>
 
-    <!-- 4. Как правильно чистить зубы -->
-    <section class="section section--white" id="brushing">
-      <div class="container">
-        <h2 class="h2">Как правильно чистить зубы</h2>
-        <p class="lead">У&nbsp;каждого зуба пять поверхностей. Необходимо очистить каждую из&nbsp;них.</p>
-        <p class="lead">На&nbsp;каждом зубе задерживайте щётку <span class="nowrap">2–3</span>&nbsp;секунды.</p>
-        <ol class="steps steps--4">
-          <li class="steps__item">
-            <img class="steps__img" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3NzIiIGhlaWdodD0iNzEyIiB2aWV3Qm94PSIwIDAgNzcyIDcxMiI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2U1ZTllZSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmaWxsPSIjMGUyOTRiIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMzQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiPtC40LvQu9GO0YHRgtGA0LDRhtC40Y8gYnJ1c2gtMTwvdGV4dD48L3N2Zz4=" width="386" height="356" alt="Щётка на наружной поверхности зубов" loading="lazy" decoding="async">
-            <div class="steps__body">
-              <h3 class="steps__title">1. Круговыми движениями очистите наружную поверхность зубов</h3>
-            </div>
-          </li>
-          <li class="steps__item">
-            <img class="steps__img" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3NzIiIGhlaWdodD0iNzEyIiB2aWV3Qm94PSIwIDAgNzcyIDcxMiI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2U1ZTllZSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmaWxsPSIjMGUyOTRiIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMzQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiPtC40LvQu9GO0YHRgtGA0LDRhtC40Y8gYnJ1c2gtMjwvdGV4dD48L3N2Zz4=" width="386" height="356" alt="Щётка на жевательной поверхности коренных зубов" loading="lazy" decoding="async">
-            <div class="steps__body">
-              <h3 class="steps__title">2. Тщательно очистите жевательные поверхности всех коренных зубов</h3>
-            </div>
-          </li>
-          <li class="steps__item">
-            <img class="steps__img" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3NzIiIGhlaWdodD0iNzEyIiB2aWV3Qm94PSIwIDAgNzcyIDcxMiI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2U1ZTllZSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmaWxsPSIjMGUyOTRiIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMzQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiPtC40LvQu9GO0YHRgtGA0LDRhtC40Y8gYnJ1c2gtMzwvdGV4dD48L3N2Zz4=" width="386" height="356" alt="Щётка у задней поверхности зубов" loading="lazy" decoding="async">
-            <div class="steps__body">
-              <h3 class="steps__title">3. Затем перейдите к&nbsp;задней поверхности и&nbsp;межзубным промежуткам</h3>
-            </div>
-          </li>
-          <li class="steps__item">
-            <img class="steps__img" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3NzIiIGhlaWdodD0iNzEyIiB2aWV3Qm94PSIwIDAgNzcyIDcxMiI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2U1ZTllZSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmaWxsPSIjMGUyOTRiIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMzQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiPtC40LvQu9GO0YHRgtGA0LDRhtC40Y8gYnJ1c2gtNDwvdGV4dD48L3N2Zz4=" width="386" height="356" alt="Пять поверхностей зуба: наружная, жевательная, две боковые, задняя" loading="lazy" decoding="async">
-            <div class="steps__body">
-              <h3 class="steps__title">4. Помните, необходимо очистить каждую из&nbsp;этих пяти поверхностей для полноценной гигиены</h3>
-            </div>
-          </li>
-        </ol>
-      </div>
-    </section>
-
-    <!-- 5. Зубная нить -->
-    <section class="section section--gray" id="floss">
-      <div class="container">
-        <h2 class="h2">Как пользоваться зубной нитью</h2>
-        <p class="lead">Зубная нить помогает удалить налёт и&nbsp;остатки пищи из&nbsp;межзубных промежутков, куда не&nbsp;проникает зубная щётка.</p>
-        <ol class="steps steps--4">
-          <li class="steps__item">
-            <img class="steps__img" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3NzIiIGhlaWdodD0iNzEyIiB2aWV3Qm94PSIwIDAgNzcyIDcxMiI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2U1ZTllZSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmaWxsPSIjMGUyOTRiIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMzQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiPtC40LvQu9GO0YHRgtGA0LDRhtC40Y8gZmxvc3MtMTwvdGV4dD48L3N2Zz4=" width="386" height="356" alt="Нить обёрнута вокруг средних пальцев" loading="lazy" decoding="async">
-            <div class="steps__body">
-              <h3 class="steps__title">1. Оберните <span class="nowrap">40–50</span>&nbsp;см нити вокруг средних пальцев</h3>
-            </div>
-          </li>
-          <li class="steps__item">
-            <img class="steps__img" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3NzIiIGhlaWdodD0iNzEyIiB2aWV3Qm94PSIwIDAgNzcyIDcxMiI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2U1ZTllZSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmaWxsPSIjMGUyOTRiIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMzQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiPtC40LvQu9GO0YHRgtGA0LDRhtC40Y8gZmxvc3MtMjwvdGV4dD48L3N2Zz4=" width="386" height="356" alt="Короткий участок нити между большими и указательными пальцами" loading="lazy" decoding="async">
-            <div class="steps__body">
-              <h3 class="steps__title">2. Удерживайте короткий участок между большими и&nbsp;указательными пальцами</h3>
-            </div>
-          </li>
-          <li class="steps__item">
-            <img class="steps__img" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3NzIiIGhlaWdodD0iNzEyIiB2aWV3Qm94PSIwIDAgNzcyIDcxMiI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2U1ZTllZSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmaWxsPSIjMGUyOTRiIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMzQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiPtC40LvQu9GO0YHRgtGA0LDRhtC40Y8gZmxvc3MtMzwvdGV4dD48L3N2Zz4=" width="386" height="356" alt="Нить вводится между зубами" loading="lazy" decoding="async">
-            <div class="steps__body">
-              <h3 class="steps__title">3. Вводите нить между зубами лёгким пилящим движением</h3>
-              <p class="steps__text">Не&nbsp;вдавливайте нить резко в&nbsp;десну.</p>
-            </div>
-          </li>
-          <li class="steps__item">
-            <img class="steps__img" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3NzIiIGhlaWdodD0iNzEyIiB2aWV3Qm94PSIwIDAgNzcyIDcxMiI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2U1ZTllZSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmaWxsPSIjMGUyOTRiIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMzQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiPtC40LvQu9GO0YHRgtGA0LDRhtC40Y8gZmxvc3MtNDwvdGV4dD48L3N2Zz4=" width="386" height="356" alt="Нить очищает боковые поверхности зуба" loading="lazy" decoding="async">
-            <div class="steps__body">
-              <h3 class="steps__title">4. Тщательно очистите обе боковые поверхности в&nbsp;каждом межзубном промежутке</h3>
-              <p class="steps__text">Сменяйте участок нити для каждого зуба.</p>
-            </div>
-          </li>
-        </ol>
-      </div>
-    </section>
-
-    <!-- 6. Ирригатор -->
-    <section class="section section--white" id="irrigator">
-      <div class="container">
-        <h2 class="h2">Как пользоваться ирригатором</h2>
-        <p class="lead">Обрабатывать каждый промежуток <span class="nowrap">1–2</span>&nbsp;секунды.</p>
-        <ol class="steps">
-          <li class="steps__item">
-            <img class="steps__img" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3NzIiIGhlaWdodD0iNzEyIiB2aWV3Qm94PSIwIDAgNzcyIDcxMiI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2U1ZTllZSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmaWxsPSIjMGUyOTRiIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMzQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiPtC40LvQu9GO0YHRgtGA0LDRhtC40Y8gaXJyaWctMTwvdGV4dD48L3N2Zz4=" width="386" height="356" alt="Ирригатор наполняют водой" loading="lazy" decoding="async">
-            <div class="steps__body">
-              <h3 class="steps__title">1. Наполните ирригатор чистой водой</h3>
-            </div>
-          </li>
-          <li class="steps__item">
-            <img class="steps__img" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3NzIiIGhlaWdodD0iNzEyIiB2aWV3Qm94PSIwIDAgNzcyIDcxMiI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2U1ZTllZSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmaWxsPSIjMGUyOTRiIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMzQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiPtC40LvQu9GO0YHRgtGA0LDRhtC40Y8gaXJyaWctMjwvdGV4dD48L3N2Zz4=" width="386" height="356" alt="Наконечник ирригатора у десневого края" loading="lazy" decoding="async">
-            <div class="steps__body">
-              <h3 class="steps__title">2. Расположите наконечник перпендикулярно десневому краю</h3>
-              <p class="steps__text">Обрабатывайте его и&nbsp;межзубные пространства.</p>
-            </div>
-          </li>
-          <li class="steps__item">
-            <img class="steps__img" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3NzIiIGhlaWdodD0iNzEyIiB2aWV3Qm94PSIwIDAgNzcyIDcxMiI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2U1ZTllZSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmaWxsPSIjMGUyOTRiIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMzQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiPtC40LvQu9GO0YHRgtGA0LDRhtC40Y8gaXJyaWctMzwvdGV4dD48L3N2Zz4=" width="386" height="356" alt="Ирригатор у задней поверхности зубов" loading="lazy" decoding="async">
-            <div class="steps__body">
-              <h3 class="steps__title">3. Перейдите к&nbsp;задней поверхности</h3>
-              <p class="steps__text">Обрабатывайте каждый промежуток <span class="nowrap">1–2</span>&nbsp;секунды.</p>
-            </div>
-          </li>
-        </ol>
-      </div>
-    </section>
-
-    <!-- 7. Щётка для языка -->
-    <section class="section section--gray" id="tongue">
-      <div class="container">
-        <h2 class="h2">Как пользоваться щёткой для языка</h2>
-        <p class="lead">Язык необходимо очищать ежедневно до&nbsp;визуально чистой поверхности.</p>
-        <ol class="steps steps--2">
-          <li class="steps__item">
-            <img class="steps__img" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3NzIiIGhlaWdodD0iNzEyIiB2aWV3Qm94PSIwIDAgNzcyIDcxMiI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2U1ZTllZSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmaWxsPSIjMGUyOTRiIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMzQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiPtC40LvQu9GO0YHRgtGA0LDRhtC40Y8gdG9uZ3VlLTE8L3RleHQ+PC9zdmc+" width="386" height="356" alt="Щётка для очистки языка в руке" loading="lazy" decoding="async">
-            <div class="steps__body">
-              <h3 class="steps__title">1. Возьмите специальную щётку для очистки языка</h3>
-            </div>
-          </li>
-          <li class="steps__item">
-            <img class="steps__img" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3NzIiIGhlaWdodD0iNzEyIiB2aWV3Qm94PSIwIDAgNzcyIDcxMiI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2U1ZTllZSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmaWxsPSIjMGUyOTRiIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMzQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiPtC40LvQu9GO0YHRgtGA0LDRhtC40Y8gdG9uZ3VlLTI8L3RleHQ+PC9zdmc+" width="386" height="356" alt="Щётка движется от корня языка к кончику" loading="lazy" decoding="async">
-            <div class="steps__body">
-              <h3 class="steps__title">2. Двигайте щёткой от&nbsp;корня языка к&nbsp;кончику</h3>
-              <p class="steps__text">До&nbsp;визуально чистой поверхности.</p>
-            </div>
-          </li>
-        </ol>
-      </div>
-    </section>
-
-    <!-- 8. Почему нужна профессиональная гигиена -->
-    <section class="section section--white section--line" id="limits">
-      <div class="container">
-        <h2 class="h2">Профессиональная гигиена позволяет удалить то, что невозможно убрать дома</h2>
-        <p class="lead">Даже идеальная домашняя гигиена не&nbsp;позволяет полностью удалить все зубные отложения, которые накапливаются со&nbsp;временем. Они становятся причиной:</p>
-        <ul class="reasons">
-          <li class="reasons__item"><span class="reasons__num">01</span><span>Воспаления десен</span></li>
-          <li class="reasons__item"><span class="reasons__num">02</span><span>Неприятного запаха</span></li>
-          <li class="reasons__item"><span class="reasons__num">03</span><span>Кровоточивости</span></li>
-          <li class="reasons__item"><span class="reasons__num">04</span><span>Кариеса</span></li>
-          <li class="reasons__item"><span class="reasons__num">05</span><span>Сокращения срока службы реставраций</span></li>
-          <li class="reasons__item"><span class="reasons__num">06</span><span>Осложнений вокруг имплантов</span></li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- 9. Что происходит без профессиональной гигиены -->
-    <section class="section section--gray2" id="neglect">
-      <div class="container">
-        <h2 class="h2">Что происходит, если не&nbsp;делать профессиональную гигиену</h2>
-        <ol class="gallery gallery--6">
-          <li class="gallery__item">
-            <img class="gallery__img" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3NzIiIGhlaWdodD0iNzEyIiB2aWV3Qm94PSIwIDAgNzcyIDcxMiI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2U1ZTllZSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmaWxsPSIjMGUyOTRiIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMzQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiPtC40LvQu9GO0YHRgtGA0LDRhtC40Y8gc3RhZ2UtMTwvdGV4dD48L3N2Zz4=" width="386" height="356" alt="Мягкий налёт на зубе" loading="lazy" decoding="async">
-            <p class="gallery__caption"><span class="gallery__num">01</span>Мягкий налет</p>
-          </li>
-          <li class="gallery__item">
-            <img class="gallery__img" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3NzIiIGhlaWdodD0iNzEyIiB2aWV3Qm94PSIwIDAgNzcyIDcxMiI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2U1ZTllZSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmaWxsPSIjMGUyOTRiIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMzQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiPtC40LvQu9GO0YHRgtGA0LDRhtC40Y8gc3RhZ2UtMjwvdGV4dD48L3N2Zz4=" width="386" height="356" alt="Зубной камень у десны" loading="lazy" decoding="async">
-            <p class="gallery__caption"><span class="gallery__num">02</span>Камень</p>
-          </li>
-          <li class="gallery__item">
-            <img class="gallery__img" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3NzIiIGhlaWdodD0iNzEyIiB2aWV3Qm94PSIwIDAgNzcyIDcxMiI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2U1ZTllZSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmaWxsPSIjMGUyOTRiIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMzQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiPtC40LvQu9GO0YHRgtGA0LDRhtC40Y8gc3RhZ2UtMzwvdGV4dD48L3N2Zz4=" width="386" height="356" alt="Воспаление десны" loading="lazy" decoding="async">
-            <p class="gallery__caption"><span class="gallery__num">03</span>Воспаление</p>
-          </li>
-          <li class="gallery__item">
-            <img class="gallery__img" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3NzIiIGhlaWdodD0iNzEyIiB2aWV3Qm94PSIwIDAgNzcyIDcxMiI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2U1ZTllZSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmaWxsPSIjMGUyOTRiIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMzQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiPtC40LvQu9GO0YHRgtGA0LDRhtC40Y8gc3RhZ2UtNDwvdGV4dD48L3N2Zz4=" width="386" height="356" alt="Кровоточивость десны" loading="lazy" decoding="async">
-            <p class="gallery__caption"><span class="gallery__num">04</span>Кровоточивость</p>
-          </li>
-          <li class="gallery__item">
-            <img class="gallery__img" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3NzIiIGhlaWdodD0iNzEyIiB2aWV3Qm94PSIwIDAgNzcyIDcxMiI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2U1ZTllZSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmaWxsPSIjMGUyOTRiIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMzQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiPtC40LvQu9GO0YHRgtGA0LDRhtC40Y8gc3RhZ2UtNTwvdGV4dD48L3N2Zz4=" width="386" height="356" alt="Убыль костной ткани вокруг корня" loading="lazy" decoding="async">
-            <p class="gallery__caption"><span class="gallery__num">05</span>Убыль костной ткани</p>
-          </li>
-          <li class="gallery__item">
-            <img class="gallery__img" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3NzIiIGhlaWdodD0iNzEyIiB2aWV3Qm94PSIwIDAgNzcyIDcxMiI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2U1ZTllZSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmaWxsPSIjMGUyOTRiIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMzQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiPtC40LvQu9GO0YHRgtGA0LDRhtC40Y8gc3RhZ2UtNjwvdGV4dD48L3N2Zz4=" width="386" height="356" alt="Расшатанный зуб с кариесом" loading="lazy" decoding="async">
-            <p class="gallery__caption"><span class="gallery__num">06</span>Зубы расшатываются, начинает образовываться кариес</p>
-          </li>
-        </ol>
-      </div>
-    </section>
-
-    <!-- 10. Каждые 6 месяцев -->
+    <!-- 6. Интервал профгигиены -->
     <section class="section section--navy" id="every6">
       <div class="container split">
         <div class="split__text">
-          <h2 class="h2">Каждые 6&nbsp;месяцев необходимо делать профессиональную гигиену</h2>
+          <h2 class="h2">Регулярно проходите профессиональную гигиену</h2>
           <div class="split__rule" aria-hidden="true"></div>
-          <p class="lead">Если пациент проходит ортодонтическое лечение, имеет импланты, виниры или заболевания десен&nbsp;— по&nbsp;индивидуальному графику, назначенному врачом.</p>
+          <p class="lead">Подходящий интервал определит врач с&nbsp;учётом состояния дёсен, качества домашнего ухода и&nbsp;проведённого лечения.</p>
         </div>
-        <img class="split__img" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNTg0IiBoZWlnaHQ9IjEyODAiIHZpZXdCb3g9IjAgMCAxNTg0IDEyODAiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiMwZTI5NGIiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZmlsbD0iI2ZmZmZmZiIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjcxIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIj7QuNC70LvRjtGB0YLRgNCw0YbQuNGPOiDQutGA0LXRgdC70L48L3RleHQ+PC9zdmc+" width="792" height="640" alt="Стоматологическое кресло" loading="lazy" decoding="async">
+        <img class="split__img" src="assets/img/chair.png" width="520" height="385" alt="Стоматологическое кресло" loading="lazy" decoding="async">
       </div>
     </section>
 
-    <!-- 11. Итог -->
+    <!-- 7. Итог -->
     <section class="section section--navy" id="final">
       <div class="container split">
         <div class="split__text">
-          <h2 class="h2">Регулярная домашняя и&nbsp;профессиональная гигиена&nbsp;—</h2>
+          <h2 class="h2">Регулярная домашняя и&nbsp;профессиональная гигиена</h2>
           <div class="split__rule" aria-hidden="true"></div>
-          <p class="lead">самый простой и&nbsp;дешевый способ сохранить здоровье зубов, десен и&nbsp;результат лечения на&nbsp;долгие годы.</p>
+          <p class="lead">Это&nbsp;ежедневная забота, которая помогает сохранить здоровье зубов и&nbsp;результат лечения.</p>
         </div>
-        <img class="split__img" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNTg0IiBoZWlnaHQ9IjEyODAiIHZpZXdCb3g9IjAgMCAxNTg0IDEyODAiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiMwZTI5NGIiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZmlsbD0iI2ZmZmZmZiIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjcxIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIj7QuNC70LvRjtGB0YLRgNCw0YbQuNGPOiDQvdCw0LHQvtGAINGB0YDQtdC00YHRgtCyPC90ZXh0Pjwvc3ZnPg==" width="792" height="640" alt="Средства домашней гигиены: щётки, нить, паста, ополаскиватель, ирригатор" loading="lazy" decoding="async">
+        <img class="split__img" src="assets/img/kit.png" width="520" height="386" alt="Средства домашней гигиены: щётки, нить, паста, ополаскиватель, ирригатор" loading="lazy" decoding="async">
+      </div>
+    </section>
+
+    <!-- 8. Завершение: помощь на приёме -->
+    <section class="section section--white" id="help">
+      <div class="container">
+        <div class="help">
+          <h2 class="h2">Не&nbsp;уверены, правильно ли очищаете зубы?</h2>
+          <p class="lead">На&nbsp;приёме мы покажем технику и&nbsp;поможем подобрать средства именно для&nbsp;вас. Если остались вопросы, напишите своему координатору.</p>
+        </div>
       </div>
     </section>
   </main>
