@@ -2305,3 +2305,4 @@ body { font-family: var(--font); font-size: 16px; }
 .note--case{grid-template-columns:minmax(0,300px) minmax(0,1fr);}
 .note--case .method__img{background:none;}
 .split__img--photo{border-radius:var(--radius-card);}
+@media (max-width:767.98px){.note--case{grid-template-columns:minmax(0,1fr);gap:16px;}.note--case .method__img{max-width:320px;justify-self:center;}}
