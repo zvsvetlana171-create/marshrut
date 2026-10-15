@@ -11,7 +11,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style>
 <link rel="stylesheet" href="assets/css/style.css?v=1">
-<link rel="stylesheet" href="assets/css/quality.css?v=7">
+<link rel="stylesheet" href="assets/css/quality.css?v=8">
 <script src="assets/js/main.js"></script>
 </head>
 <body>
@@ -125,19 +125,19 @@
             <p class="hero__eyebrow">Стандарты Денталь Профи</p>
             <h1 class="hero__title">Как мы контролируем качество лечения</h1>
             <p class="hero__text">Качество складывается из&nbsp;деталей. Коротко рассказываем, что мы&nbsp;проверяем на&nbsp;каждом этапе лечения и&nbsp;зачем это вам.</p>
-            <ul class="marks">
-              <li class="marks__item">
+            <ul class="marks" aria-label="Перейти к разделу">
+              <li class="marks__li"><a class="marks__item" href="#plan">
                 <svg class="marks__icon" viewBox="0 0 32 32" width="32" height="32" aria-hidden="true"><rect x="7" y="5" width="18" height="23" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 12h8M12 17h8M12 22h5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-                <span>Общий план</span>
-              </li>
-              <li class="marks__item">
+                <span class="marks__text">Общий план</span>
+              </a></li>
+              <li class="marks__li"><a class="marks__item" href="#checks">
                 <svg class="marks__icon" viewBox="0 0 32 32" width="32" height="32" aria-hidden="true"><circle cx="14" cy="14" r="8" fill="none" stroke="currentColor" stroke-width="2"/><path d="M20 20l7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
-                <span>Контроль деталей</span>
-              </li>
-              <li class="marks__item">
+                <span class="marks__text">Контроль деталей</span>
+              </a></li>
+              <li class="marks__li"><a class="marks__item" href="#after">
                 <svg class="marks__icon" viewBox="0 0 32 32" width="32" height="32" aria-hidden="true"><path d="M16 4l10 4v7c0 6.5-4.2 11-10 13-5.8-2-10-6.5-10-13V8z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M11.5 16l3.2 3.2 6-6.4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                <span>Сохранение результата</span>
-              </li>
+                <span class="marks__text">Сохранение результата</span>
+              </a></li>
             </ul>
           </div>
           <div class="hero__card">
@@ -220,10 +220,10 @@
     <section class="section section--white" id="checks">
       <div class="container">
         <h2 class="h2">Что именно проверяется при&nbsp;лечении</h2>
-        <p class="lead">Для&nbsp;каждого направления наши стандарты предусматривают, что нужно проверить во&nbsp;время и&nbsp;после лечения. Откройте нужное направление, чтобы посмотреть подробности.</p>
+        <p class="lead">Для&nbsp;каждого направления наши стандарты предусматривают, что нужно проверить во&nbsp;время и&nbsp;после лечения. Три самых частых направления открыты сразу, остальные&nbsp;— по&nbsp;кнопке «Подробнее».</p>
 
         <div class="accs accs--dirs">
-          <details class="acc" id="dir-fill">
+          <details class="acc" id="dir-fill" open>
             <summary class="acc__head">
               <img class="acc__tile acc__tile--blue" src="assets/img/dir-fill.svg" width="120" height="120" alt="" loading="lazy" decoding="async">
               <span class="acc__num">01</span>
@@ -236,7 +236,8 @@
                 <div class="check__main">
                   <p class="check__label">Что проверяется</p>
                   <ul class="check__list check__list--cols">
-                    <li>изоляция рабочего поля и&nbsp;протокол фиксации</li>
+                    <li>изоляция рабочего поля&nbsp;— зуб защищён от&nbsp;влаги во&nbsp;время работы</li>
+                    <li>протокол фиксации&nbsp;— порядок подготовки зуба и&nbsp;закрепления пломбы</li>
                     <li>краевое прилегание&nbsp;— плотная граница с&nbsp;зубом</li>
                     <li>контакты с&nbsp;соседними зубами</li>
                     <li>смыкание с&nbsp;зубами напротив</li>
@@ -251,12 +252,12 @@
             </div>
           </details>
 
-          <details class="acc" id="dir-canal">
+          <details class="acc" id="dir-canal" open>
             <summary class="acc__head">
               <img class="acc__tile acc__tile--pink" src="assets/img/dir-canal.svg" width="120" height="120" alt="" loading="lazy" decoding="async">
               <span class="acc__num">02</span>
               <h3 class="acc__h">Лечение каналов</h3>
-              <span class="acc__why">От&nbsp;обработки каналов до&nbsp;передачи зуба на&nbsp;восстановление.</span>
+              <span class="acc__why">От&nbsp;обработки каналов до&nbsp;восстановления зуба.</span>
               <span class="acc__btn"><span class="acc__btn-text--open">Подробнее</span><span class="acc__btn-text--close">Свернуть</span><span class="acc__chev"></span></span>
             </summary>
             <div class="acc__body">
@@ -264,11 +265,11 @@
                 <div class="check__main">
                   <p class="check__label">Что проверяется</p>
                   <ul class="check__list check__list--cols">
-                    <li>коффердам и&nbsp;работа под&nbsp;микроскопом</li>
+                    <li>коффердам (защитная завеса) и&nbsp;работа под&nbsp;микроскопом</li>
                     <li>обработка каналов</li>
-                    <li>герметичность зуба между визитами</li>
-                    <li>рентгенологический контроль</li>
-                    <li>передача на&nbsp;восстановление зуба и&nbsp;наблюдение</li>
+                    <li>зуб плотно закрыт между визитами</li>
+                    <li>контрольные рентгеновские снимки</li>
+                    <li>следующий шаг&nbsp;— восстановление зуба и&nbsp;наблюдение</li>
                   </ul>
                 </div>
                 <div class="check__for">
@@ -279,7 +280,7 @@
             </div>
           </details>
 
-          <details class="acc" id="dir-crown">
+          <details class="acc" id="dir-crown" open>
             <summary class="acc__head">
               <img class="acc__tile acc__tile--beige" src="assets/img/dir-crown.svg" width="120" height="120" alt="" loading="lazy" decoding="async">
               <span class="acc__num">03</span>
@@ -292,10 +293,10 @@
                 <div class="check__main">
                   <p class="check__label">Что проверяется</p>
                   <ul class="check__list check__list--cols">
-                    <li>посадка и&nbsp;прилегание</li>
+                    <li>точная посадка и&nbsp;прилегание к&nbsp;зубу</li>
                     <li>контакты с&nbsp;соседними зубами и&nbsp;при&nbsp;жевании</li>
-                    <li>изоляция при&nbsp;фиксации</li>
-                    <li>удаление излишков цемента</li>
+                    <li>изоляция зуба, когда конструкцию закрепляют</li>
+                    <li>удаление лишнего фиксирующего материала (цемента)</li>
                     <li>форма и&nbsp;полировка</li>
                   </ul>
                 </div>
@@ -338,7 +339,7 @@
                     <li>посадка элементов и&nbsp;всей конструкции</li>
                     <li>соединения и&nbsp;фиксация</li>
                     <li>контакты с&nbsp;соседними зубами и&nbsp;при&nbsp;смыкании</li>
-                    <li>контроль по&nbsp;протоколу</li>
+                    <li>контроль по&nbsp;установленному порядку</li>
                   </ul>
                   <div class="check__for">
                     <p class="check__label">Для&nbsp;вас</p>
@@ -365,7 +366,7 @@
                     <li>планирование вмешательства</li>
                     <li>обезболивание</li>
                     <li>контроль этапов и&nbsp;области вмешательства</li>
-                    <li>хирургические шаблоны&nbsp;— в&nbsp;предусмотренных сложных случаях</li>
+                    <li>хирургические шаблоны (направляющие для&nbsp;точной установки имплантата)&nbsp;— в&nbsp;сложных случаях, где они предусмотрены</li>
                     <li>сведения об&nbsp;установленном имплантате</li>
                     <li>рекомендации после вмешательства</li>
                   </ul>
@@ -382,39 +383,51 @@
             <summary class="acc__head">
               <img class="acc__tile acc__tile--beige" src="assets/img/dir-hygiene.svg" width="120" height="120" alt="" loading="lazy" decoding="async">
               <span class="acc__num">06</span>
-              <h3 class="acc__h">Гигиена и&nbsp;отбеливание</h3>
-              <span class="acc__why">Важна не&nbsp;только процедура, но&nbsp;и&nbsp;уход после неё.</span>
+              <h3 class="acc__h">Профессиональная гигиена</h3>
+              <span class="acc__why">Основа профилактики: чистка в&nbsp;клинике и&nbsp;понятный уход дома.</span>
               <span class="acc__btn"><span class="acc__btn-text--open">Подробнее</span><span class="acc__btn-text--close">Свернуть</span><span class="acc__chev"></span></span>
             </summary>
             <div class="acc__body">
-              <div class="dirs">
-                <div class="check">
-                  <h4 class="check__title">Профессиональная гигиена</h4>
+              <div class="check check--wide">
+                <div class="check__main">
                   <p class="check__label">Что проверяется</p>
-                  <ul class="check__list">
-                    <li>удаление доступных отложений</li>
+                  <ul class="check__list check__list--cols">
+                    <li>удаление налёта и&nbsp;зубного камня в&nbsp;доступных местах</li>
                     <li>контроль налёта</li>
-                    <li>фотопротокол&nbsp;— в&nbsp;предусмотренных случаях</li>
-                    <li>персональный подбор средств ухода и&nbsp;обучение</li>
+                    <li>фото зубов&nbsp;— в&nbsp;предусмотренных случаях</li>
+                    <li>подбор средств ухода именно для&nbsp;вас и&nbsp;обучение чистке</li>
                   </ul>
-                  <div class="check__for">
-                    <p class="check__label">Для&nbsp;вас</p>
-                    <p class="check__for-text">Важна не&nbsp;только процедура, но&nbsp;и&nbsp;понятный домашний уход после неё.</p>
-                  </div>
                 </div>
-                <div class="check">
-                  <h4 class="check__title">Отбеливание</h4>
+                <div class="check__for">
+                  <p class="check__label">Для&nbsp;вас</p>
+                  <p class="check__for-text">Важна не&nbsp;только процедура, но&nbsp;и&nbsp;понятный домашний уход после неё.</p>
+                </div>
+              </div>
+            </div>
+          </details>
+
+          <details class="acc" id="dir-whiten">
+            <summary class="acc__head">
+              <img class="acc__tile acc__tile--blue" src="assets/img/dir-whiten.svg" width="120" height="120" alt="" loading="lazy" decoding="async">
+              <span class="acc__num">07</span>
+              <h3 class="acc__h">Отбеливание</h3>
+              <span class="acc__why">Как защищают ткани во&nbsp;время процедуры и&nbsp;сохраняют эффект после неё.</span>
+              <span class="acc__btn"><span class="acc__btn-text--open">Подробнее</span><span class="acc__btn-text--close">Свернуть</span><span class="acc__chev"></span></span>
+            </summary>
+            <div class="acc__body">
+              <div class="check check--wide">
+                <div class="check__main">
                   <p class="check__label">Что проверяется</p>
-                  <ul class="check__list">
-                    <li>защита тканей и&nbsp;изоляция</li>
+                  <ul class="check__list check__list--cols">
+                    <li>защита дёсен и&nbsp;изоляция рабочего поля</li>
                     <li>подготовка к&nbsp;процедуре</li>
-                    <li>рекомендации по&nbsp;ощущениям после процедуры</li>
-                    <li>рекомендации по&nbsp;поддержанию эффекта</li>
+                    <li>рекомендации, если после процедуры появятся неприятные ощущения</li>
+                    <li>рекомендации, как сохранить эффект</li>
                   </ul>
-                  <div class="check__for">
-                    <p class="check__label">Для&nbsp;вас</p>
-                    <p class="check__for-text">Учитываются защита тканей и&nbsp;последующий уход. Оттенок и&nbsp;чувствительность у&nbsp;каждого индивидуальны.</p>
-                  </div>
+                </div>
+                <div class="check__for">
+                  <p class="check__label">Для&nbsp;вас</p>
+                  <p class="check__for-text">Учитываются защита тканей и&nbsp;последующий уход. Оттенок и&nbsp;чувствительность у&nbsp;каждого индивидуальны.</p>
                 </div>
               </div>
             </div>
@@ -422,8 +435,8 @@
 
           <details class="acc" id="dir-ortho">
             <summary class="acc__head">
-              <img class="acc__tile acc__tile--blue" src="assets/img/dir-ortho.svg" width="120" height="120" alt="" loading="lazy" decoding="async">
-              <span class="acc__num">07</span>
+              <img class="acc__tile acc__tile--pink" src="assets/img/dir-ortho.svg" width="120" height="120" alt="" loading="lazy" decoding="async">
+              <span class="acc__num">08</span>
               <h3 class="acc__h">Ортодонтия</h3>
               <span class="acc__why">Выравнивание зубов и&nbsp;сохранение результата после лечения.</span>
               <span class="acc__btn"><span class="acc__btn-text--open">Подробнее</span><span class="acc__btn-text--close">Свернуть</span><span class="acc__chev"></span></span>
@@ -433,11 +446,11 @@
                 <div class="check__main">
                   <p class="check__label">Что проверяется</p>
                   <ul class="check__list check__list--cols">
-                    <li>эстетика и&nbsp;функция</li>
+                    <li>внешний вид и&nbsp;работа зубов</li>
                     <li>контакты зубов и&nbsp;положение корней</li>
                     <li>наблюдение в&nbsp;процессе лечения</li>
-                    <li>после снятия аппаратов&nbsp;— удаление фиксирующего материала и&nbsp;полировка</li>
-                    <li>ретенционные аппараты</li>
+                    <li>после снятия аппаратов&nbsp;— удаление остатков клея и&nbsp;полировка</li>
+                    <li>ретенционные аппараты&nbsp;— они удерживают зубы на&nbsp;месте после лечения</li>
                   </ul>
                 </div>
                 <div class="check__for">
@@ -450,10 +463,10 @@
 
           <details class="acc" id="dir-gnatho">
             <summary class="acc__head">
-              <img class="acc__tile acc__tile--pink" src="assets/img/dir-gnatho.svg" width="120" height="120" alt="" loading="lazy" decoding="async">
-              <span class="acc__num">08</span>
+              <img class="acc__tile acc__tile--beige" src="assets/img/dir-gnatho.svg" width="120" height="120" alt="" loading="lazy" decoding="async">
+              <span class="acc__num">09</span>
               <h3 class="acc__h">Гнатология</h3>
-              <span class="acc__why">Работа височно-нижнечелюстных суставов и&nbsp;жевательных мышц.</span>
+              <span class="acc__why">Как работают челюстные суставы и&nbsp;жевательные мышцы.</span>
               <span class="acc__btn"><span class="acc__btn-text--open">Подробнее</span><span class="acc__btn-text--close">Свернуть</span><span class="acc__chev"></span></span>
             </summary>
             <div class="acc__body">
@@ -461,8 +474,8 @@
                 <div class="check__main">
                   <p class="check__label">Что проверяется</p>
                   <ul class="check__list check__list--cols">
-                    <li>мышечные и&nbsp;суставные симптомы</li>
-                    <li>функция жевательной системы</li>
+                    <li>жалобы со&nbsp;стороны суставов и&nbsp;жевательных мышц</li>
+                    <li>как работают челюсти и&nbsp;мышцы при&nbsp;жевании</li>
                     <li>результаты назначенного лечения</li>
                     <li>связь с&nbsp;дальнейшим восстановлением зубов</li>
                   </ul>

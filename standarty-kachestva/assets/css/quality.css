@@ -52,6 +52,36 @@
   color: var(--white);
 }
 
+/* ориентиры — ссылки на разделы страницы */
+.marks__item {
+  height: 100%;
+  text-decoration: none;
+}
+
+.marks__text {
+  text-decoration: underline;
+  text-decoration-color: rgba(255, 255, 255, 0.45);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+  transition: text-decoration-color 0.2s ease;
+}
+
+.marks__item:hover .marks__text {
+  text-decoration-color: var(--white);
+}
+
+.marks__item:focus-visible {
+  outline: 2px solid var(--white);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+#plan,
+#checks,
+#after {
+  scroll-margin-top: 16px;
+}
+
 /* ---------- Направления: цветная плитка, заголовок, кнопка ---------- */
 .accs--dirs {
   margin-top: 40px;
@@ -645,6 +675,40 @@
   .help__img {
     max-width: 240px;
     justify-self: center;
+  }
+}
+
+/* ---------- Телефон < 560: маленькая картинка рядом с логотипом, текст сразу под ними ---------- */
+@media (max-width: 559.98px) {
+  .hero__inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    column-gap: 16px;
+    align-items: center;
+  }
+
+  .hero__body {
+    display: contents;
+  }
+
+  .hero__header {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .hero__card {
+    grid-column: 2;
+    grid-row: 1;
+    width: 132px;
+    max-width: 132px;
+    justify-self: end;
+    border-radius: 12px;
+  }
+
+  .hero__content {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    margin-top: 20px;
   }
 }
 
