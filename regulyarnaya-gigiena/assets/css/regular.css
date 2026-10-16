@@ -100,8 +100,16 @@
   margin-top: 40px;
 }
 
+/* семь шагов: 4 + 3, второй ряд по центру — без пустого места справа */
 .film--7 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 44px 28px;
+}
+
+.film--7 .film__item {
+  flex: 0 0 calc((100% - 84px) / 4);
 }
 
 .film__item {
@@ -155,7 +163,7 @@
   box-shadow: 0 0 0 5px var(--bg-gray);
 }
 
-.film--7 .film__item:nth-child(4n) .film__frame::after {
+.film--7 .film__item:nth-child(4) .film__frame::after {
   display: none;
 }
 
@@ -610,6 +618,10 @@
     margin-top: 28px;
   }
 
+  .film--7 .film__item {
+    flex-basis: calc((100% - 20px) / 2);
+  }
+
   /* после визита: фото под плитками */
   .after {
     grid-template-columns: minmax(0, 1fr);
@@ -827,6 +839,14 @@
     grid-template-columns: minmax(0, 1fr);
     gap: 24px;
     margin-top: 20px;
+  }
+
+  .film--7 {
+    flex-direction: column;
+  }
+
+  .film--7 .film__item {
+    flex-basis: auto;
   }
 
   .film__item {
