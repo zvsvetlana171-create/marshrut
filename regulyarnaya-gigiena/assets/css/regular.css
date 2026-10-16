@@ -617,8 +617,7 @@
   }
 
   .after__img {
-    max-width: 520px;
-    aspect-ratio: 16 / 10;
+    max-width: 360px;
   }
 
   .film__item:nth-child(2n) .film__frame::after {
@@ -852,7 +851,8 @@
   }
 
   .after__img {
-    max-width: none;
+    max-width: 280px;
+    justify-self: center;
   }
 
   .film__media {
