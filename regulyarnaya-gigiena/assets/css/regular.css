@@ -356,9 +356,17 @@
 }
 
 /* ---------- Сомнения: вопросы раскрываются по нажатию (details, без JS) ---------- */
-.qa {
-  max-width: 980px;
+/* вопросы слева, предупреждение о жалобах — карточкой справа */
+.doubts {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 400px);
+  column-gap: 64px;
+  align-items: start;
   margin-top: 32px;
+}
+
+.qa {
+  min-width: 0;
   border-bottom: 1px solid var(--section-line);
 }
 
@@ -432,22 +440,34 @@
 }
 
 .alert {
-  display: flex;
-  align-items: flex-start;
-  gap: 14px;
-  max-width: 980px;
-  margin-top: 32px;
-  padding: 18px 22px;
-  border-radius: 12px;
+  padding: 32px 32px 34px;
+  border-radius: var(--radius-card);
   background: #F3D2D3;
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: 600;
   color: var(--navy);
 }
 
-.alert svg {
-  flex: none;
+.alert__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--white);
+}
+
+.alert__title {
+  margin-top: 20px;
+  font-size: 22px;
+  line-height: 28px;
+  font-weight: 800;
+  text-wrap: balance;
+}
+
+.alert__text {
+  margin-top: 10px;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 /* ---------- Запись: связь со своим филиалом ---------- */
@@ -813,8 +833,33 @@
     line-height: 21px;
   }
 
+  /* планшет: предупреждение под вопросами, значок слева */
+  .doubts {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 24px;
+  }
+
   .alert {
-    margin-top: 24px;
+    display: grid;
+    grid-template-columns: 48px minmax(0, 1fr);
+    column-gap: 18px;
+    align-items: center;
+    padding: 20px 24px;
+  }
+
+  .alert__icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .alert__title {
+    margin-top: 0;
+    font-size: 18px;
+    line-height: 23px;
+  }
+
+  .alert__text {
+    margin-top: 4px;
     font-size: 16px;
     line-height: 21px;
   }
@@ -1014,9 +1059,6 @@
     margin-top: 4px;
   }
 
-  .qa {
-    margin-top: 16px;
-  }
 
   .qa__q {
     gap: 14px;
@@ -1039,10 +1081,31 @@
     padding: 0 0 18px;
   }
 
+  .doubts {
+    margin-top: 16px;
+    row-gap: 20px;
+  }
+
   .alert {
-    gap: 10px;
-    margin-top: 20px;
-    padding: 14px 16px;
+    grid-template-columns: 40px minmax(0, 1fr);
+    column-gap: 12px;
+    align-items: start;
+    padding: 16px;
+  }
+
+  .alert__icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .alert__icon svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .alert__title {
+    font-size: 17px;
+    line-height: 22px;
   }
 
   .visit {
