@@ -854,17 +854,9 @@
     flex-basis: auto;
   }
 
-  /* телефон: крупное фото, рядом номер, заголовок и «Подробнее» */
+  /* телефон: фото на всю ширину, под ним номер, заголовок и «Подробнее» */
   .film__item {
-    display: grid;
-    grid-template-columns: minmax(0, 48%) minmax(0, 1fr);
-    grid-template-rows: auto auto 1fr;
-    column-gap: 14px;
-    align-items: start;
-  }
-
-  .film__frame {
-    grid-row: 1 / span 3;
+    display: block;
   }
 
   .film__text--open {
@@ -873,8 +865,7 @@
 
   .film__more {
     display: block;
-    grid-column: 2;
-    margin-top: 8px;
+    margin-top: 6px;
   }
 
   .film__toggle {
@@ -967,13 +958,13 @@
   }
 
   .film__num {
-    margin-top: 2px;
+    margin-top: 12px;
   }
 
   .film__title {
     margin-top: 2px;
-    font-size: 17px;
-    line-height: 22px;
+    font-size: 19px;
+    line-height: 24px;
   }
 
   .film__text {
