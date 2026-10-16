@@ -1,7 +1,6 @@
 /* Страница «Регулярная профессиональная гигиена»: дополнения к общим стилям маршрута.
-   Редакция 2: короче, больше иллюстраций, одна цель — согласовать визит.
-   Первый экран с кнопкой, три причины с картинками, четыре кадра визита, итог визита,
-   время и стоимость, сомнения (раскрываются), связь со своим филиалом. */
+   Редакция 3 (правки руководителя): заголовки обычным регистром, на первом экране — состав визита,
+   визит целиком в шести шагах, в конце — сначала ответ в переписке, затем телефоны филиалов. */
 
 /* ---------- Плашка прототипа (на боевой странице её нет) ---------- */
 .proto {
@@ -17,82 +16,15 @@
   font-weight: 700;
 }
 
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  white-space: nowrap;
+/* ---------- Заголовки обычным регистром ---------- */
+.hero__title,
+.h2,
+.place__title {
+  text-transform: none;
+  letter-spacing: -0.02em;
 }
 
-#contact {
-  scroll-margin-top: 16px;
-}
-
-/* ---------- Кнопки ---------- */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  min-height: 56px;
-  padding: 0 30px;
-  border-radius: 999px;
-  background: var(--navy);
-  font-family: var(--font);
-  font-size: 17px;
-  line-height: 21px;
-  font-weight: 600;
-  color: var(--white);
-  text-align: center;
-  text-decoration: none;
-  cursor: pointer;
-  transition: transform 0.2s var(--ease-out), box-shadow 0.2s var(--ease-out), background-color 0.2s ease;
-}
-
-.btn svg {
-  flex: none;
-  width: 20px;
-  height: 20px;
-}
-
-.btn--light {
-  background: var(--white);
-  color: var(--navy);
-}
-
-.btn:focus-visible {
-  outline: 3px solid var(--navy);
-  outline-offset: 3px;
-}
-
-.btn--light:focus-visible {
-  outline-color: var(--white);
-}
-
-@media (hover: hover) {
-  .btn:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-card);
-  }
-
-  .btn--light:hover {
-    background: #EFDECD;
-    box-shadow: 0 12px 26px rgba(0, 0, 0, 0.3);
-  }
-
-  .btn[data-missing]:hover {
-    transform: none;
-    box-shadow: none;
-  }
-}
-
-.btn[data-missing] {
-  cursor: not-allowed;
-}
-
-/* ---------- Первый экран: подпись, кнопка, два коротких факта ---------- */
+/* ---------- Первый экран: подпись, заголовок, состав визита, время ---------- */
 .hero__eyebrow {
   margin-bottom: 16px;
   font-size: 16px;
@@ -103,8 +35,23 @@
   color: #AFC0D6;
 }
 
-.hero__cta {
-  margin-top: 40px;
+.hero__text {
+  max-width: 680px;
+}
+
+.hero__note {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 24px;
+  font-size: 16px;
+  line-height: 21px;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.hero__note svg {
+  flex: none;
+  color: #AFC0D6;
 }
 
 /* ---------- Три причины вернуться: картинка + заголовок + одна строка ---------- */
@@ -145,12 +92,17 @@
   line-height: 24px;
 }
 
-/* ---------- Как проходит визит: четыре кадра по порядку ---------- */
+/* ---------- Как проходит визит: шаги по порядку ---------- */
 .film {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 28px;
   margin-top: 40px;
+}
+
+.film--6 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 44px 28px;
 }
 
 .film__item {
@@ -189,7 +141,7 @@
   color: #49678D;
 }
 
-/* стрелка к следующему кадру — в промежутке между картинками */
+/* стрелка к следующему шагу — в промежутке между картинками одного ряда */
 .film__item:not(:last-child) .film__frame::after {
   content: "";
   position: absolute;
@@ -202,6 +154,10 @@
   border-radius: 50%;
   background: var(--navy) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M4 10h11M11 5l5 5-5 5' fill='none' stroke='%23fff' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 18px 18px no-repeat;
   box-shadow: 0 0 0 5px var(--bg-gray);
+}
+
+.film--6 .film__item:nth-child(3n) .film__frame::after {
+  display: none;
 }
 
 .film__num {
@@ -226,55 +182,6 @@
   margin-top: 8px;
   font-size: 18px;
   line-height: 24px;
-}
-
-/* ---------- Также входят: значки-пилюли ---------- */
-.also {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 14px 18px;
-  margin-top: 48px;
-  padding: 24px 28px;
-  border-radius: var(--radius-card);
-  background: var(--white);
-}
-
-.also__label {
-  font-size: 18px;
-  line-height: 23px;
-  font-weight: 700;
-  color: var(--navy);
-}
-
-.also__list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.also__item {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 9px 16px 9px 12px;
-  border-radius: 999px;
-  background: #E8EFF8;
-  font-size: 16px;
-  line-height: 20px;
-  font-weight: 600;
-  color: var(--navy);
-}
-
-.also__item svg {
-  flex: none;
-  width: 22px;
-  height: 22px;
-}
-
-.mid-cta {
-  margin-top: 40px;
-  text-align: center;
 }
 
 /* ---------- После визита: четыре плитки со значками в тёмной секции ---------- */
@@ -355,8 +262,7 @@
   line-height: 23px;
 }
 
-/* ---------- Сомнения: вопросы раскрываются по нажатию (details, без JS) ---------- */
-/* вопросы слева, предупреждение о жалобах — карточкой справа */
+/* ---------- Сомнения: вопросы слева, предупреждение о жалобах справа ---------- */
 .doubts {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 400px);
@@ -470,7 +376,7 @@
   line-height: 24px;
 }
 
-/* ---------- Запись: связь со своим филиалом ---------- */
+/* ---------- Запись: сначала ответ в переписке, затем телефоны филиалов ---------- */
 .visit {
   padding: 48px 64px 56px;
   border-radius: var(--radius-card);
@@ -489,8 +395,45 @@
   height: auto;
 }
 
-.visit__choose {
+.reply {
+  display: grid;
+  grid-template-columns: 64px minmax(0, 1fr);
+  column-gap: 22px;
+  align-items: center;
   margin-top: 28px;
+  padding: 28px 32px;
+  border-radius: var(--radius-card);
+  background: var(--navy);
+  color: var(--white);
+}
+
+.reply__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--white);
+  color: var(--navy);
+}
+
+.reply__title {
+  font-size: 24px;
+  line-height: 30px;
+  font-weight: 700;
+  text-wrap: balance;
+}
+
+.reply__text {
+  margin-top: 8px;
+  font-size: 18px;
+  line-height: 24px;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.visit__choose {
+  margin-top: 32px;
   font-size: 18px;
   line-height: 23px;
   font-weight: 700;
@@ -508,7 +451,7 @@
   display: flex;
   flex-direction: column;
   min-width: 0;
-  padding: 26px 30px 28px;
+  padding: 24px 28px 26px;
   border-radius: var(--radius-card);
   background: var(--white);
 }
@@ -538,8 +481,6 @@
   font-size: 24px;
   line-height: 30px;
   font-weight: 800;
-  letter-spacing: -0.01em;
-  text-transform: uppercase;
   color: var(--navy);
 }
 
@@ -550,127 +491,48 @@
   color: #49678D;
 }
 
-.place__label {
-  margin-top: 20px;
-  font-size: 16px;
-  line-height: 20px;
-  font-weight: 600;
-  color: var(--navy);
-}
-
-/* три мессенджера: MAX, Telegram, WhatsApp */
-.msgs {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 10px;
-  margin-top: 12px;
-}
-
-.msg {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  min-width: 0;
-  min-height: 56px;
-  padding: 0 12px;
-  border-radius: 14px;
-  background: var(--navy);
-  font-size: 16px;
-  line-height: 20px;
-  font-weight: 600;
-  color: var(--white);
-  text-decoration: none;
-  cursor: pointer;
-  transition: transform 0.2s var(--ease-out), box-shadow 0.2s var(--ease-out);
-}
-
-.msg[data-missing] {
-  cursor: not-allowed;
-}
-
-.msg:focus-visible {
-  outline: 3px solid var(--navy);
-  outline-offset: 3px;
-}
-
-@media (hover: hover) {
-  .msg:not([data-missing]):hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-card);
-  }
-}
-
-.msg__icon {
-  display: flex;
-  flex: none;
-  align-items: center;
-  justify-content: center;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-}
-
-.msg__icon svg {
-  width: 20px;
-  height: 20px;
-}
-
-.msg__icon--max { background: linear-gradient(135deg, #3C7BFF, #8A4DFF); }
-.msg__icon--tg { background: #2AABEE; }
-.msg__icon--wa { background: #25D366; }
-
-.setup {
-  align-self: flex-start;
-  margin-top: 8px;
-  padding: 3px 10px;
-  border-radius: 6px;
-  background: #FFF3C4;
-  font-size: 13px;
-  line-height: 17px;
-  color: #5E4600;
-}
-
-.place__phone {
+.place__call {
   display: inline-flex;
   align-items: center;
   align-self: flex-start;
-  gap: 8px;
-  margin-top: 16px;
-  font-size: 16px;
-  line-height: 20px;
+  gap: 10px;
+  min-height: 48px;
+  margin-top: 18px;
+  padding: 0 22px 0 18px;
+  border-radius: 999px;
+  box-shadow: inset 0 0 0 1.5px var(--navy);
+  font-size: 17px;
+  line-height: 21px;
   font-weight: 600;
   color: var(--navy);
-  text-decoration: underline;
-  text-decoration-color: rgba(14, 41, 75, 0.35);
-  text-underline-offset: 4px;
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-.place__phone svg {
+.place__call svg {
   flex: none;
   width: 18px;
   height: 18px;
 }
 
-.place__phone:focus-visible,
+@media (hover: hover) {
+  .place__call:hover {
+    background: var(--navy);
+    color: var(--white);
+  }
+}
+
+.place__call:focus-visible,
 .visit__link:focus-visible {
   outline: 2px solid var(--navy);
   outline-offset: 4px;
-  border-radius: 4px;
-}
-
-.visit__hint {
-  margin-top: 24px;
-  font-size: 16px;
-  line-height: 21px;
-  color: var(--navy);
 }
 
 .visit__link {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  margin-top: 14px;
+  margin-top: 28px;
   font-size: 17px;
   line-height: 22px;
   font-weight: 600;
@@ -696,26 +558,8 @@
     line-height: 18px;
   }
 
-  .hero__cta {
-    margin-top: 28px;
-  }
-
-  /* в узкой карточке филиала — мессенджеры в столбик */
-  .msgs {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 8px;
-  }
-
-  .msg {
-    justify-content: flex-start;
-    min-height: 52px;
-    padding: 0 16px;
-  }
-
-  .btn {
-    min-height: 52px;
-    padding: 0 24px;
-    font-size: 16px;
+  .hero__note {
+    margin-top: 18px;
   }
 
   .why3 {
@@ -737,10 +581,15 @@
     line-height: 21px;
   }
 
-  .film {
+  .film,
+  .film--6 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 32px 20px;
     margin-top: 28px;
+  }
+
+  .film--6 .film__item:nth-child(3) .film__frame::after {
+    display: block;
   }
 
   .film__item:nth-child(2n) .film__frame::after {
@@ -764,20 +613,6 @@
   .film__text {
     font-size: 16px;
     line-height: 21px;
-  }
-
-  .also {
-    margin-top: 36px;
-    padding: 20px;
-  }
-
-  .also__label {
-    font-size: 16px;
-    line-height: 20px;
-  }
-
-  .also__item {
-    font-size: 15px;
   }
 
   .gains,
@@ -821,6 +656,12 @@
     line-height: 21px;
   }
 
+  /* предупреждение под вопросами, значок слева */
+  .doubts {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 24px;
+  }
+
   .qa__q {
     padding: 18px 0;
     font-size: 18px;
@@ -831,12 +672,6 @@
     padding-right: 40px;
     font-size: 16px;
     line-height: 21px;
-  }
-
-  /* планшет: предупреждение под вопросами, значок слева */
-  .doubts {
-    grid-template-columns: minmax(0, 1fr);
-    row-gap: 24px;
   }
 
   .alert {
@@ -873,6 +708,27 @@
     column-gap: 28px;
   }
 
+  .reply {
+    grid-template-columns: 52px minmax(0, 1fr);
+    column-gap: 18px;
+    padding: 22px 24px;
+  }
+
+  .reply__icon {
+    width: 52px;
+    height: 52px;
+  }
+
+  .reply__title {
+    font-size: 20px;
+    line-height: 26px;
+  }
+
+  .reply__text {
+    font-size: 16px;
+    line-height: 21px;
+  }
+
   .places {
     gap: 16px;
   }
@@ -897,14 +753,13 @@
     line-height: 17px;
   }
 
-  .btn {
-    gap: 10px;
-    padding: 0 14px;
-    font-size: 15px;
+  .hero__note {
+    align-items: flex-start;
+    margin-top: 14px;
   }
 
-  .hero__cta .btn {
-    width: 100%;
+  .hero__note svg {
+    margin-top: -1px;
   }
 
   .why3 {
@@ -938,8 +793,9 @@
     margin-top: 6px;
   }
 
-  /* кадры: картинка слева от номера и заголовка, строка текста ниже */
-  .film {
+  /* шаги: картинка слева от номера и заголовка, строка текста рядом */
+  .film,
+  .film--6 {
     grid-template-columns: minmax(0, 1fr);
     gap: 24px;
     margin-top: 20px;
@@ -958,7 +814,8 @@
     align-self: center;
   }
 
-  .film__item:not(:last-child) .film__frame::after {
+  .film__item .film__frame::after,
+  .film--6 .film__item:nth-child(3) .film__frame::after {
     display: none;
   }
 
@@ -989,23 +846,6 @@
     margin-top: 4px;
     font-size: 16px;
     line-height: 20px;
-  }
-
-  .also {
-    margin-top: 28px;
-    padding: 16px;
-  }
-
-  .also__list {
-    gap: 8px;
-  }
-
-  .mid-cta {
-    margin-top: 28px;
-  }
-
-  .mid-cta .btn {
-    width: 100%;
   }
 
   .gains,
@@ -1059,6 +899,10 @@
     margin-top: 4px;
   }
 
+  .doubts {
+    margin-top: 16px;
+    row-gap: 20px;
+  }
 
   .qa__q {
     gap: 14px;
@@ -1079,11 +923,6 @@
 
   .qa__a {
     padding: 0 0 18px;
-  }
-
-  .doubts {
-    margin-top: 16px;
-    row-gap: 20px;
   }
 
   .alert {
@@ -1120,8 +959,31 @@
     display: none;
   }
 
-  .visit__choose {
+  .reply {
+    grid-template-columns: 44px minmax(0, 1fr);
+    column-gap: 14px;
+    align-items: start;
     margin-top: 20px;
+    padding: 18px 16px;
+  }
+
+  .reply__icon {
+    width: 44px;
+    height: 44px;
+  }
+
+  .reply__icon svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .reply__title {
+    font-size: 18px;
+    line-height: 23px;
+  }
+
+  .visit__choose {
+    margin-top: 24px;
     font-size: 16px;
   }
 
@@ -1135,16 +997,12 @@
     padding: 18px 16px 20px;
   }
 
-  .place__label {
-    margin-top: 16px;
+  .place__call {
+    margin-top: 14px;
   }
-}
 
-/* узкий телефон: длинная надпись кнопки в одну строку — без стрелки */
-@media (max-width: 389.98px) {
-  .hero__cta .btn svg,
-  .mid-cta .btn svg {
-    display: none;
+  .visit__link {
+    margin-top: 22px;
   }
 }
 
@@ -1197,13 +1055,9 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .btn,
+  .place__call,
   .qa__mark::before,
   .qa__mark::after {
     transition: none;
-  }
-
-  .btn:hover {
-    transform: none;
   }
 }

@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<!-- Денталь Профи — образовательная страница «Регулярная профессиональная гигиена». Прототип для утверждения дизайна, редакция 2 (короче, больше иллюстраций). -->
+<!-- Денталь Профи — образовательная страница «Регулярная профессиональная гигиена». Прототип для утверждения дизайна, редакция 3 (правки руководителя). -->
 <meta name="robots" content="noindex, nofollow">
 <title>Регулярная профессиональная гигиена — Денталь Профи</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,12 +11,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style>
 <link rel="stylesheet" href="assets/css/style.css?v=1">
-<link rel="stylesheet" href="assets/css/regular.css?v=6">
-<script src="assets/js/main.js?v=2"></script>
+<link rel="stylesheet" href="assets/css/regular.css?v=7">
+<script src="assets/js/main.js?v=3"></script>
 </head>
 <body>
 <div class="proto" role="note">
-  <p><b>Прототип.</b> Иллюстрации временные&nbsp;— заменим разрешёнными фото клиники. Ссылки на&nbsp;мессенджеры филиалов ещё не&nbsp;подключены.</p>
+  <p><b>Прототип.</b> Иллюстрации временные&nbsp;— заменим реальными кадрами работы клиники: осмотр, бинокуляры, окрашивание, контроль результата. Шрифт временный&nbsp;— для&nbsp;фирменных Akrobat Bold и&nbsp;Google Sans нужны файлы шрифтов.</p>
 </div>
 <main>
     <!-- 1. Первый экран -->
@@ -127,12 +127,11 @@
           <div class="hero__content">
             <p class="hero__eyebrow">Регулярная профессиональная гигиена</p>
             <h1 class="hero__title">Здоровье зубов важно не&nbsp;только восстановить, но&nbsp;и&nbsp;сохранить</h1>
-            <div class="hero__cta">
-              <a class="btn btn--light" href="#contact" data-cta="hero">
-                <span>Согласовать профилактический визит</span>
-                <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </a>
-            </div>
+            <p class="hero__text">Профессиональная гигиена, контроль состояния зубов и&nbsp;дёсен и&nbsp;рекомендации по&nbsp;домашнему уходу&nbsp;— чтобы поддерживать результат лечения.</p>
+            <p class="hero__note">
+              <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3.5 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span>Обычно около часа. Следующий визит&nbsp;— по&nbsp;индивидуальной рекомендации.</span>
+            </p>
           </div>
           <div class="hero__card">
             <img class="hero__img" src="assets/img/hero-clean.svg" width="386" height="357" alt="чистый блестящий зуб" decoding="async">
@@ -171,12 +170,23 @@
       </div>
     </section>
 
-    <!-- 3. Как проходит визит в Денталь Профи -->
+    <!-- 3. Как проходит визит: шесть шагов -->
     <section class="section section--gray" id="visit">
       <div class="container">
         <h2 class="h2">Как проходит визит в&nbsp;Денталь Профи</h2>
-        <p class="lead">Не&nbsp;просто чистка: внимание к&nbsp;деталям и&nbsp;проверка результата.</p>
-        <ol class="film">
+        <p class="lead">Не&nbsp;просто чистка: осмотр, внимание к&nbsp;деталям и&nbsp;проверка результата.</p>
+        <ol class="film film--6">
+          <li class="film__item">
+            <div class="film__frame">
+              <figure class="film__media">
+                <img class="film__img" src="assets/img/frame-exam.svg" width="400" height="300" alt="зубы в рамке видоискателя и фотокамера" loading="lazy" decoding="async">
+                <figcaption class="film__tag">Иллюстрация</figcaption>
+              </figure>
+            </div>
+            <span class="film__num">01</span>
+            <h3 class="film__title">Осматриваем зубы и&nbsp;дёсны</h3>
+            <p class="film__text">Оцениваем состояние и&nbsp;фотографируем зубы до&nbsp;гигиены.</p>
+          </li>
           <li class="film__item">
             <div class="film__frame">
               <figure class="film__media">
@@ -184,31 +194,31 @@
                 <figcaption class="film__tag">Иллюстрация</figcaption>
               </figure>
             </div>
-            <span class="film__num">01</span>
+            <span class="film__num">02</span>
             <h3 class="film__title">Окрашиваем налёт</h3>
             <p class="film__text">Индикатор показывает участки, которым нужно внимание.</p>
           </li>
           <li class="film__item">
             <div class="film__frame">
               <figure class="film__media">
-                <img class="film__img" src="assets/img/frame-loupes.svg" width="400" height="300" alt="бинокуляры специалиста направлены на участок у края десны" loading="lazy" decoding="async">
-                <figcaption class="film__tag">Иллюстрация</figcaption>
-              </figure>
-            </div>
-            <span class="film__num">02</span>
-            <h3 class="film__title">Работаем с&nbsp;увеличением</h3>
-            <p class="film__text">Бинокуляры помогают видеть отложения и&nbsp;детали пломб.</p>
-          </li>
-          <li class="film__item">
-            <div class="film__frame">
-              <figure class="film__media">
-                <img class="film__img" src="assets/img/frame-powder.svg" width="400" height="300" alt="наконечник для воздушно-порошкового очищения и баночка с порошком" loading="lazy" decoding="async">
+                <img class="film__img" src="assets/img/frame-loupes.svg" width="400" height="300" alt="бинокуляры специалиста направлены на отложения у края десны" loading="lazy" decoding="async">
                 <figcaption class="film__tag">Иллюстрация</figcaption>
               </figure>
             </div>
             <span class="film__num">03</span>
-            <h3 class="film__title">Очищаем порошками EMS</h3>
-            <p class="film__text">Способ обработки подбираем под&nbsp;зубы, пломбы и&nbsp;конструкции.</p>
+            <h3 class="film__title">Удаляем зубные отложения</h3>
+            <p class="film__text">Работаем в&nbsp;бинокулярах и&nbsp;используем профессиональные порошки EMS. Способ подбираем под&nbsp;зубы, пломбы и&nbsp;конструкции.</p>
+          </li>
+          <li class="film__item">
+            <div class="film__frame">
+              <figure class="film__media">
+                <img class="film__img" src="assets/img/frame-polish.svg" width="400" height="300" alt="полировка пломбы резиновой чашечкой" loading="lazy" decoding="async">
+                <figcaption class="film__tag">Иллюстрация</figcaption>
+              </figure>
+            </div>
+            <span class="film__num">04</span>
+            <h3 class="film__title">Полируем пломбы</h3>
+            <p class="film__text">Там, где это нужно. Если заметим дефект, объясним, что проверить или&nbsp;лечить отдельно.</p>
           </li>
           <li class="film__item">
             <div class="film__frame">
@@ -217,28 +227,22 @@
                 <figcaption class="film__tag">Иллюстрация</figcaption>
               </figure>
             </div>
-            <span class="film__num">04</span>
+            <span class="film__num">05</span>
             <h3 class="film__title">Проверяем результат</h3>
-            <p class="film__text">Окрашиваем ещё раз и&nbsp;при&nbsp;необходимости дочищаем.</p>
+            <p class="film__text">Окрашиваем ещё раз, при&nbsp;необходимости дочищаем и&nbsp;фотографируем зубы после.</p>
+          </li>
+          <li class="film__item">
+            <div class="film__frame">
+              <figure class="film__media">
+                <img class="film__img" src="assets/img/frame-home.svg" width="400" height="300" alt="зубная щётка, ёршик и календарь с отмеченной датой" loading="lazy" decoding="async">
+                <figcaption class="film__tag">Иллюстрация</figcaption>
+              </figure>
+            </div>
+            <span class="film__num">06</span>
+            <h3 class="film__title">Даём рекомендации</h3>
+            <p class="film__text">Показываем, как ухаживать дома, и&nbsp;называем срок следующего визита.</p>
           </li>
         </ol>
-
-        <div class="also">
-          <p class="also__label">Также в&nbsp;визит входят:</p>
-          <ul class="also__list">
-            <li class="also__item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l1.8 4.7L18.5 9.5l-4.7 1.8L12 16l-1.8-4.7L5.5 9.5l4.7-1.8z" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z" fill="currentColor"/></svg>полировка пломб, где нужно</li>
-            <li class="also__item"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15 15l5.5 5.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>контрольный осмотр</li>
-            <li class="also__item"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8.5 9.5c0-2 1.7-3 3.5-2.2 1.8-.8 3.5.2 3.5 2.2 0 1.8-.8 2.6-1 4l-.6 3.5c-.2.8-1 .8-1.2 0l-.4-2c-.1-.5-.5-.5-.6 0l-.4 2c-.2.8-1 .8-1.2 0l-.6-3.5c-.2-1.4-1-2.2-1-4z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>снимки&nbsp;— по&nbsp;показаниям</li>
-            <li class="also__item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 20.5l9-9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><rect x="12.5" y="2" width="6.5" height="11" rx="2.5" transform="rotate(45 15.75 7.5)" fill="none" stroke="currentColor" stroke-width="1.9"/></svg>советы по&nbsp;уходу дома</li>
-          </ul>
-        </div>
-
-        <div class="mid-cta">
-          <a class="btn" href="#contact" data-cta="middle">
-            <span>Согласовать профилактический визит</span>
-            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-        </div>
       </div>
     </section>
 
@@ -249,15 +253,15 @@
         <ul class="gains">
           <li class="gains__item">
             <span class="gains__icon gains__icon--blue"><svg viewBox="0 0 32 32" width="32" height="32" aria-hidden="true"><path d="M7.7 10.5C7.3 6.2 10.8 4 14.7 5.8 18.6 4 22.1 6.2 21.7 10.5 21.5 14 20.4 16.2 20 19.3L18.9 28.3C18.7 30.3 16.7 30.3 16.5 28.3L15.8 22.4C15.4 20.8 14 20.8 13.6 22.4L12.9 28.3C12.7 30.3 10.7 30.3 10.5 28.3L9.4 19.3C9 16.2 7.9 14 7.7 10.5Z" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/><path d="M26 2.5l1.1 2.9 2.9 1.1-2.9 1.1L26 10.5l-1.1-2.9-2.9-1.1 2.9-1.1z" fill="currentColor"/></svg></span>
-            <p class="gains__text">Зубы очищены, результат проверен</p>
+            <p class="gains__text">Чистые зубы и&nbsp;проверенный результат</p>
           </li>
           <li class="gains__item">
-            <span class="gains__icon gains__icon--pink"><svg viewBox="0 0 32 32" width="32" height="32" aria-hidden="true"><path d="M5 15L16 6l11 9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 13v13h16V13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/><path d="M12.5 21.5l2.5 2.5 5-5.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-            <p class="gains__text">Понятные советы по&nbsp;уходу дома</p>
+            <span class="gains__icon gains__icon--pink"><svg viewBox="0 0 32 32" width="32" height="32" aria-hidden="true"><rect x="4" y="9" width="24" height="18" rx="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M11 9l2-3.5h6L21 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="16" cy="18" r="5" fill="none" stroke="currentColor" stroke-width="2"/></svg></span>
+            <p class="gains__text">Фото зубов до&nbsp;и&nbsp;после гигиены</p>
           </li>
           <li class="gains__item">
             <span class="gains__icon gains__icon--beige"><svg viewBox="0 0 32 32" width="32" height="32" aria-hidden="true"><rect x="5" y="7" width="22" height="20" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M5 13h22M11 4v5M21 4v5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M11.5 20l3 3 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-            <p class="gains__text">Срок следующего визита&nbsp;— лично для&nbsp;вас</p>
+            <p class="gains__text">Советы по&nbsp;уходу и&nbsp;срок следующего визита</p>
           </li>
           <li class="gains__item">
             <span class="gains__icon gains__icon--blue"><svg viewBox="0 0 32 32" width="32" height="32" aria-hidden="true"><path d="M6 8.5A3.5 3.5 0 0 1 9.5 5h13A3.5 3.5 0 0 1 26 8.5v9a3.5 3.5 0 0 1-3.5 3.5H14l-6 5v-5.2A3.5 3.5 0 0 1 6 17.5z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M11 11.5h10M11 15.5h6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
@@ -330,7 +334,7 @@
       </div>
     </section>
 
-    <!-- 7. Запись: связь со своим филиалом -->
+    <!-- 7. Запись: ответ в переписке, затем телефоны филиалов -->
     <section class="section section--white" id="contact">
       <div class="container">
         <div class="visit">
@@ -341,60 +345,34 @@
             </div>
             <img class="visit__img" src="assets/img/often-calendar.svg" width="320" height="240" alt="" loading="lazy" decoding="async">
           </div>
-          <p class="visit__choose">Выберите ваш филиал:</p>
+          <div class="reply">
+            <span class="reply__icon"><svg viewBox="0 0 32 32" width="30" height="30" aria-hidden="true"><path d="M6 8.5A3.5 3.5 0 0 1 9.5 5h13A3.5 3.5 0 0 1 26 8.5v9a3.5 3.5 0 0 1-3.5 3.5H14l-6 5v-5.2A3.5 3.5 0 0 1 6 17.5z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/><path d="M11 11.5h10M11 15.5h6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></span>
+            <div class="reply__body">
+              <p class="reply__title">Чтобы записаться, ответьте администратору в&nbsp;переписке, где получили эту ссылку</p>
+              <p class="reply__text">Подберём удобное время и&nbsp;уточним стоимость для&nbsp;вашего филиала.</p>
+            </div>
+          </div>
+          <p class="visit__choose">Удобнее позвонить?</p>
           <div class="places">
             <div class="place" data-branch="mitino">
               <p class="place__badge">Ваш филиал</p>
               <h3 class="place__title">Митино</h3>
               <p class="place__addr">ул.&nbsp;Генерала Белобородова, 35/2 · 9:00–21:00</p>
-              <p class="place__label">Написать администратору:</p>
-              <div class="msgs">
-                <a class="msg" data-contact="max" data-missing aria-disabled="true">
-                  <span class="msg__icon msg__icon--max"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5c-4.4 0-7.5 2.9-7.5 6.6 0 2 .9 3.7 2.4 4.9l-.6 2.9 3.1-1.5c.8.2 1.7.3 2.6.3 4.4 0 7.5-2.9 7.5-6.6S16.4 5 12 5z" fill="none" stroke="#fff" stroke-width="2" stroke-linejoin="round"/></svg></span>
-                  <span>MAX<span class="visually-hidden"> — Митино</span></span>
-                </a>
-                <a class="msg" data-contact="telegram" data-missing aria-disabled="true">
-                  <span class="msg__icon msg__icon--tg"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.3 11.7l11.6-4.5c.6-.2 1.1.1.9 1l-2 9.3c-.1.7-.6.8-1.1.5l-3-2.2-1.5 1.4c-.2.2-.3.3-.6.3l.2-3.1 5.5-5c.2-.2 0-.3-.3-.1l-6.8 4.3-2.9-.9c-.6-.2-.6-.6 0-1z" fill="#fff"/></svg></span>
-                  <span>Telegram<span class="visually-hidden"> — Митино</span></span>
-                </a>
-                <a class="msg" data-contact="whatsapp" data-missing aria-disabled="true">
-                  <span class="msg__icon msg__icon--wa"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4.6a7.4 7.4 0 0 0-6.4 11.1l-1 3.7 3.8-1a7.4 7.4 0 1 0 3.6-13.8z" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/><path d="M9.5 8.7c.2-.4.4-.4.6-.4h.4c.2 0 .4 0 .5.4l.6 1.5c.1.2 0 .4-.1.5l-.4.5c-.1.1-.1.3 0 .4.5.8 1.1 1.4 1.9 1.9.1.1.3.1.4 0l.5-.6c.2-.2.3-.2.5-.1l1.4.7c.2.1.4.2.4.4 0 .5-.3 1.2-.8 1.4-.6.3-1.4.4-2.8-.3-1.5-.7-2.7-2.1-3.3-3.3-.5-1.2-.3-2.1 0-2.9z" fill="#fff"/></svg></span>
-                  <span>WhatsApp<span class="visually-hidden"> — Митино</span></span>
-                </a>
-              </div>
-              <p class="setup">Ссылки на&nbsp;мессенджеры добавим позже</p>
-              <a class="place__phone" href="tel:+74951049707" data-contact="phone">
+              <a class="place__call" href="tel:+74951049707" data-contact="phone">
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.2 3.5l2.6 4.2-1.9 1.9a12 12 0 0 0 6.5 6.5l1.9-1.9 4.2 2.6-1.2 3.4c-.3.8-1.1 1.3-2 1.2C10.4 20.7 3.3 13.6 2.6 6.7c-.1-.9.4-1.7 1.2-2z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
-                <span>или позвонить: +7&nbsp;(495)&nbsp;104-97-07</span>
+                <span class="nowrap">+7 (495) 104-97-07</span>
               </a>
             </div>
             <div class="place" data-branch="krasnogorsk">
               <p class="place__badge">Ваш филиал</p>
               <h3 class="place__title">Красногорск</h3>
               <p class="place__addr">ул.&nbsp;Спасская, 12 · 9:00–21:00</p>
-              <p class="place__label">Написать администратору:</p>
-              <div class="msgs">
-                <a class="msg" data-contact="max" data-missing aria-disabled="true">
-                  <span class="msg__icon msg__icon--max"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5c-4.4 0-7.5 2.9-7.5 6.6 0 2 .9 3.7 2.4 4.9l-.6 2.9 3.1-1.5c.8.2 1.7.3 2.6.3 4.4 0 7.5-2.9 7.5-6.6S16.4 5 12 5z" fill="none" stroke="#fff" stroke-width="2" stroke-linejoin="round"/></svg></span>
-                  <span>MAX<span class="visually-hidden"> — Красногорск</span></span>
-                </a>
-                <a class="msg" data-contact="telegram" data-missing aria-disabled="true">
-                  <span class="msg__icon msg__icon--tg"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.3 11.7l11.6-4.5c.6-.2 1.1.1.9 1l-2 9.3c-.1.7-.6.8-1.1.5l-3-2.2-1.5 1.4c-.2.2-.3.3-.6.3l.2-3.1 5.5-5c.2-.2 0-.3-.3-.1l-6.8 4.3-2.9-.9c-.6-.2-.6-.6 0-1z" fill="#fff"/></svg></span>
-                  <span>Telegram<span class="visually-hidden"> — Красногорск</span></span>
-                </a>
-                <a class="msg" data-contact="whatsapp" data-missing aria-disabled="true">
-                  <span class="msg__icon msg__icon--wa"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4.6a7.4 7.4 0 0 0-6.4 11.1l-1 3.7 3.8-1a7.4 7.4 0 1 0 3.6-13.8z" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/><path d="M9.5 8.7c.2-.4.4-.4.6-.4h.4c.2 0 .4 0 .5.4l.6 1.5c.1.2 0 .4-.1.5l-.4.5c-.1.1-.1.3 0 .4.5.8 1.1 1.4 1.9 1.9.1.1.3.1.4 0l.5-.6c.2-.2.3-.2.5-.1l1.4.7c.2.1.4.2.4.4 0 .5-.3 1.2-.8 1.4-.6.3-1.4.4-2.8-.3-1.5-.7-2.7-2.1-3.3-3.3-.5-1.2-.3-2.1 0-2.9z" fill="#fff"/></svg></span>
-                  <span>WhatsApp<span class="visually-hidden"> — Красногорск</span></span>
-                </a>
-              </div>
-              <p class="setup">Ссылки на&nbsp;мессенджеры добавим позже</p>
-              <a class="place__phone" href="tel:+74951254655" data-contact="phone">
+              <a class="place__call" href="tel:+74951254655" data-contact="phone">
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.2 3.5l2.6 4.2-1.9 1.9a12 12 0 0 0 6.5 6.5l1.9-1.9 4.2 2.6-1.2 3.4c-.3.8-1.1 1.3-2 1.2C10.4 20.7 3.3 13.6 2.6 6.7c-.1-.9.4-1.7 1.2-2z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
-                <span>или позвонить: +7&nbsp;(495)&nbsp;125-46-55</span>
+                <span class="nowrap">+7 (495) 125-46-55</span>
               </a>
             </div>
           </div>
-          <p class="visit__hint">Или просто ответьте администратору в&nbsp;переписке, где получили эту ссылку.</p>
           <a class="visit__link" href="https://dentale-profi.ru/for-patients/pravila-ezhednevnogo-uhoda-za-zubami">
             <span>Как ухаживать за&nbsp;зубами дома</span>
             <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -403,6 +381,6 @@
       </div>
     </section>
   </main>
-<script src="assets/js/page.js?v=2"></script>
+<script src="assets/js/page.js?v=3"></script>
 </body>
 </html>
