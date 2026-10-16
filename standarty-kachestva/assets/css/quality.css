@@ -798,11 +798,6 @@
   transition: background-color 0.2s ease;
 }
 
-.doc__meta {
-  font-weight: 500;
-  color: #49678D;
-}
-
 .doc__arrow {
   flex: none;
   width: 14px;
