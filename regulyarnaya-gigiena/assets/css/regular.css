@@ -191,6 +191,11 @@
   line-height: 24px;
 }
 
+/* раскрывающийся текст шага — только на телефоне */
+.film__more {
+  display: none;
+}
+
 /* ---------- После визита: четыре плитки со значками и фото экрана камеры ---------- */
 .after {
   display: grid;
@@ -849,17 +854,91 @@
     flex-basis: auto;
   }
 
+  /* телефон: крупное фото, рядом номер, заголовок и «Подробнее» */
   .film__item {
     display: grid;
-    grid-template-columns: minmax(0, 132px) minmax(0, 1fr);
-    grid-template-rows: auto auto auto;
-    column-gap: 16px;
-    align-content: center;
+    grid-template-columns: minmax(0, 48%) minmax(0, 1fr);
+    grid-template-rows: auto auto 1fr;
+    column-gap: 14px;
+    align-items: start;
   }
 
   .film__frame {
     grid-row: 1 / span 3;
-    align-self: center;
+  }
+
+  .film__text--open {
+    display: none;
+  }
+
+  .film__more {
+    display: block;
+    grid-column: 2;
+    margin-top: 8px;
+  }
+
+  .film__toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 32px;
+    font-size: 15px;
+    line-height: 18px;
+    font-weight: 600;
+    color: var(--navy);
+    cursor: pointer;
+    list-style: none;
+  }
+
+  .film__toggle::-webkit-details-marker {
+    display: none;
+  }
+
+  .film__toggle::marker {
+    content: "";
+  }
+
+  .film__toggle:focus-visible {
+    outline: 2px solid var(--navy);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  .film__toggle-show,
+  .film__toggle-hide {
+    text-decoration: underline;
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 4px;
+  }
+
+  .film__toggle-hide {
+    display: none;
+  }
+
+  .film__more[open] .film__toggle-show {
+    display: none;
+  }
+
+  .film__more[open] .film__toggle-hide {
+    display: inline;
+  }
+
+  .film__chev {
+    width: 8px;
+    height: 8px;
+    border-right: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+    transform: translateY(-2px) rotate(45deg);
+  }
+
+  .film__more[open] .film__chev {
+    transform: translateY(2px) rotate(-135deg);
+  }
+
+  .film__more .film__text {
+    margin-top: 4px;
+    font-size: 16px;
+    line-height: 21px;
   }
 
   .film__item .film__frame::after {
@@ -888,8 +967,7 @@
   }
 
   .film__num {
-    align-self: end;
-    margin-top: 0;
+    margin-top: 2px;
   }
 
   .film__title {
