@@ -522,6 +522,13 @@
   color: #49678D;
 }
 
+.place__hours {
+  margin-top: 2px;
+  font-size: 16px;
+  line-height: 21px;
+  color: #49678D;
+}
+
 .place__call {
   display: inline-flex;
   align-items: center;
@@ -850,27 +857,33 @@
     flex-basis: auto;
   }
 
-  /* телефон: номер, заголовок и текст, под ними фото на всю ширину */
+  /* телефон: номер и заголовок в одну строку, под ними текст, затем фото на всю ширину */
   .film__item {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .film__frame {
-    order: 4;
-    margin-top: 14px;
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    column-gap: 10px;
+    align-items: baseline;
   }
 
   .film__num {
-    order: 1;
+    grid-column: 1;
+    grid-row: 1;
   }
 
   .film__title {
-    order: 2;
+    grid-column: 2;
+    grid-row: 1;
   }
 
   .film__text {
-    order: 3;
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+
+  .film__frame {
+    grid-column: 1 / -1;
+    grid-row: 3;
+    margin-top: 14px;
   }
 
   .film__item .film__frame::after {
@@ -900,10 +913,12 @@
 
   .film__num {
     margin-top: 0;
+    font-size: 16px;
+    font-weight: 600;
   }
 
   .film__title {
-    margin-top: 2px;
+    margin-top: 0;
     font-size: 19px;
     line-height: 24px;
   }
