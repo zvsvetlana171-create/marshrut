@@ -735,3 +735,175 @@
     transform: none;
   }
 }
+
+/* ---------- Документ стандартов: тёмная карточка со ссылкой на PDF ---------- */
+.doc {
+  display: grid;
+  grid-template-columns: 96px minmax(0, 1fr) auto;
+  column-gap: 32px;
+  align-items: center;
+  margin-top: 40px;
+  padding: 32px 40px;
+  border-radius: var(--radius-card);
+  background: var(--navy);
+  color: var(--white);
+}
+
+.doc__icon {
+  width: 96px;
+  height: auto;
+}
+
+.doc__label {
+  font-size: 13px;
+  line-height: 16px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #AFC0D6;
+}
+
+.doc__title {
+  margin-top: 8px;
+  font-size: 24px;
+  line-height: 30px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  color: var(--white);
+  text-wrap: balance;
+}
+
+.doc__desc {
+  max-width: 640px;
+  margin-top: 10px;
+  font-size: 18px;
+  line-height: 23px;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.doc__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 26px;
+  border-radius: 999px;
+  background: var(--white);
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 600;
+  color: var(--navy);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color 0.2s ease;
+}
+
+.doc__meta {
+  font-weight: 500;
+  color: #49678D;
+}
+
+.doc__arrow {
+  flex: none;
+  width: 14px;
+  height: 14px;
+}
+
+.doc__hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+@media (hover: hover) {
+  .doc__btn:hover {
+    background: #EFDECD;
+  }
+}
+
+.doc__btn:focus-visible {
+  outline: 2px solid var(--white);
+  outline-offset: 3px;
+}
+
+@media (max-width: 1199.98px) {
+  .doc {
+    grid-template-columns: 80px minmax(0, 1fr);
+    column-gap: 24px;
+    margin-top: 32px;
+    padding: 28px;
+  }
+
+  .doc__icon {
+    width: 80px;
+    grid-row: 1 / span 2;
+    align-self: start;
+  }
+
+  .doc__btn {
+    grid-column: 2;
+    justify-self: start;
+    margin-top: 20px;
+  }
+
+  .doc__title {
+    font-size: 20px;
+    line-height: 25px;
+  }
+
+  .doc__desc {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .doc {
+    grid-template-columns: 56px minmax(0, 1fr);
+    column-gap: 16px;
+    margin-top: 24px;
+    padding: 20px 18px;
+  }
+
+  .doc__icon {
+    width: 56px;
+    grid-row: 1;
+  }
+
+  .doc__text {
+    display: contents;
+  }
+
+  .doc__label {
+    grid-column: 2;
+    align-self: center;
+  }
+
+  .doc__title,
+  .doc__desc {
+    grid-column: 1 / -1;
+  }
+
+  .doc__title {
+    margin-top: 14px;
+    font-size: 18px;
+    line-height: 23px;
+  }
+
+  .doc__btn {
+    grid-column: 1 / -1;
+    justify-self: stretch;
+    justify-content: center;
+    margin-top: 18px;
+    white-space: normal;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .doc__btn {
+    transition: none;
+  }
+}
