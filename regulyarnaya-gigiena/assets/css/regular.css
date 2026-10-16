@@ -100,8 +100,7 @@
   margin-top: 40px;
 }
 
-.film--6 {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+.film--7 {
   gap: 44px 28px;
 }
 
@@ -117,7 +116,7 @@
   position: relative;
   margin: 0;
   overflow: hidden;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 3 / 2;
   border-radius: var(--radius-card);
   background: var(--white);
 }
@@ -156,7 +155,7 @@
   box-shadow: 0 0 0 5px var(--bg-gray);
 }
 
-.film--6 .film__item:nth-child(3n) .film__frame::after {
+.film--7 .film__item:nth-child(4n) .film__frame::after {
   display: none;
 }
 
@@ -184,7 +183,30 @@
   line-height: 24px;
 }
 
-/* ---------- После визита: четыре плитки со значками в тёмной секции ---------- */
+/* ---------- После визита: четыре плитки со значками и фото экрана камеры ---------- */
+.after {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 420px);
+  column-gap: 56px;
+  align-items: center;
+}
+
+.after__main {
+  min-width: 0;
+}
+
+.after .gains {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.after__img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: var(--radius-card);
+}
+
 .gains {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -582,14 +604,21 @@
   }
 
   .film,
-  .film--6 {
+  .film--7 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 32px 20px;
     margin-top: 28px;
   }
 
-  .film--6 .film__item:nth-child(3) .film__frame::after {
-    display: block;
+  /* после визита: фото под плитками */
+  .after {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 24px;
+  }
+
+  .after__img {
+    max-width: 520px;
+    aspect-ratio: 16 / 10;
   }
 
   .film__item:nth-child(2n) .film__frame::after {
@@ -795,7 +824,7 @@
 
   /* шаги: картинка слева от номера и заголовка, строка текста рядом */
   .film,
-  .film--6 {
+  .film--7 {
     grid-template-columns: minmax(0, 1fr);
     gap: 24px;
     margin-top: 20px;
@@ -814,9 +843,16 @@
     align-self: center;
   }
 
-  .film__item .film__frame::after,
-  .film--6 .film__item:nth-child(3) .film__frame::after {
+  .film__item .film__frame::after {
     display: none;
+  }
+
+  .after .gains {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .after__img {
+    max-width: none;
   }
 
   .film__media {

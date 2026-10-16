@@ -11,12 +11,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style>
 <link rel="stylesheet" href="assets/css/style.css?v=1">
-<link rel="stylesheet" href="assets/css/regular.css?v=8">
+<link rel="stylesheet" href="assets/css/regular.css?v=9">
 <script src="assets/js/main.js?v=3"></script>
 </head>
 <body>
 <div class="proto" role="note">
-  <p><b>Прототип.</b> Рисунки временные&nbsp;— заменим реальными кадрами клиники: осмотр, полировка пломб, рекомендации. Шрифт временный&nbsp;— для&nbsp;фирменных Akrobat Bold и&nbsp;Google Sans нужны файлы шрифтов.</p>
+  <p><b>Прототип.</b> Рисунки временные&nbsp;— заменим реальными кадрами клиники: полировка пломб, рекомендации. Шрифт временный&nbsp;— для&nbsp;фирменных Akrobat Bold и&nbsp;Google Sans нужны файлы шрифтов.</p>
 </div>
 <main>
     <!-- 1. Первый экран -->
@@ -175,77 +175,80 @@
       <div class="container">
         <h2 class="h2">Как проходит визит в&nbsp;Денталь Профи</h2>
         <p class="lead">Не&nbsp;просто чистка: осмотр, внимание к&nbsp;деталям и&nbsp;проверка результата.</p>
-        <ol class="film film--6">
+        <ol class="film film--7">
           <li class="film__item">
             <div class="film__frame">
               <figure class="film__media">
-                <img class="film__img" src="assets/img/frame-exam.svg" width="400" height="300" alt="зубы в рамке видоискателя и фотокамера" loading="lazy" decoding="async">
-                <figcaption class="film__tag">Иллюстрация</figcaption>
+                <img class="film__img" src="assets/img/photo-shoot.jpg" width="800" height="533" alt="врач фотографирует зубы пациента перед гигиеной" loading="lazy" decoding="async">
               </figure>
             </div>
             <span class="film__num">01</span>
             <h3 class="film__title">Осматриваем зубы и&nbsp;дёсны</h3>
             <p class="film__text">Оцениваем состояние и&nbsp;фотографируем зубы до&nbsp;гигиены.</p>
-          </li>
-          <li class="film__item">
+          </li>          <li class="film__item">
             <div class="film__frame">
               <figure class="film__media">
-                <img class="film__img" src="assets/img/photo-stain.jpg" width="423" height="317" alt="зубы после нанесения индикатора: налёт окрашен в фиолетовый цвет" loading="lazy" decoding="async">
+                <img class="film__img" src="assets/img/photo-stain.jpg" width="476" height="317" alt="зубы после нанесения индикатора: налёт окрашен в фиолетовый цвет" loading="lazy" decoding="async">
               </figure>
             </div>
             <span class="film__num">02</span>
             <h3 class="film__title">Окрашиваем налёт</h3>
             <p class="film__text">Индикатор показывает участки, которым нужно внимание.</p>
-          </li>
-          <li class="film__item">
+          </li>          <li class="film__item">
             <div class="film__frame">
               <figure class="film__media">
-                <img class="film__img" src="assets/img/photo-loupes.jpg" width="1200" height="900" alt="специалист в бинокулярах проводит профессиональную гигиену вместе с ассистентом" loading="lazy" decoding="async">
+                <img class="film__img" src="assets/img/photo-ems.jpg" width="600" height="400" alt="специалист с порошком EMS и наконечником для воздушно-порошкового очищения" loading="lazy" decoding="async">
               </figure>
             </div>
             <span class="film__num">03</span>
+            <h3 class="film__title">Подбираем способ очищения</h3>
+            <p class="film__text">Используем профессиональные порошки EMS и&nbsp;подбираем их под&nbsp;зубы, пломбы и&nbsp;конструкции.</p>
+          </li>          <li class="film__item">
+            <div class="film__frame">
+              <figure class="film__media">
+                <img class="film__img" src="assets/img/photo-loupes.jpg" width="1500" height="1000" alt="специалист в бинокулярах проводит профессиональную гигиену вместе с ассистентом" loading="lazy" decoding="async">
+              </figure>
+            </div>
+            <span class="film__num">04</span>
             <h3 class="film__title">Удаляем зубные отложения</h3>
-            <p class="film__text">Работаем в&nbsp;бинокулярах и&nbsp;используем профессиональные порошки EMS. Способ подбираем под&nbsp;зубы, пломбы и&nbsp;конструкции.</p>
-          </li>
-          <li class="film__item">
+            <p class="film__text">Работаем в&nbsp;бинокулярах&nbsp;— так лучше видны отложения и&nbsp;детали пломб.</p>
+          </li>          <li class="film__item">
             <div class="film__frame">
               <figure class="film__media">
                 <img class="film__img" src="assets/img/frame-polish.svg" width="400" height="300" alt="полировка пломбы резиновой чашечкой" loading="lazy" decoding="async">
                 <figcaption class="film__tag">Иллюстрация</figcaption>
               </figure>
             </div>
-            <span class="film__num">04</span>
+            <span class="film__num">05</span>
             <h3 class="film__title">Полируем пломбы</h3>
             <p class="film__text">Там, где это нужно. Если заметим дефект, объясним, что проверить или&nbsp;лечить отдельно.</p>
-          </li>
-          <li class="film__item">
+          </li>          <li class="film__item">
             <div class="film__frame">
               <figure class="film__media">
-                <img class="film__img" src="assets/img/photo-clean.jpg" width="423" height="317" alt="те же зубы после профессиональной гигиены" loading="lazy" decoding="async">
+                <img class="film__img" src="assets/img/photo-clean.jpg" width="476" height="317" alt="те же зубы после профессиональной гигиены" loading="lazy" decoding="async">
               </figure>
             </div>
-            <span class="film__num">05</span>
+            <span class="film__num">06</span>
             <h3 class="film__title">Проверяем результат</h3>
             <p class="film__text">Окрашиваем ещё раз, при&nbsp;необходимости дочищаем и&nbsp;фотографируем зубы после.</p>
-          </li>
-          <li class="film__item">
+          </li>          <li class="film__item">
             <div class="film__frame">
               <figure class="film__media">
                 <img class="film__img" src="assets/img/frame-home.svg" width="400" height="300" alt="зубная щётка, ёршик и календарь с отмеченной датой" loading="lazy" decoding="async">
                 <figcaption class="film__tag">Иллюстрация</figcaption>
               </figure>
             </div>
-            <span class="film__num">06</span>
+            <span class="film__num">07</span>
             <h3 class="film__title">Даём рекомендации</h3>
             <p class="film__text">Показываем, как ухаживать дома, и&nbsp;называем срок следующего визита.</p>
-          </li>
-        </ol>
+          </li>        </ol>
       </div>
     </section>
 
     <!-- 4. Что вы получаете -->
     <section class="section section--navy" id="after">
-      <div class="container">
+      <div class="container after">
+        <div class="after__main">
         <h2 class="h2">После визита у&nbsp;вас будет</h2>
         <ul class="gains">
           <li class="gains__item">
@@ -265,6 +268,8 @@
             <p class="gains__text">Если нужно лечение&nbsp;— объясним причину и&nbsp;следующий шаг</p>
           </li>
         </ul>
+        </div>
+        <img class="after__img" src="assets/img/photo-screen.jpg" width="500" height="500" alt="на экране фотоаппарата — снимок зубов пациента" loading="lazy" decoding="async">
       </div>
     </section>
 
@@ -338,7 +343,7 @@
           <div class="visit__head">
             <div class="visit__intro">
               <h2 class="h2">Забота о&nbsp;зубах продолжается между визитами</h2>
-              <p class="lead">Поможем уточнить срок, состав приёма и&nbsp;стоимость и&nbsp;подберём удобное время.</p>
+              <p class="lead">Подскажем, когда лучше прийти, расскажем, что входит в&nbsp;приём, и&nbsp;подберём удобное время.</p>
             </div>
             <img class="visit__img" src="assets/img/often-calendar.svg" width="320" height="240" alt="" loading="lazy" decoding="async">
           </div>
