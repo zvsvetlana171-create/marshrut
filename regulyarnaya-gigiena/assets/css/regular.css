@@ -191,10 +191,6 @@
   line-height: 24px;
 }
 
-/* раскрывающийся текст шага — только на телефоне */
-.film__more {
-  display: none;
-}
 
 /* ---------- После визита: четыре плитки со значками и фото экрана камеры ---------- */
 .after {
@@ -854,82 +850,27 @@
     flex-basis: auto;
   }
 
-  /* телефон: фото на всю ширину, под ним номер, заголовок и «Подробнее» */
+  /* телефон: номер, заголовок и текст, под ними фото на всю ширину */
   .film__item {
-    display: block;
+    display: flex;
+    flex-direction: column;
   }
 
-  .film__text--open {
-    display: none;
+  .film__frame {
+    order: 4;
+    margin-top: 14px;
   }
 
-  .film__more {
-    display: block;
-    margin-top: 6px;
+  .film__num {
+    order: 1;
   }
 
-  .film__toggle {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    min-height: 32px;
-    font-size: 15px;
-    line-height: 18px;
-    font-weight: 600;
-    color: var(--navy);
-    cursor: pointer;
-    list-style: none;
+  .film__title {
+    order: 2;
   }
 
-  .film__toggle::-webkit-details-marker {
-    display: none;
-  }
-
-  .film__toggle::marker {
-    content: "";
-  }
-
-  .film__toggle:focus-visible {
-    outline: 2px solid var(--navy);
-    outline-offset: 3px;
-    border-radius: 4px;
-  }
-
-  .film__toggle-show,
-  .film__toggle-hide {
-    text-decoration: underline;
-    text-decoration-thickness: 1.5px;
-    text-underline-offset: 4px;
-  }
-
-  .film__toggle-hide {
-    display: none;
-  }
-
-  .film__more[open] .film__toggle-show {
-    display: none;
-  }
-
-  .film__more[open] .film__toggle-hide {
-    display: inline;
-  }
-
-  .film__chev {
-    width: 8px;
-    height: 8px;
-    border-right: 2px solid currentColor;
-    border-bottom: 2px solid currentColor;
-    transform: translateY(-2px) rotate(45deg);
-  }
-
-  .film__more[open] .film__chev {
-    transform: translateY(2px) rotate(-135deg);
-  }
-
-  .film__more .film__text {
-    margin-top: 4px;
-    font-size: 16px;
-    line-height: 21px;
+  .film__text {
+    order: 3;
   }
 
   .film__item .film__frame::after {
@@ -958,7 +899,7 @@
   }
 
   .film__num {
-    margin-top: 12px;
+    margin-top: 0;
   }
 
   .film__title {
@@ -968,9 +909,9 @@
   }
 
   .film__text {
-    margin-top: 4px;
-    font-size: 16px;
-    line-height: 20px;
+    margin-top: 6px;
+    font-size: 17px;
+    line-height: 23px;
   }
 
   .gains,
