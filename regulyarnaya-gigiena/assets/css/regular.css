@@ -837,7 +837,7 @@
   .film,
   .film--7 {
     grid-template-columns: minmax(0, 1fr);
-    gap: 24px;
+    gap: 20px;
     margin-top: 20px;
   }
 
@@ -849,16 +849,17 @@
     flex-basis: auto;
   }
 
+  /* телефон: маленькое фото, рядом номер и заголовок, текст — под ними на всю ширину */
   .film__item {
     display: grid;
-    grid-template-columns: minmax(0, 132px) minmax(0, 1fr);
+    grid-template-columns: minmax(0, 96px) minmax(0, 1fr);
     grid-template-rows: auto auto auto;
-    column-gap: 16px;
-    align-content: center;
+    column-gap: 14px;
+    align-content: start;
   }
 
   .film__frame {
-    grid-row: 1 / span 3;
+    grid-row: 1 / span 2;
     align-self: center;
   }
 
@@ -876,7 +877,7 @@
   }
 
   .film__media {
-    border-radius: 12px;
+    border-radius: 10px;
   }
 
   .film__tag {
@@ -899,7 +900,8 @@
   }
 
   .film__text {
-    margin-top: 4px;
+    grid-column: 1 / -1;
+    margin-top: 10px;
     font-size: 16px;
     line-height: 20px;
   }
