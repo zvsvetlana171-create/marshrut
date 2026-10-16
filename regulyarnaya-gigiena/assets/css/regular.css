@@ -116,7 +116,7 @@
   position: relative;
   margin: 0;
   overflow: hidden;
-  aspect-ratio: 3 / 2;
+  aspect-ratio: 1 / 1;
   border-radius: var(--radius-card);
   background: var(--white);
 }
@@ -832,7 +832,7 @@
 
   .film__item {
     display: grid;
-    grid-template-columns: minmax(0, 132px) minmax(0, 1fr);
+    grid-template-columns: minmax(0, 112px) minmax(0, 1fr);
     grid-template-rows: auto auto auto;
     column-gap: 16px;
     align-content: center;
