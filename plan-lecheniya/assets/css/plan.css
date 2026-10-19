@@ -1152,10 +1152,10 @@
   padding-top: 0;
 }
 
-/* ---------- Пример маршрута: этапы-«таблетки» со стрелками ---------- */
+/* ---------- Пример маршрута: пять этапов на всю ширину, стрелки между ними ---------- */
 .route-ex {
   margin-top: 48px;
-  padding: 24px 28px 22px;
+  padding: 28px 32px 26px;
   border-radius: var(--radius-card);
   background: var(--white);
 }
@@ -1168,39 +1168,63 @@
 }
 
 .route-ex__list {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 10px 0;
-  margin-top: 14px;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0 40px;
+  margin-top: 20px;
 }
 
 .route-ex__step {
+  position: relative;
   display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-width: 0;
+  min-height: 108px;
+  padding: 16px 12px;
+  border-radius: 14px;
+  background: #E8EFF8;
+  text-align: center;
 }
 
 .route-ex__step:not(:last-child)::after {
   content: "";
+  position: absolute;
+  top: 50%;
+  right: -33px;
   width: 26px;
   height: 14px;
-  margin: 0 6px;
+  margin-top: -7px;
   background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 26 14'%3E%3Cpath d='M2 7h20M17 2l5 5-5 5' fill='none' stroke='%237B9BCB' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat;
 }
 
-.route-ex__pill {
-  padding: 9px 16px;
-  border-radius: 999px;
-  background: #E8EFF8;
-  font-size: 16px;
-  line-height: 20px;
+.route-ex__num {
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--navy);
+  font-size: 15px;
+  line-height: 1;
+  font-weight: 800;
+  color: var(--white);
+}
+
+.route-ex__name {
+  font-size: 17px;
+  line-height: 21px;
   font-weight: 600;
   color: var(--navy);
-  white-space: nowrap;
+  text-wrap: balance;
 }
 
 .route-ex__note {
-  margin-top: 14px;
+  margin-top: 16px;
   font-size: 15px;
   line-height: 20px;
   color: #49678D;
@@ -1409,7 +1433,7 @@
 @media (max-width: 1199.98px) {
   .route-ex {
     margin-top: 36px;
-    padding: 20px;
+    padding: 22px 24px;
   }
 
   .route-ex__label {
@@ -1417,8 +1441,30 @@
     line-height: 20px;
   }
 
-  .route-ex__pill {
+  .route-ex__list {
+    gap: 0 30px;
+    margin-top: 16px;
+  }
+
+  .route-ex__step {
+    min-height: 96px;
+    padding: 14px 8px;
+  }
+
+  .route-ex__step:not(:last-child)::after {
+    right: -26px;
+    width: 22px;
+  }
+
+  .route-ex__num {
+    width: 28px;
+    height: 28px;
+    font-size: 14px;
+  }
+
+  .route-ex__name {
     font-size: 15px;
+    line-height: 19px;
   }
 
   .team {
@@ -1500,31 +1546,45 @@
   }
 }
 
+/* ---------- Узкий планшет и телефон: этапы маршрута списком, стрелки вниз ---------- */
+@media (max-width: 959.98px) {
+  .route-ex__list {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 26px 0;
+  }
+
+  .route-ex__step {
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 14px;
+    min-height: 0;
+    padding: 12px 16px;
+    text-align: left;
+  }
+
+  .route-ex__step:not(:last-child)::after {
+    top: 100%;
+    right: auto;
+    left: 25px;
+    width: 14px;
+    height: 18px;
+    margin-top: 4px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 18'%3E%3Cpath d='M7 2v13M2.5 10.5L7 15l4.5-4.5' fill='none' stroke='%237B9BCB' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  }
+
+  .route-ex__name {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+
 /* =========================================================
    Телефон: < 768
    ========================================================= */
 @media (max-width: 767.98px) {
   .route-ex {
     margin-top: 28px;
-    padding: 16px;
-  }
-
-  .route-ex__list {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0;
-  }
-
-  .route-ex__step {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .route-ex__step:not(:last-child)::after {
-    width: 14px;
-    height: 18px;
-    margin: 4px 0 4px 18px;
-    transform: rotate(90deg);
+    padding: 18px 16px 16px;
   }
 
   .team {
