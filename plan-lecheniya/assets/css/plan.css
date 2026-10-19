@@ -1692,10 +1692,10 @@
    Подготовка к выпуску: фирменные шрифты, компактный первый экран
    ========================================================= */
 
-/* текст — Google Sans; заголовки — Akrobat Bold (если файл шрифта подключён), иначе Google Sans */
+/* фирменный шрифт Google Sans — и для текста, и для заголовков */
 :root {
   --font: 'Google Sans', Arial, sans-serif;
-  --font-head: 'Akrobat', 'Google Sans', Arial, sans-serif;
+  --font-head: 'Google Sans', Arial, sans-serif;
 }
 
 body {
