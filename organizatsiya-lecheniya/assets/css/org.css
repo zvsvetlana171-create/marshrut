@@ -1,10 +1,63 @@
 /* Страница «Как организовать лечение: этапы, время и расходы»: дополнения к стилям шаблона маршрута
-   (две карточки сумм, картинки 3:2 в блоках «текст + картинка», нумерованный порядок изменений). */
+   (третья карточка-пояснение к суммам, списки карточками, картинки 3:2 рядом с текстом,
+   нумерованный порядок изменений). Цель раскладки — без пустых мест на любой ширине. */
 
-/* ---------- Две главные суммы ---------- */
-.why3--2 {
+/* ---------- Пояснение к суммам: третья карточка в ряду ---------- */
+.why3__note {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+  padding: 32px 30px;
+  background: #EFDECD;
+  color: var(--navy);
+}
+
+.why3__note-icon {
+  flex: none;
+  width: 44px;
+  height: 44px;
+}
+
+.why3__note-title {
+  font-size: 22px;
+  line-height: 28px;
+  font-weight: 700;
+  text-wrap: balance;
+}
+
+.why3__note-text {
+  font-size: 18px;
+  line-height: 24px;
+  color: var(--text);
+}
+
+/* ---------- Списки карточками: заполняют колонку целиком ---------- */
+#prepare .plan__list {
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  max-width: 920px;
+  gap: 16px;
+}
+
+#prepare .plan__item,
+#coord .plan__item {
+  padding: 22px 22px 24px 70px;
+  border-radius: var(--radius-card);
+  background: #F7EFE6;
+}
+
+#coord .plan__item {
+  background: var(--white);
+}
+
+#prepare .plan__item::before,
+#coord .plan__item::before {
+  left: 22px;
+  top: 22px;
+}
+
+.org-list {
+  gap: 12px;
+  margin-top: 28px;
 }
 
 /* ---------- Текст + картинка 3:2 ---------- */
@@ -18,10 +71,6 @@
 
 .after--rev .after__img {
   order: -1;
-}
-
-.org-list {
-  margin-top: 28px;
 }
 
 /* ---------- Порядок обсуждения изменений ---------- */
@@ -63,12 +112,40 @@
    Планшет: < 1200
    ========================================================= */
 @media (max-width: 1199.98px) {
-  .after--rev {
-    grid-template-columns: minmax(0, 1fr);
+  .why3__note {
+    gap: 10px;
+    padding: 22px 20px;
   }
 
-  .after--rev .after__img {
-    order: 0;
+  .why3__note-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .why3__note-title {
+    font-size: 18px;
+    line-height: 23px;
+  }
+
+  .why3__note-text {
+    font-size: 16px;
+    line-height: 21px;
+  }
+
+  #prepare .plan__list {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  #prepare .plan__item,
+  #coord .plan__item {
+    padding: 16px 18px 18px 60px;
+  }
+
+  #prepare .plan__item::before,
+  #coord .plan__item::before {
+    left: 18px;
+    top: 16px;
   }
 
   .org-list,
@@ -82,12 +159,75 @@
   }
 }
 
+/* планшет: картинка остаётся рядом с текстом, а не висит под ним с пустотой справа */
+@media (min-width: 768px) and (max-width: 1199.98px) {
+  .after {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 300px);
+    column-gap: 32px;
+  }
+
+  .after--rev {
+    grid-template-columns: minmax(0, 300px) minmax(0, 1fr);
+  }
+
+  .after__img {
+    max-width: none;
+  }
+}
+
 /* =========================================================
    Телефон: < 768
    ========================================================= */
 @media (max-width: 767.98px) {
-  .why3--2 {
+  .why3__note {
+    display: grid;
+    grid-template-columns: 32px minmax(0, 1fr);
+    column-gap: 14px;
+    row-gap: 4px;
+    align-items: start;
+    padding: 16px;
+  }
+
+  .why3__note-icon {
+    grid-row: 1 / span 2;
+    width: 32px;
+    height: 32px;
+  }
+
+  .why3__note-title {
+    font-size: 17px;
+    line-height: 22px;
+  }
+
+  .why3__note-text {
+    font-size: 15px;
+    line-height: 20px;
+  }
+
+  .after--rev {
     grid-template-columns: minmax(0, 1fr);
+  }
+
+  .after--rev .after__img {
+    order: 0;
+  }
+
+  .org-img,
+  #prepare .plan__img,
+  #order .team__img {
+    max-width: none;
+    justify-self: stretch;
+  }
+
+  #prepare .plan__item,
+  #coord .plan__item {
+    padding: 14px 16px 16px 54px;
+  }
+
+  #prepare .plan__item::before,
+  #coord .plan__item::before {
+    left: 14px;
+    top: 14px;
   }
 
   .nums {

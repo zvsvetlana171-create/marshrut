@@ -18,20 +18,36 @@
 }
 
 /* ---------- Учебный пример плана ---------- */
+/* справа от плана — расшифровка цифр и предупреждение, чтобы колонка не пустовала */
 .ex {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 300px);
-  column-gap: 40px;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 320px);
+  grid-template-rows: auto 1fr;
+  column-gap: 32px;
   align-items: start;
   margin: 40px 0 0;
 }
 
+.ex__doc {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+}
+
 .ex__legend {
-  position: sticky;
-  top: 24px;
+  grid-column: 2;
+  grid-row: 1;
   padding: 24px 26px 26px;
   border-radius: var(--radius-card);
   background: var(--white);
+}
+
+.ex__keys small {
+  display: block;
+  margin-top: 2px;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 400;
+  color: #49678D;
 }
 
 .ex__legend-title {
@@ -45,13 +61,13 @@
 
 .ex__keys {
   display: grid;
-  gap: 12px;
+  gap: 14px;
   margin-top: 16px;
 }
 
 .ex__keys li {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 12px;
   font-size: 17px;
   line-height: 22px;
@@ -59,8 +75,23 @@
   color: var(--navy);
 }
 
+.ex__keys .ex__mark {
+  margin-top: -2px;
+}
+
 .ex__note {
-  grid-column: 1;
+  grid-column: 2;
+  grid-row: 2;
+  align-self: start;
+}
+
+/* подсказки и пятый вопрос — на всю ширину, без пустых хвостов */
+.tip--wide {
+  width: auto;
+}
+
+.ask:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
 }
 
 .ex__doc {
@@ -376,7 +407,15 @@
 
   .ex {
     grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: none;
     margin-top: 28px;
+  }
+
+  .ex__doc,
+  .ex__legend,
+  .ex__note {
+    grid-column: 1;
+    grid-row: auto;
   }
 
   .ex__doc {
@@ -442,6 +481,10 @@
     gap: 8px;
     font-size: 14px;
     line-height: 18px;
+  }
+
+  .ex__keys small {
+    display: none;
   }
 
   .ex__keys .ex__mark {
