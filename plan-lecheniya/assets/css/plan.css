@@ -1775,24 +1775,3 @@ body {
     grid-template-columns: minmax(0, 1fr) minmax(0, 200px);
   }
 }
-
-/* «Как вы узнаете, что план готов»: четыре шага в ряд, на планшете — два ряда по два */
-.ready {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-}
-
-@media (max-width: 1199.98px) {
-  .ready {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .ready__item:nth-child(2n)::after {
-    display: none;
-  }
-}
-
-@media (max-width: 767.98px) {
-  .ready {
-    grid-template-columns: minmax(0, 1fr);
-  }
-}
