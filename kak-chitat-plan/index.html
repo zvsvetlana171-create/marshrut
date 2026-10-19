@@ -12,13 +12,10 @@
 <style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style>
 <link rel="stylesheet" href="assets/css/style.css?v=1">
 <link rel="stylesheet" href="assets/css/plan.css?v=2">
-<link rel="stylesheet" href="assets/css/read.css?v=3">
+<link rel="stylesheet" href="assets/css/read.css?v=4">
 <script src="assets/js/main.js?v=1"></script>
 </head>
 <body>
-<div class="proto" role="note">
-  <p><b>Прототип.</b> Шрифт временный&nbsp;— для&nbsp;фирменных Akrobat Bold и&nbsp;Google Sans нужны файлы шрифтов.</p>
-</div>
 <main>
     <!-- 1. Первый экран -->
     <section class="hero" id="top">
@@ -150,7 +147,7 @@
             <div class="film__frame"><figure class="film__media"><img class="film__img" src="assets/img/read-goal.svg" width="360" height="240" alt="" loading="lazy" decoding="async"></figure></div>
             <span class="film__num">01</span>
             <h3 class="film__title">Цель лечения</h3>
-            <p class="film__text">Сначала найдите главное: ради чего составлен план&nbsp;— например, убрать воспаление, сохранить зубы, восстановить жевание.</p>
+            <p class="film__text">Начните с&nbsp;заключения врача: из&nbsp;него понятно, ради чего составлен план&nbsp;— например, убрать воспаление, сохранить зубы, восстановить жевание.</p>
           </li>
           <li class="film__item">
             <div class="film__frame"><figure class="film__media"><img class="film__img" src="assets/img/read-task.svg" width="360" height="240" alt="" loading="lazy" decoding="async"></figure></div>
@@ -168,7 +165,7 @@
             <div class="film__frame"><figure class="film__media"><img class="film__img" src="assets/img/read-next.svg" width="360" height="240" alt="" loading="lazy" decoding="async"></figure></div>
             <span class="film__num">04</span>
             <h3 class="film__title">Ближайший этап</h3>
-            <p class="film__text">С&nbsp;первого этапа начинается лечение. Его срок и&nbsp;стоимость понадобятся прежде всего.</p>
+            <p class="film__text">Обычно это первый этап в&nbsp;списке&nbsp;— с&nbsp;него начинается лечение. Его срок и&nbsp;стоимость понадобятся прежде всего.</p>
           </li>
           <li class="film__item">
             <div class="film__frame"><figure class="film__media"><img class="film__img" src="assets/img/read-cost.svg" width="360" height="240" alt="" loading="lazy" decoding="async"></figure></div>
@@ -180,7 +177,7 @@
             <div class="film__frame"><figure class="film__media"><img class="film__img" src="assets/img/read-options.svg" width="360" height="240" alt="" loading="lazy" decoding="async"></figure></div>
             <span class="film__num">06</span>
             <h3 class="film__title">Варианты</h3>
-            <p class="film__text">Если задачу можно решить по&#8209;разному, варианты и&nbsp;разница в&nbsp;цене указаны в&nbsp;том этапе, к&nbsp;которому относятся.</p>
+            <p class="film__text">Если задачу можно решить по&#8209;разному и&nbsp;врач считает это применимым, в&nbsp;этапе будут варианты. Они отличаются не&nbsp;только ценой, но&nbsp;и&nbsp;способом лечения, сроками, ограничениями и&nbsp;уходом.</p>
           </li>
         </ol>
       </div>
@@ -198,12 +195,12 @@
               <p class="ex__name">План лечения</p>
               <p class="ex__who">Пациент: обезличенный пример</p>
             </div>
-            <p class="ex__goal"><span class="ex__mark">1</span><span><b>Цель:</b> убрать воспаление и&nbsp;восстановить жевательные зубы</span></p>
+            <p class="ex__goal"><span class="ex__mark">1</span><span><b>Заключение врача:</b> воспаление у&nbsp;двух зубов, один зуб не&nbsp;удаётся сохранить</span></p>
             <ol class="ex__stages">
               <li class="ex__stage ex__stage--next">
                 <span class="ex__roman">I</span>
                 <div class="ex__main">
-                  <p class="ex__title">Гигиена <span class="ex__chip"><span class="ex__mark ex__mark--sm">4</span>Ближайший этап</span></p>
+                  <p class="ex__title">Гигиена <span class="ex__hint"><span class="ex__mark ex__mark--sm">4</span>ближайший этап&nbsp;— первый в&nbsp;списке</span></p>
                   <p class="ex__why">Зачем: подготовить зубы и&nbsp;дёсны к&nbsp;лечению</p>
                 </div>
                 <span class="ex__sum"><span class="ex__bar"></span>₽</span>
@@ -221,7 +218,8 @@
                 <div class="ex__main">
                   <p class="ex__title">Хирургический этап</p>
                   <p class="ex__why">Зачем: заменить зуб, который не&nbsp;удаётся сохранить</p>
-                  <p class="ex__opt"><span class="ex__mark ex__mark--sm">6</span>Вариант по&nbsp;выбору: другая система имплантатов, разница в&nbsp;цене указана здесь</p>
+                  <p class="ex__extra">По&nbsp;показаниям: <span class="ex__sum">до&nbsp;+<span class="ex__bar"></span>₽</span></p>
+                  <p class="ex__opt"><span class="ex__mark ex__mark--sm">6</span>Вариант, если врач считает его подходящим: отличается способом, сроками, уходом и&nbsp;ценой</p>
                 </div>
                 <span class="ex__sum"><span class="ex__bar"></span>₽</span>
               </li>
@@ -251,17 +249,17 @@
           <div class="ex__legend">
             <p class="ex__legend-title">Что где искать</p>
             <ol class="ex__keys">
-              <li><span class="ex__mark">1</span><span>Цель лечения<small>Ради чего составлен план</small></span></li>
+              <li><span class="ex__mark">1</span><span>Заключение врача<small>Из&nbsp;него понятна цель лечения</small></span></li>
               <li><span class="ex__mark">2</span><span>Задача этапа<small>Строка «Зачем» у&nbsp;этапа</small></span></li>
               <li><span class="ex__mark">3</span><span>Порядок этапов<small>Римские цифры I–V</small></span></li>
-              <li><span class="ex__mark">4</span><span>Ближайший этап<small>С&nbsp;него начинается лечение</small></span></li>
-              <li><span class="ex__mark">5</span><span>Стоимость<small>Суммы этапов и&nbsp;итог</small></span></li>
-              <li><span class="ex__mark">6</span><span>Варианты<small>Выбор и&nbsp;разница в&nbsp;цене</small></span></li>
+              <li><span class="ex__mark">4</span><span>Ближайший этап<small>Обычно первый в&nbsp;списке</small></span></li>
+              <li><span class="ex__mark">5</span><span>Стоимость<small>Суммы этапов, по&nbsp;показаниям и&nbsp;итог</small></span></li>
+              <li><span class="ex__mark">6</span><span>Варианты<small>Способ, сроки, уход и&nbsp;цена</small></span></li>
             </ol>
           </div>
           <figcaption class="ex__note">
             <svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true"><circle cx="16" cy="16" r="12" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 14.5v8" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><circle cx="16" cy="10" r="1.6" fill="currentColor"/></svg>
-            <span>Пример обезличен и&nbsp;упрощён. Это не&nbsp;план для&nbsp;вас и&nbsp;не&nbsp;рекомендация: ваш план врач составляет по&nbsp;вашей диагностике.</span>
+            <span>Пример обезличен и&nbsp;упрощён, названия и&nbsp;расположение разделов в&nbsp;вашем плане могут отличаться. Это не&nbsp;план для&nbsp;вас и&nbsp;не&nbsp;рекомендация: ваш план врач составляет по&nbsp;вашей диагностике.</span>
           </figcaption>
         </figure>
       </div>
@@ -285,18 +283,21 @@
           <li class="terms__item">
             <svg class="terms__icon" viewBox="0 0 32 32" width="40" height="40" aria-hidden="true"><circle cx="16" cy="16" r="11" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 11v10M11 16h10" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
             <h3 class="terms__value">По&nbsp;показаниям</h3>
-            <p class="terms__text">Возможные дополнительные процедуры. Нужны&nbsp;ли они, станет ясно в&nbsp;ходе лечения.</p>
+            <p class="terms__text">Некоторые процедуры могут понадобиться при&nbsp;определённых условиях. Врач объяснит, от&nbsp;чего это зависит. Если потребуется изменить план, необходимость и&nbsp;стоимость обсудят с&nbsp;вами до&nbsp;выполнения дополнительных работ.</p>
           </li>
           <li class="terms__item terms__item--accent">
             <svg class="terms__icon" viewBox="0 0 32 32" width="40" height="40" aria-hidden="true"><path d="M8 8v6a4 4 0 0 0 4 4h12M8 8v16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 14l4 4-4 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             <h3 class="terms__value">Вариант по&nbsp;выбору</h3>
-            <p class="terms__text">Например, другой материал. Разница в&nbsp;цене указана рядом.</p>
+            <p class="terms__text">Другой способ лечения или&nbsp;материал, если врач считает его подходящим. Варианты отличаются сроками, ограничениями, уходом и&nbsp;ценой.</p>
           </li>
         </ul>
-        <p class="tip tip--wide">
-          <svg class="tip__icon" viewBox="0 0 32 32" width="32" height="32" aria-hidden="true"><path d="M6 8.5A3.5 3.5 0 0 1 9.5 5h13A3.5 3.5 0 0 1 26 8.5v9a3.5 3.5 0 0 1-3.5 3.5H14l-6 5v-5.2A3.5 3.5 0 0 1 6 17.5z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M11 11.5h10M11 15.5h6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-          <span>Что входит в&nbsp;сумму этапа, подскажет координатор или&nbsp;врач.</span>
-        </p>
+<div class="pay">
+          <span class="pay__icon"><svg viewBox="0 0 32 32" width="30" height="30" aria-hidden="true"><rect x="4" y="9" width="24" height="17" rx="3.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M4 14h24" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8 6.5h12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="22" cy="20" r="2" fill="currentColor"/></svg></span>
+          <div class="pay__body">
+            <p class="pay__title">Общая сумма плана и&nbsp;сумма к&nbsp;оплате на&nbsp;ближайшем визите&nbsp;— разные вещи</p>
+            <p class="pay__text">Координатор объяснит порядок оплаты и&nbsp;расходы на&nbsp;ближайший этап.</p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -308,7 +309,7 @@
         <ol class="asks">
           <li class="ask"><span class="ask__num">1</span><span class="ask__text">Какая главная цель моего плана?</span></li>
           <li class="ask"><span class="ask__num">2</span><span class="ask__text">Что нужно сделать в&nbsp;первую очередь и&nbsp;почему?</span></li>
-          <li class="ask"><span class="ask__num">3</span><span class="ask__text">Что входит в&nbsp;ближайший этап и&nbsp;сколько он стоит?</span></li>
+          <li class="ask"><span class="ask__num">3</span><span class="ask__text">Что входит в&nbsp;ближайший этап и&nbsp;какую сумму запланировать на&nbsp;него?</span></li>
           <li class="ask"><span class="ask__num">4</span><span class="ask__text">Что может понадобиться по&nbsp;показаниям и&nbsp;от&nbsp;чего это зависит?</span></li>
           <li class="ask"><span class="ask__num">5</span><span class="ask__text">Есть&nbsp;ли варианты и&nbsp;чем они отличаются?</span></li>
         </ol>
@@ -330,7 +331,7 @@
             <span class="reply__icon"><svg viewBox="0 0 32 32" width="30" height="30" aria-hidden="true"><path d="M6 8.5A3.5 3.5 0 0 1 9.5 5h13A3.5 3.5 0 0 1 26 8.5v9a3.5 3.5 0 0 1-3.5 3.5H14l-6 5v-5.2A3.5 3.5 0 0 1 6 17.5z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/><path d="M11 11.5h10M11 15.5h6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></span>
             <div class="reply__body">
               <p class="reply__title">Напишите координатору в&nbsp;переписке, где получили эту ссылку</p>
-              <p class="reply__text">Ответим на&nbsp;вопросы об&nbsp;этапах, сроках и&nbsp;стоимости.</p>
+              <p class="reply__text">Укажите, какой пункт непонятен, или&nbsp;попросите разобрать ближайший этап: что предстоит, сколько времени потребуется и&nbsp;какие расходы запланировать.</p>
             </div>
           </div>
           <p class="visit__choose">Удобнее позвонить?</p>
