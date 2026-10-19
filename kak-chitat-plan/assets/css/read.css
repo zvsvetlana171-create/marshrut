@@ -1,0 +1,544 @@
+/* Страница «Как разобраться в своём плане лечения»: дополнения к стилям шаблона маршрута
+   (шесть шагов в три колонки, учебный пример плана с подсказками, вопросы к врачу). */
+
+/* ---------- Шесть шагов: три колонки, стрелки только внутри ряда ---------- */
+.film--3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 44px 28px;
+}
+
+.film--3 .film__frame::after {
+  box-shadow: 0 0 0 5px var(--white);
+}
+
+@media (min-width: 1200px) {
+  .film--3 .film__item:nth-child(3n) .film__frame::after {
+    display: none;
+  }
+}
+
+/* ---------- Учебный пример плана ---------- */
+.ex {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 300px);
+  column-gap: 40px;
+  align-items: start;
+  margin: 40px 0 0;
+}
+
+.ex__legend {
+  position: sticky;
+  top: 24px;
+  padding: 24px 26px 26px;
+  border-radius: var(--radius-card);
+  background: var(--white);
+}
+
+.ex__legend-title {
+  font-size: 13px;
+  line-height: 16px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #49678D;
+}
+
+.ex__keys {
+  display: grid;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.ex__keys li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 17px;
+  line-height: 22px;
+  font-weight: 600;
+  color: var(--navy);
+}
+
+.ex__note {
+  grid-column: 1;
+}
+
+.ex__doc {
+  max-width: none;
+  padding: 28px 32px 30px;
+  border: 1px solid #E2E7EE;
+  border-radius: var(--radius-card);
+  background: var(--white);
+  box-shadow: var(--shadow-soft);
+}
+
+.ex__top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--line);
+}
+
+.ex__badge {
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: #F3D2D3;
+  font-size: 13px;
+  line-height: 16px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--navy);
+}
+
+.ex__name {
+  font-size: 22px;
+  line-height: 27px;
+  font-weight: 800;
+  color: var(--navy);
+}
+
+.ex__who {
+  font-size: 15px;
+  line-height: 20px;
+  color: #49678D;
+}
+
+.ex__goal {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 18px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  background: #E8EFF8;
+  font-size: 17px;
+  line-height: 22px;
+  color: var(--navy);
+}
+
+.ex__goal b {
+  font-weight: 700;
+}
+
+.ex__mark {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--navy);
+  font-size: 14px;
+  line-height: 1;
+  font-weight: 700;
+  color: var(--white);
+}
+
+.ex__mark--sm {
+  width: 22px;
+  height: 22px;
+  margin-right: 8px;
+  font-size: 12px;
+  vertical-align: 1px;
+}
+
+.ex__stages {
+  margin-top: 10px;
+}
+
+.ex__stage {
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr) auto;
+  column-gap: 16px;
+  align-items: center;
+  padding: 14px 0;
+  border-bottom: 1px solid #EEF1F5;
+}
+
+.ex__stage--next {
+  margin: 4px -14px 0;
+  padding: 14px;
+  border-bottom: 0;
+  border-radius: 12px;
+  background: #F7EFE6;
+}
+
+.ex__roman {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 32px;
+  border: 1.5px solid var(--navy);
+  border-radius: 8px;
+  font-size: 14px;
+  line-height: 1;
+  font-weight: 800;
+  color: var(--navy);
+}
+
+.ex__title {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 12px;
+  font-size: 18px;
+  line-height: 23px;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.ex__chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 12px 3px 3px;
+  border-radius: 999px;
+  background: var(--navy);
+  font-size: 13px;
+  line-height: 16px;
+  font-weight: 600;
+  color: var(--white);
+}
+
+.ex__chip .ex__mark {
+  background: var(--white);
+  color: var(--navy);
+}
+
+.ex__why {
+  display: flex;
+  align-items: center;
+  margin-top: 4px;
+  font-size: 15px;
+  line-height: 20px;
+  color: #49678D;
+}
+
+.ex__opt {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 10px;
+  padding: 6px 12px 6px 6px;
+  border: 1.5px dashed #9AA8B8;
+  border-radius: 10px;
+  font-size: 14px;
+  line-height: 18px;
+  color: var(--navy);
+}
+
+.ex__sum {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 700;
+  color: var(--navy);
+  white-space: nowrap;
+}
+
+.ex__bar {
+  display: inline-block;
+  width: 64px;
+  height: 10px;
+  border-radius: 5px;
+  background: #C9D9F1;
+}
+
+.ex__bar--long {
+  width: 96px;
+  background: var(--navy);
+}
+
+.ex__sum--text {
+  font-size: 14px;
+  font-weight: 500;
+  color: #49678D;
+}
+
+.ex__order {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 12px;
+  font-size: 14px;
+  line-height: 18px;
+  color: #49678D;
+}
+
+.ex__total {
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 2px solid var(--navy);
+}
+
+.ex__row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 17px;
+  line-height: 22px;
+  color: var(--navy);
+}
+
+.ex__row b {
+  flex: 1 1 auto;
+  font-weight: 700;
+}
+
+.ex__row--extra {
+  justify-content: space-between;
+  margin-top: 10px;
+  padding-left: 30px;
+  font-size: 15px;
+  line-height: 20px;
+  color: #49678D;
+}
+
+.ex__row--extra .ex__sum {
+  font-weight: 600;
+  color: #49678D;
+}
+
+.ex__row--extra .ex__bar {
+  background: #F3D2D3;
+}
+
+.ex__note {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  max-width: none;
+  margin-top: 16px;
+  padding: 14px 18px;
+  border-radius: 12px;
+  background: #EFDECD;
+  font-size: 16px;
+  line-height: 21px;
+  color: var(--navy);
+}
+
+.ex__note svg {
+  flex: none;
+}
+
+/* ---------- Вопросы к врачу ---------- */
+.asks {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px 20px;
+  margin-top: 40px;
+}
+
+.ask {
+  display: grid;
+  grid-template-columns: 40px minmax(0, 1fr);
+  column-gap: 18px;
+  align-items: center;
+  padding: 22px 28px 22px 22px;
+  border-radius: var(--radius-card);
+  background: var(--white);
+}
+
+.ask__num {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--navy);
+  font-size: 15px;
+  line-height: 1;
+  font-weight: 700;
+  color: var(--white);
+}
+
+.ask__text {
+  font-size: 19px;
+  line-height: 24px;
+  font-weight: 600;
+  color: var(--navy);
+}
+
+/* =========================================================
+   Планшет: < 1200
+   ========================================================= */
+@media (max-width: 1199.98px) {
+  .film--3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 32px 20px;
+    margin-top: 28px;
+  }
+
+  .ex {
+    grid-template-columns: minmax(0, 1fr);
+    margin-top: 28px;
+  }
+
+  .ex__doc {
+    padding: 24px;
+  }
+
+  .ex__legend {
+    position: static;
+    order: -1;
+    margin-bottom: 16px;
+    padding: 16px 18px;
+  }
+
+  .ex__keys {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px 16px;
+    margin-top: 12px;
+  }
+
+  .ex__keys li {
+    font-size: 15px;
+    line-height: 19px;
+  }
+
+  .asks {
+    gap: 14px;
+    margin-top: 28px;
+  }
+
+  .ask {
+    padding: 18px 22px 18px 18px;
+  }
+
+  .ask__text {
+    font-size: 17px;
+    line-height: 22px;
+  }
+}
+
+/* =========================================================
+   Телефон: < 768
+   ========================================================= */
+@media (max-width: 767.98px) {
+  .film--3 {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+    margin-top: 20px;
+  }
+
+  .ex {
+    margin-top: 20px;
+  }
+
+  .ex__doc {
+    padding: 18px 16px 20px;
+  }
+
+  .ex__keys {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ex__keys li {
+    gap: 8px;
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  .ex__keys .ex__mark {
+    width: 24px;
+    height: 24px;
+    font-size: 12px;
+  }
+
+  .ex__name {
+    font-size: 19px;
+    line-height: 24px;
+  }
+
+  .ex__goal {
+    align-items: flex-start;
+    padding: 12px;
+    font-size: 15px;
+    line-height: 20px;
+  }
+
+  .ex__stage {
+    grid-template-columns: 36px minmax(0, 1fr);
+    column-gap: 12px;
+    align-items: start;
+  }
+
+  .ex__stage--next {
+    margin: 4px -8px 0;
+    padding: 12px 8px;
+  }
+
+  .ex__roman {
+    width: 36px;
+    height: 28px;
+    font-size: 13px;
+  }
+
+  .ex__title {
+    font-size: 16px;
+    line-height: 21px;
+  }
+
+  .ex__why {
+    align-items: flex-start;
+    font-size: 14px;
+    line-height: 19px;
+  }
+
+  .ex__opt {
+    align-items: flex-start;
+    font-size: 13px;
+    line-height: 17px;
+  }
+
+  .ex__stage > .ex__sum {
+    grid-column: 2;
+    margin-top: 8px;
+  }
+
+  .ex__row {
+    flex-wrap: wrap;
+    font-size: 15px;
+    line-height: 20px;
+  }
+
+  .ex__row--extra {
+    padding-left: 0;
+    font-size: 14px;
+  }
+
+  .ex__note {
+    align-items: flex-start;
+    padding: 12px 14px;
+    font-size: 15px;
+    line-height: 20px;
+  }
+
+  .asks {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .ask {
+    grid-template-columns: 32px minmax(0, 1fr);
+    column-gap: 14px;
+    padding: 14px 16px 14px 12px;
+  }
+
+  .ask__num {
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+  }
+
+  .ask__text {
+    font-size: 16px;
+    line-height: 21px;
+  }
+}
