@@ -1687,3 +1687,112 @@
     margin-top: 12px;
   }
 }
+
+/* =========================================================
+   Подготовка к выпуску: фирменные шрифты, компактный первый экран
+   ========================================================= */
+
+/* текст — Google Sans; заголовки — Akrobat Bold (если файл шрифта подключён), иначе Google Sans */
+:root {
+  --font: 'Google Sans', Arial, sans-serif;
+  --font-head: 'Akrobat', 'Google Sans', Arial, sans-serif;
+}
+
+body {
+  font-family: var(--font);
+}
+
+.hero__title,
+.h2,
+.why3__title,
+.film__title,
+.terms__value,
+.ready__title,
+.meet__title,
+.place__title,
+.alert__title,
+.reply__title,
+.route-ex__label {
+  font-family: var(--font-head);
+  font-weight: 700;
+}
+
+/* первый экран: логотип и картинка меньше — смысл и заголовок ближе к началу */
+.hero {
+  padding-top: 20px;
+  padding-bottom: 56px;
+}
+
+.hero .logo {
+  width: 140px;
+}
+
+.hero__body {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 340px);
+  margin-top: 20px;
+}
+
+@media (max-width: 1199.98px) {
+  .hero {
+    padding-bottom: 44px;
+  }
+
+  .hero .logo {
+    width: 104px;
+  }
+
+  .hero__body {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 260px);
+    margin-top: 18px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .hero {
+    padding-top: 16px;
+    padding-bottom: 28px;
+  }
+
+  .hero .logo {
+    width: 92px;
+  }
+
+  .hero__content {
+    margin-top: 14px;
+  }
+}
+
+@media (max-width: 559.98px) {
+  .hero__card {
+    width: 100px;
+    max-width: 100px;
+    border-radius: 10px;
+  }
+}
+
+@media (min-width: 560px) and (max-width: 767.98px) {
+  .hero__body {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 200px);
+  }
+}
+
+/* «Как вы узнаете, что план готов»: четыре шага в ряд, на планшете — два ряда по два */
+.ready {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+@media (max-width: 1199.98px) {
+  .ready {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ready__item:nth-child(2n)::after {
+    display: none;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .ready {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
