@@ -2,6 +2,66 @@
    (третья карточка-пояснение к суммам, списки карточками, картинки 3:2 рядом с текстом,
    нумерованный порядок изменений). Цель раскладки — без пустых мест на любой ширине. */
 
+/* ---------- Компактный первый экран (как на странице «Как мы готовим ваш план»):
+   логотип и картинка меньше — заголовок и смысл ближе к началу ---------- */
+.hero {
+  padding-top: 20px;
+  padding-bottom: 56px;
+}
+
+.hero .logo {
+  width: 140px;
+}
+
+.hero__body {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 340px);
+  margin-top: 20px;
+}
+
+@media (max-width: 1199.98px) {
+  .hero {
+    padding-bottom: 44px;
+  }
+
+  .hero .logo {
+    width: 104px;
+  }
+
+  .hero__body {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 260px);
+    margin-top: 18px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .hero {
+    padding-top: 16px;
+    padding-bottom: 28px;
+  }
+
+  .hero .logo {
+    width: 92px;
+  }
+
+  .hero__content {
+    margin-top: 14px;
+  }
+}
+
+@media (max-width: 559.98px) {
+  .hero__card {
+    width: 100px;
+    max-width: 100px;
+    border-radius: 10px;
+  }
+}
+
+@media (min-width: 560px) and (max-width: 767.98px) {
+  .hero__body {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 200px);
+  }
+}
+
 /* ---------- Пояснение к суммам: третья карточка в ряду ---------- */
 .why3__note {
   display: flex;
@@ -30,6 +90,11 @@
   font-size: 18px;
   line-height: 24px;
   color: var(--text);
+}
+
+/* ---------- Подсказки на всю ширину, без пустого хвоста ---------- */
+.tip--wide {
+  width: auto;
 }
 
 /* ---------- Списки карточками: заполняют колонку целиком ---------- */

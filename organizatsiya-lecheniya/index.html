@@ -12,13 +12,10 @@
 <style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style>
 <link rel="stylesheet" href="assets/css/style.css?v=1">
 <link rel="stylesheet" href="assets/css/plan.css?v=2">
-<link rel="stylesheet" href="assets/css/org.css?v=3">
+<link rel="stylesheet" href="assets/css/org.css?v=5">
 <script src="assets/js/main.js?v=1"></script>
 </head>
 <body>
-<div class="proto" role="note">
-  <p><b>Прототип.</b> Шрифт временный&nbsp;— для&nbsp;фирменных Akrobat Bold и&nbsp;Google Sans нужны файлы шрифтов.</p>
-</div>
 <main>
     <!-- 1. Первый экран -->
     <section class="hero" id="top">
@@ -145,28 +142,34 @@
     <section class="section section--white" id="start">
       <div class="container">
         <h2 class="h2">С&nbsp;чего начать</h2>
-        <p class="lead">В&nbsp;плане две главные суммы.</p>
+        <p class="lead">Чтобы спланировать расходы, полезно различать три суммы.</p>
         <ul class="why3">
           <li class="why3__item">
             <img class="why3__img" src="assets/img/sum-total.svg" width="320" height="240" alt="" loading="lazy" decoding="async">
             <div class="why3__body">
-              <h3 class="why3__title">Общая сумма</h3>
-              <p class="why3__text">Показывает весь объём лечения по&nbsp;плану.</p>
+              <h3 class="why3__title">Общий расчёт</h3>
+              <p class="why3__text">Весь объём лечения по&nbsp;плану.</p>
             </div>
           </li>
           <li class="why3__item">
             <img class="why3__img" src="assets/img/sum-next.svg" width="320" height="240" alt="" loading="lazy" decoding="async">
             <div class="why3__body">
-              <h3 class="why3__title">Ближайший этап</h3>
-              <p class="why3__text">С&nbsp;него начинается лечение. Его срок и&nbsp;стоимость нужны в&nbsp;первую очередь.</p>
+              <h3 class="why3__title">Стоимость ближайшего этапа</h3>
+              <p class="why3__text">С&nbsp;этого этапа начинается лечение. Один этап может включать несколько приёмов.</p>
             </div>
           </li>
-          <li class="why3__item why3__note">
-            <svg class="why3__note-icon" viewBox="0 0 32 32" width="44" height="44" aria-hidden="true"><circle cx="16" cy="16" r="12" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 14.5v8" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><circle cx="16" cy="10" r="1.6" fill="currentColor"/></svg>
-            <p class="why3__note-title">Сумма в&nbsp;плане&nbsp;— ориентир на&nbsp;момент составления</p>
-            <p class="why3__note-text">Как долго она действует, уточните у&nbsp;координатора.</p>
+          <li class="why3__item">
+            <img class="why3__img" src="assets/img/sum-visit.svg" width="320" height="240" alt="" loading="lazy" decoding="async">
+            <div class="why3__body">
+              <h3 class="why3__title">Оплата на&nbsp;следующем приёме</h3>
+              <p class="why3__text">Сумма к&nbsp;оплате за&nbsp;конкретный визит. Её&nbsp;назовёт координатор.</p>
+            </div>
           </li>
         </ul>
+        <p class="tip tip--wide">
+          <svg class="tip__icon" viewBox="0 0 32 32" width="32" height="32" aria-hidden="true"><circle cx="16" cy="16" r="12" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 14.5v8" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><circle cx="16" cy="10" r="1.6" fill="currentColor"/></svg>
+          <span>Сумма в&nbsp;плане&nbsp;— ориентир на&nbsp;момент составления. Порядок оплаты и&nbsp;срок действия расчёта объяснит координатор.</span>
+        </p>
 
       </div>
     </section>
@@ -176,7 +179,7 @@
       <div class="container team">
         <div class="team__main">
           <h2 class="h2">Порядок этапов определяет врач</h2>
-          <p class="lead">Некоторые этапы нельзя поменять местами или&nbsp;надолго отложить. Например, коронку ставят только после лечения каналов.</p>
+          <p class="lead">Некоторые этапы нельзя поменять местами или&nbsp;надолго отложить. Например, если зубу требуется лечение каналов, его проводят до&nbsp;окончательного восстановления коронкой.</p>
           <ul class="team__list">
             <li class="team__item">Сначала&nbsp;— то, что не&nbsp;стоит откладывать: воспаление и&nbsp;боль</li>
             <li class="team__item">Затем&nbsp;— восстановление зубов</li>
@@ -221,15 +224,20 @@
     <section class="section section--white" id="prepare">
       <div class="container">
         <h2 class="h2">Как подготовиться к&nbsp;первому этапу</h2>
+        <p class="lead">Перед первым визитом важно знать четыре вещи&nbsp;— координатор подскажет каждую.</p>
         <div class="plan">
           <img class="plan__img" src="assets/img/prepare.svg" width="420" height="420" alt="" loading="lazy" decoding="async">
           <ul class="plan__list">
-            <li class="plan__item">Согласуйте дату и&nbsp;время<small>Координатор подберёт удобный визит.</small></li>
-            <li class="plan__item">Уточните, сколько займёт приём<small>Чтобы спокойно спланировать день.</small></li>
-            <li class="plan__item">Расскажите о&nbsp;самочувствии и&nbsp;лекарствах<small>Это важно для&nbsp;лечения.</small></li>
-            <li class="plan__item">Запишите вопросы<small>Их&nbsp;можно обсудить с&nbsp;врачом на&nbsp;приёме.</small></li>
+            <li class="plan__item">Что будут делать<small>Какой этап начинается и&nbsp;что в&nbsp;него входит.</small></li>
+            <li class="plan__item">Сколько займёт приём<small>Чтобы спокойно спланировать день.</small></li>
+            <li class="plan__item">Какая нужна подготовка<small>И&nbsp;что сообщить врачу о&nbsp;самочувствии и&nbsp;лекарствах.</small></li>
+            <li class="plan__item">Сколько предстоит оплатить<small>Сумму к&nbsp;оплате на&nbsp;этом приёме.</small></li>
           </ul>
         </div>
+        <p class="tip tip--wide">
+          <svg class="tip__icon" viewBox="0 0 32 32" width="32" height="32" aria-hidden="true"><rect x="5" y="7" width="22" height="20" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M5 13h22M11 4v5M21 4v5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M12 20h8M17 17l3 3-3 3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span>Если визит нужно перенести, заранее свяжитесь с&nbsp;координатором&nbsp;— он согласует новую дату с&nbsp;учётом лечения.</span>
+        </p>
       </div>
     </section>
 
@@ -274,17 +282,16 @@
         <h2 class="h2">Частые вопросы</h2>
         <div class="doubts">
         <div class="qa">
-          <details class="qa__item">
+          <details class="qa__item" open>
+            <summary class="qa__q"><span>Сейчас не&nbsp;могу оплатить весь план&nbsp;— что делать?</span><span class="qa__mark" aria-hidden="true"></span></summary>
+            <p class="qa__a">Скажите об&nbsp;этом координатору. Вместе с&nbsp;врачом обсудим медицинские приоритеты, допустимые интервалы и&nbsp;условия оплаты. Возможность распределить лечение зависит от&nbsp;вашей ситуации.</p>
+          </details>          <details class="qa__item">
             <summary class="qa__q"><span>Можно&nbsp;ли сделать перерыв между этапами?</span><span class="qa__mark" aria-hidden="true"></span></summary>
             <p class="qa__a">Иногда да, но&nbsp;не&nbsp;всегда: это зависит от&nbsp;того, что уже сделано. Врач подскажет, какой перерыв допустим и&nbsp;с&nbsp;чем лучше не&nbsp;тянуть.</p>
           </details>
           <details class="qa__item">
             <summary class="qa__q"><span>Может&nbsp;ли измениться сумма?</span><span class="qa__mark" aria-hidden="true"></span></summary>
-            <p class="qa__a">Да, если понадобятся процедуры по&nbsp;показаниям или&nbsp;план изменится. Врач объяснит причину, а&nbsp;изменения обсудят с&nbsp;вами.</p>
-          </details>
-          <details class="qa__item">
-            <summary class="qa__q"><span>С&nbsp;кем обсуждать сроки и&nbsp;оплату?</span><span class="qa__mark" aria-hidden="true"></span></summary>
-            <p class="qa__a">С&nbsp;координатором. Он подберёт время визитов, уточнит условия оплаты для&nbsp;вашего плана и&nbsp;при&nbsp;необходимости организует обсуждение с&nbsp;врачом.</p>
+            <p class="qa__a">Да, если понадобятся процедуры по&nbsp;показаниям или&nbsp;план изменится. Необходимость дополнительных работ и&nbsp;их&nbsp;стоимость обсуждаются с&nbsp;вами до&nbsp;их&nbsp;выполнения.</p>
           </details>
         </div>
         <div class="alert">
