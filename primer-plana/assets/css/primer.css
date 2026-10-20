@@ -583,7 +583,7 @@
 }
 
 .ctfind__link::after {
-  content: " 93";
+  content: " \2193";
 }
 
 .ktrep {
