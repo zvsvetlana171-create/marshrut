@@ -541,49 +541,18 @@
   color: var(--navy);
 }
 
-/* демонстрационный этап: пунктирный номер и жёлтая метка */
+/* метка демонстрационного этапа */
 .stage__tag {
   display: inline-block;
   margin-left: 6px;
   padding: 2px 9px;
   border-radius: 999px;
-  background: #FFF3C4;
+  background: #EEF1F5;
   font-size: 12px;
   line-height: 16px;
   font-weight: 700;
-  color: #5E4600;
+  color: #49678D;
   vertical-align: 2px;
-}
-
-.stage--demo .stage__num {
-  border-style: dashed;
-}
-
-.stage.stage--demo {
-  margin: 0 -22px;
-  padding: 18px 22px 20px;
-  background: #FFFAE6;
-  scroll-margin-top: 24px;
-}
-
-.stage--demo + .stage {
-  border-top: 0;
-}
-
-.toc__link--demo .toc__icon {
-  background: #FFF3C4;
-}
-
-.ctfind__link {
-  display: inline-block;
-  margin-top: 6px;
-  font-weight: 600;
-  color: var(--navy);
-  text-underline-offset: 3px;
-}
-
-.ctfind__link::after {
-  content: " \2193";
 }
 
 .ktrep {
@@ -1117,7 +1086,7 @@
   }
 
   .toc {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     margin-top: 12px;
   }
 
@@ -1468,11 +1437,6 @@
 
   .stages {
     padding: 0 14px;
-  }
-
-  .stage.stage--demo {
-    margin: 0 -14px;
-    padding: 16px 14px;
   }
 
   /* этап на телефоне: номер и название, под ними срок и сумма, ниже — состав */
