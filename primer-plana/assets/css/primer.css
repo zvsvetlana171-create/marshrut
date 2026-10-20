@@ -541,20 +541,6 @@
   color: var(--navy);
 }
 
-/* метка демонстрационного этапа */
-.stage__tag {
-  display: inline-block;
-  margin-left: 6px;
-  padding: 2px 9px;
-  border-radius: 999px;
-  background: #EEF1F5;
-  font-size: 12px;
-  line-height: 16px;
-  font-weight: 700;
-  color: #49678D;
-  vertical-align: 2px;
-}
-
 .ktrep {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1570,4 +1556,154 @@
 
 .cost--inline {
   vertical-align: -1px;
+}
+
+.ctfind__label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #9B5A60;
+}
+
+/* возможный этап, которого нет в этом плане: отдельный блок с пунктирной рамкой */
+.maybe {
+  margin-top: 28px;
+  padding: 18px 22px 4px;
+  border: 1.5px dashed #B9C5D6;
+  border-radius: 14px;
+}
+
+.maybe__label {
+  font-size: 13px;
+  line-height: 17px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #49678D;
+}
+
+.maybe__text {
+  margin-top: 6px;
+  font-size: 15px;
+  line-height: 21px;
+  color: var(--text);
+}
+
+.stages--flat {
+  padding: 0;
+}
+
+/* страницы отчёта КТ открываются крупно по нажатию */
+.ktrep__zoom {
+  position: relative;
+  display: block;
+  border-radius: 10px;
+  cursor: zoom-in;
+}
+
+.ktrep__zoom:focus-visible {
+  outline: 2px solid var(--navy);
+  outline-offset: 3px;
+}
+
+.ktrep__hint {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 10px 5px 8px;
+  border-radius: 999px;
+  background: var(--navy);
+  font-size: 13px;
+  line-height: 16px;
+  font-weight: 600;
+  color: var(--white);
+}
+
+.zoom {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  overflow: auto;
+  background: rgba(14, 41, 75, 0.94);
+  -webkit-overflow-scrolling: touch;
+}
+
+.zoom[hidden] {
+  display: none;
+}
+
+.zoom__img {
+  display: block;
+  width: auto;
+  max-width: calc(100% - 32px);
+  max-height: calc(100% - 32px);
+  margin: 16px auto;
+  border-radius: 8px;
+  background: var(--white);
+  cursor: zoom-in;
+}
+
+/* второе нажатие — исходный размер, листается во все стороны */
+.zoom--full .zoom__img {
+  width: 1100px;
+  max-width: none;
+  max-height: none;
+  cursor: zoom-out;
+}
+
+.zoom__close {
+  position: fixed;
+  top: 12px;
+  right: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: var(--white);
+  color: var(--navy);
+  cursor: pointer;
+}
+
+.zoom__close:focus-visible {
+  outline: 2px solid var(--white);
+  outline-offset: 3px;
+}
+
+@media (max-width: 767.98px) {
+  .maybe {
+    margin-top: 20px;
+    padding: 14px 14px 2px;
+  }
+
+  .maybe__text {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .ktrep__hint {
+    right: 6px;
+    bottom: 6px;
+    padding: 4px 8px 4px 6px;
+    font-size: 12px;
+  }
+
+  .zoom__img {
+    max-width: calc(100% - 16px);
+    margin: 64px auto 16px;
+  }
+
+  .zoom--full .zoom__img {
+    width: 760px;
+  }
 }

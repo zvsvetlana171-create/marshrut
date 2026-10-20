@@ -58,5 +58,54 @@
   });
   openFold(window.location.hash.slice(1));
 
+  // страницы отчёта КТ: по нажатию открываются на весь экран; второе нажатие — исходный размер
+  var zoomLinks = document.querySelectorAll('.ktrep__zoom');
+  if (zoomLinks.length) {
+    var zoom = document.createElement('div');
+    zoom.className = 'zoom';
+    zoom.hidden = true;
+    zoom.setAttribute('role', 'dialog');
+    zoom.setAttribute('aria-modal', 'true');
+    zoom.setAttribute('aria-label', 'Страница отчёта КТ');
+    zoom.innerHTML = '<button class="zoom__close" type="button" aria-label="Закрыть"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button><img class="zoom__img" alt="">';
+    document.body.appendChild(zoom);
+    var zoomImg = zoom.querySelector('.zoom__img');
+    var zoomClose = zoom.querySelector('.zoom__close');
+    var opener = null;
+
+    var closeZoom = function () {
+      zoom.hidden = true;
+      zoom.classList.remove('zoom--full');
+      document.documentElement.style.overflow = '';
+      if (opener) opener.focus();
+    };
+
+    Array.prototype.forEach.call(zoomLinks, function (link) {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        opener = link;
+        var img = link.querySelector('img');
+        zoomImg.src = link.getAttribute('href');
+        zoomImg.alt = img ? img.alt : '';
+        zoom.hidden = false;
+        zoom.scrollTop = 0;
+        document.documentElement.style.overflow = 'hidden';
+        zoomClose.focus();
+      });
+    });
+
+    zoomImg.addEventListener('click', function (e) {
+      e.stopPropagation();
+      zoom.classList.toggle('zoom--full');
+    });
+    zoomClose.addEventListener('click', closeZoom);
+    zoom.addEventListener('click', function (e) {
+      if (e.target === zoom) closeZoom();
+    });
+    document.addEventListener('keydown', function (e) {
+      if (!zoom.hidden && (e.key === 'Escape' || e.key === 'Esc')) closeZoom();
+    });
+  }
+
   track('page_view', branch);
 })();

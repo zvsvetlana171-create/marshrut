@@ -12,7 +12,7 @@
 <style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style>
 <link rel="stylesheet" href="assets/css/style.css?v=1">
 <link rel="stylesheet" href="assets/css/plan.css?v=6">
-<link rel="stylesheet" href="assets/css/primer.css?v=6">
+<link rel="stylesheet" href="assets/css/primer.css?v=7">
 <script src="assets/js/main.js?v=2"></script>
 </head>
 <body>
@@ -142,7 +142,7 @@
     <section class="section section--gray" id="primer">
       <div class="container">
         <h2 class="h2">Так выглядит план лечения</h2>
-        <p class="lead">Пример составлен по&nbsp;плану одного из&nbsp;наших пациентов и&nbsp;упрощён. В&nbsp;вашем плане будут ваши зубы, ваши снимки и&nbsp;ваш маршрут лечения.</p>
+        <p class="lead">Здесь показан пример комплексного лечения. Он демонстрирует устройство плана, а&nbsp;не&nbsp;перечень процедур, которые нужны каждому. Ваш объём лечения и&nbsp;сроки врач определит после диагностики.</p>
 
         <div class="demo">
           <aside class="demo__aside">
@@ -198,8 +198,8 @@
                   <div class="fold__body">
                     <dl class="risk">
                       <div class="risk__row"><dt>Кариес и&nbsp;дефекты<small>зубы 17, 24, 25, 26, 27, 37, 36</small></dt><dd>Разрушение продолжается: полость растёт, стенки зуба истончаются и&nbsp;скалываются. При распространении к&nbsp;нерву кариес переходит в&nbsp;пульпит&nbsp;— потребуется лечение каналов, а&nbsp;восстановление станет сложнее и&nbsp;дороже.</dd></div>
-                      <div class="risk__row"><dt>Очаги инфекции у&nbsp;корней (периодонтит)<small>зуб 16</small></dt><dd>Очаг у&nbsp;корня разрушает кость вокруг зуба и&nbsp;может обостриться болью и&nbsp;отёком в&nbsp;любой момент; без лечения зуб теряется, а&nbsp;хроническая инфекция влияет на&nbsp;соседние зубы и&nbsp;общее здоровье.</dd></div>
-                      <div class="risk__row"><dt>Пародонтит<small>зубы 32, 31, 41, 42</small></dt><dd>Дёсны кровоточат, кость продолжает убывать, зубы становятся подвижными и&nbsp;смещаются; на&nbsp;поздних стадиях зубы теряются даже внешне целыми.</dd></div>
+                      <div class="risk__row"><dt>Очаги инфекции у&nbsp;корней (периодонтит)<small>зуб 16</small></dt><dd>Очаг у&nbsp;корня постепенно разрушает кость вокруг зуба и&nbsp;может обостриться болью и&nbsp;отёком; без лечения зуб можно потерять.</dd></div>
+                      <div class="risk__row"><dt>Пародонтит<small>зубы 32, 31, 41, 42</small></dt><dd>Дёсны кровоточат, кость вокруг зубов может продолжать убывать, зубы&nbsp;— становиться подвижными и&nbsp;смещаться.</dd></div>
                       <div class="risk__row"><dt>Зубы мудрости<small>зубы 18, 38, 48</small></dt><dd>Неправильно стоящие восьмёрки травмируют десну, накапливают налёт и&nbsp;провоцируют кариес соседних зубов.</dd></div>
                       <div class="risk__row"><dt>Несостоятельные коронки<small>зубы 16, 15</small></dt><dd>Под негерметичной коронкой скапливаются бактерии&nbsp;— развивается кариес и&nbsp;разрушение опорного зуба.</dd></div>
                       <div class="risk__row"><dt>Неудовлетворительная гигиена</dt><dd>Быстрое прогрессирование кариеса и&nbsp;воспаления дёсен.</dd></div>
@@ -226,16 +226,16 @@
               <section class="part" id="p-ct">
                 <h4 class="part__title">Анализ компьютерной томограммы</h4>
                 <div class="ctfind">
-                  <p class="ctfind__title"><span class="ctfind__icon"><svg viewBox="0 0 32 32" width="26" height="26" aria-hidden="true"><circle cx="14" cy="14" r="8" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M20 20l7 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg></span>Что дала КТ этому плану</p>
+                  <p class="ctfind__title"><span class="ctfind__icon"><svg viewBox="0 0 32 32" width="26" height="26" aria-hidden="true"><circle cx="14" cy="14" r="8" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M20 20l7 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg></span>Что даёт КТ</p>
                   <ul class="ctfind__list">
-                    <li><b>Очаг воспаления у&nbsp;корня зуба&nbsp;16.</b> Он в&nbsp;кости под старой коронкой&nbsp;— на&nbsp;осмотре его не&nbsp;увидеть. В&nbsp;плане: лечение каналов и&nbsp;новая коронка.</li>
-                    <li><b>Положение и&nbsp;корни зубов мудрости.</b> По&nbsp;ним оценена сложность удаления.</li>
-                    <li><b>Объём кости для&nbsp;имплантации.</b> От&nbsp;него зависят размер имплантата и&nbsp;то, нужна&nbsp;ли костная пластика.</li>
+                    <li><span class="ctfind__label">В&nbsp;этом плане</span><b>Очаг воспаления у&nbsp;корня зуба&nbsp;16.</b> Он в&nbsp;кости под старой коронкой, на&nbsp;осмотре его не&nbsp;видно. В&nbsp;плане: лечение каналов и&nbsp;новая коронка.</li>
+                    <li><span class="ctfind__label">В&nbsp;этом плане</span><b>Положение и&nbsp;корни зубов мудрости.</b> По&nbsp;ним оценена сложность удаления.</li>
+                    <li><span class="ctfind__label">Если нужна имплантация</span><b>Объём кости, пазухи и&nbsp;нервные каналы.</b> По&nbsp;ним подбирают размер имплантата и&nbsp;решают, нужна&nbsp;ли костная пластика.</li>
                   </ul>
                 </div>
                 <div class="ktrep">
-                  <figure class="ktrep__page"><img src="assets/img/kt-otchet-1.jpg" width="760" height="1076" alt="первая страница отчёта по КТ: панорамный снимок челюстей и схема зубов, ФИО и даты скрыты" loading="lazy" decoding="async"><figcaption>Отчёт по&nbsp;КТ&nbsp;· страница 1 из&nbsp;10</figcaption></figure>
-                  <figure class="ktrep__page"><img src="assets/img/kt-otchet-2.jpg" width="760" height="1076" alt="страница отчёта по КТ с разбором зубов 18, 17 и 16 в разных срезах" loading="lazy" decoding="async"><figcaption>Отчёт по&nbsp;КТ&nbsp;· страница 2 из&nbsp;10</figcaption></figure>
+                  <figure class="ktrep__page"><a class="ktrep__zoom" href="assets/img/kt-otchet-1.jpg" target="_blank" rel="noopener" aria-label="Открыть страницу отчёта крупно"><img src="assets/img/kt-otchet-1.jpg" width="760" height="1076" alt="первая страница отчёта по КТ: панорамный снимок челюстей и схема зубов, ФИО и даты скрыты" loading="lazy" decoding="async"><span class="ktrep__hint"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15 15l5 5M10.5 8v5M8 10.5h5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Увеличить</span></a><figcaption>Отчёт по&nbsp;КТ&nbsp;· страница 1 из&nbsp;10</figcaption></figure>
+                  <figure class="ktrep__page"><a class="ktrep__zoom" href="assets/img/kt-otchet-2.jpg" target="_blank" rel="noopener" aria-label="Открыть страницу отчёта крупно"><img src="assets/img/kt-otchet-2.jpg" width="760" height="1076" alt="страница отчёта по КТ с разбором зубов 18, 17 и 16 в разных срезах" loading="lazy" decoding="async"><span class="ktrep__hint"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15 15l5 5M10.5 8v5M8 10.5h5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Увеличить</span></a><figcaption>Отчёт по&nbsp;КТ&nbsp;· страница 2 из&nbsp;10</figcaption></figure>
                 </div>
                 <p class="part__note part__note--blue">Отчёт по&nbsp;КТ&nbsp;— 10 страниц с&nbsp;разбором каждого зуба в&nbsp;нескольких срезах. Это автоматический анализ снимка, окончательный диагноз ставит врач.</p>
               </section>
@@ -298,7 +298,7 @@
 
                 <div class="phase" style="--phase:#6E7CB8">
                   <div class="phase__head">
-                    <div class="phase__name"><b>Восстановление прикуса</b><span>Выравниваем зубы и&nbsp;прикус: нагрузка распределяется равномерно, зубы меньше стираются, а&nbsp;будущие коронки служат дольше.</span></div>
+                    <div class="phase__name"><b>Восстановление прикуса</b><span>Выравниваем зубы и&nbsp;прикус, чтобы нагрузка при жевании распределялась равномерно.</span></div>
                     <span class="phase__term">≈&nbsp;2&nbsp;года</span>
                   </div>
                   <ol class="stages">
@@ -322,16 +322,16 @@
                       <span class="stage__num">IV</span>
                       <div class="stage__main">
                         <p class="stage__title">Исправление прикуса элайнерами или&nbsp;брекетами</p>
-                        <p class="stage__why">Зачем: положение зубов определяет позиции имплантатов и&nbsp;форму будущих коронок.</p>
-                        <p class="stage__opt"><b>На&nbsp;выбор:</b> элайнеры или&nbsp;брекеты&nbsp;— выберете вместе с&nbsp;ортодонтом. Поэтому сумма указана диапазоном.</p>
+                        <p class="stage__why">Зачем: выровненные зубы и&nbsp;правильный прикус определяют форму будущих коронок.</p>
+                        <p class="stage__opt"><b>На&nbsp;выбор:</b> элайнеры или&nbsp;брекеты&nbsp;— выберете вместе с&nbsp;ортодонтом. Поэтому сумма указана диапазоном. Точный срок ортодонт определит после диагностики.</p>
                       </div>
-                      <span class="stage__term">2–3 года</span>
+                      <span class="stage__term">≈&nbsp;2&nbsp;года</span>
                       <span class="cost cost--range" role="img" aria-label="диапазон суммы скрыт">от&nbsp;<i class="cost__bar"></i> до&nbsp;<i class="cost__bar"></i>₽</span>
                       <details class="more">
                         <summary class="more__sum">Что входит</summary>
                         <ul class="pos">
                           <li class="pos__row pos__row--wide"><span class="pos__name">Элайнеры или&nbsp;брекеты, их&nbsp;установка</span><span class="cost cost--sm" role="img" aria-label="сумма скрыта"><i class="cost__bar"></i>₽</span></li>
-                          <li class="pos__row pos__row--wide"><span class="pos__name">Плановые приёмы ортодонта раз в&nbsp;2&nbsp;месяца</span><span class="cost cost--sm" role="img" aria-label="сумма скрыта"><i class="cost__bar"></i>₽</span></li>
+                          <li class="pos__row pos__row--wide"><span class="pos__name">Плановые приёмы ортодонта</span><span class="cost cost--sm" role="img" aria-label="сумма скрыта"><i class="cost__bar"></i>₽</span></li>
                           <li class="pos__row pos__row--wide"><span class="pos__name">Снятие аппаратуры и&nbsp;ретейнеры на&nbsp;две челюсти</span><span class="cost cost--sm" role="img" aria-label="сумма скрыта"><i class="cost__bar"></i>₽</span></li>
                         </ul>
                       </details>
@@ -341,45 +341,21 @@
 
                 <div class="phase" style="--phase:#4E8F76">
                   <div class="phase__head">
-                    <div class="phase__name"><b>Восстановление функции и&nbsp;эстетики</b><span>Возвращаем жевание, форму зубов и&nbsp;внешний вид улыбки&nbsp;— постоянные конструкции в&nbsp;выверенном прикусе.</span></div>
-                    <span class="phase__term">≈&nbsp;4–7&nbsp;мес.</span>
+                    <div class="phase__name"><b>Восстановление функции и&nbsp;эстетики</b><span>Возвращаем форму зубов и&nbsp;внешний вид улыбки&nbsp;— постоянные конструкции в&nbsp;выверенном прикусе.</span></div>
+                    <span class="phase__term">≈&nbsp;1&nbsp;мес.</span>
                   </div>
                   <ol class="stages">
                     <li class="stage">
                       <span class="stage__num">V</span>
                       <div class="stage__main">
-                        <p class="stage__title">Имплантация <span class="stage__tag">пример этапа</span></p>
-                        <p class="stage__why">Зачем: восстанавливаем отсутствующий зуб&nbsp;— имплантат заменяет корень, на&nbsp;него ставят коронку.</p>
-                        <p class="stage__ct"><span class="ctmark">КТ</span>Объём кости, пазухи и&nbsp;нервные каналы&nbsp;— по&nbsp;ним подбирают размер имплантата и&nbsp;место установки.</p>
-                      </div>
-                      <span class="stage__term">3–6 месяцев</span>
-                      <span class="cost" role="img" aria-label="сумма скрыта"><i class="cost__bar"></i>₽</span>
-                      <details class="more">
-                        <summary class="more__sum">Что входит</summary>
-                        <ul class="pos">
-                          <li class="pos__row pos__row--wide"><span class="pos__name">Установка имплантата</span><span class="cost cost--sm" role="img" aria-label="сумма скрыта"><i class="cost__bar"></i>₽</span></li>
-                          <li class="pos__row pos__row--wide"><span class="pos__name">Формирователь десны</span><span class="cost cost--sm" role="img" aria-label="сумма скрыта"><i class="cost__bar"></i>₽</span></li>
-                        </ul>
-                      </details>
-                      <details class="more">
-                        <summary class="more__sum">По&nbsp;показаниям&nbsp;— <span class="cost cost--sm cost--extra cost--inline" role="img" aria-label="сумма скрыта">до&nbsp;+<i class="cost__bar"></i>₽</span></summary>
-                        <ul class="pos">
-                          <li class="pos__row pos__row--wide"><span class="pos__name">Костная пластика, если кости недостаточно</span><span class="cost cost--sm cost--extra" role="img" aria-label="сумма скрыта">до&nbsp;+<i class="cost__bar"></i>₽</span></li>
-                        </ul>
-                      </details>
-                    </li>
-                    <li class="stage">
-                      <span class="stage__num">VI</span>
-                      <div class="stage__main">
                         <p class="stage__title">Постоянное протезирование</p>
-                        <p class="stage__why">Зачем: коронка на&nbsp;имплантат и&nbsp;новые коронки вместо несостоятельных.</p>
+                        <p class="stage__why">Зачем: заменяем несостоятельные коронки на&nbsp;новые.</p>
                       </div>
                       <span class="stage__term">1 месяц</span>
                       <span class="cost" role="img" aria-label="сумма скрыта"><i class="cost__bar"></i>₽</span>
                       <details class="more">
                         <summary class="more__sum">Что входит</summary>
                         <ul class="pos">
-                          <li class="pos__row pos__row--wide"><span class="pos__name">Коронка на&nbsp;имплантате</span><span class="cost cost--sm" role="img" aria-label="сумма скрыта"><i class="cost__bar"></i>₽</span></li>
                           <li class="pos__row"><span class="pos__tooth">Зубы 15, 16</span><span class="pos__name">Снятие старых коронок и&nbsp;циркониевые коронки</span><span class="cost cost--sm" role="img" aria-label="сумма скрыта"><i class="cost__bar"></i>₽</span></li>
                         </ul>
                       </details>
@@ -394,13 +370,44 @@
                   </div>
                   <ol class="stages">
                     <li class="stage">
-                      <span class="stage__num">VII</span>
+                      <span class="stage__num">VI</span>
                       <div class="stage__main">
                         <p class="stage__title">Ретенционные каппы</p>
-                        <p class="stage__why">Зачем: удерживают новое положение зубов и&nbsp;защищают конструкции.</p>
+                        <p class="stage__why">Зачем: помогают удержать новое положение зубов и&nbsp;защищают конструкции.</p>
                       </div>
                       <span class="stage__term">после протезирования</span>
                       <span class="cost" role="img" aria-label="сумма скрыта"><i class="cost__bar"></i>₽</span>
+                    </li>
+                  </ol>
+                </div>
+
+                <div class="maybe">
+                  <p class="maybe__label">Возможный этап&nbsp;— в&nbsp;этот план не&nbsp;входит</p>
+                  <p class="maybe__text">Если нужно восстановить отсутствующий зуб, в&nbsp;плане появится этап имплантации. Так он может выглядеть:</p>
+                  <ol class="stages stages--flat">
+                    <li class="stage">
+                      <span class="stage__num">+</span>
+                      <div class="stage__main">
+                        <p class="stage__title">Имплантация</p>
+                        <p class="stage__why">Зачем: имплантат заменяет корень отсутствующего зуба, на&nbsp;него ставят коронку.</p>
+                        <p class="stage__ct"><span class="ctmark">КТ</span>Объём кости, пазухи и&nbsp;нервные каналы&nbsp;— по&nbsp;ним подбирают размер имплантата и&nbsp;место установки.</p>
+                      </div>
+                      <span class="stage__term">срок определит врач</span>
+                      <span class="cost" role="img" aria-label="сумма скрыта"><i class="cost__bar"></i>₽</span>
+                      <details class="more">
+                        <summary class="more__sum">Что входит</summary>
+                        <ul class="pos">
+                          <li class="pos__row pos__row--wide"><span class="pos__name">Установка имплантата</span><span class="cost cost--sm" role="img" aria-label="сумма скрыта"><i class="cost__bar"></i>₽</span></li>
+                          <li class="pos__row pos__row--wide"><span class="pos__name">Формирователь десны</span><span class="cost cost--sm" role="img" aria-label="сумма скрыта"><i class="cost__bar"></i>₽</span></li>
+                          <li class="pos__row pos__row--wide"><span class="pos__name">Коронка на&nbsp;имплантате</span><span class="cost cost--sm" role="img" aria-label="сумма скрыта"><i class="cost__bar"></i>₽</span></li>
+                        </ul>
+                      </details>
+                      <details class="more">
+                        <summary class="more__sum">По&nbsp;показаниям&nbsp;— <span class="cost cost--sm cost--extra cost--inline" role="img" aria-label="сумма скрыта">до&nbsp;+<i class="cost__bar"></i>₽</span></summary>
+                        <ul class="pos">
+                          <li class="pos__row pos__row--wide"><span class="pos__name">Костная пластика, если кости недостаточно</span><span class="cost cost--sm cost--extra" role="img" aria-label="сумма скрыта">до&nbsp;+<i class="cost__bar"></i>₽</span></li>
+                        </ul>
+                      </details>
                     </li>
                   </ol>
                 </div>
@@ -410,114 +417,102 @@
               <section class="part part--cost" id="p-cost">
                 <h4 class="part__title">Итог по&nbsp;плану</h4>
                 <dl class="total">
-                  <div class="total__row total__row--main"><dt>Основной маршрут лечения<small>срок реализации ≈&nbsp;3&nbsp;года</small></dt><dd><span class="cost cost--range cost--big" role="img" aria-label="диапазон суммы скрыт">от&nbsp;<i class="cost__bar"></i> до&nbsp;<i class="cost__bar"></i>₽</span></dd></div>
+                  <div class="total__row total__row--main"><dt>Основной маршрут лечения<small>срок реализации ≈&nbsp;2,5&nbsp;года</small></dt><dd><span class="cost cost--range cost--big" role="img" aria-label="диапазон суммы скрыт">от&nbsp;<i class="cost__bar"></i> до&nbsp;<i class="cost__bar"></i>₽</span></dd></div>
                   <div class="total__row"><dt>По&nbsp;показаниям&nbsp;— только если врач подтвердит необходимость</dt><dd><span class="cost cost--extra" role="img" aria-label="сумма скрыта">до&nbsp;+<i class="cost__bar"></i>₽</span></dd></div>
                 </dl>
                 <div class="phase phase--care" style="--phase:#4E8F76">
                   <div class="phase__head">
-                    <div class="phase__name"><b>Поддержание здоровья</b><span>Профессиональная гигиена и&nbsp;осмотры после лечения сохраняют результат. Оплачиваются по&nbsp;факту визита.</span></div>
-                    <span class="phase__term">каждые 6–8 месяцев</span>
+                    <div class="phase__name"><b>Поддержание здоровья</b><span>Профессиональная гигиена и&nbsp;осмотры после лечения помогают сохранить результат. Оплачиваются по&nbsp;факту визита.</span></div>
+                    <span class="phase__term">по&nbsp;графику врача</span>
                   </div>
                 </div>
                 <div class="paynote">
-                  <p class="paynote__title">Оплата постепенная&nbsp;— по&nbsp;мере выполнения этапов. Вы платите за&nbsp;то, что уже сделано.</p>
+                  <p class="paynote__title">Лечение оплачивается поэтапно. Порядок и&nbsp;сроки оплаты согласовываются до&nbsp;начала соответствующего этапа.</p>
                   <p class="paynote__text">План носит информационный характер: точные сроки и&nbsp;стоимость фиксируются в&nbsp;смете. Дополнительные вмешательства&nbsp;— только по&nbsp;показаниям и&nbsp;после согласования с&nbsp;вами.</p>
-                  <p class="paynote__next">Ваш следующий шаг&nbsp;— согласовать с&nbsp;координатором первый этап лечения.</p>
+                  <p class="paynote__next">Когда ваш индивидуальный план будет готов, координатор поможет разобраться в&nbsp;этапах и&nbsp;дальнейших действиях.</p>
                 </div>
               </section>
 
               <!-- Приложения -->
               <section class="part part--more" id="p-more">
                 <details class="fold" id="p-standards">
-                  <summary class="fold__sum"><span>Стандарты качества Денталь Профи&nbsp;· материалы и&nbsp;технологии</span><span class="fold__btn" aria-hidden="true"></span></summary>
+                  <summary class="fold__sum"><span>Стандарты качества Денталь Профи</span><span class="fold__btn" aria-hidden="true"></span></summary>
                   <div class="fold__body">
-                    <p class="fold__lead">Хорошо и&nbsp;плохо сделанная работа выглядят одинаково&nbsp;— разница видна через год-два. Поэтому у&nbsp;нас есть письменные стандарты: что должно быть сделано и&nbsp;чем это проверяется. Ниже&nbsp;— по&nbsp;работам вашего плана.</p>
-                    <p class="std__badge"><b>Наш собственный стандарт.</b> Это внутренний стандарт Денталь Профи, утверждённый в&nbsp;клинике и&nbsp;обязательный для&nbsp;наших врачей. Отраслевых требований такого уровня не&nbsp;существует&nbsp;— каждая клиника решает сама.</p>
-                    <p class="std__zoom"><b>Всё под увеличением.</b> Все терапевтические, эндодонтические, хирургические и&nbsp;ортопедические работы&nbsp;— под увеличением: бинокуляры и&nbsp;микроскоп, всегда с&nbsp;ассистентом.</p>
-                    <ul class="std__list">
-                      <li>В&nbsp;стоимость входят врачебные манипуляции и&nbsp;материалы: анестезия, наложение коффердама, лечебные пасты, светоотверждаемые материалы, слепки (оттиски).</li>
-                      <li>Постоянные коронки&nbsp;— безметалловая керамика и&nbsp;диоксид циркония&nbsp;— устанавливаются после стабилизации положения зубов.</li>
-                      <li>Регулярная поддерживающая программа существенно влияет на&nbsp;срок службы результата. В&nbsp;неё входят профессиональная гигиена, контрольные осмотры, оценка состояния реставраций, коронок и&nbsp;имплантатов, диспансерное наблюдение и&nbsp;гарантийные осмотры. Регулярное прохождение поддерживающей программы&nbsp;— одно из&nbsp;условий действия гарантийных обязательств клиники.</li>
-                    </ul>
+                    <p class="fold__lead">Многие детали качества не&nbsp;видны глазом. Поэтому у&nbsp;нас есть письменные стандарты: что врач проверяет на&nbsp;каждом этапе, каким способом и&nbsp;зачем.</p>
+                    <p class="std__badge"><b>Внутренний стандарт клиники.</b> Он утверждён в&nbsp;Денталь Профи и&nbsp;обязателен для&nbsp;наших врачей.</p>
+                    <p class="std__zoom"><b>Под увеличением.</b> Терапевтические, эндодонтические, хирургические и&nbsp;ортопедические работы врач выполняет с&nbsp;оптикой&nbsp;— бинокулярами или&nbsp;микроскопом, с&nbsp;ассистентом.</p>
+                    <p class="std__zoom"><b>Снимки&nbsp;— по&nbsp;показаниям.</b> Необходимость контрольных снимков, вид исследования и&nbsp;сроки врач определяет индивидуально.</p>
                     <div class="std">
                       <div class="std__item">
                         <p class="std__title">Профессиональная гигиена</p>
                         <ul class="std__list">
-                          <li>Снимаем все отложения&nbsp;— видимые и&nbsp;поддесневые, на&nbsp;глубину до&nbsp;3–5&nbsp;мм; при большом объёме работу делим на&nbsp;два посещения</li>
-                          <li>Полируем выступающие края старых пломб: на&nbsp;шероховатости налёт задерживается быстрее всего</li>
-                          <li>Делаем фото с&nbsp;окрашиванием налёта до&nbsp;и&nbsp;после&nbsp;— результат видно, а&nbsp;не&nbsp;приходится верить на&nbsp;слово</li>
-                          <li>При необходимости проводим реминерализацию эмали</li>
-                          <li>Подбираем средства для&nbsp;домашнего ухода именно под ваши зубы и&nbsp;показываем, как ими пользоваться</li>
+                          <li>Удаляем видимые и&nbsp;поддесневые отложения; при большом объёме работу делим на&nbsp;два посещения</li>
+                          <li>Окрашиваем налёт и&nbsp;фотографируем зубы до&nbsp;и&nbsp;после&nbsp;— результат видно на&nbsp;фото</li>
+                          <li>Полируем выступающие края старых пломб: на&nbsp;шероховатостях налёт задерживается быстрее</li>
+                          <li>Подбираем средства для&nbsp;домашнего ухода и&nbsp;показываем, как ими пользоваться</li>
                         </ul>
-                        <p class="std__why"><b>Почему это важно.</b> На&nbsp;воспалённых дёснах не&nbsp;держатся реставрации и&nbsp;невозможно точное планирование. Гигиена&nbsp;— не&nbsp;процедура «для&nbsp;свежести», а&nbsp;первый лечебный этап, от&nbsp;которого зависит результат всего плана.</p>
+                        <p class="std__why"><b>Зачем.</b> Воспаление дёсен мешает лечению, поэтому гигиена&nbsp;— первый лечебный этап плана.</p>
                       </div>
                       <div class="std__item">
-                        <p class="std__title">Лечение зубов: пломбы и&nbsp;реставрации</p>
+                        <p class="std__title">Пломбы и&nbsp;реставрации</p>
                         <ul class="std__list">
-                          <li>Работаем в&nbsp;изоляции&nbsp;— слюна и&nbsp;влага в&nbsp;зону лечения не&nbsp;попадают</li>
-                          <li>Убираем весь поражённый дентин под оптикой и&nbsp;с&nbsp;индикатором кариеса, а&nbsp;не&nbsp;«на&nbsp;глаз»</li>
-                          <li>Никаких щелей и&nbsp;нависающих краёв: прилегание проверяем визуально и&nbsp;на&nbsp;снимке</li>
-                          <li>Плотный контакт с&nbsp;соседним зубом&nbsp;— зубная нить проходит со&nbsp;щелчком, пища не&nbsp;застревает</li>
-                          <li>Проверяем смыкание: пломба не&nbsp;мешает ни&nbsp;при сжатии зубов, ни&nbsp;при движении челюсти</li>
-                          <li>Полируем до&nbsp;блеска и&nbsp;воспроизводим природную анатомию&nbsp;— реставрация не&nbsp;выделяется на&nbsp;фоне своих зубов</li>
+                          <li>Изолируем зуб от&nbsp;слюны и&nbsp;влаги</li>
+                          <li>Удаляем поражённые ткани под увеличением и&nbsp;с&nbsp;индикатором кариеса</li>
+                          <li>Проверяем прилегание пломбы по&nbsp;краю: без щелей и&nbsp;нависающих краёв</li>
+                          <li>Проверяем контакт с&nbsp;соседним зубом зубной нитью</li>
+                          <li>Проверяем смыкание: пломба не&nbsp;должна мешать при сжатии зубов и&nbsp;движении челюсти</li>
                         </ul>
-                        <p class="std__why"><b>Почему это важно.</b> Повторный кариес почти всегда начинается по&nbsp;краю пломбы и&nbsp;в&nbsp;межзубном промежутке. Разница между «поставили пломбу» и&nbsp;«поставили герметично, с&nbsp;правильным контактом»&nbsp;— это годы службы зуба.</p>
+                        <p class="std__why"><b>Зачем.</b> Повторный кариес часто начинается по&nbsp;краю пломбы и&nbsp;между зубами&nbsp;— эти места проверяем отдельно.</p>
                       </div>
                       <div class="std__item">
                         <p class="std__title">Лечение корневых каналов</p>
                         <ul class="std__list">
-                          <li>Каналы лечим под микроскопом и&nbsp;в&nbsp;полной изоляции&nbsp;— инфекция снаружи внутрь зуба не&nbsp;попадает</li>
-                          <li>Перед началом убираем весь кариес и&nbsp;старые пломбы, чтобы не&nbsp;занести инфекцию в&nbsp;канал</li>
-                          <li>Проходим каждый канал до&nbsp;верхушки корня; длину контролируем прибором и&nbsp;снимком</li>
-                          <li>Пломбируем плотно, без пустот&nbsp;— герметичность подтверждаем рентгеном</li>
-                          <li>Между посещениями зуб закрыт герметично: канал не&nbsp;инфицируется повторно</li>
-                          <li>Через 6–12 месяцев приглашаем на&nbsp;контрольный снимок&nbsp;— убеждаемся, что кость у&nbsp;верхушки зажила</li>
+                          <li>Работаем под микроскопом и&nbsp;в&nbsp;изоляции</li>
+                          <li>Перед лечением убираем кариес и&nbsp;старые пломбы</li>
+                          <li>Длину каждого канала контролируем специальным прибором</li>
+                          <li>Между посещениями закрываем зуб герметичной временной пломбой</li>
                         </ul>
-                        <p class="std__why"><b>Почему это важно.</b> Перелечивание канала всегда сложнее, дороже и&nbsp;менее предсказуемо, чем первое лечение, а&nbsp;иногда заканчивается потерей зуба. Качество этой работы видно только на&nbsp;снимке и&nbsp;проявляется через годы.</p>
+                        <p class="std__why"><b>Зачем.</b> Качество лечения каналов не&nbsp;видно снаружи, поэтому каждый шаг выполняется по&nbsp;протоколу.</p>
                       </div>
                       <div class="std__item">
                         <p class="std__title">Удаление зуба</p>
                         <ul class="std__list">
-                          <li>Полное обезболивание: во&nbsp;время удаления боли быть не&nbsp;должно</li>
-                          <li>Удаляем зуб и&nbsp;все его фрагменты, лунку очищаем от&nbsp;воспалённых тканей</li>
-                          <li>Добиваемся правильного сгустка в&nbsp;лунке и&nbsp;ушиваем рану&nbsp;— заживление идёт спокойнее</li>
-                          <li>Делаем контрольный снимок: в&nbsp;лунке ничего не&nbsp;осталось</li>
+                          <li>Перед удалением проверяем действие обезболивания</li>
+                          <li>Удаляем зуб полностью, лунку очищаем от&nbsp;воспалённых тканей</li>
+                          <li>При необходимости ушиваем лунку</li>
                           <li>Даём письменные рекомендации на&nbsp;первые дни и&nbsp;остаёмся на&nbsp;связи</li>
                         </ul>
-                        <p class="std__why"><b>Почему это важно.</b> Оставленный фрагмент корня или&nbsp;невычищенное воспаление&nbsp;— это боль, отёк и&nbsp;потеря кости, которую потом приходится восстанавливать отдельной операцией перед имплантацией.</p>
+                        <p class="std__why"><b>Зачем.</b> Чтобы заживление прошло спокойно и&nbsp;не&nbsp;осложнило следующие этапы лечения.</p>
                       </div>
                       <div class="std__item">
-                        <p class="std__title">Коронки и&nbsp;протезы на&nbsp;имплантатах</p>
+                        <p class="std__title">Имплантация и&nbsp;коронки на&nbsp;имплантатах</p>
                         <ul class="std__list">
-                          <li>Точность посадки на&nbsp;имплантат проверяем рентгеном: конструкция садится без зазора и&nbsp;без напряжения</li>
-                          <li>Промежуточная часть плотно прилегает к&nbsp;десне&nbsp;— под протезом не&nbsp;скапливается налёт</li>
-                          <li>Смыкание настраиваем так, чтобы имплантаты не&nbsp;перегружались</li>
-                          <li>При цементной фиксации полностью убираем излишки цемента</li>
-                          <li>Шахту винта закрываем герметично и&nbsp;незаметно</li>
+                          <li>Размер имплантата и&nbsp;место установки планируем по&nbsp;КТ</li>
+                          <li>Проверяем посадку коронки: без зазора и&nbsp;напряжения</li>
+                          <li>Настраиваем смыкание так, чтобы имплантат не&nbsp;перегружался</li>
+                          <li>При цементной фиксации убираем излишки цемента</li>
                         </ul>
-                        <p class="std__why"><b>Почему это важно.</b> Имплантат не&nbsp;чувствует перегрузку&nbsp;— у&nbsp;него нет связки, как у&nbsp;своего зуба. Поэтому точность посадки и&nbsp;настройка смыкания определяют, прослужит конструкция пять лет или&nbsp;двадцать.</p>
+                        <p class="std__why"><b>Зачем.</b> У&nbsp;имплантата нет связки, как у&nbsp;своего зуба, поэтому точность посадки и&nbsp;смыкания особенно важна.</p>
                       </div>
                       <div class="std__item">
                         <p class="std__title">Коронки, виниры и&nbsp;вкладки</p>
                         <ul class="std__list">
-                          <li>Край коронки плотно прилегает к&nbsp;зубу&nbsp;— проверяем визуально и&nbsp;на&nbsp;снимке</li>
-                          <li>Плотный контакт с&nbsp;соседними зубами: зубная нить проходит со&nbsp;щелчком</li>
-                          <li>Настраиваем смыкание&nbsp;— без перегрузки и&nbsp;без помех при движении челюсти</li>
-                          <li>Фиксируем в&nbsp;сухом поле и&nbsp;полностью убираем излишки цемента</li>
-                          <li>Форма и&nbsp;цвет&nbsp;— под ваши зубы: конструкция не&nbsp;выделяется</li>
+                          <li>Проверяем прилегание края коронки к&nbsp;зубу</li>
+                          <li>Проверяем контакт с&nbsp;соседними зубами зубной нитью</li>
+                          <li>Настраиваем смыкание: без перегрузки и&nbsp;помех при движении челюсти</li>
+                          <li>Фиксируем в&nbsp;сухом поле и&nbsp;убираем излишки цемента</li>
+                          <li>Подбираем форму и&nbsp;цвет под ваши зубы</li>
                         </ul>
-                        <p class="std__why"><b>Почему это важно.</b> Остатки цемента под десной вызывают воспаление и&nbsp;потерю кости, а&nbsp;неточный край&nbsp;— кариес под коронкой, который не&nbsp;виден до&nbsp;появления боли. Эти детали и&nbsp;отделяют работу на&nbsp;десять лет от&nbsp;работы на&nbsp;пару лет.</p>
+                        <p class="std__why"><b>Зачем.</b> Остатки цемента и&nbsp;неточный край могут вызвать воспаление десны и&nbsp;кариес под коронкой.</p>
                       </div>
                       <div class="std__item">
                         <p class="std__title">Ортодонтическое лечение</p>
                         <ul class="std__list">
-                          <li>Смыкание выставляем по&nbsp;первому классу; центр и&nbsp;эстетика лица&nbsp;— обязательная часть результата</li>
-                          <li>Полноценные контакты на&nbsp;каждом зубе: жевание равномерное, передние зубы не&nbsp;перегружены</li>
-                          <li>Корни зубов ставим безопасно в&nbsp;кости&nbsp;— это профилактика рецессий десны</li>
-                          <li>Контрольная КТ в&nbsp;начале, на&nbsp;этапах, в&nbsp;конце лечения и&nbsp;через год после него</li>
-                          <li>После снятия аппаратуры зубы полностью очищаем и&nbsp;полируем, ретейнеры изготавливаем в&nbsp;кратчайший срок</li>
+                          <li>Цель&nbsp;— не&nbsp;только ровные зубы, но&nbsp;и&nbsp;равномерное смыкание</li>
+                          <li>Следим, чтобы корни зубов перемещались в&nbsp;пределах кости</li>
+                          <li>После снятия аппаратуры очищаем и&nbsp;полируем зубы, изготавливаем ретейнеры</li>
                         </ul>
-                        <p class="std__why"><b>Почему это важно.</b> Ровные зубы&nbsp;— не&nbsp;результат, а&nbsp;его видимая часть. Результат&nbsp;— стабильное смыкание, в&nbsp;котором зубы не&nbsp;стираются и&nbsp;не&nbsp;расшатываются, и&nbsp;которое удерживается ретейнерами.</p>
+                        <p class="std__why"><b>Зачем.</b> Без удержания зубы могут вернуться в&nbsp;прежнее положение, поэтому после лечения нужны ретейнеры.</p>
                       </div>
                     </div>
                     <p class="std__foot">Стандарты качества Денталь Профи&nbsp;— собственная методика клиники, редакция 2026 года.</p>
@@ -572,6 +567,6 @@
       </div>
     </section>
   </main>
-<script src="assets/js/page.js?v=2"></script>
+<script src="assets/js/page.js?v=3"></script>
 </body>
 </html>
