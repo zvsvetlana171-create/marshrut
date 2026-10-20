@@ -50,6 +50,7 @@
   .toc__link:hover {
     box-shadow: inset 0 0 0 1.5px var(--navy);
   }
+
 }
 
 .toc__link:focus-visible {
@@ -450,58 +451,112 @@
 
 /* ---------- Анализ КТ ---------- */
 .ctfind {
-  display: grid;
-  grid-template-columns: 48px minmax(0, 1fr);
-  column-gap: 16px;
-  align-items: center;
   margin-top: 20px;
-  padding: 18px 22px;
+  padding: 20px 24px 22px;
   border-radius: 14px;
   background: #F3D2D3;
-  font-size: 17px;
-  line-height: 24px;
   color: var(--navy);
+}
+
+.ctfind__title {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-family: var(--font-head);
+  font-size: 20px;
+  line-height: 25px;
+  font-weight: 700;
 }
 
 .ctfind__icon {
   display: flex;
+  flex: none;
   align-items: center;
   justify-content: center;
-  width: 48px;
-  height: 48px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   background: var(--white);
 }
 
-.ctfind b {
+.ctfind__list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.ctfind__list li {
+  min-width: 0;
+  padding: 14px 16px 16px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.72);
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.ctfind__list b {
+  display: block;
+  margin-bottom: 4px;
   font-weight: 700;
 }
 
-.ctlist {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  column-gap: 32px;
-  margin: 16px 0 0;
+/* метка «КТ»: этап спланирован по данным КТ */
+.ctmark {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  height: 22px;
+  padding: 0 8px;
+  border-radius: 6px;
+  background: var(--navy);
+  font-size: 12px;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--white);
 }
 
-.ctlist__row {
+.part__legend {
   display: flex;
-  justify-content: space-between;
-  gap: 12px;
-  padding: 9px 0;
-  border-bottom: 1px solid #EEF1F5;
-  font-size: 16px;
-  line-height: 21px;
+  align-items: center;
+  gap: 10px;
+  margin-top: 14px;
+  font-size: 15px;
+  line-height: 20px;
+  color: #49678D;
 }
 
-.ctlist dt {
-  font-weight: 600;
+.stage__ct {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 8px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: #FBEAEA;
+  font-size: 15px;
+  line-height: 21px;
   color: var(--navy);
 }
 
-.ctlist dd {
-  margin: 0;
-  text-align: right;
+/* демонстрационный этап: пунктирный номер и жёлтая метка */
+.stage__tag {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 2px 9px;
+  border-radius: 999px;
+  background: #FFF3C4;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 700;
+  color: #5E4600;
+  vertical-align: 2px;
+}
+
+.stage--demo .stage__num {
+  border-style: dashed;
 }
 
 .ktrep {
@@ -648,8 +703,7 @@
   padding-top: 1px;
 }
 
-.stage > .more,
-.stage > .stage__warn {
+.stage > .more {
   grid-column: 2 / -1;
 }
 
@@ -667,7 +721,6 @@
   color: #49678D;
 }
 
-.stage__doc,
 .stage__opt {
   margin-top: 8px;
   padding: 9px 12px;
@@ -676,36 +729,14 @@
   line-height: 21px;
 }
 
-.stage__doc {
-  background: #F1F5FA;
-}
-
 .stage__opt {
   background: #E8EFF8;
   color: var(--navy);
 }
 
-.stage__doc b,
 .stage__opt b {
   font-weight: 700;
   color: var(--navy);
-}
-
-.stage__warn {
-  margin-top: 12px;
-  padding: 12px 16px;
-  border: 1px solid #F0DFC0;
-  border-radius: 10px;
-  background: #FDF7EC;
-  font-size: 15px;
-  line-height: 21px;
-  color: #7A5510;
-}
-
-.stage__warn b {
-  display: block;
-  margin-bottom: 4px;
-  font-weight: 700;
 }
 
 .more {
@@ -747,20 +778,6 @@
   transform: rotate(90deg);
 }
 
-.more > .stage__warn {
-  margin-left: 24px;
-}
-
-.pos__group {
-  margin: 10px 0 0 24px;
-  font-size: 13px;
-  line-height: 17px;
-  font-weight: 700;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-  color: #55606E;
-}
-
 .pos {
   margin: 8px 0 0 7px;
   padding-left: 14px;
@@ -769,7 +786,7 @@
 
 .pos__row {
   display: grid;
-  grid-template-columns: 62px minmax(0, 1fr) auto;
+  grid-template-columns: 112px minmax(0, 1fr) auto;
   column-gap: 12px;
   align-items: start;
   padding: 8px 0;
@@ -789,7 +806,6 @@
 .pos__tooth {
   font-weight: 700;
   color: var(--navy);
-  white-space: nowrap;
 }
 
 .pos__name small {
@@ -936,62 +952,6 @@
   margin-top: 0;
 }
 
-.teeth {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
-}
-
-.tcard {
-  min-width: 0;
-  overflow: hidden;
-  border: 1px solid #DCE3EC;
-  border-left: 5px solid var(--tc);
-  border-radius: 12px;
-}
-
-.tcard__head {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: 2px 10px;
-  padding: 10px 14px;
-  background: #F7F9FB;
-}
-
-.tcard__head b {
-  font-size: 17px;
-  line-height: 22px;
-  font-weight: 700;
-  color: var(--navy);
-}
-
-.tcard__head span {
-  font-size: 13px;
-  line-height: 17px;
-  font-weight: 700;
-  color: var(--tc);
-}
-
-.tcard__list li {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 12px;
-  padding: 8px 14px;
-  border-top: 1px solid #F1F4F8;
-  font-size: 14px;
-  line-height: 19px;
-}
-
-.tcard__list small {
-  display: block;
-  margin-top: 2px;
-  font-size: 13px;
-  line-height: 17px;
-  color: #49678D;
-}
-
 .std__badge,
 .std__zoom {
   font-size: 15px;
@@ -1110,52 +1070,6 @@
   color: #49678D;
 }
 
-.links {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 16px 28px;
-}
-
-.links__title {
-  font-size: 16px;
-  line-height: 21px;
-  font-weight: 700;
-  color: var(--navy);
-}
-
-.links__list li {
-  margin-top: 8px;
-  font-size: 15px;
-  line-height: 20px;
-}
-
-.links__list a {
-  color: #2F5C97;
-  text-underline-offset: 3px;
-}
-
-.sheet__status {
-  margin-top: 40px;
-  padding: 16px 20px;
-  border-radius: 12px;
-  background: #F5F7FB;
-  font-size: 14px;
-  line-height: 20px;
-  color: #5B6B7E;
-}
-
-.sheet__status b {
-  font-weight: 700;
-  color: var(--navy);
-}
-
-.sheet__id {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin-top: 12px;
-}
-
 /* =========================================================
    Планшет: < 1200
    ========================================================= */
@@ -1216,9 +1130,9 @@
     gap: 18px 14px;
   }
 
-  .ctfind {
-    font-size: 16px;
-    line-height: 22px;
+  .ctfind__title {
+    font-size: 18px;
+    line-height: 23px;
   }
 
   .stage {
@@ -1239,10 +1153,15 @@
     font-size: 18px;
     line-height: 23px;
   }
+
 }
 
 /* ---------- Узкий планшет: оглавление в две колонки ---------- */
 @media (max-width: 959.98px) {
+  .ctfind__list {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
   .toc {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1256,11 +1175,11 @@
     row-gap: 4px;
   }
 
-  .teeth,
   .std,
   .gloss {
     grid-template-columns: minmax(0, 1fr);
   }
+
 }
 
 /* =========================================================
@@ -1444,31 +1363,44 @@
   }
 
   .ctfind {
-    grid-template-columns: 40px minmax(0, 1fr);
-    column-gap: 12px;
-    align-items: start;
-    padding: 14px;
+    padding: 14px 14px 16px;
+  }
+
+  .ctfind__title {
+    gap: 10px;
+    font-size: 17px;
+    line-height: 22px;
+  }
+
+  .ctfind__icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .ctfind__icon svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .ctfind__list {
+    gap: 8px;
+    margin-top: 12px;
+  }
+
+  .ctfind__list li {
+    padding: 12px 12px 14px;
     font-size: 15px;
     line-height: 21px;
   }
 
-  .ctfind__icon {
-    width: 40px;
-    height: 40px;
+  .part__legend,
+  .stage__ct {
+    font-size: 14px;
+    line-height: 19px;
   }
 
-  .ctfind__icon svg {
-    width: 22px;
-    height: 22px;
-  }
-
-  .ctlist {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  .ctlist__row {
-    font-size: 15px;
-    line-height: 20px;
+  .stage__ct {
+    padding: 8px 10px;
   }
 
   .ktrep {
@@ -1531,8 +1463,7 @@
     margin-top: 8px;
   }
 
-  .stage > .more,
-  .stage > .stage__warn {
+  .stage > .more {
     grid-column: 1 / -1;
   }
 
@@ -1542,21 +1473,9 @@
   }
 
   .stage__why,
-  .stage__doc,
   .stage__opt {
     font-size: 14px;
     line-height: 20px;
-  }
-
-  .stage__warn {
-    padding: 10px 12px;
-    font-size: 14px;
-    line-height: 20px;
-  }
-
-  .more > .stage__warn,
-  .pos__group {
-    margin-left: 0;
   }
 
   .more__sum {
@@ -1643,16 +1562,6 @@
     line-height: 21px;
   }
 
-  .links {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  .sheet__status {
-    margin-top: 28px;
-    padding: 14px;
-    font-size: 13px;
-    line-height: 19px;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1660,6 +1569,7 @@
   .more__sum::before {
     transition: none;
   }
+
 }
 
 .cost--inline {
