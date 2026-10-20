@@ -91,10 +91,10 @@
   margin-top: 16px;
   padding: 14px 16px;
   border-radius: 14px;
-  background: #FFF3C4;
+  background: #E8EFF8;
   font-size: 15px;
   line-height: 20px;
-  color: #5E4600;
+  color: var(--navy);
 }
 
 .demo__note svg {
@@ -116,13 +116,13 @@
 
 .sheet__ribbon {
   padding: 10px 28px;
-  background: #FFF3C4;
+  background: #E8EFF8;
   font-size: 13px;
   line-height: 17px;
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: #5E4600;
+  color: #49678D;
 }
 
 .sheet__body {
@@ -133,48 +133,13 @@
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
-  justify-content: space-between;
+  justify-content: center;
   gap: 16px 24px;
 }
 
 .sheet__logo {
   width: 150px;
   height: auto;
-}
-
-.sheet__org {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 6px;
-  font-size: 16px;
-  line-height: 20px;
-  color: var(--navy);
-  text-align: right;
-}
-
-.sheet__org b {
-  font-weight: 700;
-}
-
-/* скрытые данные: пустое поле с подписью, что там будет */
-.blank {
-  display: inline-block;
-  padding: 3px 12px;
-  border: 1px dashed #B9C5D6;
-  border-radius: 999px;
-  background: #F3F6FA;
-  font-size: 14px;
-  line-height: 18px;
-  font-weight: 500;
-  color: #7B8A9D;
-  white-space: nowrap;
-}
-
-.blank--sm {
-  padding: 2px 10px;
-  font-size: 13px;
-  line-height: 17px;
 }
 
 .sheet__title {
@@ -186,32 +151,6 @@
   letter-spacing: -0.01em;
   color: var(--navy);
   text-align: center;
-}
-
-.info {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  column-gap: 32px;
-  margin: 20px 0 0;
-}
-
-.info__row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  padding: 10px 0;
-  border-bottom: 1px solid #DCE3EC;
-}
-
-.info dt {
-  font-size: 15px;
-  line-height: 20px;
-  color: #49678D;
-}
-
-.info dd {
-  margin: 0;
 }
 
 /* ---------- Разделы документа ---------- */
@@ -1227,33 +1166,10 @@
     width: 104px;
   }
 
-  .sheet__org {
-    align-items: flex-start;
-    font-size: 15px;
-    text-align: left;
-  }
-
-  .sheet__head {
-    flex-direction: column;
-  }
-
   .sheet__title {
     margin-top: 20px;
     font-size: 20px;
     line-height: 25px;
-  }
-
-  .info {
-    grid-template-columns: minmax(0, 1fr);
-    margin-top: 12px;
-  }
-
-  .info__row {
-    padding: 8px 0;
-  }
-
-  .info dt {
-    font-size: 14px;
   }
 
   .part {
@@ -1706,4 +1622,5 @@
   .zoom--full .zoom__img {
     width: 760px;
   }
+
 }

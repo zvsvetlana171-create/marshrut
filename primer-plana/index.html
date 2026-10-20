@@ -12,7 +12,7 @@
 <style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style>
 <link rel="stylesheet" href="assets/css/style.css?v=1">
 <link rel="stylesheet" href="assets/css/plan.css?v=6">
-<link rel="stylesheet" href="assets/css/primer.css?v=7">
+<link rel="stylesheet" href="assets/css/primer.css?v=9">
 <script src="assets/js/main.js?v=2"></script>
 </head>
 <body>
@@ -138,7 +138,7 @@
       </div>
     </section>
 
-    <!-- 2. Прототип плана -->
+    <!-- 2. Пример плана -->
     <section class="section section--gray" id="primer">
       <div class="container">
         <h2 class="h2">Так выглядит план лечения</h2>
@@ -157,30 +157,19 @@
             </ol>
             <p class="demo__note">
               <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><rect x="4" y="10.5" width="16" height="10" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-              <span><b>Прототип.</b> План упрощён, имена, даты и&nbsp;суммы скрыты.</span>
+              <span>Пример обезличен и&nbsp;упрощён: имена, даты и&nbsp;суммы скрыты.</span>
             </p>
           </aside>
 
           <article class="sheet" aria-label="Пример плана лечения">
-            <p class="sheet__ribbon">Прототип плана&nbsp;· данные пациента скрыты</p>
+            <p class="sheet__ribbon">Обезличенный пример плана лечения</p>
             <div class="sheet__body">
 
               <header class="sheet__head">
                 <img class="sheet__logo" src="assets/img/logo-plan.png" width="640" height="447" alt="Денталь Профи, центр восстановления улыбок" loading="lazy" decoding="async">
-                <div class="sheet__org">
-                  <b>Денталь Профи</b>
-                  <span class="blank">филиал, адрес и&nbsp;телефон</span>
-                  <span class="blank blank--sm">реквизиты и&nbsp;лицензия клиники</span>
-                </div>
               </header>
 
               <h3 class="sheet__title">Информационный план лечения</h3>
-              <dl class="info">
-                <div class="info__row"><dt>Пациент</dt><dd><span class="blank">ФИО пациента</span></dd></div>
-                <div class="info__row"><dt>Ответственный врач</dt><dd><span class="blank">ФИО врача</span></dd></div>
-                <div class="info__row"><dt>Дата плана</dt><dd><span class="blank">дд.мм.гггг</span></dd></div>
-                <div class="info__row"><dt>Диагност</dt><dd><span class="blank">ФИО врача</span></dd></div>
-              </dl>
 
               <!-- Состояние зубов -->
               <section class="part" id="p-state">
@@ -234,7 +223,7 @@
                   </ul>
                 </div>
                 <div class="ktrep">
-                  <figure class="ktrep__page"><a class="ktrep__zoom" href="assets/img/kt-otchet-1.jpg" target="_blank" rel="noopener" aria-label="Открыть страницу отчёта крупно"><img src="assets/img/kt-otchet-1.jpg" width="760" height="1076" alt="первая страница отчёта по КТ: панорамный снимок челюстей и схема зубов, ФИО и даты скрыты" loading="lazy" decoding="async"><span class="ktrep__hint"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15 15l5 5M10.5 8v5M8 10.5h5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Увеличить</span></a><figcaption>Отчёт по&nbsp;КТ&nbsp;· страница 1 из&nbsp;10</figcaption></figure>
+                  <figure class="ktrep__page"><a class="ktrep__zoom" href="assets/img/kt-otchet-1.jpg?v=2" target="_blank" rel="noopener" aria-label="Открыть страницу отчёта крупно"><img src="assets/img/kt-otchet-1.jpg?v=2" width="760" height="1076" alt="первая страница отчёта по КТ: панорамный снимок челюстей и схема зубов, данные пациента скрыты" loading="lazy" decoding="async"><span class="ktrep__hint"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15 15l5 5M10.5 8v5M8 10.5h5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Увеличить</span></a><figcaption>Отчёт по&nbsp;КТ&nbsp;· страница 1 из&nbsp;10</figcaption></figure>
                   <figure class="ktrep__page"><a class="ktrep__zoom" href="assets/img/kt-otchet-2.jpg" target="_blank" rel="noopener" aria-label="Открыть страницу отчёта крупно"><img src="assets/img/kt-otchet-2.jpg" width="760" height="1076" alt="страница отчёта по КТ с разбором зубов 18, 17 и 16 в разных срезах" loading="lazy" decoding="async"><span class="ktrep__hint"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15 15l5 5M10.5 8v5M8 10.5h5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Увеличить</span></a><figcaption>Отчёт по&nbsp;КТ&nbsp;· страница 2 из&nbsp;10</figcaption></figure>
                 </div>
                 <p class="part__note part__note--blue">Отчёт по&nbsp;КТ&nbsp;— 10 страниц с&nbsp;разбором каждого зуба в&nbsp;нескольких срезах. Это автоматический анализ снимка, окончательный диагноз ставит врач.</p>
@@ -247,12 +236,29 @@
 
                 <div class="phase" style="--phase:#C08A3E">
                   <div class="phase__head">
-                    <div class="phase__name"><b>Основа здоровья</b><span>Убираем воспаление и&nbsp;приводим зубы в&nbsp;здоровое состояние&nbsp;— это фундамент для&nbsp;всего лечения.</span></div>
+                    <div class="phase__name"><b>Основа здоровья</b><span>Убираем воспаление дёсен и&nbsp;зубов, приводим их&nbsp;в&nbsp;здоровое состояние&nbsp;— это фундамент для&nbsp;всего лечения.</span></div>
                     <span class="phase__term">≈&nbsp;4&nbsp;мес.</span>
                   </div>
                   <ol class="stages">
                     <li class="stage">
                       <span class="stage__num">I</span>
+                      <div class="stage__main">
+                        <p class="stage__title">Профессиональная гигиена и&nbsp;лечение дёсен</p>
+                        <p class="stage__why">Зачем: убираем налёт и&nbsp;зубной камень, снимаем воспаление дёсен&nbsp;— с&nbsp;этого начинается лечение.</p>
+                      </div>
+                      <span class="stage__term">в&nbsp;начале лечения</span>
+                      <span class="cost" role="img" aria-label="сумма скрыта"><i class="cost__bar"></i>₽</span>
+                      <details class="more">
+                        <summary class="more__sum">Что входит</summary>
+                        <ul class="pos">
+                          <li class="pos__row pos__row--wide"><span class="pos__name">Профессиональная гигиена</span><span class="cost cost--sm" role="img" aria-label="сумма скрыта"><i class="cost__bar"></i>₽</span></li>
+                          <li class="pos__row"><span class="pos__tooth">Зубы 31, 32, 41, 42</span><span class="pos__name">Лечение дёсен при пародонтите</span><span class="cost cost--sm" role="img" aria-label="сумма скрыта"><i class="cost__bar"></i>₽</span></li>
+                          <li class="pos__row pos__row--wide"><span class="pos__name">Контрольный осмотр: оценка состояния дёсен</span><span class="cost cost--sm" role="img" aria-label="сумма скрыта"><i class="cost__bar"></i>₽</span></li>
+                        </ul>
+                      </details>
+                    </li>
+                    <li class="stage">
+                      <span class="stage__num">II</span>
                       <div class="stage__main">
                         <p class="stage__title">Лечение зубов и&nbsp;устранение очагов инфекции (санация)</p>
                         <p class="stage__why">Зачем: сохраняем и&nbsp;восстанавливаем зубы, убираем инфекцию.</p>
@@ -277,7 +283,7 @@
                       </details>
                     </li>
                     <li class="stage">
-                      <span class="stage__num">II</span>
+                      <span class="stage__num">III</span>
                       <div class="stage__main">
                         <p class="stage__title">Удаление зубов мудрости</p>
                         <p class="stage__why">Зачем: зубы 18, 38, 48 удаляем перед исправлением прикуса.</p>
@@ -303,7 +309,7 @@
                   </div>
                   <ol class="stages">
                     <li class="stage">
-                      <span class="stage__num">III</span>
+                      <span class="stage__num">IV</span>
                       <div class="stage__main">
                         <p class="stage__title">Ортодонтическая диагностика и&nbsp;удаление лишнего зуба</p>
                         <p class="stage__why">Зачем: ортодонт составляет план исправления прикуса; сверхкомплектный зуб удаляем по&nbsp;его заключению.</p>
@@ -319,7 +325,7 @@
                       </details>
                     </li>
                     <li class="stage">
-                      <span class="stage__num">IV</span>
+                      <span class="stage__num">V</span>
                       <div class="stage__main">
                         <p class="stage__title">Исправление прикуса элайнерами или&nbsp;брекетами</p>
                         <p class="stage__why">Зачем: выровненные зубы и&nbsp;правильный прикус определяют форму будущих коронок.</p>
@@ -346,7 +352,7 @@
                   </div>
                   <ol class="stages">
                     <li class="stage">
-                      <span class="stage__num">V</span>
+                      <span class="stage__num">VI</span>
                       <div class="stage__main">
                         <p class="stage__title">Постоянное протезирование</p>
                         <p class="stage__why">Зачем: заменяем несостоятельные коронки на&nbsp;новые.</p>
@@ -370,7 +376,7 @@
                   </div>
                   <ol class="stages">
                     <li class="stage">
-                      <span class="stage__num">VI</span>
+                      <span class="stage__num">VII</span>
                       <div class="stage__main">
                         <p class="stage__title">Ретенционные каппы</p>
                         <p class="stage__why">Зачем: помогают удержать новое положение зубов и&nbsp;защищают конструкции.</p>
