@@ -12,7 +12,7 @@
 <style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style>
 <link rel="stylesheet" href="assets/css/style.css?v=1">
 <link rel="stylesheet" href="assets/css/plan.css?v=6">
-<link rel="stylesheet" href="assets/css/analizy.css?v=1">
+<link rel="stylesheet" href="assets/css/analizy.css?v=3">
 <script src="assets/js/main.js?v=1"></script>
 </head>
 <body>
@@ -128,7 +128,7 @@
             <p class="hero__text">Перед имплантацией нужно сдать пять анализов. Отмечайте сданные прямо на&nbsp;этой странице, а&nbsp;результаты отправьте нам на&nbsp;почту.</p>
             <p class="hero__note">
               <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3.5 7l8.5 6 8.5-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
-              <span>Результаты&nbsp;— на&nbsp;<a class="hero__mail" href="#send">dentale-profi@mail.ru</a></span>
+              <span>Результаты&nbsp;— на&nbsp;<a class="hero__mail" href="#send">почту вашего филиала</a></span>
             </p>
           </div>
           <div class="hero__card">
@@ -201,17 +201,40 @@
         <h2 class="h2">Как передать результаты</h2>
         <div class="mail">
           <div class="mail__main">
-            <p class="mail__label">Отправьте результаты на&nbsp;почту</p>
-            <a class="mail__addr" href="mailto:dentale-profi@mail.ru?subject=%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D1%8B%20%D0%B4%D0%BB%D1%8F%20%D0%B8%D0%BC%D0%BF%D0%BB%D0%B0%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D0%B8">dentale-profi@mail.ru</a>
-            <div class="mail__actions">
-              <a class="mail__btn" href="mailto:dentale-profi@mail.ru?subject=%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D1%8B%20%D0%B4%D0%BB%D1%8F%20%D0%B8%D0%BC%D0%BF%D0%BB%D0%B0%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D0%B8">
-                <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M4 12l16-8-6 16-2.5-6.5z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M11.5 13.5L20 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-                <span>Написать письмо</span>
-              </a>
-              <button class="mail__btn mail__btn--ghost" type="button" data-copy="dentale-profi@mail.ru" hidden>
-                <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2" fill="none" stroke="currentColor" stroke-width="2"/></svg>
-                <span data-copy-label>Скопировать адрес</span>
-              </button>
+            <p class="mail__label">Отправьте результаты на&nbsp;почту вашего филиала</p>
+            <div class="mail__boxes">
+              <div class="mail__box" data-branch="mitino">
+                <div class="mail__who">
+                  <p class="mail__branch">Митино <span class="mail__badge">Ваш филиал</span></p>
+                  <a class="mail__addr" href="mailto:dentale-profi@mail.ru?subject=%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D1%8B%20%D0%B4%D0%BB%D1%8F%20%D0%B8%D0%BC%D0%BF%D0%BB%D0%B0%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D0%B8">dentale-profi@<wbr>mail.ru</a>
+                </div>
+                <div class="mail__actions">
+                  <a class="mail__btn" href="mailto:dentale-profi@mail.ru?subject=%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D1%8B%20%D0%B4%D0%BB%D1%8F%20%D0%B8%D0%BC%D0%BF%D0%BB%D0%B0%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D0%B8">
+                    <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M4 12l16-8-6 16-2.5-6.5z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M11.5 13.5L20 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                    <span>Написать</span>
+                  </a>
+                  <button class="mail__btn mail__btn--ghost" type="button" data-copy="dentale-profi@mail.ru" hidden>
+                    <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+                    <span data-copy-label>Скопировать</span>
+                  </button>
+                </div>
+              </div>
+              <div class="mail__box" data-branch="krasnogorsk">
+                <div class="mail__who">
+                  <p class="mail__branch">Красногорск <span class="mail__badge">Ваш филиал</span></p>
+                  <a class="mail__addr" href="mailto:dentale-profi-2@mail.ru?subject=%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D1%8B%20%D0%B4%D0%BB%D1%8F%20%D0%B8%D0%BC%D0%BF%D0%BB%D0%B0%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D0%B8">dentale-profi-2@<wbr>mail.ru</a>
+                </div>
+                <div class="mail__actions">
+                  <a class="mail__btn" href="mailto:dentale-profi-2@mail.ru?subject=%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D1%8B%20%D0%B4%D0%BB%D1%8F%20%D0%B8%D0%BC%D0%BF%D0%BB%D0%B0%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D0%B8">
+                    <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M4 12l16-8-6 16-2.5-6.5z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M11.5 13.5L20 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                    <span>Написать</span>
+                  </a>
+                  <button class="mail__btn mail__btn--ghost" type="button" data-copy="dentale-profi-2@mail.ru" hidden>
+                    <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+                    <span data-copy-label>Скопировать</span>
+                  </button>
+                </div>
+              </div>
             </div>
             <ul class="mail__tips">
               <li>Подойдут PDF из&nbsp;лаборатории или&nbsp;фото бланков.</li>
@@ -268,6 +291,6 @@
       </div>
     </section>
   </main>
-<script src="assets/js/page.js?v=1"></script>
+<script src="assets/js/page.js?v=2"></script>
 </body>
 </html>

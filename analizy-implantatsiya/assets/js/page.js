@@ -1,7 +1,7 @@
-/* Рекомендации «Анализы для имплантации»: отметки сданных анализов, копирование адреса почты, «ваш филиал».
+/* Рекомендации «Анализы для имплантации»: отметки сданных анализов, копирование адресов почты филиалов, «ваш филиал».
    Без JS страница читается полностью: отметки ставятся, но не запоминаются; полоса прогресса и кнопка
-   «Скопировать адрес» скрыты. Отметки хранятся на этом устройстве (localStorage), чтобы при повторном
-   открытии ссылки список был таким же. ?branch=mitino|krasnogorsk — отметка «Ваш филиал». */
+   «Скопировать» скрыты. Отметки хранятся на этом устройстве (localStorage), чтобы при повторном
+   открытии ссылки список был таким же. ?branch=mitino|krasnogorsk — отметка «Ваш филиал» у почты и телефона. */
 (function () {
   'use strict';
 
@@ -14,6 +14,9 @@
   var branch = param('branch').toLowerCase();
   Array.prototype.forEach.call(document.querySelectorAll('.place[data-branch]'), function (place) {
     if (place.getAttribute('data-branch') === branch) place.classList.add('place--mine');
+  });
+  Array.prototype.forEach.call(document.querySelectorAll('.mail__box[data-branch]'), function (box) {
+    if (box.getAttribute('data-branch') === branch) box.classList.add('mail__box--mine');
   });
 
   /* ---------- Отметки сданных анализов ---------- */
@@ -51,16 +54,16 @@
   update();
   if (progress) progress.hidden = false;
 
-  /* ---------- Скопировать адрес почты ---------- */
-  var copy = document.querySelector('[data-copy]');
-  if (copy && navigator.clipboard && navigator.clipboard.writeText) {
+  /* ---------- Скопировать адрес почты филиала ---------- */
+  if (!navigator.clipboard || !navigator.clipboard.writeText) return;
+  Array.prototype.forEach.call(document.querySelectorAll('[data-copy]'), function (copy) {
     var label = copy.querySelector('[data-copy-label]');
     var initial = label ? label.textContent : '';
     var timer;
     copy.addEventListener('click', function () {
       navigator.clipboard.writeText(copy.getAttribute('data-copy')).then(function () {
         copy.classList.add('is-done');
-        if (label) label.textContent = 'Адрес скопирован';
+        if (label) label.textContent = 'Скопировано';
         clearTimeout(timer);
         timer = setTimeout(function () {
           copy.classList.remove('is-done');
@@ -69,5 +72,5 @@
       });
     });
     copy.hidden = false;
-  }
+  });
 })();
