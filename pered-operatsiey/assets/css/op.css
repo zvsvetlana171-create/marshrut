@@ -290,6 +290,76 @@
   }
 }
 
+/* ---------- Компьютер и широкий планшет: шаги полосами — слева шаг (и подсказка о перекусе),
+   справа пункты в две колонки; высота полосы по содержимому, пунктир между значками шагов ---------- */
+@media (min-width: 960px) {
+  .stages {
+    position: relative;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
+
+  .stages::before {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    top: 40px;
+    bottom: 40px;
+    left: 57px;
+    border-left: 2px dashed #B9C3CF;
+  }
+
+  .stage-card {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: minmax(0, 300px) minmax(0, 1fr);
+    column-gap: 48px;
+    align-items: start;
+    padding: 28px 32px;
+  }
+
+  .stage-card__head {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .todo {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px 36px;
+    margin-top: 0;
+  }
+
+  .todo__item + .todo__item {
+    padding-top: 0;
+    border-top: 0;
+  }
+
+  .snack {
+    grid-column: 1;
+    grid-row: 2;
+    margin-top: 22px;
+  }
+}
+
+@media (min-width: 960px) and (max-width: 1199.98px) {
+  .stages::before {
+    left: 46px;
+  }
+
+  .stage-card {
+    grid-template-columns: minmax(0, 240px) minmax(0, 1fr);
+    column-gap: 32px;
+    padding: 24px;
+  }
+
+  .todo {
+    gap: 18px 24px;
+  }
+}
+
 /* ---------- Узкий планшет и телефон: шаги друг под другом ---------- */
 @media (max-width: 959.98px) {
   .stages {
