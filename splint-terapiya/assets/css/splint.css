@@ -1,0 +1,197 @@
+/* Рекомендации пациенту «Сплинт-терапия»: дополнения к rec.css и prep.css.
+   Новые блоки: «Проверяйте смыкание» — схема рядом с правилом, карточки на сером фоне,
+   «Будьте на связи с врачом» — две карточки на тёмном фоне. */
+
+/* ---------- Как надевать: шаги рядом с картинкой ---------- */
+.splint-use .howto {
+  min-width: 0;
+}
+
+/* ---------- Проверяйте смыкание ---------- */
+.bite {
+  display: grid;
+  grid-template-columns: minmax(0, 480px) minmax(0, 1fr);
+  column-gap: 56px;
+  align-items: center;
+}
+
+.bite__img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-card);
+}
+
+.bite__main {
+  min-width: 0;
+}
+
+.bite__label {
+  margin-top: 24px;
+  font-family: var(--font-head);
+  font-size: 18px;
+  line-height: 23px;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.bite__list {
+  display: grid;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.bite__list li {
+  position: relative;
+  min-height: 28px;
+  padding: 2px 0 0 42px;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 600;
+  color: var(--navy);
+}
+
+.bite__list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--navy) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M5 10.5l3.2 3.2L15 7' fill='none' stroke='%23fff' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 16px 16px no-repeat;
+}
+
+.bite__fix {
+  margin-top: 22px;
+  padding: 16px 20px;
+  border-radius: 14px;
+  background: #F7EFE6;
+  font-size: 17px;
+  line-height: 23px;
+}
+
+.bite__link,
+.rules__link {
+  font-weight: 600;
+  color: var(--navy);
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 3px;
+}
+
+.rules__link {
+  color: var(--white);
+}
+
+.bite__link:focus-visible {
+  outline: 2px solid var(--navy);
+  outline-offset: 2px;
+}
+
+.rules__link:focus-visible {
+  outline: 2px solid var(--white);
+  outline-offset: 2px;
+}
+
+/* ---------- Карточки на сером фоне ---------- */
+.key__item--white {
+  background: var(--white);
+}
+
+.key__item--white .key__icon {
+  background: #F7EFE6;
+}
+
+/* ---------- Связь с врачом: две карточки ---------- */
+.splint-lead {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+@media (min-width: 960px) {
+  .rules--2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* =========================================================
+   Планшет: < 1200
+   ========================================================= */
+@media (max-width: 1199.98px) {
+  .bite {
+    grid-template-columns: minmax(0, 360px) minmax(0, 1fr);
+    column-gap: 32px;
+  }
+
+  .bite__label {
+    margin-top: 18px;
+    font-size: 17px;
+    line-height: 22px;
+  }
+
+  .bite__list li {
+    font-size: 16px;
+    line-height: 21px;
+  }
+
+  .bite__fix {
+    font-size: 16px;
+    line-height: 21px;
+  }
+}
+
+/* ---------- Узкий планшет и телефон: схема над текстом ---------- */
+@media (max-width: 959.98px) {
+  .bite {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 24px;
+  }
+
+  .bite__img {
+    max-width: 480px;
+    order: 1;
+  }
+}
+
+/* =========================================================
+   Телефон: < 768
+   ========================================================= */
+@media (max-width: 767.98px) {
+  .bite {
+    row-gap: 16px;
+  }
+
+  .bite__img {
+    border-radius: 12px;
+  }
+
+  .bite__label {
+    margin-top: 14px;
+    font-size: 16px;
+    line-height: 21px;
+  }
+
+  .bite__list {
+    gap: 8px;
+    margin-top: 10px;
+  }
+
+  .bite__list li {
+    min-height: 24px;
+    padding: 1px 0 0 34px;
+    font-size: 15px;
+    line-height: 20px;
+  }
+
+  .bite__list li::before {
+    width: 24px;
+    height: 24px;
+    background-size: 14px 14px;
+  }
+
+  .bite__fix {
+    margin-top: 16px;
+    padding: 12px 14px;
+    font-size: 15px;
+    line-height: 20px;
+  }
+}
