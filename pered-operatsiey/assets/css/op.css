@@ -1,0 +1,399 @@
+/* Рекомендации пациенту «Перед операцией»: дополнения к общим стилям (style.css + plan.css).
+   Новые блоки: три шага подготовки карточками со списками, подсказка «когда перекусить»
+   по времени операции, предупреждение о недомогании, напутствие на тёмном фоне. */
+
+/* ---------- Три шага подготовки ---------- */
+.stages {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  align-items: start;
+  margin-top: 40px;
+}
+
+.stage-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 28px 26px 26px;
+  border-radius: var(--radius-card);
+  background: var(--white);
+}
+
+.stage-card__head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.stage-card__icon {
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--navy);
+  color: var(--white);
+}
+
+.stage-card__heading {
+  min-width: 0;
+}
+
+.stage-card__step {
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #49678D;
+}
+
+.stage-card__title {
+  margin-top: 2px;
+  font-family: var(--font-head);
+  font-size: 22px;
+  line-height: 27px;
+  font-weight: 700;
+  color: var(--navy);
+  text-wrap: balance;
+}
+
+.todo {
+  display: grid;
+  gap: 16px;
+  margin-top: 22px;
+}
+
+.todo__item {
+  display: grid;
+  grid-template-columns: 40px minmax(0, 1fr);
+  column-gap: 14px;
+  align-items: start;
+}
+
+.todo__item + .todo__item {
+  padding-top: 16px;
+  border-top: 1px solid #ECEEF2;
+}
+
+.todo__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #F7EFE6;
+  color: var(--navy);
+}
+
+.todo__body {
+  min-width: 0;
+}
+
+.todo__title {
+  font-family: var(--font-head);
+  font-size: 18px;
+  line-height: 23px;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.todo__text {
+  margin-top: 3px;
+  font-size: 16px;
+  line-height: 21px;
+}
+
+/* ---------- Когда перекусить: по времени операции (только с JS) ---------- */
+.snack {
+  margin-top: 22px;
+  padding: 16px;
+  border-radius: 14px;
+  background: #E3ECF8;
+}
+
+.snack__label {
+  display: block;
+  font-size: 15px;
+  line-height: 20px;
+  font-weight: 600;
+  color: #49678D;
+}
+
+.snack__row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 14px;
+  margin-top: 8px;
+}
+
+.snack__input {
+  box-sizing: border-box;
+  min-height: 44px;
+  margin: 0;
+  padding: 0 12px;
+  border: 0;
+  border-radius: 10px;
+  box-shadow: inset 0 0 0 1.5px var(--navy);
+  background: var(--white);
+  font-family: var(--font);
+  font-size: 17px;
+  line-height: 20px;
+  font-weight: 600;
+  color: var(--navy);
+}
+
+.snack__input:focus-visible {
+  outline: 2px solid var(--navy);
+  outline-offset: 2px;
+}
+
+.snack__out {
+  flex: 1 1 140px;
+  min-width: 0;
+  font-size: 16px;
+  line-height: 21px;
+  color: var(--text);
+}
+
+.snack__out b {
+  font-weight: 700;
+  color: var(--navy);
+}
+
+/* ---------- Недомогание: предупреждение со ссылкой на контакты ---------- */
+.op-alert {
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr);
+  column-gap: 18px;
+  align-items: center;
+  margin-top: 20px;
+  padding: 18px 24px;
+}
+
+.op-alert .alert__icon {
+  width: 48px;
+  height: 48px;
+}
+
+.op-alert .alert__title {
+  margin-top: 0;
+  font-size: 19px;
+  line-height: 24px;
+}
+
+.op-alert .alert__text {
+  margin-top: 4px;
+  font-size: 17px;
+  line-height: 23px;
+}
+
+.op-alert__link {
+  font-weight: 600;
+  color: var(--navy);
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 3px;
+}
+
+.op-alert__link:focus-visible {
+  outline: 2px solid var(--navy);
+  outline-offset: 2px;
+}
+
+/* ---------- Напутствие ---------- */
+.calm {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 240px);
+  column-gap: 48px;
+  align-items: center;
+}
+
+.calm__main {
+  min-width: 0;
+}
+
+.calm__text {
+  margin-top: 10px;
+  font-family: var(--font-head);
+  font-size: 30px;
+  line-height: 36px;
+  font-weight: 500;
+  color: #AFC0D6;
+}
+
+.calm__img {
+  width: 100%;
+  height: auto;
+}
+
+/* =========================================================
+   Планшет: < 1200
+   ========================================================= */
+@media (max-width: 1199.98px) {
+  .stages {
+    gap: 16px;
+    margin-top: 28px;
+  }
+
+  .stage-card {
+    padding: 22px 20px 20px;
+  }
+
+  .stage-card__icon {
+    width: 46px;
+    height: 46px;
+  }
+
+  .stage-card__title {
+    font-size: 19px;
+    line-height: 24px;
+  }
+
+  .todo {
+    gap: 14px;
+    margin-top: 18px;
+  }
+
+  .todo__item + .todo__item {
+    padding-top: 14px;
+  }
+
+  .todo__title {
+    font-size: 16px;
+    line-height: 21px;
+  }
+
+  .todo__text {
+    font-size: 15px;
+    line-height: 20px;
+  }
+
+  .op-alert .alert__text {
+    font-size: 16px;
+    line-height: 21px;
+  }
+
+  .calm {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 180px);
+    column-gap: 28px;
+  }
+
+  .calm__text {
+    font-size: 24px;
+    line-height: 30px;
+  }
+}
+
+/* ---------- Узкий планшет и телефон: шаги друг под другом ---------- */
+@media (max-width: 959.98px) {
+  .stages {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+  }
+}
+
+/* =========================================================
+   Телефон: < 768
+   ========================================================= */
+@media (max-width: 767.98px) {
+  .stages {
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .stage-card {
+    padding: 16px 14px 16px;
+  }
+
+  .stage-card__head {
+    gap: 12px;
+  }
+
+  .stage-card__icon {
+    width: 42px;
+    height: 42px;
+  }
+
+  .stage-card__icon svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .stage-card__step {
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  .stage-card__title {
+    font-size: 18px;
+    line-height: 23px;
+  }
+
+  .todo {
+    gap: 12px;
+    margin-top: 14px;
+  }
+
+  .todo__item {
+    grid-template-columns: 36px minmax(0, 1fr);
+    column-gap: 12px;
+  }
+
+  .todo__item + .todo__item {
+    padding-top: 12px;
+  }
+
+  .todo__icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .snack {
+    margin-top: 16px;
+    padding: 12px;
+  }
+
+  .op-alert {
+    grid-template-columns: 40px minmax(0, 1fr);
+    column-gap: 12px;
+    margin-top: 12px;
+    padding: 14px;
+  }
+
+  .op-alert .alert__icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .op-alert .alert__icon svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .op-alert .alert__title {
+    font-size: 16px;
+    line-height: 21px;
+  }
+
+  .op-alert .alert__text {
+    font-size: 15px;
+    line-height: 20px;
+  }
+
+  .calm {
+    grid-template-columns: minmax(0, 1fr) 96px;
+    column-gap: 14px;
+  }
+
+  .calm__text {
+    margin-top: 6px;
+    font-size: 19px;
+    line-height: 24px;
+  }
+}
