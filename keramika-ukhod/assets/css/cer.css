@@ -1,0 +1,351 @@
+/* Рекомендации пациенту «Уход за керамическими реставрациями»: дополнения к rec.css и prep.css.
+   Новые блоки: два срока, плитки «берегите реставрации» 4 в ряд, «Следите за смыканием» — схема
+   рядом с правилом, карточка про бруксизм, предупреждение, напутствие на тёмном фоне. */
+
+/* ---------- Первое время: две карточки ---------- */
+@media (min-width: 960px) {
+  .when--2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* ---------- Берегите реставрации: четыре плитки, картинка над текстом ---------- */
+.food--4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.food--4 .food__item {
+  grid-template-columns: minmax(0, 1fr);
+  row-gap: 16px;
+  align-content: start;
+  padding: 22px 22px 24px;
+}
+
+/* ---------- Смыкание: схема рядом с правилом ---------- */
+.bite {
+  display: grid;
+  grid-template-columns: minmax(0, 480px) minmax(0, 1fr);
+  column-gap: 56px;
+  align-items: center;
+}
+
+.bite__img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-card);
+}
+
+.bite__main {
+  min-width: 0;
+}
+
+.bite__label {
+  margin-top: 24px;
+  font-family: var(--font-head);
+  font-size: 18px;
+  line-height: 23px;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.bite__list {
+  display: grid;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.bite__list li {
+  position: relative;
+  min-height: 28px;
+  padding: 2px 0 0 42px;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 600;
+  color: var(--navy);
+}
+
+.bite__list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--navy) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M5 10.5l3.2 3.2L15 7' fill='none' stroke='%23fff' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 16px 16px no-repeat;
+}
+
+/* бруксизм и кленчинг */
+.para {
+  display: grid;
+  grid-template-columns: 56px minmax(0, 1fr);
+  column-gap: 18px;
+  align-items: center;
+  margin-top: 32px;
+  padding: 22px 26px;
+  border-radius: var(--radius-card);
+  background: #F7EFE6;
+}
+
+.para__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--navy);
+  color: var(--white);
+}
+
+.para__body {
+  min-width: 0;
+}
+
+.para__title {
+  font-family: var(--font-head);
+  font-size: 20px;
+  line-height: 25px;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.para__text {
+  margin-top: 4px;
+  font-size: 17px;
+  line-height: 23px;
+}
+
+/* ---------- Что-то беспокоит ---------- */
+.worry {
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr);
+  column-gap: 18px;
+  align-items: center;
+  padding: 20px 24px;
+}
+
+.worry .alert__icon {
+  width: 48px;
+  height: 48px;
+}
+
+.worry .alert__title {
+  margin-top: 0;
+  font-size: 20px;
+  line-height: 25px;
+}
+
+.worry .alert__text {
+  margin-top: 4px;
+  font-size: 17px;
+  line-height: 23px;
+}
+
+.worry__link {
+  font-weight: 600;
+  color: var(--navy);
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 3px;
+}
+
+.worry__link:focus-visible {
+  outline: 2px solid var(--navy);
+  outline-offset: 2px;
+}
+
+/* ---------- Напутствие ---------- */
+.calm {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 240px);
+  column-gap: 48px;
+  align-items: center;
+}
+
+.calm__main {
+  min-width: 0;
+}
+
+.calm__img {
+  width: 100%;
+  height: auto;
+}
+
+/* =========================================================
+   Планшет: < 1200
+   ========================================================= */
+@media (max-width: 1199.98px) {
+  .food--4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .food--4 .food__item {
+    padding: 18px 18px 20px;
+  }
+
+  .bite {
+    grid-template-columns: minmax(0, 360px) minmax(0, 1fr);
+    column-gap: 32px;
+  }
+
+  .bite__label {
+    margin-top: 18px;
+    font-size: 17px;
+    line-height: 22px;
+  }
+
+  .bite__list li {
+    font-size: 16px;
+    line-height: 21px;
+  }
+
+  .para {
+    grid-template-columns: 48px minmax(0, 1fr);
+    column-gap: 16px;
+    margin-top: 24px;
+    padding: 18px 20px;
+  }
+
+  .para__icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .para__title {
+    font-size: 18px;
+    line-height: 23px;
+  }
+
+  .para__text,
+  .worry .alert__text {
+    font-size: 16px;
+    line-height: 21px;
+  }
+
+  .calm {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 180px);
+    column-gap: 28px;
+  }
+}
+
+/* ---------- Узкий планшет и телефон: схема над текстом ---------- */
+@media (max-width: 959.98px) {
+  .bite {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 24px;
+  }
+
+  .bite__img {
+    max-width: 480px;
+    order: 1;
+  }
+}
+
+/* =========================================================
+   Телефон: < 768
+   ========================================================= */
+@media (max-width: 767.98px) {
+  .food--4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .food--4 .food__item {
+    row-gap: 8px;
+    padding: 12px 12px 14px;
+  }
+
+  .food--4 .food__pic {
+    width: 60px;
+    height: 60px;
+  }
+
+  .bite {
+    row-gap: 16px;
+  }
+
+  .bite__img {
+    border-radius: 12px;
+  }
+
+  .bite__label {
+    margin-top: 14px;
+    font-size: 16px;
+    line-height: 21px;
+  }
+
+  .bite__list {
+    gap: 8px;
+    margin-top: 10px;
+  }
+
+  .bite__list li {
+    min-height: 24px;
+    padding: 1px 0 0 34px;
+    font-size: 15px;
+    line-height: 20px;
+  }
+
+  .bite__list li::before {
+    width: 24px;
+    height: 24px;
+    background-size: 14px 14px;
+  }
+
+  .para {
+    grid-template-columns: 42px minmax(0, 1fr);
+    column-gap: 12px;
+    align-items: start;
+    margin-top: 16px;
+    padding: 14px;
+  }
+
+  .para__icon {
+    width: 42px;
+    height: 42px;
+  }
+
+  .para__icon svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .para__title {
+    font-size: 16px;
+    line-height: 21px;
+  }
+
+  .para__text,
+  .worry .alert__text {
+    font-size: 15px;
+    line-height: 20px;
+  }
+
+  .worry {
+    grid-template-columns: 40px minmax(0, 1fr);
+    column-gap: 12px;
+    align-items: start;
+    padding: 14px;
+  }
+
+  .worry .alert__icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .worry .alert__icon svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .worry .alert__title {
+    font-size: 16px;
+    line-height: 21px;
+  }
+
+  .calm {
+    grid-template-columns: minmax(0, 1fr) 96px;
+    column-gap: 14px;
+  }
+}
