@@ -1,0 +1,697 @@
+/* Рекомендации пациенту «Подготовка к отбеливанию»: дополнения к стилям рекомендаций (rec.css).
+   Новые блоки: «Главное» тремя карточками, переключатель двух гелей, пошаговая инструкция
+   с таймером 3 минуты, «засечь время» до еды. Без JS обе инструкции идут подряд. */
+
+/* ---------- Главное: три правила карточками ---------- */
+.key {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.key__item {
+  min-width: 0;
+  padding: 28px 26px 30px;
+  border-radius: var(--radius-card);
+  background: #F7EFE6;
+}
+
+.key__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--white);
+  color: var(--navy);
+}
+
+.key__body {
+  min-width: 0;
+}
+
+.key__title {
+  margin-top: 18px;
+  font-family: var(--font-head);
+  font-size: 22px;
+  line-height: 27px;
+  font-weight: 700;
+  color: var(--navy);
+  text-wrap: balance;
+}
+
+.key__text {
+  margin-top: 8px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+/* ---------- Переключатель средств (только с JS) ---------- */
+.gel-tabs {
+  margin-top: 28px;
+}
+
+.gel-tabs__label {
+  font-size: 17px;
+  line-height: 22px;
+  font-weight: 600;
+  color: #49678D;
+}
+
+.gel-tabs__bar {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6px;
+  max-width: 760px;
+  margin-top: 10px;
+  padding: 6px;
+  border-radius: 999px;
+  background: var(--white);
+}
+
+.gel-tabs__tab {
+  min-height: 52px;
+  margin: 0;
+  padding: 6px 18px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  font-family: var(--font-head);
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: 700;
+  color: var(--navy);
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.gel-tabs__tab[aria-selected="true"] {
+  background: var(--navy);
+  color: var(--white);
+}
+
+@media (hover: hover) {
+  .gel-tabs__tab:not([aria-selected="true"]):hover {
+    background: #E3ECF8;
+  }
+}
+
+.gel-tabs__tab:focus-visible {
+  outline: 2px solid var(--navy);
+  outline-offset: 3px;
+}
+
+/* ---------- Инструкция к гелю: слева картинка и факты, справа шаги ---------- */
+.gel {
+  display: grid;
+  grid-template-columns: minmax(0, 360px) minmax(0, 1fr);
+  column-gap: 48px;
+  align-items: start;
+  margin-top: 24px;
+  padding: 36px;
+  border-radius: var(--radius-card);
+  background: var(--white);
+}
+
+.gel__side,
+.gel__main {
+  min-width: 0;
+}
+
+/* на компьютере картинка и факты едут рядом с длинным списком шагов */
+@media (min-width: 960px) {
+  .gel__side {
+    position: sticky;
+    top: 24px;
+  }
+}
+
+/* фото средства: квадрат, тонкая рамка — белый фон снимка не сливается с карточкой */
+.gel__img {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border: 1px solid #E3ECF8;
+  border-radius: 14px;
+}
+
+.gel__title {
+  margin-top: 22px;
+  font-family: var(--font-head);
+  font-size: 28px;
+  line-height: 34px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--navy);
+}
+
+.gel__alt {
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0;
+  color: #49678D;
+}
+
+.gel__facts {
+  display: grid;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.gel__facts li {
+  position: relative;
+  padding-left: 30px;
+  font-size: 17px;
+  line-height: 23px;
+}
+
+.gel__facts li::before {
+  content: "";
+  position: absolute;
+  left: 3px;
+  top: 6px;
+  width: 12px;
+  height: 7px;
+  border-left: 2.5px solid var(--navy);
+  border-bottom: 2.5px solid var(--navy);
+  transform: rotate(-45deg);
+}
+
+/* предупреждение об аллергии: значок слева, текст справа */
+.gel__alert {
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr);
+  column-gap: 18px;
+  align-items: start;
+  margin-bottom: 16px;
+  padding: 20px 24px;
+}
+
+.gel__alert .alert__icon {
+  width: 48px;
+  height: 48px;
+}
+
+.gel__alert .alert__title {
+  margin-top: 0;
+  font-size: 19px;
+  line-height: 24px;
+}
+
+.gel__alert .alert__text {
+  margin-top: 6px;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+/* ---------- Шаги ---------- */
+.howto {
+  display: grid;
+  gap: 10px;
+}
+
+.howto__step {
+  display: grid;
+  grid-template-columns: 40px minmax(0, 1fr);
+  column-gap: 16px;
+  align-items: start;
+  padding: 16px 20px 16px 16px;
+  border-radius: 14px;
+  background: #F7EFE6;
+}
+
+.howto__num {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--navy);
+  font-size: 17px;
+  line-height: 1;
+  font-weight: 700;
+  color: var(--white);
+}
+
+.howto__body {
+  min-width: 0;
+  align-self: center;
+}
+
+.howto__text {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.howto__text b {
+  font-weight: 700;
+  color: var(--navy);
+}
+
+/* таймер 3 минуты в шаге (только с JS) */
+.howto__timer {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 42px;
+  margin: 12px 0 0;
+  padding: 0 18px 0 14px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--navy);
+  font-family: var(--font);
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--white);
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.howto__timer.is-running {
+  box-shadow: inset 0 0 0 2px var(--navy);
+  background: var(--white);
+  color: var(--navy);
+}
+
+.howto__timer.is-done {
+  background: #2E7D4F;
+}
+
+.howto__timer:focus-visible {
+  outline: 2px solid var(--navy);
+  outline-offset: 3px;
+}
+
+/* ---------- Пауза в еде: «засечь время» ---------- */
+.wait {
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr) auto;
+  column-gap: 16px;
+  row-gap: 14px;
+  align-items: center;
+  margin-top: 16px;
+  padding: 18px 20px;
+  border-radius: 14px;
+  background: var(--navy);
+  color: var(--white);
+}
+
+.wait__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--white);
+  color: var(--navy);
+}
+
+.wait__body {
+  min-width: 0;
+}
+
+.wait__title {
+  font-family: var(--font-head);
+  font-size: 19px;
+  line-height: 24px;
+  font-weight: 700;
+}
+
+.wait__out {
+  margin-top: 2px;
+  font-size: 16px;
+  line-height: 21px;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.wait__out b {
+  font-weight: 700;
+  color: var(--white);
+}
+
+.wait__btn {
+  min-height: 46px;
+  margin: 0;
+  padding: 0 20px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--white);
+  font-family: var(--font);
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 600;
+  color: var(--navy);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+@media (hover: hover) {
+  .wait__btn:hover {
+    background: #E3ECF8;
+  }
+}
+
+.wait__btn:focus-visible {
+  outline: 2px solid var(--white);
+  outline-offset: 3px;
+}
+
+/* =========================================================
+   Планшет: < 1200
+   ========================================================= */
+@media (max-width: 1199.98px) {
+  .key {
+    gap: 16px;
+    margin-top: 28px;
+  }
+
+  .key__item {
+    padding: 22px 20px 24px;
+  }
+
+  .key__icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .key__title {
+    margin-top: 14px;
+    font-size: 19px;
+    line-height: 24px;
+  }
+
+  .key__text {
+    font-size: 16px;
+    line-height: 21px;
+  }
+
+  .gel-tabs {
+    margin-top: 22px;
+  }
+
+  .gel-tabs__tab {
+    min-height: 48px;
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .gel {
+    grid-template-columns: minmax(0, 280px) minmax(0, 1fr);
+    column-gap: 28px;
+    padding: 28px;
+  }
+
+  .gel__title {
+    margin-top: 18px;
+    font-size: 23px;
+    line-height: 28px;
+  }
+
+  .gel__alt {
+    font-size: 16px;
+  }
+
+  .gel__facts li {
+    font-size: 16px;
+    line-height: 21px;
+  }
+
+  .howto__step {
+    grid-template-columns: 36px minmax(0, 1fr);
+    column-gap: 14px;
+    padding: 14px 18px 14px 14px;
+  }
+
+  .howto__num {
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+  }
+
+  .howto__text {
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  .wait__title {
+    font-size: 17px;
+    line-height: 22px;
+  }
+
+  .wait__out {
+    font-size: 15px;
+    line-height: 20px;
+  }
+}
+
+/* ---------- Узкий планшет и телефон: карточки строками, инструкция в одну колонку ---------- */
+@media (max-width: 959.98px) {
+  .key {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .key__item {
+    display: grid;
+    grid-template-columns: 48px minmax(0, 1fr);
+    column-gap: 16px;
+    align-items: center;
+    padding: 16px 20px 16px 16px;
+  }
+
+  .key__title {
+    margin-top: 0;
+  }
+
+  .key__text {
+    margin-top: 4px;
+  }
+
+  .gel {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 20px;
+  }
+
+  /* картинка слева, название и факты справа — по центру картинки по высоте */
+  .gel__side {
+    display: grid;
+    grid-template-columns: minmax(0, 220px) minmax(0, 1fr);
+    grid-template-rows: 1fr auto auto 1fr;
+    column-gap: 24px;
+  }
+
+  .gel__img {
+    grid-column: 1;
+    grid-row: 1 / -1;
+    align-self: center;
+  }
+
+  .gel__title {
+    grid-column: 2;
+    grid-row: 2;
+    margin-top: 0;
+  }
+
+  .gel__facts {
+    grid-column: 2;
+    grid-row: 3;
+  }
+
+  .gel__facts {
+    margin-top: 10px;
+  }
+}
+
+/* =========================================================
+   Телефон: < 768
+   ========================================================= */
+@media (max-width: 767.98px) {
+  .key {
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .key__item {
+    grid-template-columns: 44px minmax(0, 1fr);
+    column-gap: 14px;
+    padding: 14px 16px 14px 12px;
+  }
+
+  .key__icon {
+    width: 44px;
+    height: 44px;
+  }
+
+  .key__icon svg {
+    width: 26px;
+    height: 26px;
+  }
+
+  .key__title {
+    font-size: 17px;
+    line-height: 22px;
+  }
+
+  .key__text {
+    font-size: 15px;
+    line-height: 20px;
+  }
+
+  .gel-tabs {
+    margin-top: 16px;
+  }
+
+  .gel-tabs__label {
+    font-size: 15px;
+    line-height: 20px;
+  }
+
+  .gel-tabs__bar {
+    gap: 4px;
+    margin-top: 8px;
+    padding: 4px;
+    border-radius: 16px;
+  }
+
+  .gel-tabs__tab {
+    min-height: 52px;
+    padding: 6px 10px;
+    border-radius: 12px;
+    font-size: 15px;
+    line-height: 19px;
+  }
+
+  .gel {
+    row-gap: 16px;
+    margin-top: 12px;
+    padding: 16px 12px 14px;
+  }
+
+  .gel__side {
+    grid-template-columns: 112px minmax(0, 1fr);
+    column-gap: 14px;
+  }
+
+  .gel__img {
+    border-radius: 10px;
+  }
+
+  .gel__title {
+    font-size: 19px;
+    line-height: 24px;
+  }
+
+  .gel__alt {
+    display: block;
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  .gel__facts {
+    gap: 6px;
+    margin-top: 6px;
+  }
+
+  .gel__facts li {
+    padding-left: 24px;
+    font-size: 14px;
+    line-height: 19px;
+  }
+
+  .gel__facts li::before {
+    left: 2px;
+    top: 4px;
+    width: 10px;
+    height: 6px;
+  }
+
+  .gel__alert {
+    grid-template-columns: 40px minmax(0, 1fr);
+    column-gap: 12px;
+    margin-bottom: 12px;
+    padding: 14px;
+  }
+
+  .gel__alert .alert__icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .gel__alert .alert__icon svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .gel__alert .alert__title {
+    font-size: 16px;
+    line-height: 21px;
+  }
+
+  .gel__alert .alert__text {
+    font-size: 14px;
+    line-height: 19px;
+  }
+
+  .howto {
+    gap: 8px;
+  }
+
+  .howto__step {
+    grid-template-columns: 32px minmax(0, 1fr);
+    column-gap: 12px;
+    padding: 12px 14px 12px 12px;
+  }
+
+  .howto__num {
+    width: 32px;
+    height: 32px;
+    font-size: 15px;
+  }
+
+  .howto__text {
+    font-size: 15px;
+    line-height: 21px;
+  }
+
+  .howto__timer {
+    min-height: 40px;
+    margin-top: 10px;
+    font-size: 15px;
+  }
+
+  /* пауза: кнопка под текстом на всю ширину */
+  .wait {
+    grid-template-columns: 40px minmax(0, 1fr);
+    column-gap: 12px;
+    margin-top: 12px;
+    padding: 14px;
+  }
+
+  .wait__icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .wait__btn {
+    grid-column: 1 / -1;
+    width: 100%;
+    min-height: 46px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gel-tabs__tab,
+  .howto__timer,
+  .wait__btn {
+    transition: none;
+  }
+}
