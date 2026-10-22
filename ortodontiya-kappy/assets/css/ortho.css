@@ -399,3 +399,55 @@
     transition: none;
   }
 }
+
+/* ---------- Правки 22.10.2026: шаги по-русски под видео, срок изготовления капп ---------- */
+.video__steps {
+  display: grid;
+  gap: 6px;
+  margin-top: 10px;
+  padding-left: 22px;
+  list-style: decimal;
+}
+
+.video__steps li {
+  padding-left: 4px;
+  font-size: 17px;
+  line-height: 23px;
+}
+
+.video__steps li::marker {
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.video__meta {
+  margin-top: 10px;
+}
+
+.ortho-make {
+  margin-top: 16px;
+  margin-bottom: 0;
+}
+
+@media (max-width: 1199.98px) {
+  .video__steps li {
+    font-size: 16px;
+    line-height: 21px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .video__steps {
+    margin-top: 8px;
+    padding-left: 20px;
+  }
+
+  .video__steps li {
+    font-size: 15px;
+    line-height: 20px;
+  }
+
+  .ortho-make {
+    margin-top: 12px;
+  }
+}

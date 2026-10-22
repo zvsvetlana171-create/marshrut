@@ -695,3 +695,19 @@
     transition: none;
   }
 }
+
+/* ---------- Правки 22.10.2026: пояснение про системы, подпись к выбору средства ---------- */
+.prep-system {
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+
+.gel-tabs__label {
+  max-width: 760px;
+}
+
+@media (max-width: 767.98px) {
+  .prep-system {
+    margin-top: 12px;
+  }
+}

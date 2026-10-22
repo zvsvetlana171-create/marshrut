@@ -41,7 +41,7 @@
     });
     var total = checks.length;
     if (fill) fill.style.width = (total ? done.length / total * 100 : 0) + '%';
-    if (count) count.textContent = done.length === total ? 'Все анализы сданы' : 'Отмечено ' + done.length + ' из ' + total;
+    if (count) count.textContent = done.length === total ? 'Отмечены все ' + total + ' анализов' : 'Отмечено ' + done.length + ' из ' + total;
     if (progress) progress.classList.toggle('is-full', done.length === total);
     return done;
   }
