@@ -1,0 +1,50 @@
+/* Рекомендации пациенту «После профессиональной гигиены»: дополнения к rec.css, prep.css и post.css.
+   Новое: «засечь 30 минут» под сроками, шаги ухода рядом с картинкой, подсказка к назначениям,
+   плашка «укажет гигиенист» под группой паст. */
+
+.hyg-wait {
+  margin-top: 20px;
+}
+
+.hyg-care .howto {
+  min-width: 0;
+}
+
+.hyg-hint {
+  margin-top: 8px;
+  font-size: 16px;
+  line-height: 21px;
+  color: #49678D;
+}
+
+.hyg-hint + .med-group--wide {
+  margin-top: 16px;
+}
+
+.hyg-plan {
+  margin-top: 14px;
+}
+
+/* в группе паст три карточки — заголовок без отступа сверху у плашки */
+.med-list .med__dose {
+  margin-top: 6px;
+}
+
+@media (max-width: 767.98px) {
+  .hyg-wait {
+    margin-top: 12px;
+  }
+
+  .hyg-hint {
+    font-size: 14px;
+    line-height: 19px;
+  }
+
+  .hyg-hint + .med-group--wide {
+    margin-top: 12px;
+  }
+
+  .hyg-plan {
+    margin-top: 10px;
+  }
+}

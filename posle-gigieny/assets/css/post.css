@@ -1,0 +1,950 @@
+/* Рекомендации пациенту «После операции»: дополнения к rec.css и prep.css.
+   Новые блоки: четыре срока, даты по дню операции (номер срока в кружке), карточки на сером фоне,
+   плитки ограничений 4 в ряд, лекарства (схему, которую назначает врач, — пунктирной плашкой),
+   «Когда сразу связаться с клиникой», напутствие на тёмном фоне. */
+
+/* ---------- Сроки: четыре карточки ---------- */
+.when--4 .when__value {
+  padding-right: 0;
+}
+
+@media (min-width: 1200px) {
+  .when--4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 960px) and (max-width: 1199.98px) {
+  .when--4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.post-tip {
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+
+.mydates__ic--num {
+  font-family: var(--font-head);
+  font-size: 15px;
+  line-height: 1;
+  font-weight: 700;
+}
+
+/* ---------- Карточки: две в ряд, белые на сером фоне ---------- */
+.key--2 {
+  margin-top: 28px;
+}
+
+@media (min-width: 960px) {
+  .key--2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.key__item--white {
+  background: var(--white);
+}
+
+.key__item--white .key__icon {
+  background: #F7EFE6;
+}
+
+/* ---------- Ограничения: четыре плитки (серые на белом фоне, картинка над текстом), подзаголовок ---------- */
+.food--4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.food--4 .food__item {
+  grid-template-columns: minmax(0, 1fr);
+  row-gap: 16px;
+  align-content: start;
+  padding: 22px 22px 24px;
+  background: var(--bg-gray);
+}
+
+.food--4 .food__pic::after {
+  box-shadow: 0 0 0 3px var(--bg-gray);
+}
+
+.post-subhead {
+  margin-top: 44px;
+  font-family: var(--font-head);
+  font-size: 26px;
+  line-height: 32px;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.post-subhead + .key {
+  margin-top: 20px;
+}
+
+/* ---------- Лекарства ---------- */
+.meds-note {
+  display: grid;
+  grid-template-columns: 52px minmax(0, 1fr);
+  column-gap: 18px;
+  align-items: center;
+  margin-top: 28px;
+  padding: 22px 26px;
+  border-radius: var(--radius-card);
+  background: var(--navy);
+  color: var(--white);
+}
+
+.meds-note__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--white);
+  color: var(--navy);
+}
+
+.meds-note__body {
+  min-width: 0;
+}
+
+.meds-note__title {
+  font-family: var(--font-head);
+  font-size: 20px;
+  line-height: 25px;
+  font-weight: 700;
+}
+
+.meds-note__text {
+  margin-top: 4px;
+  font-size: 17px;
+  line-height: 23px;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.med-group {
+  min-width: 0;
+  padding: 24px 26px 26px;
+  border-radius: var(--radius-card);
+  background: var(--white);
+}
+
+.med-group--wide {
+  margin-top: 20px;
+}
+
+.med-group__title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-head);
+  font-size: 20px;
+  line-height: 25px;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.med-group__icon {
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #F7EFE6;
+}
+
+.med-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.med-row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.med {
+  min-width: 0;
+  padding: 16px 18px 18px;
+  border-radius: 12px;
+  background: #F7EFE6;
+}
+
+.med-group > .med {
+  margin-top: 16px;
+}
+
+.med__name {
+  font-family: var(--font-head);
+  font-size: 18px;
+  line-height: 23px;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.med__dose {
+  margin-top: 4px;
+  font-size: 16px;
+  line-height: 21px;
+}
+
+.med__plan {
+  margin-top: 8px;
+  font-size: 16px;
+  line-height: 21px;
+  font-weight: 600;
+  color: var(--navy);
+}
+
+/* пустая графа бланка: схему назначает врач */
+.med__plan--doctor {
+  margin-top: 12px;
+  padding: 9px 12px;
+  border: 1.5px dashed #7B9BCB;
+  border-radius: 10px;
+  background: var(--white);
+  font-size: 15px;
+  line-height: 20px;
+  color: #49678D;
+}
+
+/* ---------- Когда сразу связаться с клиникой ---------- */
+.alarm {
+  padding: 32px 36px 34px;
+  border-radius: var(--radius-card);
+  background: #F3D2D3;
+  color: var(--navy);
+}
+
+.alarm__head {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.alarm__icon {
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--white);
+}
+
+.alarm__title {
+  font-family: var(--font-head);
+  font-size: 30px;
+  line-height: 36px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+
+.alarm__list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px 28px;
+  margin-top: 24px;
+}
+
+.alarm__list li {
+  position: relative;
+  padding-left: 22px;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 600;
+}
+
+.alarm__list li::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 8px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--navy);
+}
+
+.alarm__text {
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(14, 41, 75, 0.15);
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.alarm__link {
+  font-weight: 700;
+  color: var(--navy);
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 3px;
+}
+
+.alarm__link:focus-visible {
+  outline: 2px solid var(--navy);
+  outline-offset: 2px;
+}
+
+/* ---------- Напутствие ---------- */
+.calm {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 240px);
+  column-gap: 48px;
+  align-items: center;
+}
+
+.calm__main {
+  min-width: 0;
+}
+
+.calm__img {
+  width: 100%;
+  height: auto;
+}
+
+/* =========================================================
+   Планшет: < 1200
+   ========================================================= */
+@media (max-width: 1199.98px) {
+  .key--2 {
+    margin-top: 20px;
+  }
+
+  .food--4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .post-subhead {
+    margin-top: 32px;
+    font-size: 22px;
+    line-height: 28px;
+  }
+
+  .meds-note {
+    grid-template-columns: 46px minmax(0, 1fr);
+    column-gap: 16px;
+    margin-top: 22px;
+    padding: 18px 20px;
+  }
+
+  .meds-note__icon {
+    width: 46px;
+    height: 46px;
+  }
+
+  .meds-note__title {
+    font-size: 18px;
+    line-height: 23px;
+  }
+
+  .meds-note__text {
+    font-size: 16px;
+    line-height: 21px;
+  }
+
+  .med-group {
+    padding: 20px;
+  }
+
+  .med-list,
+  .med-row {
+    gap: 14px;
+  }
+
+  .med {
+    padding: 14px 16px 16px;
+  }
+
+  .med__name {
+    font-size: 17px;
+    line-height: 22px;
+  }
+
+  .med__dose,
+  .med__plan {
+    font-size: 15px;
+    line-height: 20px;
+  }
+
+  .alarm {
+    padding: 26px 28px 28px;
+  }
+
+  .alarm__title {
+    font-size: 24px;
+    line-height: 30px;
+  }
+
+  .alarm__list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .alarm__list li,
+  .alarm__text {
+    font-size: 16px;
+    line-height: 21px;
+  }
+
+  .alarm__list li::before {
+    top: 6px;
+  }
+
+  .calm {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 180px);
+    column-gap: 28px;
+  }
+}
+
+/* ---------- Узкий планшет: лекарства в один столбец карточек ---------- */
+@media (max-width: 959.98px) {
+  .med-list,
+  .med-row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* =========================================================
+   Телефон: < 768
+   ========================================================= */
+@media (max-width: 767.98px) {
+  /* четыре плитки — сеткой 2×2, картинка над названием */
+  .food--4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .food--4 .food__item {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 8px;
+    align-content: start;
+    padding: 12px 12px 14px;
+  }
+
+  .food--4 .food__pic {
+    width: 60px;
+    height: 60px;
+  }
+
+  .post-tip {
+    margin-top: 12px;
+  }
+
+  .post-subhead {
+    margin-top: 26px;
+    font-size: 19px;
+    line-height: 24px;
+  }
+
+  .post-subhead + .key {
+    margin-top: 12px;
+  }
+
+  .meds-note {
+    grid-template-columns: 40px minmax(0, 1fr);
+    column-gap: 12px;
+    align-items: start;
+    margin-top: 16px;
+    padding: 14px;
+  }
+
+  .meds-note__icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .meds-note__icon svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .meds-note__title {
+    font-size: 16px;
+    line-height: 21px;
+  }
+
+  .meds-note__text {
+    font-size: 15px;
+    line-height: 20px;
+  }
+
+  .med-group {
+    padding: 14px 12px 14px;
+  }
+
+  .med-group--wide,
+  .med-row {
+    margin-top: 12px;
+  }
+
+  .med-row {
+    gap: 12px;
+  }
+
+  .med-list {
+    gap: 8px;
+    margin-top: 12px;
+  }
+
+  .med-group > .med {
+    margin-top: 12px;
+  }
+
+  .med-group__title {
+    font-size: 17px;
+    line-height: 22px;
+  }
+
+  .med-group__icon {
+    width: 34px;
+    height: 34px;
+  }
+
+  .med {
+    padding: 12px 14px 14px;
+  }
+
+  .med__plan--doctor {
+    font-size: 14px;
+    line-height: 19px;
+  }
+
+  .alarm {
+    padding: 18px 16px 20px;
+  }
+
+  .alarm__head {
+    gap: 12px;
+  }
+
+  .alarm__icon {
+    width: 44px;
+    height: 44px;
+  }
+
+  .alarm__icon svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .alarm__title {
+    font-size: 20px;
+    line-height: 25px;
+  }
+
+  .alarm__list {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 8px;
+    margin-top: 16px;
+  }
+
+  .alarm__list li,
+  .alarm__text {
+    font-size: 15px;
+    line-height: 20px;
+  }
+
+  .alarm__text {
+    margin-top: 16px;
+    padding-top: 14px;
+  }
+
+  .calm {
+    grid-template-columns: minmax(0, 1fr) 96px;
+    column-gap: 14px;
+  }
+}
+
+/* =========================================================
+   Правки 22.10.2026: холод и сроки, ванночки, особые случаи, лекарства без дозировок,
+   экстренная помощь 112/103, телефоны филиалов в блоке «Когда связаться»
+   ========================================================= */
+@media (min-width: 960px) {
+  .when--2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .med-row--2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.hero__sos {
+  color: var(--white);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.hero__sos:focus-visible {
+  outline: 2px solid var(--white);
+  outline-offset: 2px;
+}
+
+.mydates__note {
+  grid-column: 1 / -1;
+  font-size: 14px;
+  line-height: 19px;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+/* широкая карточка со значком: ванночки, сон */
+.wide-card {
+  display: grid;
+  grid-template-columns: 56px minmax(0, 1fr);
+  column-gap: 18px;
+  align-items: start;
+  margin-top: 20px;
+  padding: 22px 26px;
+  border-radius: var(--radius-card);
+  background: var(--white);
+}
+
+.wide-card--beige {
+  background: #F7EFE6;
+}
+
+.wide-card__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--navy);
+  color: var(--white);
+}
+
+.wide-card__body {
+  min-width: 0;
+  align-self: center;
+}
+
+.wide-card__title {
+  font-family: var(--font-head);
+  font-size: 20px;
+  line-height: 25px;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.wide-card__text {
+  margin-top: 6px;
+  font-size: 17px;
+  line-height: 23px;
+}
+
+/* особые случаи: синус-лифтинг, временный протез */
+.special {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.special__item {
+  min-width: 0;
+  padding: 22px 24px 24px;
+  border-radius: var(--radius-card);
+  box-shadow: inset 0 0 0 2px #C9D9F1;
+  background: #F4F8FC;
+}
+
+.special__title {
+  margin: 0;
+  font-family: var(--font-head);
+  font-size: 20px;
+  line-height: 25px;
+  font-weight: 700;
+  color: var(--navy);
+  text-wrap: balance;
+}
+
+.special__text {
+  margin-top: 8px;
+  font-size: 17px;
+  line-height: 23px;
+}
+
+.special__note {
+  margin-top: 10px;
+  font-size: 15px;
+  line-height: 20px;
+  font-weight: 600;
+  color: #49678D;
+}
+
+.post-subhead--meds {
+  margin-top: 32px;
+}
+
+/* экстренная помощь */
+.sos {
+  margin-bottom: 20px;
+  padding: 28px 32px 30px;
+  border-radius: var(--radius-card);
+  background: #A3243B;
+  color: var(--white);
+}
+
+.sos__head {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.sos__icon {
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--white);
+  color: #A3243B;
+}
+
+.sos__title {
+  font-family: var(--font-head);
+  font-size: 30px;
+  line-height: 36px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.sos__text {
+  margin-top: 16px;
+  max-width: 900px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.sos__calls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.sos__call {
+  display: inline-flex;
+  align-items: center;
+  min-height: 48px;
+  padding: 0 24px;
+  border-radius: 999px;
+  background: var(--white);
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: 700;
+  color: #A3243B;
+  text-decoration: none;
+}
+
+.sos__call:focus-visible {
+  outline: 2px solid var(--white);
+  outline-offset: 3px;
+}
+
+/* связь с филиалом в блоке «Когда важно связаться» */
+.alarm__branches {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px 24px;
+  margin-top: 16px;
+}
+
+.alarm__branch {
+  min-width: 0;
+}
+
+.alarm__branch-name {
+  font-family: var(--font-head);
+  font-size: 18px;
+  line-height: 23px;
+  font-weight: 700;
+}
+
+.alarm__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.alarm__links .alarm__link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 16px;
+  border-radius: 999px;
+  background: var(--white);
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+
+@media (hover: hover) {
+  .alarm__links .alarm__link:hover {
+    background: var(--navy);
+    color: var(--white);
+  }
+}
+
+@media (max-width: 1199.98px) {
+  .wide-card {
+    grid-template-columns: 48px minmax(0, 1fr);
+    column-gap: 16px;
+    padding: 18px 20px;
+  }
+
+  .wide-card__icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .wide-card__title,
+  .special__title {
+    font-size: 18px;
+    line-height: 23px;
+  }
+
+  .wide-card__text,
+  .special__text,
+  .sos__text {
+    font-size: 16px;
+    line-height: 21px;
+  }
+
+  .special {
+    gap: 14px;
+  }
+
+  .special__item {
+    padding: 18px 20px 20px;
+  }
+
+  .sos {
+    padding: 22px 24px 24px;
+  }
+
+  .sos__title {
+    font-size: 24px;
+    line-height: 30px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .wide-card {
+    grid-template-columns: 40px minmax(0, 1fr);
+    column-gap: 12px;
+    margin-top: 12px;
+    padding: 14px;
+  }
+
+  .wide-card__icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .wide-card__icon svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .wide-card__title,
+  .special__title {
+    font-size: 16px;
+    line-height: 21px;
+  }
+
+  .wide-card__text,
+  .special__text,
+  .sos__text {
+    font-size: 15px;
+    line-height: 20px;
+  }
+
+  .special {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 10px;
+    margin-top: 12px;
+  }
+
+  .special__item {
+    padding: 14px 14px 16px;
+  }
+
+  .special__note {
+    font-size: 14px;
+    line-height: 19px;
+  }
+
+  .post-subhead--meds {
+    margin-top: 22px;
+  }
+
+  .sos {
+    margin-bottom: 12px;
+    padding: 18px 16px 20px;
+  }
+
+  .sos__head {
+    gap: 12px;
+  }
+
+  .sos__icon {
+    width: 44px;
+    height: 44px;
+  }
+
+  .sos__icon svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .sos__title {
+    font-size: 20px;
+    line-height: 25px;
+  }
+
+  .sos__text {
+    margin-top: 12px;
+  }
+
+  .sos__calls {
+    margin-top: 14px;
+  }
+
+  .sos__call {
+    flex: 1 1 0;
+    justify-content: center;
+    padding: 0 12px;
+    font-size: 16px;
+  }
+
+  .alarm__branches {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .alarm__links .alarm__link {
+    font-size: 15px;
+  }
+
+  .mydates__note {
+    font-size: 13px;
+    line-height: 18px;
+  }
+}
