@@ -219,7 +219,7 @@
 .alarm {
   padding: 32px 36px 34px;
   border-radius: var(--radius-card);
-  background: #F3D2D3;
+  background: #E3ECF8;
   color: var(--navy);
 }
 
@@ -693,8 +693,8 @@
   margin-bottom: 20px;
   padding: 28px 32px 30px;
   border-radius: var(--radius-card);
-  background: #A3243B;
-  color: var(--white);
+  background: #E3ECF8;
+  color: var(--navy);
 }
 
 .sos__head {
@@ -711,8 +711,8 @@
   width: 56px;
   height: 56px;
   border-radius: 50%;
-  background: var(--white);
-  color: #A3243B;
+  background: var(--navy);
+  color: var(--white);
 }
 
 .sos__title {
@@ -743,16 +743,16 @@
   min-height: 48px;
   padding: 0 24px;
   border-radius: 999px;
-  background: var(--white);
+  background: var(--navy);
   font-size: 18px;
   line-height: 22px;
   font-weight: 700;
-  color: #A3243B;
+  color: var(--white);
   text-decoration: none;
 }
 
 .sos__call:focus-visible {
-  outline: 2px solid var(--white);
+  outline: 2px solid var(--navy);
   outline-offset: 3px;
 }
 
