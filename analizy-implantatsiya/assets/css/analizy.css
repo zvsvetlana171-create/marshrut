@@ -160,6 +160,34 @@
   line-height: 22px;
 }
 
+/* по показаниям: карточка-подсказка без отметки */
+.test--extra {
+  align-items: start;
+  cursor: default;
+}
+
+.test__icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--navy) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 3.5c-3.3 4.3-5.5 7.4-5.5 10.2a5.5 5.5 0 0 0 11 0c0-2.8-2.2-5.9-5.5-10.2z' fill='%23fff'/%3E%3C/svg%3E") center / 18px 18px no-repeat;
+}
+
+.test__tag {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 1px 10px;
+  border-radius: 999px;
+  background: var(--white);
+  font-family: var(--font);
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: 600;
+  color: #49678D;
+  vertical-align: 2px;
+  white-space: nowrap;
+}
+
 /* ---------- Отправьте результаты на почту ---------- */
 .mail {
   display: grid;
