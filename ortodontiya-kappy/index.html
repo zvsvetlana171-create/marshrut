@@ -32,7 +32,7 @@
 <link rel="stylesheet" href="assets/css/plan.css?v=6">
 <link rel="stylesheet" href="assets/css/rec.css?v=1">
 <link rel="stylesheet" href="assets/css/prep.css?v=2">
-<link rel="stylesheet" href="assets/css/ortho.css?v=4">
+<link rel="stylesheet" href="assets/css/ortho.css?v=5">
 <script src="assets/js/main.js?v=1"></script>
 </head>
 <body>
@@ -305,7 +305,7 @@
                 <video class="video__file" controls preload="none" playsinline poster="assets/img/gigiena-breketov-poster.jpg" width="720" height="1278" aria-label="Видео: чистка зубов с брекетами" onplay="this.parentNode.classList.add('is-playing')">
                   <source src="assets/video/gigiena-breketov.mp4" type="video/mp4">
                 </video>
-                <span class="video__play" aria-hidden="true"></span>
+                <button class="video__start" type="button" aria-label="Смотреть видео: чистка зубов с брекетами" onclick="this.parentNode.querySelector('video').play()"><span class="video__play" aria-hidden="true"></span></button>
               </div>
               <p class="video__title">Чистка зубов с&nbsp;брекетами</p>
               <ol class="video__steps">

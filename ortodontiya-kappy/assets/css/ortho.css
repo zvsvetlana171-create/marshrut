@@ -209,12 +209,38 @@
   background: var(--navy);
 }
 
-.video__frame--tall .video__play {
-  pointer-events: none;
+.video__start {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
 
-.video__frame.is-playing .video__play {
+.video__start:focus-visible {
+  outline: 3px solid var(--white);
+  outline-offset: -6px;
+}
+
+@media (hover: hover) {
+  .video__frame:hover .video__start .video__play {
+    transform: scale(1.08);
+  }
+}
+
+.video__frame.is-playing .video__start {
   display: none;
+}
+
+@media (max-width: 600px) {
+  .video__frame--tall {
+    max-height: 640px;
+  }
 }
 
 .video__title {
