@@ -32,7 +32,7 @@
 <link rel="stylesheet" href="assets/css/plan.css?v=6">
 <link rel="stylesheet" href="assets/css/rec.css?v=1">
 <link rel="stylesheet" href="assets/css/prep.css?v=2">
-<link rel="stylesheet" href="assets/css/ortho.css?v=3">
+<link rel="stylesheet" href="assets/css/ortho.css?v=4">
 <script src="assets/js/main.js?v=1"></script>
 </head>
 <body>
@@ -301,17 +301,19 @@
               <p class="video__meta">Видео на&nbsp;YouTube, на&nbsp;английском</p>
             </div>
             <div class="video">
-              <a class="video__frame" href="https://youtu.be/iWzccidNPVQ" target="_blank" rel="noopener" data-yt="iWzccidNPVQ" aria-label="Смотреть видео: чистка зубов с брекетами">
-                <img class="video__thumb" src="https://i.ytimg.com/vi/iWzccidNPVQ/hqdefault.jpg" width="480" height="360" alt="" loading="lazy" decoding="async">
+              <div class="video__frame video__frame--tall">
+                <video class="video__file" controls preload="none" playsinline poster="assets/img/gigiena-breketov-poster.jpg" width="720" height="1278" aria-label="Видео: чистка зубов с брекетами" onplay="this.parentNode.classList.add('is-playing')">
+                  <source src="assets/video/gigiena-breketov.mp4" type="video/mp4">
+                </video>
                 <span class="video__play" aria-hidden="true"></span>
-              </a>
+              </div>
               <p class="video__title">Чистка зубов с&nbsp;брекетами</p>
               <ol class="video__steps">
                 <li>Чистите зубы тщательно каждый день.</li>
                 <li>Очищайте зубы над&nbsp;дугой и&nbsp;под&nbsp;ней, вокруг каждого брекета.</li>
                 <li>Промежутки между зубами, брекетами и&nbsp;дугами&nbsp;— средствами, которые подобрал врач или&nbsp;гигиенист.</li>
               </ol>
-              <p class="video__meta">Видео на&nbsp;YouTube, на&nbsp;английском</p>
+              <p class="video__meta">Рассказывает врач-ортодонт клиники Ангелина Дмитриевна Бабийчук</p>
             </div>
           </div>
           <a class="switch" href="#stage-kappy" data-go="kappy" hidden>
