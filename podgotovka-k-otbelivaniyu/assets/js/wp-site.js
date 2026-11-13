@@ -9,7 +9,7 @@
   var GEL_KEY = 'dp-whitening-gel';
 
   function param(name) {
-    var m = new RegExp('[?&]' + name + '=([^&#]*)').exec(window.location.search);
+    var m = new RegExp('[?\\x26]' + name + '=([^\\x26#]*)').exec(window.location.search);
     if (!m) return '';
     try { return decodeURIComponent(m[1].replace(/\+/g, ' ')); } catch (e) { return ''; }
   }
@@ -60,7 +60,7 @@
         show(name);
       });
       tab.addEventListener('keydown', function (e) {
-        if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
+        if (['ArrowLeft', 'ArrowRight'].indexOf(e.key) === -1) return;
         var next = GELS[(GELS.indexOf(tab.getAttribute('data-tab')) + 1) % GELS.length];
         var target = root.querySelector('[data-tab="' + next + '"]');
         if (target) {
@@ -130,10 +130,9 @@
       if (saved > Date.now()) {
         end = saved;
         start();
-      } else if (saved && Date.now() - saved < 600000) {
-        done();
       } else if (saved) {
-        save(key, '');
+        if (Date.now() - saved < 600000) done();
+        else save(key, '');
       }
       btn.hidden = false;
     });
@@ -181,7 +180,7 @@
   }
 
   function reveal(root) {
-    var reduce = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+    var reduce = window.matchMedia ? window.matchMedia('(prefers-reduced-motion: reduce)').matches : false;
     if (reduce || !('IntersectionObserver' in window)) return;
 
     var viewH = window.innerHeight || document.documentElement.clientHeight;
@@ -189,7 +188,9 @@
 
     try {
       Array.prototype.slice.call(root.querySelectorAll(TARGETS)).forEach(function (el) {
-        if (el.getClientRects().length && el.getBoundingClientRect().top < viewH) return;
+        if (el.getClientRects().length) {
+          if (el.getBoundingClientRect().top < viewH) return;
+        }
         el.classList.add('dpwb-reveal');
         hidden.push(el);
       });
