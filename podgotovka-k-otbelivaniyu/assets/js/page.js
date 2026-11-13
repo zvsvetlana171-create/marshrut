@@ -1,6 +1,6 @@
-/* Рекомендации «Подготовка к отбеливанию»: выбор геля, таймер 3 минуты, «засечь время» до еды, «ваш филиал».
+/* Рекомендации «Подготовка к отбеливанию»: выбор геля, таймер 30 минут с каппой, «засечь время» на час без воды и полоскания, «ваш филиал».
    Без JS страница читается полностью: обе инструкции идут подряд, кнопки таймера и «засечь время» скрыты.
-   Выбранный гель и время, до которого нельзя есть, хранятся на этом устройстве (localStorage).
+   Выбранный гель и время, до которого нельзя пить, хранятся на этом устройстве (localStorage).
    ?gel=rocs|gc — администратор может отправить ссылку сразу на нужный гель.
    ?branch=mitino|krasnogorsk — отметка «Ваш филиал». */
 (function () {
@@ -68,29 +68,37 @@
     tabs.hidden = false;
   }
 
-  /* ---------- Таймер 3 минуты: нажатие запускает, повторное — сбрасывает ---------- */
+  /* ---------- Таймер 30 минут с каппой: нажатие запускает, повторное — сбрасывает.
+     Время окончания хранится на устройстве: если закрыть страницу и открыть снова, отсчёт продолжится. ---------- */
   each('[data-timer]', function (btn) {
     var label = btn.querySelector('[data-timer-label]');
     var initial = label ? label.innerHTML : '';
     var total = +btn.getAttribute('data-timer');
+    var key = 'dp-gel-timer-' + (btn.getAttribute('data-timer-id') || 'main');
     var end = 0;
     var tick;
 
     function reset() {
       clearInterval(tick);
       end = 0;
+      save(key, '');
       btn.classList.remove('is-running', 'is-done');
       if (label) label.innerHTML = initial;
+    }
+
+    function done() {
+      clearInterval(tick);
+      end = 0;
+      save(key, '');
+      btn.classList.remove('is-running');
+      btn.classList.add('is-done');
+      if (label) label.textContent = 'Готово: 30 минут прошли, снимите каппу';
     }
 
     function render() {
       var left = Math.max(0, Math.ceil((end - Date.now()) / 1000));
       if (left === 0) {
-        clearInterval(tick);
-        end = 0;
-        btn.classList.remove('is-running');
-        btn.classList.add('is-done');
-        if (label) label.textContent = 'Готово: 3 минуты прошли';
+        done();
         if (navigator.vibrate) navigator.vibrate([200, 100, 200]);
         return;
       }
@@ -98,17 +106,27 @@
       if (label) label.textContent = Math.floor(left / 60) + ':' + (s < 10 ? '0' : '') + s + ' — нажмите, чтобы сбросить';
     }
 
-    btn.addEventListener('click', function () {
-      if (end || btn.classList.contains('is-done')) { reset(); return; }
-      end = Date.now() + total * 1000;
+    function run() {
       btn.classList.add('is-running');
       render();
       tick = setInterval(render, 250);
+    }
+
+    btn.addEventListener('click', function () {
+      if (end || btn.classList.contains('is-done')) { reset(); return; }
+      end = Date.now() + total * 1000;
+      save(key, String(end));
+      run();
     });
+
+    var saved = +load(key) || 0;
+    if (saved > Date.now()) { end = saved; run(); }
+    else if (saved && Date.now() - saved < 600000) done();
+    else if (saved) save(key, '');
     btn.hidden = false;
   });
 
-  /* ---------- Засечь время: до скольких не есть и не пить ---------- */
+  /* ---------- Засечь время: до скольких не пить и не полоскать рот ---------- */
   function hhmm(t) {
     var d = new Date(t);
     var m = d.getMinutes();
@@ -127,8 +145,8 @@
       if (!end || Date.now() - end > 3600000) { out.hidden = true; return; }
       out.hidden = false;
       out.innerHTML = Date.now() < end
-        ? 'Можно есть и&nbsp;пить после <b>' + hhmm(end) + '</b>'
-        : 'Время прошло&nbsp;— можно есть и&nbsp;пить';
+        ? 'Можно пить и&nbsp;полоскать рот после <b>' + hhmm(end) + '</b>'
+        : 'Час прошёл&nbsp;— можно пить и&nbsp;полоскать рот';
     }
 
     btn.addEventListener('click', function () {

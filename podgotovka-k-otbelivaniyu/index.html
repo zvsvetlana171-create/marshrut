@@ -31,7 +31,7 @@
 <link rel="stylesheet" href="assets/css/style.css?v=1">
 <link rel="stylesheet" href="assets/css/plan.css?v=6">
 <link rel="stylesheet" href="assets/css/rec.css?v=1">
-<link rel="stylesheet" href="assets/css/prep.css?v=3">
+<link rel="stylesheet" href="assets/css/prep.css?v=4">
 <script src="assets/js/main.js?v=1"></script>
 </head>
 <body>
@@ -147,7 +147,7 @@
             <p class="hero__text">Средство и&nbsp;схему подготовки подбирает специалист, который будет проводить отбеливание. На&nbsp;этой странице можно посмотреть инструкцию к&nbsp;рекомендованному вам средству.</p>
             <p class="hero__note">
               <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7v5.5l3.5 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              <span>На&nbsp;странице есть таймер и&nbsp;подсказка, когда можно есть.</span>
+              <span>На&nbsp;странице есть таймер на&nbsp;30&nbsp;минут и&nbsp;подсказка, когда снова можно пить.</span>
             </p>
           </div>
           <div class="hero__card">
@@ -170,17 +170,17 @@
             </div>
           </li>
           <li class="key__item">
-            <span class="key__icon" aria-hidden="true"><svg viewBox="0 0 32 32" width="30" height="30"><path d="M9 7h14l-1.8 18.2a2 2 0 0 1-2 1.8h-6.4a2 2 0 0 1-2-1.8z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/><path d="M10 13.5h12" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><path d="M6 26L26 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span>
+            <span class="key__icon" aria-hidden="true"><svg viewBox="0 0 32 32" width="30" height="30"><path d="M6 26V15a10 10 0 0 1 20 0v11h-5.5V15.5a4.5 4.5 0 0 0-9 0V26z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/><path d="M8.8 24V15.2a7.2 7.2 0 0 1 14.4 0V24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" opacity=".55"/></svg></span>
             <div class="key__body">
-              <h3 class="key__title">Рот лучше не&nbsp;полоскать</h3>
-              <p class="key__text">После нанесения геля рот лучше не&nbsp;ополаскивать.</p>
+              <h3 class="key__title">Гель&nbsp;— в&nbsp;каппе на&nbsp;30&nbsp;минут</h3>
+              <p class="key__text">Выдавите гель в&nbsp;стандартную каппу и&nbsp;наденьте её на&nbsp;зубы.</p>
             </div>
           </li>
           <li class="key__item">
-            <span class="key__icon" aria-hidden="true"><svg viewBox="0 0 32 32" width="30" height="30"><circle cx="16" cy="16" r="11" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M16 10v6.5l4 2.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <span class="key__icon" aria-hidden="true"><svg viewBox="0 0 32 32" width="30" height="30"><path d="M9 7h14l-1.8 18.2a2 2 0 0 1-2 1.8h-6.4a2 2 0 0 1-2-1.8z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/><path d="M10 13.5h12" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><path d="M6 26L26 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span>
             <div class="key__body">
-              <h3 class="key__title">Пауза в&nbsp;еде и&nbsp;напитках</h3>
-              <p class="key__text">Rocs Medical Minerals&nbsp;— <span class="nowrap">40–50&nbsp;минут</span>, GC&nbsp;Tooth&nbsp;Mousse&nbsp;— 30&nbsp;минут.</p>
+              <h3 class="key__title">1&nbsp;час не&nbsp;пить и&nbsp;не&nbsp;полоскать</h3>
+              <p class="key__text">После того как снимете каппу и&nbsp;сплюнете гель.</p>
             </div>
           </li>
         </ul>
@@ -195,6 +195,13 @@
     <section class="section section--gray" id="how">
       <div class="container">
         <h2 class="h2">Как наносить гель</h2>
+        <div class="tray">
+          <img class="tray__img" src="assets/img/tray.svg" width="360" height="360" alt="стандартная прозрачная каппа с полоской геля и часы с отметкой 30 минут" loading="lazy" decoding="async">
+          <div class="tray__body">
+            <h3 class="tray__title">Понадобится стандартная каппа</h3>
+            <p class="tray__text">Её можно купить на&nbsp;Ozon или&nbsp;Wildberries.</p>
+          </div>
+        </div>
         <div class="gel-tabs" data-tabs hidden>
           <p class="gel-tabs__label" id="gel-tabs-label">Откройте инструкцию к&nbsp;средству, которое вам рекомендовал специалист. Не&nbsp;уверены, какое ваше,&nbsp;— уточните в&nbsp;переписке, где получили ссылку.</p>
           <div class="gel-tabs__bar" role="tablist" aria-labelledby="gel-tabs-label">
@@ -216,16 +223,17 @@
           <div class="gel__main">
             <ol class="howto">
               <li class="howto__step"><span class="howto__num" aria-hidden="true">1</span><div class="howto__body"><p class="howto__text"><b>Тщательно почистите зубы</b> щёткой и&nbsp;пастой без фтора.</p></div></li>
-              <li class="howto__step"><span class="howto__num" aria-hidden="true">2</span><div class="howto__body"><p class="howto__text"><b>Нанесите гель на&nbsp;щётку</b> и&nbsp;равномерно распределите по&nbsp;зубным рядам.</p></div></li>
-              <li class="howto__step"><span class="howto__num" aria-hidden="true">3</span><div class="howto__body"><p class="howto__text"><b>Не&nbsp;ополаскивайте рот</b> и&nbsp;воздержитесь от&nbsp;еды и&nbsp;напитков <span class="nowrap">40–50&nbsp;минут</span>.</p></div></li>
+              <li class="howto__step"><span class="howto__num" aria-hidden="true">2</span><div class="howto__body"><p class="howto__text"><b>Выдавите гель в&nbsp;каппу</b> и&nbsp;наденьте её на&nbsp;зубы.</p></div></li>
+              <li class="howto__step"><span class="howto__num" aria-hidden="true">3</span><div class="howto__body"><p class="howto__text"><b>Подержите 30&nbsp;минут</b> и&nbsp;снимите каппу.</p><button class="howto__timer" type="button" data-timer="1800" data-timer-id="rocs" hidden><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="12" cy="13" r="8" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 9v4l2.5 1.5M10 3h4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-timer-label>Таймер 30&nbsp;минут</span></button></div></li>
+              <li class="howto__step"><span class="howto__num" aria-hidden="true">4</span><div class="howto__body"><p class="howto__text"><b>Сплюньте остатки геля.</b></p></div></li>
             </ol>
             <div class="wait">
               <span class="wait__icon" aria-hidden="true"><svg viewBox="0 0 32 32" width="26" height="26"><circle cx="16" cy="16" r="11" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M16 10v6.5l4 2.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
               <div class="wait__body">
-                <p class="wait__title">Не&nbsp;ешьте и&nbsp;не&nbsp;пейте <span class="nowrap">40–50&nbsp;минут</span></p>
+                <p class="wait__title">1&nbsp;час не&nbsp;пейте и&nbsp;не&nbsp;полощите рот</p>
                 <p class="wait__out" data-wait-out="rocs" aria-live="polite" hidden></p>
               </div>
-              <button class="wait__btn" type="button" data-wait="rocs" data-minutes="50" hidden>Гель нанесён&nbsp;— засечь время</button>
+              <button class="wait__btn" type="button" data-wait="rocs" data-minutes="60" hidden>Каппа снята&nbsp;— засечь время</button>
             </div>
           </div>
         </div>
@@ -249,20 +257,17 @@
             </div>
             <ol class="howto">
               <li class="howto__step"><span class="howto__num" aria-hidden="true">1</span><div class="howto__body"><p class="howto__text"><b>Тщательно почистите зубы</b> щёткой и&nbsp;пастой без фтора.</p></div></li>
-              <li class="howto__step"><span class="howto__num" aria-hidden="true">2</span><div class="howto__body"><p class="howto__text"><b>Нанесите достаточное количество геля</b> на&nbsp;верхние и&nbsp;нижние зубы: шарик размером с&nbsp;крупную горошину&nbsp;— необходимый минимум для&nbsp;каждого зубного ряда.</p></div></li>
-              <li class="howto__step"><span class="howto__num" aria-hidden="true">3</span><div class="howto__body"><p class="howto__text"><b>Наносите ватным тампоном или&nbsp;сухим чистым пальцем.</b> Между зубами&nbsp;— специальной щёткой или&nbsp;зубной нитью, смазанной гелем.</p></div></li>
-              <li class="howto__step"><span class="howto__num" aria-hidden="true">4</span><div class="howto__body"><p class="howto__text"><b>Оставьте гель на&nbsp;зубах</b> минимум на&nbsp;3&nbsp;минуты.</p><button class="howto__timer" type="button" data-timer="180" hidden><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="12" cy="13" r="8" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 9v4l2.5 1.5M10 3h4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-timer-label>Таймер 3&nbsp;минуты</span></button></div></li>
-              <li class="howto__step"><span class="howto__num" aria-hidden="true">5</span><div class="howto__body"><p class="howto__text"><b>Языком распределите остатки</b> по&nbsp;зубам и&nbsp;тканям полости рта. Как можно дольше&nbsp;— ещё примерно <span class="nowrap">1–2&nbsp;минуты</span>&nbsp;— не&nbsp;сплёвывайте и&nbsp;не&nbsp;сглатывайте слюну: чем дольше гель и&nbsp;слюна во&nbsp;рту, тем эффективнее результат.</p></div></li>
-              <li class="howto__step"><span class="howto__num" aria-hidden="true">6</span><div class="howto__body"><p class="howto__text"><b>Тщательно сплюньте</b> слюну и&nbsp;остатки препарата. По&nbsp;возможности не&nbsp;споласкивайте рот&nbsp;— небольшие остатки быстро растворятся.</p></div></li>
-              <li class="howto__step"><span class="howto__num" aria-hidden="true">7</span><div class="howto__body"><p class="howto__text"><b>Не&nbsp;ешьте и&nbsp;не&nbsp;пейте 30&nbsp;минут</b> после нанесения.</p></div></li>
+              <li class="howto__step"><span class="howto__num" aria-hidden="true">2</span><div class="howto__body"><p class="howto__text"><b>Выдавите гель в&nbsp;каппу</b> и&nbsp;наденьте её на&nbsp;зубы.</p></div></li>
+              <li class="howto__step"><span class="howto__num" aria-hidden="true">3</span><div class="howto__body"><p class="howto__text"><b>Подержите 30&nbsp;минут</b> и&nbsp;снимите каппу.</p><button class="howto__timer" type="button" data-timer="1800" data-timer-id="gc" hidden><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="12" cy="13" r="8" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 9v4l2.5 1.5M10 3h4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-timer-label>Таймер 30&nbsp;минут</span></button></div></li>
+              <li class="howto__step"><span class="howto__num" aria-hidden="true">4</span><div class="howto__body"><p class="howto__text"><b>Сплюньте остатки геля.</b></p></div></li>
             </ol>
             <div class="wait">
               <span class="wait__icon" aria-hidden="true"><svg viewBox="0 0 32 32" width="26" height="26"><circle cx="16" cy="16" r="11" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M16 10v6.5l4 2.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
               <div class="wait__body">
-                <p class="wait__title">Не&nbsp;ешьте и&nbsp;не&nbsp;пейте 30&nbsp;минут</p>
+                <p class="wait__title">1&nbsp;час не&nbsp;пейте и&nbsp;не&nbsp;полощите рот</p>
                 <p class="wait__out" data-wait-out="gc" aria-live="polite" hidden></p>
               </div>
-              <button class="wait__btn" type="button" data-wait="gc" data-minutes="30" hidden>Всё сделано&nbsp;— засечь время</button>
+              <button class="wait__btn" type="button" data-wait="gc" data-minutes="60" hidden>Каппа снята&nbsp;— засечь время</button>
             </div>
           </div>
         </div>
@@ -318,6 +323,6 @@
       </div>
     </section>
   </main>
-<script src="assets/js/page.js?v=1"></script>
+<script src="assets/js/page.js?v=2"></script>
 </body>
 </html>

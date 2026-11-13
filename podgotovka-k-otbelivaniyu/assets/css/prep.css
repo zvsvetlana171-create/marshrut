@@ -711,3 +711,85 @@
     margin-top: 12px;
   }
 }
+
+/* ---------- Правки 13.11.2026: гель в стандартной каппе — карточка «Понадобится каппа» ---------- */
+.tray {
+  display: grid;
+  grid-template-columns: 168px minmax(0, 1fr);
+  column-gap: 28px;
+  align-items: center;
+  max-width: 760px;
+  margin-top: 28px;
+  padding: 16px 28px 16px 16px;
+  border-radius: var(--radius-card);
+  background: var(--white);
+}
+
+.tray__img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  border-radius: 14px;
+}
+
+.tray__body {
+  min-width: 0;
+}
+
+.tray__title {
+  font-family: var(--font-head);
+  font-size: 24px;
+  line-height: 30px;
+  font-weight: 700;
+  color: var(--navy);
+  text-wrap: balance;
+}
+
+.tray__text {
+  margin-top: 8px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+@media (max-width: 1199.98px) {
+  .tray {
+    grid-template-columns: 140px minmax(0, 1fr);
+    column-gap: 22px;
+    margin-top: 22px;
+  }
+
+  .tray__title {
+    font-size: 20px;
+    line-height: 26px;
+  }
+
+  .tray__text {
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .tray {
+    grid-template-columns: 96px minmax(0, 1fr);
+    column-gap: 14px;
+    margin-top: 16px;
+    padding: 10px 14px 10px 10px;
+  }
+
+  .tray__img {
+    border-radius: 10px;
+  }
+
+  .tray__title {
+    font-size: 17px;
+    line-height: 22px;
+  }
+
+  .tray__text {
+    margin-top: 4px;
+    font-size: 15px;
+    line-height: 20px;
+  }
+}
